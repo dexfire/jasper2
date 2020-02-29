@@ -74,3 +74,14 @@ martin:
   facebook: False
   twitter: False
   cover: False
+dexfire:
+  username: martin
+  name: Dexfire Alex
+  location: Chongqing, China
+  url_full: False
+  url: dexfire.github.io/jasper2
+  bio: 水中月是天上月，眼前人是心上人
+  picture: assets/images/dexfire.jpg
+  facebook: False
+  twitter: False
+  cover: assets/images/fables.jpg
