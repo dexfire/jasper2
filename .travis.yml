@@ -1,0 +1,28 @@
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+- 2.5.1
+
+install:
+  # Install Jekyll and dependencies
+  - gem install travis
+  - travis --help -y
+  - travis encrypt 'GIT_NAME="dexfire" GIT_EMAIL="dexfire29@foxmail.com" GH_TOKEN=5acebd443361d5aa2830d55c678bfa7dd6681bde' -y
+  - bundle install
+
+script: bundle exec rake site:deploy --quiet --trace
+
+# Generate your secure token with the travis gem:
+# get Github token from your Travis CI profile page
+# gem install travis
+# GH_TOKEN from https://github.com/settings/tokens
+# 5acebd443361d5aa2830d55c678bfa7dd6681bde
+# travis encrypt 'GIT_NAME="YOUR_USERNAME" GIT_EMAIL="YOUR_EMAIL" GH_TOKEN=YOUR_TOKEN'
+env:
+  global:
+    #secure: "hGpEWbQXMoZDTKAyG4AEKT/Q8CzjJ7TAT4ZDKDmYsIeDjw9IYLVpG9dMArpguHP9eHzcZn1sX/WTWLm8d1fdBGZgUXcKOXb1b8SFKd/A9SNJhIAYlpW9xde6LgUpbOywFfbH93+vkXGiHTxbvdf5ESRrYD8wGGgTKSUAv7/2IPaA9Ea3JX2XMT0v4MIAIndat5SDrcjgLasHev7P8hQo8k4Rjx94axbJUHKImDPl+sAwCtrD3kWikAGwcrnBNoaYw8QBj6tG3XH4RbAbSu4U5GKABOBJNbSq5R9W7jdvTY81oxH/PWTOeIeQBQQk+ekRrtb/GTdVBrLVuevs++63EW5OEARZJCpLLliD/NszhuxNHh7PgNJvO4rLjnxZk3b/QbjbNXzsACFKI0WU0PEaYeGxNB+2oVRuMyw4gtO7DVcCTO1ZC/zsO/DOoajzbsenpn76PR0JykeNcu8u3YvNG2sD9NoUFAtw9bzJK1/PaYNhOL1sF9EUBVqUE9aZYGbp1nqLuhgsBdF5YwzZ2yGX2bKIUnVMvyLnUiZMN1Sr/siglUqsmXRvtQPD/GAVrgr74DvfWcuXk6TnLl4csHtK61abSGJwsBwlvdovq/Rrrm4wfqXqJ801l3+EGUXJtaOO+ghDw4M5aTo3Qwcsf9gkwj9kZE+eljxTL7irxwxmlWU="
+    secure: "RTTvwPIy9Al88ebT/qcANGGxSvdqQTg6XfaP3gOcs81hEIkoIzOaL//dri64V/SkfdcgWjFOIVccW2sXkZRk3SzypvBZm7XkvWx45FKDnsk4s+xgJrm0xz2LPmVzCOZ3hsgmuPfyrY9VomgXbRYAwuj+G2j9dNagY2fEjirrnNXmk493G2pDDQS/TQXEP08vwb9FFy1UJDKKK9XQ/Wp7eJ+AhpOpT7XSk0E9ODO+c9Q9Iy2hK8qmxH/Vc0KoK903u5kUjSkxTyzHyHCUNkpQC+IB3JN3uibhtzYztECAup6TmR/5bHE2w2CTWHmLez5k+/4PwInPBAK2t+w1315/8tCUZYE+5WxD3a3d7XkM2k/Nm3rfh3oXzRGobQK0cMNiCzCrnZuzosmUsE7uSDaRXmqhB2OVhKBXiaPCj1mLxWcKZWp0ZXsW5AQuI7YoxszwYUqQMEwp1lqrpH+S/jnZ9cP0imbFW+iWyqGt0ZvfETx+FZ7Ffd0aCcyLKqJ4uFT/SJE1Llu3ueccqGbrx/OmzKORFCinX8zENWrxpFDoirpj/+J7jpwQCX/s2a13eFq4+3mifdX/O94ZgUTnAJsvpaXZw+gW1bgf6jaWMDQMqOZ2noUqWP7xo3Y9Bt/vPM5oAl27HbsT77luZcdTtW1HUJLLZGvc5sjprygL92qjddk="
+branches:
+  only:
+    - master
