@@ -1,7 +1,7 @@
 ---
 layout: post
 current: post
-cover:  assets/images/python.jpg
+cover:  assets/images/python.png
 navigation: True
 title: Python argparse 模块使用记录
 date: 2020-03-01 00:57:00
@@ -26,3 +26,5 @@ parser.add_argument('--sum', dest='accumulate', action='store_const',
 args = parser.parse_args()
 print(args.accumulate(args.integers))
 ```
+
+![测试](assets/images/QQ截图20200301111111.png)
