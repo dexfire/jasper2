@@ -14,3 +14,7 @@ getting-started:
   name: getting-started
   description: False
   cover: False
+embed:
+  name: 嵌入式开发概述
+  description: Some articles on embeded developments.
+  cover: assets/images/msp4305529lp.png
