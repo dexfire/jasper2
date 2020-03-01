@@ -15,10 +15,18 @@ getting-started:
   description: False
   cover: False
 embed:
-  name: 嵌入式开发概述
+  name: 嵌入式开发
   description: Some articles on embeded developments.
   cover: assets/images/msp4305529lp.png
 python:
   name: Python
   description: Some articles on Python developments.
   cover: assets/images/Python.png
+sweet:
+  name: 甜甜的句子
+  description: 永远保护好心里的小孩子，永远不要与大人为伍，无论谁欺骗了你，都永远要相信爱情。
+  cover: assets/images/brooke-lark-bivUtyUT6mk-unsplash_small.jpg
+sentences:
+  name: 书摘
+  description: 一些好听的句子。
+  cover: assets/images/thong-vo-Maf7wdHCmvo-unsplash.jpg
