@@ -30,3 +30,23 @@ sentences:
   name: 书摘
   description: 一些好听的句子。
   cover: assets/images/thong-vo-Maf7wdHCmvo-unsplash.jpg
+cs:
+  name: Computer Science
+  description: 基于现代高速计算机的理论与应用研究
+  cover: assets/images/computer_vision.jpg
+web:
+  name: Web Development
+  description: 基于现代高速计算机的理论与应用研究
+  cover: assets/images/html.jpg
+git:
+  name: git
+  description: git version control system
+  cover: assets/images/Logo-What-Is-Git-Edureka.png
+ai:
+  name: Artificial Intelligence
+  description: 未来始终属于人类，因为只有人类才懂得享受午后的阳光
+  cover: assets/images/1_HJuwVA7maMsOBz5UYCPCag.png
+star:
+  name: Stared Pretty Things
+  description: 我的收藏
+  cover: assets/images/thong-vo-Maf7wdHCmvo-unsplash.jpg
