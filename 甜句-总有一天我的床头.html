@@ -12,7 +12,7 @@
 
 
 
-    <title>嵌入式开发概述</title>
+    <title>总有一天我的床头有你...</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -43,174 +43,32 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The professional publishing platform" />
     <link rel="shortcut icon" href="/jasper2/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="/jasper2/embd-development" />
+    <link rel="canonical" href="/jasper2/%E7%94%9C%E5%8F%A5-%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Ghost" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="嵌入式开发概述" />
-    <meta property="og:description" content="嵌入式开发概述
-@toc
-嵌入式开发特点
-
-
-  使用开发板开发，提供相关的底层工具
-极少有直接拿一个ARM CPU来做开发，尽量让工程师的开发面向功能。
-  交叉式开发
-PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。
-  调试可能需要特定环境开发
-比如温度测试功能，几千度的温度怎么仿真？
-了解硬件
-  调试模式
-一般使用仿真器进行开发， 需要硬件、调试器相互配合，不一定是通用的（JTAG是跨平台的）
-
-    嵌入式系统开发流程
-  
-  层级结构
-    
-      执行装置：被控对象（电机）
-      功能层
-        
-          应用程序
-        
-      
-      软件层
-        
-          文件系统
-          图形用户接口
-          任务管理
-        
-      
-      实时操作系统（RTOS）
-      HAL、BSP 硬件抽象层
-  排除许多硬件相关，多变的操作（地址、中断等）。方便跨平台。
-      硬件层
-        
-          MCU
-          通用接口
-          人机交互接口
-          
-            
-              
-            
-          
-        
-      
-    
-  
-  HAL、BSP 硬件抽象层
-
-
-
-UML 通用建模语言工具
-UML是一个通用化的工具，可用于形成规范化的关系图谱，并形成相关的代码原型等。
-
-UML支持的图类别
-
-  用例图
-  类图
-  对象图
-  状态图
-状态机，状态转移（有条件）
-  顺序图
-  协作图
-  活动图
-  组件图
-  部署图
-
-
-
-
+    <meta property="og:title" content="总有一天我的床头有你..." />
+    <meta property="og:description" content="总有一天我的床头有你随意翻看的书，洗漱室的漱口水旁是你的粉底液，更衣室里的白衬衫里夹杂着你的白裙，车副座是你的专属位置，朋友无一不知道你的样子。连夜晚独自在客厅等我归来，都成了我们最幸福的小事，然后我再前方你大步靠近，并握住我的手，我低头对你说，我们回家！
 " />
-    <meta property="og:url" content="/jasper2/embd-development" />
-    <meta property="og:image" content="/jasper2/assets/images/东方水光月.jpg" />
+    <meta property="og:url" content="/jasper2/%E7%94%9C%E5%8F%A5-%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4" />
+    <meta property="og:image" content="/jasper2/assets/images/blog-cover.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
     <meta property="article:author" content="https://www.facebook.com/ghost" />
     <meta property="article:published_time" content="2020-03-01T00:57:00+00:00" />
     <meta property="article:modified_time" content="2020-03-01T00:57:00+00:00" />
-    <meta property="article:tag" content="Embed" />
+    <meta property="article:tag" content="Sweet" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="嵌入式开发概述" />
-    <meta name="twitter:description" content="嵌入式开发概述
-@toc
-嵌入式开发特点
-
-
-  使用开发板开发，提供相关的底层工具
-极少有直接拿一个ARM CPU来做开发，尽量让工程师的开发面向功能。
-  交叉式开发
-PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。
-  调试可能需要特定环境开发
-比如温度测试功能，几千度的温度怎么仿真？
-了解硬件
-  调试模式
-一般使用仿真器进行开发， 需要硬件、调试器相互配合，不一定是通用的（JTAG是跨平台的）
-
-    嵌入式系统开发流程
-  
-  层级结构
-    
-      执行装置：被控对象（电机）
-      功能层
-        
-          应用程序
-        
-      
-      软件层
-        
-          文件系统
-          图形用户接口
-          任务管理
-        
-      
-      实时操作系统（RTOS）
-      HAL、BSP 硬件抽象层
-  排除许多硬件相关，多变的操作（地址、中断等）。方便跨平台。
-      硬件层
-        
-          MCU
-          通用接口
-          人机交互接口
-          
-            
-              
-            
-          
-        
-      
-    
-  
-  HAL、BSP 硬件抽象层
-
-
-
-UML 通用建模语言工具
-UML是一个通用化的工具，可用于形成规范化的关系图谱，并形成相关的代码原型等。
-
-UML支持的图类别
-
-  用例图
-  类图
-  对象图
-  状态图
-状态机，状态转移（有条件）
-  顺序图
-  协作图
-  活动图
-  组件图
-  部署图
-
-
-
-
+    <meta name="twitter:title" content="总有一天我的床头有你..." />
+    <meta name="twitter:description" content="总有一天我的床头有你随意翻看的书，洗漱室的漱口水旁是你的粉底液，更衣室里的白衬衫里夹杂着你的白裙，车副座是你的专属位置，朋友无一不知道你的样子。连夜晚独自在客厅等我归来，都成了我们最幸福的小事，然后我再前方你大步靠近，并握住我的手，我低头对你说，我们回家！
 " />
     <meta name="twitter:url" content="/jasper2/" />
-    <meta name="twitter:image" content="/jasper2/assets/images/东方水光月.jpg" />
+    <meta name="twitter:image" content="/jasper2/assets/images/blog-cover.jpg" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Ghost" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Embed" />
+    <meta name="twitter:data2" content="Sweet" />
     <meta name="twitter:site" content="@tryghost" />
     <meta name="twitter:creator" content="@tryghost" />
     <meta property="og:image:width" content="1400" />
@@ -225,89 +83,18 @@ UML支持的图类别
         "name": "Ghost",
         "logo": "/jasper2/assets/images/blog-icon.png"
     },
-    "url": "/jasper2/embd-development",
+    "url": "/jasper2/%E7%94%9C%E5%8F%A5-%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4",
     "image": {
         "@type": "ImageObject",
-        "url": "/jasper2/assets/images/东方水光月.jpg",
+        "url": "/jasper2/assets/images/blog-cover.jpg",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/jasper2/embd-development"
+        "@id": "/jasper2/%E7%94%9C%E5%8F%A5-%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4"
     },
-    "description": "嵌入式开发概述
-@toc
-嵌入式开发特点
-
-
-  使用开发板开发，提供相关的底层工具
-极少有直接拿一个ARM CPU来做开发，尽量让工程师的开发面向功能。
-  交叉式开发
-PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。
-  调试可能需要特定环境开发
-比如温度测试功能，几千度的温度怎么仿真？
-了解硬件
-  调试模式
-一般使用仿真器进行开发， 需要硬件、调试器相互配合，不一定是通用的（JTAG是跨平台的）
-
-    嵌入式系统开发流程
-  
-  层级结构
-    
-      执行装置：被控对象（电机）
-      功能层
-        
-          应用程序
-        
-      
-      软件层
-        
-          文件系统
-          图形用户接口
-          任务管理
-        
-      
-      实时操作系统（RTOS）
-      HAL、BSP 硬件抽象层
-  排除许多硬件相关，多变的操作（地址、中断等）。方便跨平台。
-      硬件层
-        
-          MCU
-          通用接口
-          人机交互接口
-          
-            
-              
-            
-          
-        
-      
-    
-  
-  HAL、BSP 硬件抽象层
-
-
-
-UML 通用建模语言工具
-UML是一个通用化的工具，可用于形成规范化的关系图谱，并形成相关的代码原型等。
-
-UML支持的图类别
-
-  用例图
-  类图
-  对象图
-  状态图
-状态机，状态转移（有条件）
-  顺序图
-  协作图
-  活动图
-  组件图
-  部署图
-
-
-
-
+    "description": "总有一天我的床头有你随意翻看的书，洗漱室的漱口水旁是你的粉底液，更衣室里的白衬衫里夹杂着你的白裙，车副座是你的专属位置，朋友无一不知道你的样子。连夜晚独自在客厅等我归来，都成了我们最幸福的小事，然后我再前方你大步靠近，并握住我的手，我低头对你说，我们回家！
 "
 }
     </script>
@@ -321,7 +108,7 @@ UML支持的图类别
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="嵌入式开发概述" href="/jasper2/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="总有一天我的床头有你..." href="/jasper2/feed.xml" />
 
 
 </head>
@@ -381,7 +168,7 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full post embed ">
+        <article class="post-full post sweet sentences no-image">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
@@ -390,93 +177,23 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/jasper2/tag/embed/'>EMBED</a>
+                               <a href='/jasper2/tag/sweet/'>SWEET</a>,
+                            
+                        
+                            
+                               <a href='/jasper2/tag/sentences/'>SENTENCES</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">嵌入式开发概述</h1>
+                <h1 class="post-full-title">总有一天我的床头有你...</h1>
             </header>
 
-            
-            <figure class="post-full-image" style="background-image: url(/jasper2/assets/images/东方水光月.jpg)">
-            </figure>
             
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <h1 id="嵌入式开发概述">嵌入式开发概述</h1>
-<p>@<a href="目录">toc</a></p>
-<h2 id="嵌入式开发特点">嵌入式开发特点</h2>
-<p><img src="https://img-blog.csdnimg.cn/20200224081648925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70" alt="嵌入式系统特点" /></p>
-<ul>
-  <li>使用开发板开发，提供相关的底层工具
-极少有直接拿一个ARM CPU来做开发，尽量让工程师的开发面向功能。</li>
-  <li>交叉式开发
-PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。</li>
-  <li>调试可能需要特定环境开发
-比如温度测试功能，几千度的温度怎么仿真？
-了解硬件</li>
-  <li>调试模式
-一般使用仿真器进行开发， 需要硬件、调试器相互配合，不一定是通用的（JTAG是跨平台的）
-<img src="https://img-blog.csdnimg.cn/20200224081734724.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70" alt="宿主机-目标机 调试模式" />
-    <h2 id="嵌入式系统开发流程">嵌入式系统开发流程</h2>
-  </li>
-  <li>层级结构
-    <ul>
-      <li>执行装置：被控对象（电机）</li>
-      <li>功能层
-        <ul>
-          <li>应用程序</li>
-        </ul>
-      </li>
-      <li>软件层
-        <ul>
-          <li>文件系统</li>
-          <li>图形用户接口</li>
-          <li>任务管理</li>
-        </ul>
-      </li>
-      <li>实时操作系统（RTOS）</li>
-      <li>HAL、BSP 硬件抽象层
-  排除许多硬件相关，多变的操作（地址、中断等）。方便跨平台。</li>
-      <li>硬件层
-        <ul>
-          <li>MCU</li>
-          <li>通用接口</li>
-          <li>人机交互接口</li>
-          <li>
-            <ul>
-              <li><img src="https://img-blog.csdnimg.cn/20200224081938174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>HAL、BSP 硬件抽象层</li>
-</ul>
-
-<p><img src="https://img-blog.csdnimg.cn/20200224082409391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
-<h2 id="uml-通用建模语言工具">UML 通用建模语言工具</h2>
-<p>UML是一个通用化的工具，可用于形成规范化的关系图谱，并形成相关的代码原型等。</p>
-
-<h3 id="uml支持的图类别">UML支持的图类别</h3>
-<ul>
-  <li>用例图</li>
-  <li>类图</li>
-  <li>对象图</li>
-  <li>状态图
-状态机，状态转移（有条件）</li>
-  <li>顺序图</li>
-  <li>协作图</li>
-  <li>活动图</li>
-  <li>组件图</li>
-  <li>部署图
-<img src="https://img-blog.csdnimg.cn/20200224084636578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70" alt="用例图" />
-<img src="https://img-blog.csdnimg.cn/20200224084947391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />
-<img src="https://img-blog.csdnimg.cn/2020022408495783.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></li>
-</ul>
+                    <p>总有一天我的床头有你随意翻看的书，洗漱室的漱口水旁是你的粉底液，更衣室里的白衬衫里夹杂着你的白裙，车副座是你的专属位置，朋友无一不知道你的样子。连夜晚独自在客厅等我归来，都成了我们最幸福的小事，然后我再前方你大步靠近，并握住我的手，我低头对你说，我们回家！</p>
 
                 </div>
             </section>
@@ -560,69 +277,6 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。</l
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
             
-                
-
-    <article class="post-card post-template no-image">
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/jasper2/%E7%94%9C%E5%8F%A5-%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4">
-                <header class="post-card-header">
-                    
-                        
-                            
-                               <span class="post-card-tags">Sweet</span>
-                            
-                        
-                            
-                                <span class="post-card-tags">Sentences</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">总有一天我的床头有你...</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p></p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                        
-                        <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="Dexfire Alex" />
-                        
-                        <span class="post-card-author">
-                            <a href="/jasper2/author/dexfire/">Dexfire Alex</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-            
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
             
@@ -630,22 +284,22 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。</l
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97">
-                <div class="post-card-image" style="background-image: url(/jasper2/assets/images/python.png)"></div>
+            <a class="post-card-image-link" href="/jasper2/embd-development">
+                <div class="post-card-image" style="background-image: url(/jasper2/assets/images/东方水光月.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97">
+            <a class="post-card-content-link" href="/jasper2/embd-development">
                 <header class="post-card-header">
                     
                         
                             
-                                <span class="post-card-tags">Python</span>
+                                <span class="post-card-tags">Embed</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">Python argparse 模块使用记录</h2>
+                    <h2 class="post-card-title">嵌入式开发概述</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -705,18 +359,18 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。</l
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">嵌入式开发概述</div>
+    <div class="floating-header-title">总有一天我的床头有你...</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E6%A6%82%E8%BF%B0&amp;url=https://dexfire.github.io/jasper2/embd-development"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4%E6%9C%89%E4%BD%A0...&amp;url=https://dexfire.github.io/jasper2/%E7%94%9C%E5%8F%A5-%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dexfire.github.io/jasper2/embd-development"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dexfire.github.io/jasper2/%E7%94%9C%E5%8F%A5-%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

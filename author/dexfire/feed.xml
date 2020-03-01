@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/jasper2/author/dexfire/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/jasper2/" rel="alternate" type="text/html" />
-  <updated>2020-03-01T03:52:57+00:00</updated>
+  <updated>2020-03-01T04:24:53+00:00</updated>
   <id>/jasper2/author/dexfire/feed.xml</id>
 
   
@@ -193,6 +193,42 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。&lt
 
       
         <summary type="html">嵌入式开发概述 @toc 嵌入式开发特点 使用开发板开发，提供相关的底层工具 极少有直接拿一个ARM CPU来做开发，尽量让工程师的开发面向功能。 交叉式开发 PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。 调试可能需要特定环境开发 比如温度测试功能，几千度的温度怎么仿真？ 了解硬件 调试模式 一般使用仿真器进行开发， 需要硬件、调试器相互配合，不一定是通用的（JTAG是跨平台的） 嵌入式系统开发流程 层级结构 执行装置：被控对象（电机） 功能层 应用程序 软件层 文件系统 图形用户接口 任务管理 实时操作系统（RTOS） HAL、BSP 硬件抽象层 排除许多硬件相关，多变的操作（地址、中断等）。方便跨平台。 硬件层 MCU 通用接口 人机交互接口 HAL、BSP 硬件抽象层</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">总有一天我的床头有你…</title>
+      <link href="/jasper2/%E7%94%9C%E5%8F%A5-%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4" rel="alternate" type="text/html" title="总有一天我的床头有你..." />
+      <published>2020-03-01T00:57:00+00:00</published>
+      <updated>2020-03-01T00:57:00+00:00</updated>
+      <id>/jasper2/%E3%80%90%E7%94%9C%E5%8F%A5%E3%80%91%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4</id>
+      <content type="html" xml:base="/jasper2/%E7%94%9C%E5%8F%A5-%E6%80%BB%E6%9C%89%E4%B8%80%E5%A4%A9%E6%88%91%E7%9A%84%E5%BA%8A%E5%A4%B4">&lt;p&gt;总有一天我的床头有你随意翻看的书，洗漱室的漱口水旁是你的粉底液，更衣室里的白衬衫里夹杂着你的白裙，车副座是你的专属位置，朋友无一不知道你的样子。连夜晚独自在客厅等我归来，都成了我们最幸福的小事，然后我再前方你大步靠近，并握住我的手，我低头对你说，我们回家！&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="sweet" />
+      
+        <category term="sentences" />
+      
+
+      
+        <summary type="html">总有一天我的床头有你随意翻看的书，洗漱室的漱口水旁是你的粉底液，更衣室里的白衬衫里夹杂着你的白裙，车副座是你的专属位置，朋友无一不知道你的样子。连夜晚独自在客厅等我归来，都成了我们最幸福的小事，然后我再前方你大步靠近，并握住我的手，我低头对你说，我们回家！</summary>
       
 
       
