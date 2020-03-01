@@ -8,6 +8,71 @@
     
       
       <item>
+        <title>嵌入式开发概述</title>
+        
+          <description>&lt;h1 id=&quot;嵌入式开发概述&quot;&gt;嵌入式开发概述&lt;/h1&gt;
+&lt;p&gt;@&lt;a href=&quot;目录&quot;&gt;toc&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;嵌入式开发特点&quot;&gt;嵌入式开发特点&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20200224081648925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70&quot; alt=&quot;嵌入式系统特点&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;使用开发板开发，提供相关的底层工具
+极少有直接拿一个ARM CPU来做开发，尽量让工程师的开发面向功能。&lt;/li&gt;
+  &lt;li&gt;交叉式开发
+PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。&lt;/li&gt;
+  &lt;li&gt;调试可能需要特定环境开发
+比如温度测试功能，几千度的温度怎么仿真？
+了解硬件&lt;/li&gt;
+  &lt;li&gt;调试模式
+一般使用仿真器进行开发， 需要硬件、调试器相互配合，不一定是通用的（JTAG是跨平台的）
+&lt;img src=&quot;https://img-blog.csdnimg.cn/20200224081734724.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70&quot; alt=&quot;宿主机-目标机 调试模式&quot; /&gt;
+    &lt;h2 id=&quot;嵌入式系统开发流程&quot;&gt;嵌入式系统开发流程&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;层级结构
+    &lt;ul&gt;
+      &lt;li&gt;执行装置：被控对象（电机）&lt;/li&gt;
+      &lt;li&gt;功能层
+        &lt;ul&gt;
+          &lt;li&gt;应用程序&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;软件层
+        &lt;ul&gt;
+          &lt;li&gt;文件系统&lt;/li&gt;
+          &lt;li&gt;图形用户接口&lt;/li&gt;
+          &lt;li&gt;任务管理&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;实时操作系统（RTOS）&lt;/li&gt;
+      &lt;li&gt;HAL、BSP 硬件抽象层
+  排除许多硬件相关，多变的操作（地址、中断等）。方便跨平台。&lt;/li&gt;
+      &lt;li&gt;硬件层
+        &lt;ul&gt;
+          &lt;li&gt;MCU&lt;/li&gt;
+          &lt;li&gt;通用接口&lt;/li&gt;
+          &lt;li&gt;人机交互接口&lt;/li&gt;
+          &lt;li&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20200224081938174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70&quot; alt=&quot;在这里插入图片描述&quot; /&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;HAL、BSP 硬件抽象层&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sun, 01 Mar 2020 00:57:00 +0000</pubDate>
+        <link>
+        /embd-development</link>
+        <guid isPermaLink="true">/embd-development</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Welcome to Ghost</title>
         
           <description>&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
