@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/jasper2/tag/embed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/jasper2/" rel="alternate" type="text/html" />
-  <updated>2020-03-01T10:57:50+00:00</updated>
+  <updated>2020-03-01T15:05:03+00:00</updated>
   <id>/jasper2/tag/embed/feed.xml</id>
 
   
@@ -90,12 +90,10 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。&lt
         &lt;ul&gt;
           &lt;li&gt;MCU&lt;/li&gt;
           &lt;li&gt;通用接口&lt;/li&gt;
-          &lt;li&gt;人机交互接口&lt;/li&gt;
-          &lt;li&gt;
-            &lt;ul&gt;
-              &lt;li&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20200224081938174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70&quot; alt=&quot;在这里插入图片描述&quot; /&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
+          &lt;li&gt;人机交互接口
+  -
+  -
+&lt;img src=&quot;https://img-blog.csdnimg.cn/20200224081938174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70&quot; alt=&quot;在这里插入图片描述&quot; /&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -143,7 +141,7 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。&lt
       
 
       
-        <summary type="html">嵌入式开发概述 @toc 嵌入式开发特点 使用开发板开发，提供相关的底层工具 极少有直接拿一个ARM CPU来做开发，尽量让工程师的开发面向功能。 交叉式开发 PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。 调试可能需要特定环境开发 比如温度测试功能，几千度的温度怎么仿真？ 了解硬件 调试模式 一般使用仿真器进行开发， 需要硬件、调试器相互配合，不一定是通用的（JTAG是跨平台的） 嵌入式系统开发流程 层级结构 执行装置：被控对象（电机） 功能层 应用程序 软件层 文件系统 图形用户接口 任务管理 实时操作系统（RTOS） HAL、BSP 硬件抽象层 排除许多硬件相关，多变的操作（地址、中断等）。方便跨平台。 硬件层 MCU 通用接口 人机交互接口 HAL、BSP 硬件抽象层</summary>
+        <summary type="html">嵌入式开发概述 @toc 嵌入式开发特点 使用开发板开发，提供相关的底层工具 极少有直接拿一个ARM CPU来做开发，尽量让工程师的开发面向功能。 交叉式开发 PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。 调试可能需要特定环境开发 比如温度测试功能，几千度的温度怎么仿真？ 了解硬件 调试模式 一般使用仿真器进行开发， 需要硬件、调试器相互配合，不一定是通用的（JTAG是跨平台的） 嵌入式系统开发流程 层级结构 执行装置：被控对象（电机） 功能层 应用程序 软件层 文件系统 图形用户接口 任务管理 实时操作系统（RTOS） HAL、BSP 硬件抽象层 排除许多硬件相关，多变的操作（地址、中断等）。方便跨平台。 硬件层 MCU 通用接口 人机交互接口 - - HAL、BSP 硬件抽象层</summary>
       
 
       
