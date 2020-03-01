@@ -22,7 +22,7 @@
     <!-- highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/tomorrow.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- <script>hljs.initHighlightingOnLoad();</script> -->
     <style>
         .hljs {
             background: none;
@@ -660,11 +660,18 @@ into the {body} of the default.hbs template -->
 
     <!-- highlight.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function () {
-            $('pre code').each(function (i, block) {
+    <script>
+        // $(document).ready(function () {
+        //     $('pre code').each(function (i, block) {
+        //         hljs.highlightBlock(block);
+        //     });
+        // });
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
                 hljs.highlightBlock(block);
             });
-        });</script>
+        });
+    </script>
 
     <!-- jQuery + Fitvids, which makes all video embeds responsive -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
