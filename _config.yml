@@ -95,3 +95,4 @@ exclude:
   - changelog.md
   - "*.Rmd"
   - .git*
+  - *.py
