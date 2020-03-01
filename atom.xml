@@ -73,6 +73,36 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。&lt
     
       
       <item>
+        <title>Python argparse 模块使用记录</title>
+        
+          <description>&lt;p&gt;以下代码是一个 Python 程序，它获取一个整数列表并计算总和或者最大值：&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 01 Mar 2020 00:57:00 +0000</pubDate>
+        <link>
+        /Python-argparse-%E6%A8%A1%E5%9D%97</link>
+        <guid isPermaLink="true">/Python-argparse-%E6%A8%A1%E5%9D%97</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Github Blog 添加评论功能</title>
+        
+          <description>&lt;p&gt;2020-03-01-Github-Blog-添加评论功能
+使用 MongoDB 作为后端。&lt;/p&gt;
+</description>
+        
+        <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+        <link>
+        /Github-Blog-%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD</link>
+        <guid isPermaLink="true">/Github-Blog-%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Welcome to Ghost</title>
         
           <description>&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
