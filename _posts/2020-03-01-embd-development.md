@@ -41,8 +41,8 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。
 		- MCU
 		- 通用接口
 		- 人机交互接口
-		- 
-			- 
+		-
+			-
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200224081938174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FRMjc1MTc2NjI5,size_16,color_FFFFFF,t_70)
 - HAL、BSP 硬件抽象层
 
