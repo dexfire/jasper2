@@ -18,3 +18,7 @@ embed:
   name: 嵌入式开发概述
   description: Some articles on embeded developments.
   cover: assets/images/msp4305529lp.png
+python:
+  name: Python
+  description: Some articles on Python developments.
+  cover: assets/images/Python.png
