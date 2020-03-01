@@ -7,6 +7,7 @@ language: 'zh-cn'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
+# jasper2/
 baseurl: /jasper2/
 
 # Website info
@@ -95,3 +96,4 @@ exclude:
   - changelog.md
   - "*.Rmd"
   - .git*
+  - .vscode
