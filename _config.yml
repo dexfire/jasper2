@@ -31,8 +31,8 @@ twitter: tryghost # replace by your username
 facebook: ghost # replace by your username
 
 # Disqus
-disqus: False
-disqus_shortname: jekyller # replace with your disqus username
+disqus: True
+disqus_shortname: dexfire # replace with your disqus username
 
 # Google Analytics
 google_analytics: UA-69281367-1 # replace with your GA tracking identifier
@@ -41,6 +41,7 @@ google_analytics: UA-69281367-1 # replace with your GA tracking identifier
 permalink: /:title
 # permalink: /author/:author
 # permalink: /tag/:tag
+# permalink: /:title
 
 # Authors' info in `_data/authors.yml`
 # Tags' info in `_data/tags_info.yml`
