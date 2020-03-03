@@ -7,7 +7,7 @@ language: 'zh-cn'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-# jasper2/
+# /jasper2/
 baseurl: /jasper2/
 
 # Website info
@@ -17,9 +17,10 @@ cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
-production_url: https://jekyller.github.io/jasper2/
+production_url: https://dexfire.github.io/
 source_url: https://github.com/jekyller/jasper2/
-CNAME: #add cname for website to be created
+CNAME: dexfire.cn
+#add cname for website to be created
 
 # Social info
 navigation: True # show the navbar links
@@ -76,7 +77,7 @@ repo: jasper2
 branch: master
 relative_source: ../jasper2/
 destination: ../jasper2-pages/
-production_url:  https://dexfire.github.io/jasper2/
+production_url:  https://dexfire.github.io/
 source_url:  https://github.com/dexfire/jasper2/
 
 exclude:
