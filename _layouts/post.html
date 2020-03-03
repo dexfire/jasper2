@@ -19,7 +19,7 @@ into the {body} of the default.hbs template -->
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<main id="site-main" class="site-main outer" role="main">
+<main class="site-main outer" id="site-main" role="main">
     <div class="inner">
 
         <article class="post-full {{ page.subclass }} {% unless page.cover %}no-image{% endunless %}">
@@ -31,9 +31,9 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         {% for tag in page.tags %}
                             {% if forloop.index == page.tags.size %}
-                               <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | upcase }}</a>
+                                <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | upcase }}</a>
                             {% else %}
-                               <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | upcase }}</a>,
+                                <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | upcase }}</a>,
                             {% endif %}
                         {% endfor %}
                     {% endif %}
@@ -42,8 +42,16 @@ into the {body} of the default.hbs template -->
             </header>
 
             {% if page.cover %}
-            <figure class="post-full-image" style="background-image: url({{ site.baseurl }}{{ page.cover }})">
-            </figure>
+                {% if page.cover contains 'http://' or page.cover contains 'https://' %}
+                    <figure class="post-full-image" style="background-image: url({{ page.cover }})"></figure>
+                {% else %}
+                    {%- if page.cover contains 'assert/images/' -%}
+                        <figure class="post-full-image" style="background-image: url({{ site.baseurl | append: page.cover }})"></figure>
+                    {%- else -%}
+                        <figure class="post-full-image" style="background-image: url({{ site.baseurl | append: 'assert/images/' }}{{ page.cover }})"></figure>
+                    {%- endif -%}
+
+                {% endif %}
             {% endif %}
 
             <section class="post-full-content">
@@ -55,7 +63,8 @@ into the {body} of the default.hbs template -->
             <!-- Email subscribe form at the bottom of the page -->
             {% if site.subscribers %}
                 <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">Subscribe to {{ site.title }}</h3>
+                    <h3 class="subscribe-form-title">Subscribe to
+                        {{ site.title }}</h3>
                     <p>Get the latest posts delivered right to your inbox</p>
                     {% include subscribe-form.html placeholder="youremail@example.com" %}
                 </section>
@@ -63,19 +72,23 @@ into the {body} of the default.hbs template -->
 
             <footer class="post-full-footer">
                 <!-- Everything inside the #author tags pulls data from the author -->
-                <!-- #author-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <!-- #author-->
                 {% for author in site.data.authors %}
                     {% if author[1].username == page.author %}
                         <section class="author-card">
                             {% if author[1].picture %}
-                                <img class="author-profile-image" src="{{ site.baseurl }}{{ author[1].picture }}" alt="{{ page.author }}" />
+                                <img class="author-profile-image" src="{{ site.baseurl }}{{ author[1].picture }}" alt="{{ page.author }}"/>
                             {% endif %}
                             <section class="author-card-content">
-                                <h4 class="author-card-name"><a href="{{ site.baseurl }}author/{{ page.author }}">{{ author[1].name }}</a></h4>
+                                <h4 class="author-card-name">
+                                    <a href="{{ site.baseurl }}author/{{ page.author }}">{{ author[1].name }}</a>
+                                </h4>
                                 {% if author[1].bio %}
                                     <p>{{ author[1].bio }}</p>
                                 {% else %}
-                                    <p>Read <a href="{{ site.baseurl }}author/{{ page.author }}">more posts</a> by this author.</p>
+                                    <p>Read
+                                        <a href="{{ site.baseurl }}author/{{ page.author }}">more posts</a>
+                                        by this author.</p>
                                 {% endif %}
                             </section>
                         </section>
@@ -121,25 +134,22 @@ into the {body} of the default.hbs template -->
                 {% assign primary = page.tags | first %}
                 {% assign related_posts = 0 %}
                 {% for post in site.posts %}
-                  {% if post.tags.size > 0 %}
-                      {% if post.tags contains primary %}
-                        {% assign related_posts = related_posts | plus: 1 %}
-                      {% endif %}
-                  {% endif %}
+                    {% if post.tags.size > 0 %}
+                        {% if post.tags contains primary %}
+                            {% assign related_posts = related_posts | plus: 1 %}
+                        {% endif %}
+                    {% endif %}
                 {% endfor %}
                 {% if related_posts > 1 %}
-                    <article class="read-next-card"
-                        {% if site.cover %}
-                            style="background-image: url({{ site.baseurl }}{{ site.cover }})"
-                        {% else %}
-                            {% if page.cover %}
-                                style="background-image: url(url({{ site.baseurl }}{{ page.cover }})"{% endif %}
-                        {% endif %}
-                    >
+                    <article class="read-next-card" {% if site.cover %} style="background-image: url({{ site.baseurl }}{{ site.cover }})" {% else %} {% if page.cover %} style="background-image: url(url({{ site.baseurl }}{{ page.cover }})" {% endif %} {% endif %}>
                         <header class="read-next-card-header">
-                            <small class="read-next-card-header-sitetitle">&mdash; {{ site.title }} &mdash;</small>
+                            <small class="read-next-card-header-sitetitle">&mdash;
+                                {{ site.title }}
+                                &mdash;</small>
                             {% if primary %}
-                                <h3 class="read-next-card-header-title"><a href="{{ site.baseurl }}tag/{{ primary | downcase | replace: ' ', '-' }}/">{{ primary | capitalize }}</a></h3>
+                                <h3 class="read-next-card-header-title">
+                                    <a href="{{ site.baseurl }}tag/{{ primary | downcase | replace: ' ', '-' }}/">{{ primary | capitalize }}</a>
+                                </h3>
                             {% endif %}
                         </header>
                         <div class="read-next-divider">{% include infinity.html %}</div>
@@ -147,23 +157,28 @@ into the {body} of the default.hbs template -->
                             <ul>
                                 {% assign count = 0 %}
                                 {% for post in site.posts %}
-                                  {% if post.tags contains primary %}
-                                    {% if post.title != page.title %}
-                                        {% assign count = count | plus: 1 %}
-                                        {% if count <= 3 %}
-                                            <li><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}">{{ post.title }}</a></li>
+                                    {% if post.tags contains primary %}
+                                        {% if post.title != page.title %}
+                                            {% assign count = count | plus: 1 %}
+                                            {% if count <= 3 %}
+                                                <li>
+                                                    <a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
+                                                </li>
+                                            {% endif %}
                                         {% endif %}
                                     {% endif %}
-                                  {% endif %}
                                 {% endfor %}
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
                             <a href="{{ site.baseurl }}tag/{{ primary | downcase | replace: ' ', '-' }}/">
                                 {% if related_posts > 1 %}
-                                    See all {{ related_posts | minus: 1 }} posts  →
+                                    See all
+                                    {{ related_posts | minus: 1 }}
+                                    posts  →
                                 {% elsif related_posts == 1 %}
-                                    {{ related_posts }} post  →
+                                    {{ related_posts }}
+                                    post  →
                                 {% else %}
                                     No posts.
                                 {% endif %}
