@@ -45,7 +45,7 @@ into the {body} of the default.hbs template -->
                 {% if page.cover contains 'http://' or page.cover contains 'https://' %}
                     <figure class="post-full-image" style="background-image: url({{ page.cover }})"></figure>
                 {% else %}
-                    {%- if page.cover contains 'assert/images/' -%}
+                    {%- if page.cover contains 'assets/images/' -%}
                         <figure class="post-full-image" style="background-image: url({{ site.baseurl | append: page.cover }})"></figure>
                     {%- else -%}
                         <figure class="post-full-image" style="background-image: url({{ site.baseurl | append: 'assert/images/' }}{{ page.cover }})"></figure>
@@ -72,7 +72,7 @@ into the {body} of the default.hbs template -->
 
             <footer class="post-full-footer">
                 <!-- Everything inside the #author tags pulls data from the author -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <!-- #author-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <!-- #author-->
                 {% for author in site.data.authors %}
                     {% if author[1].username == page.author %}
                         <section class="author-card">
