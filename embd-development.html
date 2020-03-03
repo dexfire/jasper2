@@ -374,7 +374,7 @@ into the {body} of the default.hbs template -->
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<main id="site-main" class="site-main outer" role="main">
+<main class="site-main outer" id="site-main" role="main">
     <div class="inner">
 
         <article class="post-full post embed ">
@@ -386,7 +386,7 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/embed/'>EMBED</a>
+                                <a href='/tag/embed/'>EMBED</a>
                             
                         
                     
@@ -395,8 +395,7 @@ into the {body} of the default.hbs template -->
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/东方水光月.jpg)">
-            </figure>
+                <figure class="post-full-image" style="background-image: url(/assert/images/assets/images/东方水光月.jpg)"></figure>
             
 
             <section class="post-full-content">
@@ -478,7 +477,8 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。</l
             <!-- Email subscribe form at the bottom of the page -->
             
                 <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">Subscribe to Ghost</h3>
+                    <h3 class="subscribe-form-title">Subscribe to
+                        Ghost</h3>
                     <p>Get the latest posts delivered right to your inbox</p>
                     <form method="post" action="/subscribe/" class="">
     <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
@@ -495,7 +495,7 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。</l
 
             <footer class="post-full-footer">
                 <!-- Everything inside the #author tags pulls data from the author -->
-                <!-- #author-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <!-- #author-->
                 
                     
                 
@@ -514,10 +514,12 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。</l
                     
                         <section class="author-card">
                             
-                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire" />
+                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire"/>
                             
                             <section class="author-card-content">
-                                <h4 class="author-card-name"><a href="/author/dexfire">Dexfire Alex</a></h4>
+                                <h4 class="author-card-name">
+                                    <a href="/author/dexfire">Dexfire Alex</a>
+                                </h4>
                                 
                                     <p>水中月是天上月，眼前人是心上人</p>
                                 
@@ -813,7 +815,7 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。</l
 
     <!-- Add Google Analytics  -->
     <!-- Google Analytics Tracking code -->
- <script>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -822,7 +824,7 @@ PC端编译，嵌入式硬件式上运行，编译调试都要配置环境。</l
   ga('create', 'UA-69281367-1', 'auto');
   ga('send', 'pageview');
 
- </script>
+</script>
 
 
     <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
