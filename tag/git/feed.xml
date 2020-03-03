@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="/jasper2/tag/git/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/jasper2/" rel="alternate" type="text/html" />
+  <updated>2020-03-03T02:24:29+00:00</updated>
+  <id>/jasper2/tag/git/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Ghost | </title>
+  
+
+  
+    <subtitle>The professional publishing platform</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">Github 博客设置 CNAME 网站别名</title>
+      <link href="/jasper2/github-cnames" rel="alternate" type="text/html" title="Github 博客设置 CNAME 网站别名" />
+      <published>2020-03-01T18:06:00+00:00</published>
+      <updated>2020-03-01T18:06:00+00:00</updated>
+      <id>/jasper2/github-cnames</id>
+      <content type="html" xml:base="/jasper2/github-cnames">&lt;p&gt;nothing&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="cs" />
+      
+        <category term="web" />
+      
+        <category term="git" />
+      
+
+      
+        <summary type="html">nothing</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
