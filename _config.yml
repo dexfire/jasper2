@@ -8,7 +8,7 @@ words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
 # /jasper2/
-baseurl: /jasper2/
+baseurl: /
 
 # Website info
 title: Ghost
