@@ -4,5 +4,9 @@
 			"path": "D:\\CreatingSpace\\jasper2"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"terminal.integrated.env.windows": {
+			"path": "%PATH%;${workspaceFolder}\\jasper2\\scripts"
+		}
+	},
 }
