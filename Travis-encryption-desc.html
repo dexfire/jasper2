@@ -16,9 +16,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
     <!-- highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/tomorrow.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
@@ -42,8 +42,8 @@
 
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The professional publishing platform" />
-    <link rel="shortcut icon" href="/jasper2/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="/jasper2/Travis-encryption-desc" />
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="/Travis-encryption-desc" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
@@ -51,8 +51,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Travis 中的几类数据加密" />
     <meta property="og:description" content="travis-ci 中的几类数据加密 travis-ci 是一个托管构建平台，可以检测 Github 项目的 Commit 并随时构建，推送编译测试结果。 Travis-ci 使用类似 Docker 的组织方式，使用时仅仅需要在项目目录下包含一个 .travis.yml 写入编译环境配置，平台支持众多编译环境的编译。 一个仓库中的 .travis.yml 文件可以包含加密变量，通常为环境变量，敏感设置值，apikeys等，这些加密值可以由任意用户加密上传，但仅仅可以由Travis CI读取，且加密时用户不需要保留任何私钥。 值得注意的是，加密环境变量不适用于forks项目下的pull request。 加密协议 Travis CI 使用非对称式加密，对于每一个注册的仓库，Travis CI生成一个RSA密钥对。Travis CI保留私钥，但对访问仓库用户开放公钥。 开放的公钥可以为任何人所用，用于加密对应于该密钥对的数据，但这些数据只有Travis CI可以访问。 获取公钥 获取公钥的方式因项目位置，以及仓库使用的API版本而异。 此外，获取公钥的请求可能需要通过“用户：口令”方式进行认证，这同样取决于仓库的位置、可见性以及采用的API版本。 Authorization header requirement Repository visibility and location API server API v1 API v3 /repos/OWNER/REPO/key /v3/repo/OWNER%2fREPO/key_pair/generated .org https://api.travis-ci.org no yes" />
-    <meta property="og:url" content="/jasper2/Travis-encryption-desc" />
-    <meta property="og:image" content="/jasper2/assets/images/travis.png" />
+    <meta property="og:url" content="/Travis-encryption-desc" />
+    <meta property="og:image" content="/assets/images/travis.png" />
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
     <meta property="article:author" content="https://www.facebook.com/ghost" />
     <meta property="article:published_time" content="2020-03-01T20:01:01+00:00" />
@@ -61,8 +61,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Travis 中的几类数据加密" />
     <meta name="twitter:description" content="travis-ci 中的几类数据加密 travis-ci 是一个托管构建平台，可以检测 Github 项目的 Commit 并随时构建，推送编译测试结果。 Travis-ci 使用类似 Docker 的组织方式，使用时仅仅需要在项目目录下包含一个 .travis.yml 写入编译环境配置，平台支持众多编译环境的编译。 一个仓库中的 .travis.yml 文件可以包含加密变量，通常为环境变量，敏感设置值，apikeys等，这些加密值可以由任意用户加密上传，但仅仅可以由Travis CI读取，且加密时用户不需要保留任何私钥。 值得注意的是，加密环境变量不适用于forks项目下的pull request。 加密协议 Travis CI 使用非对称式加密，对于每一个注册的仓库，Travis CI生成一个RSA密钥对。Travis CI保留私钥，但对访问仓库用户开放公钥。 开放的公钥可以为任何人所用，用于加密对应于该密钥对的数据，但这些数据只有Travis CI可以访问。 获取公钥 获取公钥的方式因项目位置，以及仓库使用的API版本而异。 此外，获取公钥的请求可能需要通过“用户：口令”方式进行认证，这同样取决于仓库的位置、可见性以及采用的API版本。 Authorization header requirement Repository visibility and location API server API v1 API v3 /repos/OWNER/REPO/key /v3/repo/OWNER%2fREPO/key_pair/generated .org https://api.travis-ci.org no yes" />
-    <meta name="twitter:url" content="/jasper2/" />
-    <meta name="twitter:image" content="/jasper2/assets/images/travis.png" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image" content="/assets/images/travis.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Ghost" />
     <meta name="twitter:label2" content="Filed under" />
@@ -79,18 +79,18 @@
     "publisher": {
         "@type": "Organization",
         "name": "Ghost",
-        "logo": "/jasper2/assets/images/blog-icon.png"
+        "logo": "/assets/images/blog-icon.png"
     },
-    "url": "/jasper2/Travis-encryption-desc",
+    "url": "/Travis-encryption-desc",
     "image": {
         "@type": "ImageObject",
-        "url": "/jasper2/assets/images/travis.png",
+        "url": "/assets/images/travis.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/jasper2/Travis-encryption-desc"
+        "@id": "/Travis-encryption-desc"
     },
     "description": "travis-ci 中的几类数据加密 travis-ci 是一个托管构建平台，可以检测 Github 项目的 Commit 并随时构建，推送编译测试结果。 Travis-ci 使用类似 Docker 的组织方式，使用时仅仅需要在项目目录下包含一个 .travis.yml 写入编译环境配置，平台支持众多编译环境的编译。 一个仓库中的 .travis.yml 文件可以包含加密变量，通常为环境变量，敏感设置值，apikeys等，这些加密值可以由任意用户加密上传，但仅仅可以由Travis CI读取，且加密时用户不需要保留任何私钥。 值得注意的是，加密环境变量不适用于forks项目下的pull request。 加密协议 Travis CI 使用非对称式加密，对于每一个注册的仓库，Travis CI生成一个RSA密钥对。Travis CI保留私钥，但对访问仓库用户开放公钥。 开放的公钥可以为任何人所用，用于加密对应于该密钥对的数据，但这些数据只有Travis CI可以访问。 获取公钥 获取公钥的方式因项目位置，以及仓库使用的API版本而异。 此外，获取公钥的请求可能需要通过“用户：口令”方式进行认证，这同样取决于仓库的位置、可见性以及采用的API版本。 Authorization header requirement Repository visibility and location API server API v1 API v3 /repos/OWNER/REPO/key /v3/repo/OWNER%2fREPO/key_pair/generated .org https://api.travis-ci.org no yes"
 }
@@ -105,7 +105,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="Travis 中的几类数据加密" href="/jasper2/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Travis 中的几类数据加密" href="/feed.xml" />
 
 
 </head>
@@ -126,18 +126,18 @@ into the {body} of the default.hbs template -->
     <div class="site-nav-left">
         
             
-                <a class="site-nav-logo" href="/jasper2/"><img src="/jasper2/assets/images/blog-icon.png" alt="Ghost" /></a>
+                <a class="site-nav-logo" href="/"><img src="/assets/images/blog-icon.png" alt="Ghost" /></a>
             
         
         
             <ul class="nav" role="menu">
-    <li class="nav-home" role="menuitem"><a href="/jasper2/">Home</a></li>
-    <li class="nav-about" role="menuitem"><a href="/jasper2/author/dexfire/">Dexfire</a></li>
-    <li class="nav-getting-started" role="menuitem"><a href="/jasper2/tag/sweet/">Sweets</a>
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/author/dexfire/">Dexfire</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/sweet/">Sweets</a>
     </li>
-    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/ai/">AI</a></li>
-    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/embed/">Embed</a></li>
-    <li class="nav-about" role="menuitem"><a href="/jasper2/tag/star/">Stars</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/ai/">AI</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/embed/">Embed</a></li>
+    <li class="nav-about" role="menuitem"><a href="/tag/star/">Stars</a></li>
 </ul>
         
     </div>
@@ -176,7 +176,7 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/jasper2/tag/dev-git/'>DEV GIT</a>
+                               <a href='/tag/dev-git/'>DEV GIT</a>
                             
                         
                     
@@ -185,7 +185,7 @@ into the {body} of the default.hbs template -->
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/jasper2/assets/images/travis.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/images/travis.png)">
             </figure>
             
 
@@ -430,17 +430,17 @@ and <a href="/user/notifications">notifications</a>.</p>
                     
                         <section class="author-card">
                             
-                                <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="dexfire" />
+                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire" />
                             
                             <section class="author-card-content">
-                                <h4 class="author-card-name"><a href="/jasper2/author/dexfire">Dexfire Alex</a></h4>
+                                <h4 class="author-card-name"><a href="/author/dexfire">Dexfire Alex</a></h4>
                                 
                                     <p>水中月是天上月，眼前人是心上人</p>
                                 
                             </section>
                         </section>
                         <div class="post-full-footer-right">
-                            <a class="author-card-button" href="/jasper2/author/dexfire">Read More</a>
+                            <a class="author-card-button" href="/author/dexfire">Read More</a>
                         </div>
                     
                 
@@ -474,12 +474,12 @@ and <a href="/user/notifications">notifications</a>.</p>
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/jasper2/%E6%95%85%E4%BA%8B-No.001">
-                <div class="post-card-image" style="background-image: url(/jasper2/assets/images/netease.png)"></div>
+            <a class="post-card-image-link" href="/%E6%95%85%E4%BA%8B-No.001">
+                <div class="post-card-image" style="background-image: url(/assets/images/netease.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/jasper2/%E6%95%85%E4%BA%8B-No.001">
+            <a class="post-card-content-link" href="/%E6%95%85%E4%BA%8B-No.001">
                 <header class="post-card-header">
                     
                         
@@ -515,10 +515,10 @@ and <a href="/user/notifications">notifications</a>.</p>
                 
                     
                         
-                        <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="Dexfire Alex" />
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex" />
                         
                         <span class="post-card-author">
-                            <a href="/jasper2/author/dexfire/">Dexfire Alex</a>
+                            <a href="/author/dexfire/">Dexfire Alex</a>
                         </span>
                     
                 
@@ -540,12 +540,12 @@ and <a href="/user/notifications">notifications</a>.</p>
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97">
-                <div class="post-card-image" style="background-image: url(/jasper2/assets/images/python.png)"></div>
+            <a class="post-card-image-link" href="/Python-argparse-%E6%A8%A1%E5%9D%97">
+                <div class="post-card-image" style="background-image: url(/assets/images/python.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97">
+            <a class="post-card-content-link" href="/Python-argparse-%E6%A8%A1%E5%9D%97">
                 <header class="post-card-header">
                     
                         
@@ -581,10 +581,10 @@ and <a href="/user/notifications">notifications</a>.</p>
                 
                     
                         
-                        <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="Dexfire Alex" />
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex" />
                         
                         <span class="post-card-author">
-                            <a href="/jasper2/author/dexfire/">Dexfire Alex</a>
+                            <a href="/author/dexfire/">Dexfire Alex</a>
                         </span>
                     
                 
@@ -607,9 +607,9 @@ and <a href="/user/notifications">notifications</a>.</p>
 <!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
 <div class="floating-header">
     <div class="floating-header-logo">
-        <a href="/jasper2/">
+        <a href="/">
             
-                <img src="/jasper2/assets/images/favicon.png" alt="Ghost icon" />
+                <img src="/assets/images/favicon.png" alt="Ghost icon" />
             
             <span>Ghost</span>
         </a>
@@ -651,13 +651,13 @@ and <a href="/user/notifications">notifications</a>.</p>
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="/jasper2/">Ghost</a> &copy;
+                <section class="copyright"><a href="/">Ghost</a> &copy;
                     2020</section>
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
                 <nav class="site-footer-nav">
-                    <a href="/jasper2/">Latest Posts</a>
+                    <a href="/">Latest Posts</a>
                     <a href="https://facebook.com/ghost" target="_blank"
                         rel="noopener">Facebook</a>
                     <a href="https://twitter.com/tryghost" target="_blank"
@@ -675,7 +675,7 @@ and <a href="/user/notifications">notifications</a>.</p>
         <a class="subscribe-overlay-close" href="#"></a>
         <div class="subscribe-overlay-content">
             
-            <img class="subscribe-overlay-logo" src="/jasper2/assets/images/blog-icon.png" alt="Ghost" />
+            <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="Ghost" />
             
             <h1 class="subscribe-overlay-title">Subscribe to Ghost</h1>
             <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered
@@ -713,7 +713,7 @@ and <a href="/user/notifications">notifications</a>.</p>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
-    <script type="text/javascript" src="/jasper2/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
     <!--script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script-->
 
 
@@ -722,7 +722,7 @@ and <a href="/user/notifications">notifications</a>.</p>
     <!-- <script>
         var maxPages = parseInt('');
     </script>
-    <script src="/jasper2/assets/js/infinitescroll.js"></script> -->
+    <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
     

@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/jasper2/tag/python/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/jasper2/" rel="alternate" type="text/html" />
-  <updated>2020-03-03T02:24:29+00:00</updated>
-  <id>/jasper2/tag/python/feed.xml</id>
+  <link href="/tag/python/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2020-03-03T02:40:33+00:00</updated>
+  <id>/tag/python/feed.xml</id>
 
   
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">Python argparse 模块使用记录</title>
-      <link href="/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97" rel="alternate" type="text/html" title="Python argparse 模块使用记录" />
+      <link href="/Python-argparse-%E6%A8%A1%E5%9D%97" rel="alternate" type="text/html" title="Python argparse 模块使用记录" />
       <published>2020-03-01T20:01:01+00:00</published>
       <updated>2020-03-01T20:01:01+00:00</updated>
-      <id>/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97</id>
-      <content type="html" xml:base="/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97">&lt;p&gt;以下代码是一个 Python 程序，它获取一个整数列表并计算总和或者最大值：&lt;/p&gt;
+      <id>/Python-argparse-%E6%A8%A1%E5%9D%97</id>
+      <content type="html" xml:base="/Python-argparse-%E6%A8%A1%E5%9D%97">&lt;p&gt;以下代码是一个 Python 程序，它获取一个整数列表并计算总和或者最大值：&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;argparse&lt;/span&gt;
 
