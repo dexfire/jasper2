@@ -54,7 +54,7 @@ git:
   cover: assets/images/Logo-What-Is-Git-Edureka.png
 
 ai:
-  name: Artificial Intelligence
+  name: AI
   description: 未来始终属于人类，因为只有人类才懂得享受午后的阳光
   cover: assets/images/1_HJuwVA7maMsOBz5UYCPCag.png
 
@@ -82,3 +82,18 @@ idea:
   name: 随想
   description: 快看，那是灵魂的闪光！
   cover: assets/images/house_in_the_forest.png
+
+sad:
+  name: 伤感
+  description: 我想试着忘记你，思念却满溢。
+  cover: assets/images/raingirl.jpg
+
+sweetsad:
+  name: 酸酸甜甜
+  description: 有点喜欢是妙语连珠，特别喜欢是遮遮掩掩、奇奇怪怪、哭哭嗒嗒。
+  cover: assets/images/raingirl.jpg
+
+article:
+  name: 文章
+  description: 有点喜欢是妙语连珠，特别喜欢是遮遮掩掩、奇奇怪怪、哭哭嗒嗒。
+  cover: assets/images/raingirl.jpg
