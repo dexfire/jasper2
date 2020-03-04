@@ -95,10 +95,20 @@ sweetsad:
 
 article:
   name: 文章
-  description: 有点喜欢是妙语连珠，特别喜欢是遮遮掩掩、奇奇怪怪、哭哭嗒嗒。
-  cover: assets/images/raingirl.jpg
+  description: 长一点的就叫文章，也不一定能吐出象牙。
+  cover: assets/images/0f746325738c486399d815a7ed2e837a.jpg
 
 eco:
   name: 经济学
-  description: 有点喜欢是妙语连珠，特别喜欢是遮遮掩掩、奇奇怪怪、哭哭嗒嗒。
+  description: 有钱是任性的底气，没钱怎么拽都是穷逼
+  cover: assets/images/eco.jpg
+
+msp430:
+  name: MSP430
+  description: MSP430F5529LP
+  cover: assets/images/msp-exp430f5529lp_5529_lp_angle.jpg
+
+poem:
+  name: 诗情
+  description: 生活中有诗句，心里才有下远方。
   cover: assets/images/eco.jpg

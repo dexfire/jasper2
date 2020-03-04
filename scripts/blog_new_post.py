@@ -1,5 +1,5 @@
 import argparse
-import datetime.datetime
+from datetime import datetime
 import yaml
 import os
 
@@ -15,7 +15,7 @@ ap.add_argument("--category", "-cg", dest="category", type=str,
                 required=False, default=None, help="The category name. Default value is the first tag name.")
 ap.add_argument("--tags", "-tg", dest="tags", nargs="*", action="store", type=str,
                 help="The tag of the post, The first tag will use as the main category.")
-ap.add_argument("--datetime", "-dt", dest="date_time", type=str, default=datetime.datetime.now().isoformat(sep=' ', timespec='seconds'),
+ap.add_argument("--datetime", "-dt", dest="datetime", type=str, default=datetime.now().isoformat(sep=' ', timespec='seconds'),
                 help="The post time, ISO format. format: 2020-05-20 00:00:00")
 ap.add_argument("--cover", "-c", dest="cover", type=str,
                 help="The post cover image, default to be the [first_tag_name].jpg.")
@@ -34,23 +34,31 @@ print(datetime.now().isoformat(sep=' ', timespec='seconds'))
 if __name__ == "__main__":
     args = ap.parse_args(["-a", "dexfire", "-t",
                           "An awesome post title.", "-tg", "foo", "bar"])
-    print(args.title)
-    print(yaml.__version__)
+    # print(args.title)
+    # print(yaml.__version__)
+
     # help(yaml)
     authors = yaml.full_load(
         open(os.sep.join(['_data', 'authors.yml']), 'r', encoding='utf8'))
     config = yaml.full_load(open('_config.yml', 'r', encoding='utf8'))
     tags = yaml.full_load(
         open(os.sep.join(["_data", "tags.yml"]), encoding='utf8'))
-    print(authors['dexfire'], config, tags['sweet'], sep='\n\n')
-    print('='*40)
-    print(authors.keys(), config.keys(), tags.keys())
+
+    # print(authors['dexfire'], config, tags['sweet'], sep='\n\n')
+    # print('='*40)
+    # print(authors.keys(), config.keys(), tags.keys())
+
+    for tag in args.tags:
+        if tag not in tags:
+            print("ERROR tag:", tag)
+            print("Tags Available:\n\t", ' '.join(tags.keys()))
+            exit(1)
 
     fn = datetime.fromisoformat(args.datetime)
     if args.title is None:
-        pass
+        title = ""
     else:
-        pass
+        title = args.title
 
     with open(os.sep.join(["_posts"])) as fp:
         pass
