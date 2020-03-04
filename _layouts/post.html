@@ -48,7 +48,7 @@ into the {body} of the default.hbs template -->
                     {%- if page.cover contains 'assets/images/' -%}
                         <figure class="post-full-image" style="background-image: url({{ site.baseurl | append: page.cover }})"></figure>
                     {%- else -%}
-                        <figure class="post-full-image" style="background-image: url({{ site.baseurl | append: 'assert/images/' }}{{ page.cover }})"></figure>
+                        <figure class="post-full-image" style="background-image: url({{ site.baseurl | append: 'assets/images/' }}{{ page.cover }})"></figure>
                     {%- endif -%}
 
                 {% endif %}
