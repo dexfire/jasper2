@@ -97,3 +97,8 @@ article:
   name: 文章
   description: 有点喜欢是妙语连珠，特别喜欢是遮遮掩掩、奇奇怪怪、哭哭嗒嗒。
   cover: assets/images/raingirl.jpg
+
+eco:
+  name: 经济学
+  description: 有点喜欢是妙语连珠，特别喜欢是遮遮掩掩、奇奇怪怪、哭哭嗒嗒。
+  cover: assets/images/eco.jpg
