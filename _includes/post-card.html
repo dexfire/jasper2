@@ -4,14 +4,14 @@
     <article class="post-card {{ page.class }}{% unless post.cover %} no-image{% endunless %}">
         {% if post.cover %}
             <a class="post-card-image-link" href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}">
-                {% if page.cover %}
-                    {% if page.cover contains 'http://' or page.cover contains 'https://' %}
-                        <div class="post-card-image" style="background-image: url({{ page.cover }})"></div>
+                {% if post.cover %}
+                    {% if post.cover contains 'http://' or post.cover contains 'https://' %}
+                        <div class="post-card-image" style="background-image: url({{ post.cover }})"></div>
                     {% else %}
-                        {%- if page.cover contains 'assets/images/' -%}
-                            <div class="post-card-image" style="background-image: url({{ site.baseurl | append: page.cover }})"></div>
+                        {%- if post.cover contains 'assets/images/' -%}
+                            <div class="post-card-image" style="background-image: url({{ site.baseurl | append: post.cover }})"></div>
                         {%- else -%}
-                            <div class="post-card-image" style="background-image: url({{ site.baseurl | append: 'assets/images/' }}{{ page.cover }})"></div>
+                            <div class="post-card-image" style="background-image: url({{ site.baseurl | append: 'assets/images/' }}{{ post.cover }})"></div>
                         {%- endif -%}
                     {% endif %}
                 {% endif %}
