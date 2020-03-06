@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="/tag/dev/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2020-03-06T01:07:51+00:00</updated>
+  <id>/tag/dev/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Ghost | </title>
+  
+
+  
+    <subtitle>The professional publishing platform</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">MSP430 ASM汇编基础语法：点亮一个 BLING, BLING 的 LED 灯</title>
+      <link href="/msp430-MSP430%E7%9A%84%E6%B1%87%E7%BC%96%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="MSP430 ASM汇编基础语法：点亮一个 BLING, BLING 的 LED 灯" />
+      <published>2020-03-04T00:19:00+00:00</published>
+      <updated>2020-03-04T00:19:00+00:00</updated>
+      <id>/%E3%80%90msp430%E3%80%91MSP430%E7%9A%84%E6%B1%87%E7%BC%96%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="/msp430-MSP430%E7%9A%84%E6%B1%87%E7%BC%96%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;msp430-asm汇编基础语法点亮一个-bling-bling-的-led-灯&quot;&gt;MSP430 ASM汇编基础语法：点亮一个 BLING, BLING 的 LED 灯&lt;/h1&gt;
+
+&lt;p&gt;核心目标，是掌握 asm 汇编语法，熟悉msp430的开发流程与实际开发过程遇到的种种问题。&lt;/p&gt;
+
+&lt;h2 id=&quot;msp430-平台汇编语法&quot;&gt;msp430 平台汇编语法&lt;/h2&gt;
+
+&lt;p&gt;msp430 的汇编语法不同寻常的 x86 或者 51，STM32 平台，有些标新立异，其实对于任意一个硬件平台来讲，其底层汇编代码，都会在很多细节之处有出入，这让许多代码对开发平台产生了很高的依赖，即软硬件之间存在着 &lt;strong&gt;高度耦合性&lt;/strong&gt;，使得嵌入式开发复杂化，但这也是嵌入式开发中的一大特点与共识，并不需要当作一个疑难杂症，这是一定会面对的问题，那么逢山开路，遇水搭桥，兵来将挡，水来土掩，道高一尺魔高一丈，总会有办法解决的，要对自己的解决问题能力有信心。&lt;/p&gt;
+
+&lt;p&gt;msp430 平台的最大特点是超低功耗，这是德仪430系列在众多优秀嵌入式平台中独占一隅的看家本领，所以处于这一要求，MSP430 平台多出了许多特性：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;全线采取 16 Bits MCU 架构，满足多数应用场合。&lt;/li&gt;
+  &lt;li&gt;数据指令均统一为 16 Bits ，方便开发。&lt;/li&gt;
+  &lt;li&gt;使用 RISC 精简指令集。&lt;/li&gt;
+  &lt;li&gt;集成了部分常用外设：
+    &lt;ol&gt;
+      &lt;li&gt;GPIO&lt;/li&gt;
+      &lt;li&gt;Timer&lt;/li&gt;
+      &lt;li&gt;ADC&lt;/li&gt;
+      &lt;li&gt;WatchDog&lt;/li&gt;
+      &lt;li&gt;RTC&lt;/li&gt;
+      &lt;li&gt;DAC&lt;/li&gt;
+      &lt;li&gt;LCD Controller&lt;/li&gt;
+      &lt;li&gt;Comparator&lt;/li&gt;
+      &lt;li&gt;USB&lt;/li&gt;
+      &lt;li&gt;UART/SPI&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这里着重讲两句有关片上集成 ADC 的解释。&lt;/p&gt;
+
+&lt;p&gt;MSP430系列通常集成了多个且多种的ADC模块，包括一个ADC10（10Bits），一个ADC12（12 Bits）以及一个SD24（Sigma-Delta型，高精度低速24Bits ADC），满足高速以及高精度应用场合。&lt;/p&gt;
+
+&lt;p&gt;虽然TI的模电器件并非特别出众，但也的确不差，高端运放，比较器，滤波器，振荡器一样不少，当然模拟信号发生器自然还是 AD 家的更专业、更靠谱一些，但 TI 数十年军民双路芯片供应，基本奠定了 TI 在半导体方面的独门绝技，这么小一片芯片，集成众多处理与外设单元，还能综合考虑到足够的性能与低功耗要求，可以说 TI 的雪球越滚越大并非偶然，国内半导体芯片仍需努力呀！&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="msp430" />
+      
+        <category term="dev" />
+      
+        <category term="mbed" />
+      
+
+      
+        <summary type="html">MSP430 ASM汇编基础语法：点亮一个 BLING, BLING 的 LED 灯</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

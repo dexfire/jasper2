@@ -1,0 +1,172 @@
+
+<h1 id="使用-scrapy-简单爬取网页">使用 Scrapy 简单爬取网页</h1>
+
+<p>首先，使用 <code class="highlighter-rouge">scrapy startproject &lt;project_name&gt; &lt;project_path&gt;</code> 建立一个爬虫.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> scrapy startproject eol eol
+New Scrapy project <span class="s1">'eol'</span>, <span class="k">using </span>template directory <span class="s1">'c:\users\dexfire\appdata\local\programs\python\python37\lib\site-packages\scrapy\templates\project'</span>, created <span class="k">in</span>:
+    D:\CreatingSpace\VSCode\Python36\eol.cn\eol
+
+You can <span class="nb">start </span>your first spider with:
+    <span class="nb">cd </span>eol
+    scrapy genspider example example.com
+</code></pre></div></div>
+
+<p>然后我们建立一个 CSVFeed 爬虫，因为集成了数据处理部分，方便提取和储存。</p>
+
+<p><code class="highlighter-rouge">scrapy genspider csvfeed gkcx.eol.cn</code></p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> scrapy genspider csvfeed gkcx.eol.cn
+Created spider <span class="s1">'csvfeed'</span> <span class="k">using </span>template <span class="s1">'basic'</span> <span class="k">in </span>module:
+  eol.spiders.csvfeed
+</code></pre></div></div>
+
+<p>然后我们看到这样一段初始代码：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CsvfeedSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">'csvfeed'</span>
+    <span class="n">allowed_domains</span> <span class="o">=</span> <span class="p">[</span><span class="s">'gkcx.eol.cn'</span><span class="p">]</span>
+    <span class="n">start_url</span> <span class="o">=</span> <span class="p">[</span><span class="s">'http://gkcx.eol.cn'</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>这段代码非常简洁，简洁得有些离谱，这个…就是爬虫的本体？</p>
+
+<p>事实上呢，这里只是暴露在外的部分， scrapy 本身就是一个爬虫可能用到的所有辅助util工具的一个集合，因此需要用户输入很少的关键配置信息即可快速生成一个相关的爬虫，正是运用的这种逻辑。那么，深层的代码到底怎样运作的呢？</p>
+
+<p>做编码工作，不一定要能自己编写一个完整框架，不过除了要灵活掌握框架用法以外，还一定要清楚的，就是这个框架的底层实现机制，要有个大致脉络，否则无论编码和调试都很容易卡壳的。</p>
+
+<p>那么，我们开始，对 scrapy 进行抽丝剥茧，看看这只肥得流油的小宝贝肚子里到底装了些什么呢？</p>
+
+<p><img src="assets/images/QQ截图20200305094313.png" alt="p1" /></p>
+
+<p>首先直观来看，这里似乎”定义”了几个变量，<code class="highlighter-rouge">name</code> <code class="highlighter-rouge">allowed_domains</code> <code class="highlighter-rouge">start_url</code> 却并没有对其进行任何操作，这显然是不合理的，事实上，这里的几个变量，都是其父类的成员变量，所以一定有方法对这几个变量进行了调用的。</p>
+
+<p>首先我们打开第一个底层类，也即是我们所有spider的祖总类，<code class="highlighter-rouge">scrapy.Spider</code>，</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">Spider</span><span class="p">(</span><span class="n">object_ref</span><span class="p">):</span>
+    <span class="s">"""Base class for scrapy spiders. All spiders must inherit from this
+    class.
+    """</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">custom_settings</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">'name'</span><span class="p">,</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"</span><span class="si">%</span><span class="s">s must have a name"</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">'start_urls'</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_urls</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">logging</span><span class="o">.</span><span class="n">LoggerAdapter</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="p">{</span><span class="s">'spider'</span><span class="p">:</span> <span class="bp">self</span><span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="s">"""Log the given message at the given log level
+
+        This helper wraps a log call to the logger within the spider, but you
+        can use it directly (e.g. Spider.logger.info('msg')) or use any other
+        Python logger too.
+        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_crawler</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">crawler</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">spider</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">spider</span><span class="o">.</span><span class="n">_set_crawler</span><span class="p">(</span><span class="n">crawler</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">spider</span>
+
+    <span class="k">def</span> <span class="nf">_set_crawler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">crawler</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">crawler</span> <span class="o">=</span> <span class="n">crawler</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span> <span class="o">=</span> <span class="n">crawler</span><span class="o">.</span><span class="n">settings</span>
+        <span class="n">crawler</span><span class="o">.</span><span class="n">signals</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">,</span> <span class="n">signals</span><span class="o">.</span><span class="n">spider_closed</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">start_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span>
+        <span class="k">if</span> <span class="n">method_is_overridden</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">Spider</span><span class="p">,</span> <span class="s">'make_requests_from_url'</span><span class="p">):</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s">"Spider.make_requests_from_url method is deprecated; it "</span>
+                <span class="s">"won't be called in future Scrapy releases. Please "</span>
+                <span class="s">"override Spider.start_requests method instead (see </span><span class="si">%</span><span class="s">s.</span><span class="si">%</span><span class="s">s)."</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">cls</span><span class="o">.</span><span class="n">__module__</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_urls</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_requests_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_urls</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dont_filter</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">make_requests_from_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+        <span class="s">""" This method is deprecated. """</span>
+        <span class="k">return</span> <span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dont_filter</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="nb">NotImplementedError</span><span class="p">(</span><span class="s">'{}.parse callback is not defined'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">update_settings</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">settings</span><span class="p">):</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">setdict</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">custom_settings</span> <span class="ow">or</span> <span class="p">{},</span> <span class="n">priority</span><span class="o">=</span><span class="s">'spider'</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">handles_request</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">url_is_from_spider</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="n">spider</span><span class="p">,</span> <span class="n">reason</span><span class="p">):</span>
+        <span class="n">closed</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">spider</span><span class="p">,</span> <span class="s">'closed'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">closed</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">closed</span><span class="p">(</span><span class="n">reason</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">"&lt;</span><span class="si">%</span><span class="s">s </span><span class="si">%</span><span class="s">r at 0x</span><span class="si">%0</span><span class="s">x&gt;"</span> <span class="o">%</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+</code></pre></div></div>
+<p>我们发现，其内部是这样的，定义了多个函数</p>
+
+<ul>
+  <li><code class="highlighter-rouge">__init__</code></li>
+  <li><code class="highlighter-rouge">logger</code></li>
+  <li><code class="highlighter-rouge">log</code></li>
+  <li><code class="highlighter-rouge">from_crawler</code></li>
+  <li><code class="highlighter-rouge">start_requests</code></li>
+  <li><code class="highlighter-rouge">make_requests_from_url</code></li>
+  <li><code class="highlighter-rouge">parse</code></li>
+  <li><code class="highlighter-rouge">_set_crawler</code></li>
+  <li><code class="highlighter-rouge">update_settings</code></li>
+  <li><code class="highlighter-rouge">handles_request</code></li>
+  <li><code class="highlighter-rouge">close</code></li>
+  <li><code class="highlighter-rouge">__str__</code></li>
+</ul>
+
+<p>而实际我们默认的爬虫中，只覆盖实现了 <code class="highlighter-rouge">parse</code> 方法，也就是说，其他的所有方法均采取默认方式。
+从这里的名字我们可以看到，scrapy 在运行爬虫的时候，首先使用<code class="highlighter-rouge">__init__</code>初始化爬虫，然后调用某些方法，例如<code class="highlighter-rouge">start_requests</code>获取起始请求，并进一步在<code class="highlighter-rouge">handle</code> request的过程中传递新的url给系统，从而开始调用下一层次的爬取工作。</p>
+
+<p>下一步我们关心的是，我们究竟怎样发起第一个请求呢？事实上，根据官方文档，起始方式有“两种”，起始呢，本质上也都是一种：调用<code class="highlighter-rouge">start_requests</code>函数，返回一个Request对象，那么这个request对象又包含哪些参数呢？我们跟着摸摸底：</p>
+
+<p>官网参考文档：<a href="https://docs.scrapy.org/en/latest/topics/request-response.html">scrapy: request-response</a>
+文件名：<code class="highlighter-rouge">Python37\Lib\site-packages\scrapy\http\__init__.py</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">scrapy.http.headers</span> <span class="kn">import</span> <span class="n">Headers</span>
+
+<span class="kn">from</span> <span class="nn">scrapy.http.request</span> <span class="kn">import</span> <span class="n">Request</span>
+<span class="kn">from</span> <span class="nn">scrapy.http.request.form</span> <span class="kn">import</span> <span class="n">FormRequest</span>
+<span class="kn">from</span> <span class="nn">scrapy.http.request.rpc</span> <span class="kn">import</span> <span class="n">XmlRpcRequest</span>
+<span class="kn">from</span> <span class="nn">scrapy.http.request.json_request</span> <span class="kn">import</span> <span class="n">JsonRequest</span>
+
+<span class="kn">from</span> <span class="nn">scrapy.http.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">scrapy.http.response.html</span> <span class="kn">import</span> <span class="n">HtmlResponse</span>
+<span class="kn">from</span> <span class="nn">scrapy.http.response.xml</span> <span class="kn">import</span> <span class="n">XmlResponse</span>
+<span class="kn">from</span> <span class="nn">scrapy.http.response.text</span> <span class="kn">import</span> <span class="n">TextResponse</span>
+</code></pre></div></div>
+
+<p>事实上，这个 <code class="highlighter-rouge">scrapy.http.Request</code> 仅仅是一个封装类，其底层是引用了多个子类，包括多种Request类，以及多种Response类。</p>
+
+<p>这里，由于我们使用的是 Json 文件请求，所以同样也采用 <code class="highlighter-rouge">JsonRequest</code> 和 <code class="highlighter-rouge">JsonResponse</code> 来构造我们的请求：</p>
