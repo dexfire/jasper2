@@ -7,7 +7,19 @@
         <article class="post-card {{ page.class }}{% unless post.cover %} no-image{% endunless %}">
             {% if post.cover %}
                 <a class="post-card-image-link" href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}">
-                    <div class="post-card-image" style="background-image: url({{ site.baseurl }}{{ post.cover }})"></div>
+                    {% if page.cover %}
+                        {% if page.cover contains 'http://' or page.cover contains 'https://' %}
+                            <div class="post-card-image" style="background-image: url({{ page.cover }})"></div>
+                        {% else %}
+                            {%- if page.cover contains 'assets/images/' -%}
+                                <div class="post-card-image" style="background-image: url({{ site.baseurl | append: page.cover }})"></div>
+                            {%- else -%}
+                                <div class="post-card-image" style="background-image: url({{ site.baseurl | append: 'assets/images/' }}{{ page.cover }})"></div>
+                            {%- endif -%}
+
+                        {% endif %}
+                    {% endif %}
+                    <!-- <div class="post-card-image" style="background-image: url({{ site.baseurl }}{{ post.cover }})"></div> -->
                 </a>
             {% endif %}
             <div class="post-card-content">
@@ -18,7 +30,7 @@
                                 {% if forloop.index == post.tags.size %}
                                     <span class="post-card-tags">{{ tag | capitalize }}</span>
                                 {% else %}
-                                   <span class="post-card-tags">{{ tag | capitalize }}</span>
+                                    <span class="post-card-tags">{{ tag | capitalize }}</span>
                                 {% endif %}
                             {% endfor %}
                         {% endif %}
@@ -37,7 +49,7 @@
                     {% for author in site.data.authors %}
                         {% if author[1].username == post.author %}
                             {% if author[1].picture %}
-                            <img class="author-profile-image" src="{{ site.baseurl }}{{ author[1].picture }}" alt="{{ author[1].name }}" />
+                                <img class="author-profile-image" src="{{ site.baseurl }}{{ author[1].picture }}" alt="{{ author[1].name }}"/>
                             {% endif %}
                             <span class="post-card-author">
                                 <a href="{{ site.baseurl }}author/{{ post.author }}/">{{ author[1].name }}</a>
@@ -47,9 +59,10 @@
                     <span class="reading-time">
                         {% assign words = post.content | strip_html | number_of_words %}
                         {% if words <= words_per_minute %}
-                          1 min read
+                            1 min read
                         {% else %}
-                          {{ words | divided_by:words_per_minute }} min read
+                            {{ words | divided_by:words_per_minute }}
+                            min read
                         {% endif %}
                     </span>
                 </footer>
