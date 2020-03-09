@@ -122,3 +122,8 @@ book:
   name: 书评
   description: 谁说书生百无一用。
   cover: assets/images/book.jpg
+
+spider:
+  name: 爬虫
+  description: 高效率数据挖掘
+  cover: assets/images/spider.jpg
