@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="/tag/spider/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2020-03-11T15:26:19+00:00</updated>
+  <id>/tag/spider/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Ghost | </title>
+  
+
+  
+    <subtitle>The professional publishing platform</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">【爬虫】QQ空间爬虫简单思路</title>
+      <link href="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF" rel="alternate" type="text/html" title="【爬虫】QQ空间爬虫简单思路" />
+      <published>2020-03-10T11:33:00+00:00</published>
+      <updated>2020-03-10T11:33:00+00:00</updated>
+      <id>/%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF</id>
+      <content type="html" xml:base="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF">&lt;h1 id=&quot;爬虫qq空间爬虫简单思路&quot;&gt;【爬虫】QQ空间爬虫简单思路&lt;/h1&gt;
+
+&lt;p&gt;我们继续尝试爬取QQ空间的好友动态。现在是大数据当道的时代，爬虫工程师也成了一个关键性的抢手职位，你可以不做一个优秀的爬虫工程师，但掌握一门扎实的爬虫编写技能，是可以为你的职业技能加分的。同时&lt;/p&gt;
+
+&lt;h2 id=&quot;展开全文读取完整的说说-feed-内容&quot;&gt;展开全文：读取完整的说说 feed 内容&lt;/h2&gt;
+
+&lt;p&gt;QQ 空间说说常见如图所示的展开全文选项，那么怎样实现一次性爬取完整说说内容呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200311232102.png&quot; alt=&quot;p0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;读取完整 Feed 内容，这里可以使用 浏览器调试工具中的 Elements -&amp;gt; Event Listener
+可以读取并定位 js 调用堆栈，达到监视 js 运行的目的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200311231857.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们追踪一次看看：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200311232244.png&quot; alt=&quot;p3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;发现其中是&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="spider" />
+      
+        <category term="python" />
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">【爬虫】QQ空间爬虫简单思路</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
+      <link href="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
+      <published>2020-03-10T01:00:00+00:00</published>
+      <updated>2020-03-10T01:00:00+00:00</updated>
+      <id>/%E3%80%90QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E3%80%91%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0</id>
+      <content type="html" xml:base="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0">&lt;h1 id=&quot;qq空间爬虫关于qq空间g_tk的生成方法的python实现&quot;&gt;【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现&lt;/h1&gt;
+
+&lt;p&gt;QQ空间中的许多API都需要使用一个名叫 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 的请求参数，而实验中证明，如果这个参数错误，会直接导致访问失败，而实际必须参数中也仅仅只有&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;qzonetoken&lt;/code&gt;两个参数是授权必须的（当然还要提供cookie啦）。&lt;/p&gt;
+
+&lt;p&gt;那么这个 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 是怎样生成的呢？&lt;/p&gt;
+
+&lt;p&gt;我们首先打开QQ空间，发现QQ动态数据是动态加载的，那么一定涉及到了 XHR 请求，也就是在js代码中使用HTTP请求动态调用了数据，我们使用开发工具 Network 监视调用，发现向下刷新时，QQ空间网页请求了这样一个资源：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=【你的QQ号】&amp;amp;hostuin=【当前访问用户的QQ号】&amp;amp;scope=7&amp;amp;filter=all&amp;amp;flag=1&amp;amp;refresh=0&amp;amp;firstGetGroup=0&amp;amp;mixnocache=0&amp;amp;scene=0&amp;amp;start=10&amp;amp;count=10&amp;amp;sidomain=qzonestyle.gtimg.cn&amp;amp;useutf8=1&amp;amp;outputhtmlfeed=1&amp;amp;refer=specialcare&amp;amp;r=0.7234408300556543&amp;amp;g_tk=70237777&amp;amp;qzonetoken=【QQ空间加密口令】&amp;amp;g_tk=70237777&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;其中包含了&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;字段，而这个参数并非Cookie的一部分，所以我们进一步尝试在 Source 中搜索这个关键字，发现并没有找到，那么可以推断，这个&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;字段是在独立js文件中进行的调用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200310011158.png&quot; alt=&quot;Network监控日志&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在新Tab中打开是这样的，其中可以看到html格式的动态信息！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200310011349.png&quot; alt=&quot;QQ动态feeds&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们继续观察，发现其中加载了一个名叫 &lt;code class=&quot;highlighter-rouge&quot;&gt;qzfl_v8_[version].js&lt;/code&gt; 的文件，在其中我们找到了我们关注的 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 关键字！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200310011608.png&quot; alt=&quot;qzfl_v8.js&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;QQ截图20200310011836.png&quot; alt=&quot;g_tk 的线索&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;发现其调用了一行 &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;g_tk=&quot; + QZFL.pluginsDefine.getACSRFToken(t);&lt;/code&gt; 显然，这正是我们关心的代码，跟踪其调用，发现这个关键函数的定义：
+似乎已经发掘到矿山深处，开心！！(*^▽^*)&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pluginsDefine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getACSRFToken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;util&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;URI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;qzone.qq.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p_skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p_skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;qq.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p_skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_DJB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这里使用了一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;arguments.callee&lt;/code&gt; 引用，在 js 语法中，这个引用指向当前调用的函数体，也就是 &lt;code class=&quot;highlighter-rouge&quot;&gt;QZFL.pluginsDefine.getACSRFToken&lt;/code&gt; 这个对象，但这个 &lt;code class=&quot;highlighter-rouge&quot;&gt;._DJB()&lt;/code&gt; 又是个什么函数呢？我们继续挖掘！&lt;/p&gt;
+
+&lt;p&gt;结果就在这个函数体下方，我们看到这样一个函数定义：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pluginsDefine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getACSRFToken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_DJB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;charCodeAt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2147483647&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;嘿嘿嘿，剩下的都是基本算法和基本函数，我们就可以用自己的代码来实现这个函数的移植版本啦！值得注意的是，这里第一个函数，使用了一个名为 &lt;code class=&quot;highlighter-rouge&quot;&gt;p_skey&lt;/code&gt; 的cookie值，需要从浏览器中提取，提取方法是在QQ空间页面请求中 Network 中，查看html主页面的请求Cookie项，这里使用的是：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;pskey = 'Reo7rMXWccIn0wX4vy3PqkhcmGx93k6c7JTWjWfseVg_'&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;我们在 Python IDLE 中进行试验：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# function(e) {&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#     var t = 5381;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#     for (var n=0,&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#          r=e.length; n &amp;lt; r; ++n) {&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#         t += (t &amp;lt;&amp;lt; 5) + e.charCodeAt(n)&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#     }&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#     return t &amp;amp; 2147483647&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# };&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2147483647&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pskey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Reo7rMXWccIn0wX4vy3PqkhcmGx93k6c7JTWjWfseVg_'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pskey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;结果呢，发现有什么不对劲，明明刚刚调用的 URL 中使用的是很长一串的才对？
+&lt;code class=&quot;highlighter-rouge&quot;&gt;...300556543&amp;amp;g_tk=70237777&amp;amp;qzonetoken=...&lt;/code&gt; 这个才是原版？&lt;/p&gt;
+
+&lt;p&gt;哪里的bug呢？捏死它丫的！&lt;/p&gt;
+
+&lt;p&gt;…
+↑ 此处省略var个字…&lt;/p&gt;
+
+&lt;p&gt;结果还是基本功不扎实，这里的移位操作符优先级是低于加法的，所以要优先移位必须加括号，也就是如下版本：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# function(e) {&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#     var t = 5381;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#     for (var n=0,&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#          r=e.length; n &amp;lt; r; ++n) {&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#         t += (t &amp;lt;&amp;lt; 5) + e.charCodeAt(n)&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#     }&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#     return t &amp;amp; 2147483647&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# };&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2147483647&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pskey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;635563388&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这就对了噻！和我们源 URL 中的结果完全一致！！我滚去继续爬后续代码了…！&lt;/p&gt;
+
+&lt;p&gt;另：今晚 00:45 分有前后N年来难得一见的大月亮出现，纪念。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="python" />
+      
+        <category term="spider" />
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

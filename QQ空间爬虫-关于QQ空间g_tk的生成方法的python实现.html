@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/tomorrow.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+    <style>
+        .hljs {
+            background: none;
+        }
+    </style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="The professional publishing platform" />
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Ghost" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
+    <meta property="og:description" content="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现 QQ空间中的许多API都需要使用一个名叫 g_tk 的请求参数，而实验中证明，如果这个参数错误，会直接导致访问失败，而实际必须参数中也仅仅只有g_tk和qzonetoken两个参数是授权必须的（当然还要提供cookie啦）。 那么这个 g_tk 是怎样生成的呢？ 我们首先打开QQ空间，发现QQ动态数据是动态加载的，那么一定涉及到了 XHR 请求，也就是在js代码中使用HTTP请求动态调用了数据，我们使用开发工具 Network 监视调用，发现向下刷新时，QQ空间网页请求了这样一个资源： https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=【你的QQ号】&amp;hostuin=【当前访问用户的QQ号】&amp;scope=7&amp;filter=all&amp;flag=1&amp;refresh=0&amp;firstGetGroup=0&amp;mixnocache=0&amp;scene=0&amp;start=10&amp;count=10&amp;sidomain=qzonestyle.gtimg.cn&amp;useutf8=1&amp;outputhtmlfeed=1&amp;refer=specialcare&amp;r=0.7234408300556543&amp;g_tk=70237777&amp;qzonetoken=【QQ空间加密口令】&amp;g_tk=70237777 其中包含了g_tk字段，而这个参数并非Cookie的一部分，所以我们进一步尝试在 Source 中搜索这个关键字，发现并没有找到，那么可以推断，这个g_tk字段是在独立js文件中进行的调用。 在新Tab中打开是这样的，其中可以看到html格式的动态信息！ 我们继续观察，发现其中加载了一个名叫 qzfl_v8_[version].js 的文件，在其中我们找到了我们关注的 g_tk 关键字！ 发现其调用了一行 "g_tk=" + QZFL.pluginsDefine.getACSRFToken(t); 显然，这正是我们关心的代码，跟踪其调用，发现这个关键函数的定义： 似乎已经发掘到矿山深处，开心！！(*^▽^*) QZFL.pluginsDefine.getACSRFToken = function(e) { e = QZFL.util.URI(e); var t; if (e) { if (e.host &amp;&amp; e.host.indexOf("qzone.qq.com") &gt; 0) { try { t" />
+    <meta property="og:url" content="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0" />
+    <meta property="og:image" content="/python.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta property="article:author" content="https://www.facebook.com/ghost" />
+    <meta property="article:published_time" content="2020-03-10T01:00:00+00:00" />
+    <meta property="article:modified_time" content="2020-03-10T01:00:00+00:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
+    <meta name="twitter:description" content="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现 QQ空间中的许多API都需要使用一个名叫 g_tk 的请求参数，而实验中证明，如果这个参数错误，会直接导致访问失败，而实际必须参数中也仅仅只有g_tk和qzonetoken两个参数是授权必须的（当然还要提供cookie啦）。 那么这个 g_tk 是怎样生成的呢？ 我们首先打开QQ空间，发现QQ动态数据是动态加载的，那么一定涉及到了 XHR 请求，也就是在js代码中使用HTTP请求动态调用了数据，我们使用开发工具 Network 监视调用，发现向下刷新时，QQ空间网页请求了这样一个资源： https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=【你的QQ号】&amp;hostuin=【当前访问用户的QQ号】&amp;scope=7&amp;filter=all&amp;flag=1&amp;refresh=0&amp;firstGetGroup=0&amp;mixnocache=0&amp;scene=0&amp;start=10&amp;count=10&amp;sidomain=qzonestyle.gtimg.cn&amp;useutf8=1&amp;outputhtmlfeed=1&amp;refer=specialcare&amp;r=0.7234408300556543&amp;g_tk=70237777&amp;qzonetoken=【QQ空间加密口令】&amp;g_tk=70237777 其中包含了g_tk字段，而这个参数并非Cookie的一部分，所以我们进一步尝试在 Source 中搜索这个关键字，发现并没有找到，那么可以推断，这个g_tk字段是在独立js文件中进行的调用。 在新Tab中打开是这样的，其中可以看到html格式的动态信息！ 我们继续观察，发现其中加载了一个名叫 qzfl_v8_[version].js 的文件，在其中我们找到了我们关注的 g_tk 关键字！ 发现其调用了一行 "g_tk=" + QZFL.pluginsDefine.getACSRFToken(t); 显然，这正是我们关心的代码，跟踪其调用，发现这个关键函数的定义： 似乎已经发掘到矿山深处，开心！！(*^▽^*) QZFL.pluginsDefine.getACSRFToken = function(e) { e = QZFL.util.URI(e); var t; if (e) { if (e.host &amp;&amp; e.host.indexOf("qzone.qq.com") &gt; 0) { try { t" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image" content="/python.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Ghost" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@tryghost" />
+    <meta name="twitter:creator" content="@tryghost" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Ghost",
+        "logo": "/assets/images/blog-icon.png"
+    },
+    "url": "/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0",
+    "image": {
+        "@type": "ImageObject",
+        "url": "/python.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0"
+    },
+    "description": "【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现 QQ空间中的许多API都需要使用一个名叫 g_tk 的请求参数，而实验中证明，如果这个参数错误，会直接导致访问失败，而实际必须参数中也仅仅只有g_tk和qzonetoken两个参数是授权必须的（当然还要提供cookie啦）。 那么这个 g_tk 是怎样生成的呢？ 我们首先打开QQ空间，发现QQ动态数据是动态加载的，那么一定涉及到了 XHR 请求，也就是在js代码中使用HTTP请求动态调用了数据，我们使用开发工具 Network 监视调用，发现向下刷新时，QQ空间网页请求了这样一个资源： https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=【你的QQ号】&amp;hostuin=【当前访问用户的QQ号】&amp;scope=7&amp;filter=all&amp;flag=1&amp;refresh=0&amp;firstGetGroup=0&amp;mixnocache=0&amp;scene=0&amp;start=10&amp;count=10&amp;sidomain=qzonestyle.gtimg.cn&amp;useutf8=1&amp;outputhtmlfeed=1&amp;refer=specialcare&amp;r=0.7234408300556543&amp;g_tk=70237777&amp;qzonetoken=【QQ空间加密口令】&amp;g_tk=70237777 其中包含了g_tk字段，而这个参数并非Cookie的一部分，所以我们进一步尝试在 Source 中搜索这个关键字，发现并没有找到，那么可以推断，这个g_tk字段是在独立js文件中进行的调用。 在新Tab中打开是这样的，其中可以看到html格式的动态信息！ 我们继续观察，发现其中加载了一个名叫 qzfl_v8_[version].js 的文件，在其中我们找到了我们关注的 g_tk 关键字！ 发现其调用了一行 "g_tk=" + QZFL.pluginsDefine.getACSRFToken(t); 显然，这正是我们关心的代码，跟踪其调用，发现这个关键函数的定义： 似乎已经发掘到矿山深处，开心！！(*^▽^*) QZFL.pluginsDefine.getACSRFToken = function(e) { e = QZFL.util.URI(e); var t; if (e) { if (e.host &amp;&amp; e.host.indexOf("qzone.qq.com") &gt; 0) { try { t"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" href="/feed.xml" />
+
+
+</head>
+
+<body
+    class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="/"><img src="/assets/images/blog-icon.png" alt="Ghost" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/author/dexfire/">Dexfire</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/sweet/">Sweets</a>
+    </li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/ai/">AI</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/embed/">Embed</a></li>
+    <li class="nav-about" role="menuitem"><a href="/tag/star/">Stars</a></li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+                <a class="social-link social-link-fb" href="https://facebook.com/ghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/tryghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main class="site-main outer" id="site-main" role="main">
+    <div class="inner">
+
+        <article class="post-full post python, dev ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="10 March 2020">10 March 2020</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                                <a href='/tag/python/'>PYTHON</a>,
+                            
+                        
+                            
+                                <a href='/tag/spider/'>SPIDER</a>,
+                            
+                        
+                            
+                                <a href='/tag/dev/'>DEV</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</h1>
+            </header>
+
+            
+                <figure class="post-full-image" style="background-image: url(/assets/images/python.jpg)"></figure>
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <h1 id="qq空间爬虫关于qq空间g_tk的生成方法的python实现">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</h1>
+
+<p>QQ空间中的许多API都需要使用一个名叫 <code class="highlighter-rouge">g_tk</code> 的请求参数，而实验中证明，如果这个参数错误，会直接导致访问失败，而实际必须参数中也仅仅只有<code class="highlighter-rouge">g_tk</code>和<code class="highlighter-rouge">qzonetoken</code>两个参数是授权必须的（当然还要提供cookie啦）。</p>
+
+<p>那么这个 <code class="highlighter-rouge">g_tk</code> 是怎样生成的呢？</p>
+
+<p>我们首先打开QQ空间，发现QQ动态数据是动态加载的，那么一定涉及到了 XHR 请求，也就是在js代码中使用HTTP请求动态调用了数据，我们使用开发工具 Network 监视调用，发现向下刷新时，QQ空间网页请求了这样一个资源：</p>
+
+<p><code class="highlighter-rouge">https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=【你的QQ号】&amp;hostuin=【当前访问用户的QQ号】&amp;scope=7&amp;filter=all&amp;flag=1&amp;refresh=0&amp;firstGetGroup=0&amp;mixnocache=0&amp;scene=0&amp;start=10&amp;count=10&amp;sidomain=qzonestyle.gtimg.cn&amp;useutf8=1&amp;outputhtmlfeed=1&amp;refer=specialcare&amp;r=0.7234408300556543&amp;g_tk=70237777&amp;qzonetoken=【QQ空间加密口令】&amp;g_tk=70237777</code></p>
+
+<p>其中包含了<code class="highlighter-rouge">g_tk</code>字段，而这个参数并非Cookie的一部分，所以我们进一步尝试在 Source 中搜索这个关键字，发现并没有找到，那么可以推断，这个<code class="highlighter-rouge">g_tk</code>字段是在独立js文件中进行的调用。</p>
+
+<p><img src="/assets/images/QQ截图20200310011158.png" alt="Network监控日志" /></p>
+
+<p>在新Tab中打开是这样的，其中可以看到html格式的动态信息！</p>
+
+<p><img src="/assets/images/QQ截图20200310011349.png" alt="QQ动态feeds" /></p>
+
+<p>我们继续观察，发现其中加载了一个名叫 <code class="highlighter-rouge">qzfl_v8_[version].js</code> 的文件，在其中我们找到了我们关注的 <code class="highlighter-rouge">g_tk</code> 关键字！</p>
+
+<p><img src="/assets/images/QQ截图20200310011608.png" alt="qzfl_v8.js" /></p>
+
+<p><img src="QQ截图20200310011836.png" alt="g_tk 的线索" /></p>
+
+<p>发现其调用了一行 <code class="highlighter-rouge">"g_tk=" + QZFL.pluginsDefine.getACSRFToken(t);</code> 显然，这正是我们关心的代码，跟踪其调用，发现这个关键函数的定义：
+似乎已经发掘到矿山深处，开心！！(*^▽^*)</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">QZFL</span><span class="p">.</span><span class="nx">pluginsDefine</span><span class="p">.</span><span class="nx">getACSRFToken</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">e</span> <span class="o">=</span> <span class="nx">QZFL</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">URI</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">t</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">host</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">host</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"qzone.qq.com"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="nx">t</span> <span class="o">=</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">QZFL</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"p_skey"</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">t</span> <span class="o">=</span> <span class="nx">QZFL</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"p_skey"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">host</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">host</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"qq.com"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">t</span> <span class="o">=</span> <span class="nx">QZFL</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"skey"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">t</span> <span class="o">=</span> <span class="nx">QZFL</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"p_skey"</span><span class="p">)</span> <span class="o">||</span> <span class="nx">QZFL</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"skey"</span><span class="p">)</span> <span class="o">||</span> <span class="nx">QZFL</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"rv2"</span><span class="p">)</span> <span class="o">||</span> <span class="s2">""</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kr">arguments</span><span class="p">.</span><span class="nx">callee</span><span class="p">.</span><span class="nx">_DJB</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>这里使用了一个 <code class="highlighter-rouge">arguments.callee</code> 引用，在 js 语法中，这个引用指向当前调用的函数体，也就是 <code class="highlighter-rouge">QZFL.pluginsDefine.getACSRFToken</code> 这个对象，但这个 <code class="highlighter-rouge">._DJB()</code> 又是个什么函数呢？我们继续挖掘！</p>
+
+<p>结果就在这个函数体下方，我们看到这样一个函数定义：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">QZFL</span><span class="p">.</span><span class="nx">pluginsDefine</span><span class="p">.</span><span class="nx">getACSRFToken</span><span class="p">.</span><span class="nx">_DJB</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="mi">5381</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">r</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">n</span> <span class="o">&lt;</span> <span class="nx">r</span><span class="p">;</span> <span class="o">++</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">t</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">t</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">t</span> <span class="o">&amp;</span> <span class="mi">2147483647</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>嘿嘿嘿，剩下的都是基本算法和基本函数，我们就可以用自己的代码来实现这个函数的移植版本啦！值得注意的是，这里第一个函数，使用了一个名为 <code class="highlighter-rouge">p_skey</code> 的cookie值，需要从浏览器中提取，提取方法是在QQ空间页面请求中 Network 中，查看html主页面的请求Cookie项，这里使用的是：
+<code class="highlighter-rouge">pskey = 'Reo7rMXWccIn0wX4vy3PqkhcmGx93k6c7JTWjWfseVg_'</code></p>
+
+<p>我们在 Python IDLE 中进行试验：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">gen_gtk</span><span class="p">(</span><span class="n">p_skey</span><span class="p">):</span>
+    <span class="c"># function(e) {</span>
+    <span class="c">#     var t = 5381;</span>
+    <span class="c">#     for (var n=0,</span>
+    <span class="c">#          r=e.length; n &lt; r; ++n) {</span>
+    <span class="c">#         t += (t &lt;&lt; 5) + e.charCodeAt(n)</span>
+    <span class="c">#     }</span>
+    <span class="c">#     return t &amp; 2147483647</span>
+    <span class="c"># };</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">5381</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">p_skey</span><span class="p">:</span>
+        <span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">t</span> <span class="o">&amp;</span> <span class="mi">2147483647</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pskey</span> <span class="o">=</span> <span class="s">'Reo7rMXWccIn0wX4vy3PqkhcmGx93k6c7JTWjWfseVg_'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gen_gtk</span><span class="p">(</span><span class="n">pskey</span><span class="p">)</span>
+<span class="mi">5381</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div></div>
+
+<p>结果呢，发现有什么不对劲，明明刚刚调用的 URL 中使用的是很长一串的才对？
+<code class="highlighter-rouge">...300556543&amp;g_tk=70237777&amp;qzonetoken=...</code> 这个才是原版？</p>
+
+<p>哪里的bug呢？捏死它丫的！</p>
+
+<p>…
+↑ 此处省略var个字…</p>
+
+<p>结果还是基本功不扎实，这里的移位操作符优先级是低于加法的，所以要优先移位必须加括号，也就是如下版本：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">gen_gtk</span><span class="p">(</span><span class="n">p_skey</span><span class="p">):</span>
+    <span class="c"># function(e) {</span>
+    <span class="c">#     var t = 5381;</span>
+    <span class="c">#     for (var n=0,</span>
+    <span class="c">#          r=e.length; n &lt; r; ++n) {</span>
+    <span class="c">#         t += (t &lt;&lt; 5) + e.charCodeAt(n)</span>
+    <span class="c">#     }</span>
+    <span class="c">#     return t &amp; 2147483647</span>
+    <span class="c"># };</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">5381</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">p_skey</span><span class="p">:</span>
+        <span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">t</span> <span class="o">&amp;</span> <span class="mi">2147483647</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gen_gtk</span><span class="p">(</span><span class="n">pskey</span><span class="p">)</span>
+<span class="mi">635563388</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div></div>
+
+<p>这就对了噻！和我们源 URL 中的结果完全一致！！我滚去继续爬后续代码了…！</p>
+
+<p>另：今晚 00:45 分有前后N年来难得一见的大月亮出现，纪念。</p>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to
+                        Ghost</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire"/>
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name">
+                                    <a href="/author/dexfire">Dexfire Alex</a>
+                                </h4>
+                                
+                                    <p>水中月是天上月，眼前人是心上人</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/dexfire">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = '/';
+                            this.page.identifier = 'Ghost';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://dexfire.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"  style="background-image: url(/assets/images/blog-cover.jpg)" >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash;
+                                Ghost
+                                &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title">
+                                    <a href="/tag/python/">Python</a>
+                                </h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                    
+                                        
+                                            
+                                            
+                                                <li>
+                                                    <a href="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2">【Python】Python正则表达式re.sub()之原位替换</a>
+                                                </li>
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                                <li>
+                                                    <a href="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF">【爬虫】QQ空间爬虫简单思路</a>
+                                                </li>
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                                <li>
+                                                    <a href="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86">【python】基本数据类型字符串处理</a>
+                                                </li>
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/python/">
+                                
+                                    See all
+                                    4
+                                    posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+<article class="post-card post-template">
+    
+        <a class="post-card-image-link" href="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF">
+            
+                <div class="post-card-image" style="background-image: url(/assets/images/spider.jpg)"></div>
+            
+            <!-- <div class="post-card-image" style="background-image: url(/spider.jpg)"></div> -->
+        </a>
+    
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF">
+            <header class="post-card-header">
+                
+                    
+                        
+                            <span class="post-card-tags">Spider</span>
+                        
+                    
+                        
+                            <span class="post-card-tags">Python</span>
+                        
+                    
+                        
+                            <span class="post-card-tags">Dev</span>
+                        
+                    
+                
+
+                <h2 class="post-card-title">【爬虫】QQ空间爬虫简单思路</h2>
+            </header>
+            <section class="post-card-excerpt">
+                
+                    <p></p>
+                
+            </section>
+        </a>
+        <footer class="post-card-meta">
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                    
+                    <span class="post-card-author">
+                        <a href="/author/dexfire/">Dexfire Alex</a>
+                    </span>
+                
+            
+            <span class="reading-time">
+                
+                
+                    1 min read
+                
+            </span>
+        </footer>
+    </div>
+</article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+<article class="post-card post-template">
+    
+        <a class="post-card-image-link" href="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86">
+            
+                <div class="post-card-image" style="background-image: url(/assets/images/python.jpg)"></div>
+            
+            <!-- <div class="post-card-image" style="background-image: url(/python.jpg)"></div> -->
+        </a>
+    
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86">
+            <header class="post-card-header">
+                
+                    
+                        
+                            <span class="post-card-tags">Python</span>
+                        
+                    
+                        
+                            <span class="post-card-tags">Dev</span>
+                        
+                    
+                
+
+                <h2 class="post-card-title">【python】基本数据类型字符串处理</h2>
+            </header>
+            <section class="post-card-excerpt">
+                
+                    <p></p>
+                
+            </section>
+        </a>
+        <footer class="post-card-meta">
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                    
+                    <span class="post-card-author">
+                        <a href="/author/dexfire/">Dexfire Alex</a>
+                    </span>
+                
+            
+            <span class="reading-time">
+                
+                
+                    1 min read
+                
+            </span>
+        </footer>
+    </div>
+</article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="/">
+            
+                <img src="/assets/images/favicon.png" alt="Ghost icon" />
+            
+            <span>Ghost</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E3%80%90QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E3%80%91%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0&amp;url=https://dexfire.github.io/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dexfire.github.io/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="/">Ghost</a> &copy;
+                    2020</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    <a href="https://facebook.com/ghost" target="_blank"
+                        rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/tryghost" target="_blank"
+                        rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="Ghost" />
+            
+            <h1 class="subscribe-overlay-title">Subscribe to Ghost</h1>
+            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered
+                straight to your inbox</p>
+            <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>
+        // $(document).ready(function () {
+        //     $('pre code').each(function (i, block) {
+        //         hljs.highlightBlock(block);
+        //     });
+        // });
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!--script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script-->
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69281367-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+
+</html>
