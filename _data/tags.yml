@@ -127,3 +127,13 @@ spider:
   name: 爬虫
   description: 高效率数据挖掘
   cover: assets/images/spider.jpg
+
+math:
+  name: 数学
+  description: 恋 · 理科生
+  cover: assets/images/math.jpg
+
+optics:
+  name: 光学
+  description: 为爱发电
+  cover: assets/images/math.jpg
