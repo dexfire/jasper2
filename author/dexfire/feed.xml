@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/author/dexfire/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-12T17:35:17+00:00</updated>
+  <updated>2020-03-12T17:39:56+00:00</updated>
   <id>/author/dexfire/feed.xml</id>
 
   
@@ -841,8 +841,8 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
     </entry>
   
     <entry>
-      <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
-      <link href="/%E8%A1%8D%E5%B0%84-%E5%85%89%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A1%8D%E5%B0%84%E7%8E%B0%E8%B1%A1%E6%8E%A8%E8%AE%BA%E4%B8%8E%E8%AE%A1%E7%AE%97" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
+      <title type="html">【衍射】光学中的衍射现象推论与计算</title>
+      <link href="/%E8%A1%8D%E5%B0%84-%E5%85%89%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A1%8D%E5%B0%84%E7%8E%B0%E8%B1%A1%E6%8E%A8%E8%AE%BA%E4%B8%8E%E8%AE%A1%E7%AE%97" rel="alternate" type="text/html" title="【衍射】光学中的衍射现象推论与计算" />
       <published>2020-03-10T01:00:00+00:00</published>
       <updated>2020-03-10T01:00:00+00:00</updated>
       <id>/%E3%80%90%E8%A1%8D%E5%B0%84%E3%80%91%E5%85%89%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A1%8D%E5%B0%84%E7%8E%B0%E8%B1%A1%E6%8E%A8%E8%AE%BA%E4%B8%8E%E8%AE%A1%E7%AE%97</id>
@@ -911,11 +911,9 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
       
 
       
-        <category term="python" />
+        <category term="math" />
       
-        <category term="spider" />
-      
-        <category term="dev" />
+        <category term="optics" />
       
 
       
