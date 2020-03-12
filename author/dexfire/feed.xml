@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/author/dexfire/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-12T17:39:56+00:00</updated>
+  <updated>2020-03-12T17:40:57+00:00</updated>
   <id>/author/dexfire/feed.xml</id>
 
   
@@ -841,90 +841,6 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
     </entry>
   
     <entry>
-      <title type="html">【衍射】光学中的衍射现象推论与计算</title>
-      <link href="/%E8%A1%8D%E5%B0%84-%E5%85%89%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A1%8D%E5%B0%84%E7%8E%B0%E8%B1%A1%E6%8E%A8%E8%AE%BA%E4%B8%8E%E8%AE%A1%E7%AE%97" rel="alternate" type="text/html" title="【衍射】光学中的衍射现象推论与计算" />
-      <published>2020-03-10T01:00:00+00:00</published>
-      <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/%E3%80%90%E8%A1%8D%E5%B0%84%E3%80%91%E5%85%89%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A1%8D%E5%B0%84%E7%8E%B0%E8%B1%A1%E6%8E%A8%E8%AE%BA%E4%B8%8E%E8%AE%A1%E7%AE%97</id>
-      <content type="html" xml:base="/%E8%A1%8D%E5%B0%84-%E5%85%89%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A1%8D%E5%B0%84%E7%8E%B0%E8%B1%A1%E6%8E%A8%E8%AE%BA%E4%B8%8E%E8%AE%A1%E7%AE%97">&lt;h1 id=&quot;光学中有关衍射的推论与计算&quot;&gt;光学中有关衍射的推论与计算&lt;/h1&gt;
-
-&lt;p&gt;夫琅禾费衍射公式：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\boxed{U(x,y)=\frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)}\iint_\infty^\infty{U(x_0,y_0)e^{-j\frac{2\pi}{\lambda z}(xx_0,yy_0)}dx_0dy_0}}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\boxed{U(x,y)=\frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)}[\mathscr{F}\{U(x_0,y_0)\}|_{f_x=\frac{x}{\lambda z}, f_y=\frac{y}{\lambda z}}]}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f_x=\frac{x}{\lambda z}, f_y=\frac{y}{\lambda z}&lt;/script&gt;
-
-&lt;p&gt;第13题，孔径函数：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;t(x_0,y_0)=comb(\frac{x_0}{a})comb(\frac{y_0}{a})+comb(\frac{x_0-0.1a}{a})comb(\frac{y_0}{a})&lt;/script&gt;
-
-&lt;p&gt;这里可以傅里叶变换得到其频谱为：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-    T(f_x,f_y) &amp;=a^2 [comb(af_x) comb(af_y)]+a^2 e^{-j0.2 \pi af_x}[comb(af_x) comb(af_y)] \\
-    &amp;= a^2[1+e^{-j0.2 \pi af_x}][comb(af_x)comb(af_y)]
-\end{aligned} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200313011318.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;代入夫琅禾费公式：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-    U(x,y)&amp;=\frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)}\mathscr{F}\{U_o(f_x,f_y)\}|_{f_x=\frac{x}{\lambda z},f_y=\frac{y}{\lambda z}} \\
-    &amp;= \frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)}T(\frac{x}{\lambda z},\frac{y}{\lambda z}) \\
-    &amp;= \frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)} \cdot a^2[1+e^{-j0.2 \pi af_x}][comb(af_x)comb(af_y)]
-\end{aligned} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;注：这里得到的已经是复振幅强度对坐标(x,y)的分布了，而不是对频率对$(f_x,f_y)$的分布。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;这就是z处的夫琅禾费衍射复振幅分布函数了，但通常人眼和探测器都仅仅对衍射强度敏感，所以我们求得其功率谱分布：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-    I(f_x,f_y) &amp;= \mid U(f_x,f_y) \mid^2
-\end{aligned} %]]&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;附录&quot;&gt;附录&lt;/h2&gt;
-&lt;h3 id=&quot;本例中用到的常用-katex-表达式&quot;&gt;本例中用到的常用 Katex 表达式&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$a \cdot b$&lt;/code&gt;             –&amp;gt;  $a \cdot b$&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$$\mathscr{F} = $$&lt;/code&gt;  –&amp;gt;  $\mathscr{F}$&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$$\boxed{...}$$&lt;/code&gt;     –&amp;gt;  $\boxed{ABC}$&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">光学中有关衍射的推论与计算</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
       <title type="html">【python】基本数据类型字符串处理</title>
       <link href="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" rel="alternate" type="text/html" title="【python】基本数据类型字符串处理" />
       <published>2020-03-10T00:39:00+00:00</published>
@@ -1068,6 +984,48 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 
       
         <summary type="html">股票评估技巧</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【随想】你的读书境界，决定你的人生高度</title>
+      <link href="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C-%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6" rel="alternate" type="text/html" title="【随想】你的读书境界，决定你的人生高度" />
+      <published>2020-03-08T14:27:00+00:00</published>
+      <updated>2020-03-08T14:27:00+00:00</updated>
+      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C,%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6</id>
+      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C-%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6">&lt;h1 id=&quot;你的读书境界决定你的人生高度&quot;&gt;你的读书境界，决定你的人生高度&lt;/h1&gt;
+
+&lt;p&gt;读书，是世界上门槛最低的高贵举动。它改变你的容颜，丰富你的思想，提升你的逻辑、谈吐。在阅读上花的每一秒，都将沉淀成将来更好的你。&lt;/p&gt;
+
+&lt;p&gt;据说，全世界最爱读书的是德国人，几乎每一个德国家庭，都有书架，或设在书房，或摆放与客厅，似乎成为了家里的一件装饰，但很多德国人的书架上的书，他们几乎全部都读过。德国每个家庭平均藏书近300册，人均藏书一百多册。他们认为，一个家庭没有书籍，等于一间房子没有窗户。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="idea" />
+      
+        <category term="article" />
+      
+        <category term="book" />
+      
+
+      
+        <summary type="html">你的读书境界，决定你的人生高度</summary>
       
 
       

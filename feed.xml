@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-03-12T17:39:56+00:00</updated><id>/</id><title type="html">Ghost</title><subtitle>The professional publishing platform</subtitle><entry><title type="html">【转载】《你的身材，出卖了你的生活层次》</title><link href="/%E8%BD%AC%E8%BD%BD-%E4%BD%A0%E7%9A%84%E8%BA%AB%E6%9D%90-%E5%87%BA%E5%8D%96%E4%BA%86%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%B1%82%E6%AC%A1" rel="alternate" type="text/html" title="【转载】《你的身材，出卖了你的生活层次》" /><published>2020-03-12T00:00:00+00:00</published><updated>2020-03-12T00:00:00+00:00</updated><id>/%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E3%80%8A%E4%BD%A0%E7%9A%84%E8%BA%AB%E6%9D%90,%E5%87%BA%E5%8D%96%E4%BA%86%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%B1%82%E6%AC%A1%E3%80%8B</id><content type="html" xml:base="/%E8%BD%AC%E8%BD%BD-%E4%BD%A0%E7%9A%84%E8%BA%AB%E6%9D%90-%E5%87%BA%E5%8D%96%E4%BA%86%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%B1%82%E6%AC%A1">&lt;h1 id=&quot;转载你的身材出卖了你的生活层次&quot;&gt;【转载】《你的身材，出卖了你的生活层次》&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-03-12T17:40:57+00:00</updated><id>/</id><title type="html">Ghost</title><subtitle>The professional publishing platform</subtitle><entry><title type="html">【转载】《你的身材，出卖了你的生活层次》</title><link href="/%E8%BD%AC%E8%BD%BD-%E4%BD%A0%E7%9A%84%E8%BA%AB%E6%9D%90-%E5%87%BA%E5%8D%96%E4%BA%86%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%B1%82%E6%AC%A1" rel="alternate" type="text/html" title="【转载】《你的身材，出卖了你的生活层次》" /><published>2020-03-12T00:00:00+00:00</published><updated>2020-03-12T00:00:00+00:00</updated><id>/%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E3%80%8A%E4%BD%A0%E7%9A%84%E8%BA%AB%E6%9D%90,%E5%87%BA%E5%8D%96%E4%BA%86%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%B1%82%E6%AC%A1%E3%80%8B</id><content type="html" xml:base="/%E8%BD%AC%E8%BD%BD-%E4%BD%A0%E7%9A%84%E8%BA%AB%E6%9D%90-%E5%87%BA%E5%8D%96%E4%BA%86%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%B1%82%E6%AC%A1">&lt;h1 id=&quot;转载你的身材出卖了你的生活层次&quot;&gt;【转载】《你的身材，出卖了你的生活层次》&lt;/h1&gt;
 
 &lt;p&gt;一个人的身材，能直接折射出他的习惯、自控力、及生活状态。&lt;/p&gt;
 
@@ -415,55 +415,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 &lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;qzEvent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;qzEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dispatch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;QZ_ON_NEW_FEEDS_RENDER&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;feedsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Dexfire Alex</name></author><category term="spider" /><category term="python" /><category term="dev" /><summary type="html">【爬虫】QQ空间爬虫简单思路</summary></entry><entry><title type="html">【衍射】光学中的衍射现象推论与计算</title><link href="/%E8%A1%8D%E5%B0%84-%E5%85%89%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A1%8D%E5%B0%84%E7%8E%B0%E8%B1%A1%E6%8E%A8%E8%AE%BA%E4%B8%8E%E8%AE%A1%E7%AE%97" rel="alternate" type="text/html" title="【衍射】光学中的衍射现象推论与计算" /><published>2020-03-10T01:00:00+00:00</published><updated>2020-03-10T01:00:00+00:00</updated><id>/%E3%80%90%E8%A1%8D%E5%B0%84%E3%80%91%E5%85%89%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A1%8D%E5%B0%84%E7%8E%B0%E8%B1%A1%E6%8E%A8%E8%AE%BA%E4%B8%8E%E8%AE%A1%E7%AE%97</id><content type="html" xml:base="/%E8%A1%8D%E5%B0%84-%E5%85%89%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A1%8D%E5%B0%84%E7%8E%B0%E8%B1%A1%E6%8E%A8%E8%AE%BA%E4%B8%8E%E8%AE%A1%E7%AE%97">&lt;h1 id=&quot;光学中有关衍射的推论与计算&quot;&gt;光学中有关衍射的推论与计算&lt;/h1&gt;
-
-&lt;p&gt;夫琅禾费衍射公式：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\boxed{U(x,y)=\frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)}\iint_\infty^\infty{U(x_0,y_0)e^{-j\frac{2\pi}{\lambda z}(xx_0,yy_0)}dx_0dy_0}}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\boxed{U(x,y)=\frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)}[\mathscr{F}\{U(x_0,y_0)\}|_{f_x=\frac{x}{\lambda z}, f_y=\frac{y}{\lambda z}}]}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f_x=\frac{x}{\lambda z}, f_y=\frac{y}{\lambda z}&lt;/script&gt;
-
-&lt;p&gt;第13题，孔径函数：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;t(x_0,y_0)=comb(\frac{x_0}{a})comb(\frac{y_0}{a})+comb(\frac{x_0-0.1a}{a})comb(\frac{y_0}{a})&lt;/script&gt;
-
-&lt;p&gt;这里可以傅里叶变换得到其频谱为：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-    T(f_x,f_y) &amp;=a^2 [comb(af_x) comb(af_y)]+a^2 e^{-j0.2 \pi af_x}[comb(af_x) comb(af_y)] \\
-    &amp;= a^2[1+e^{-j0.2 \pi af_x}][comb(af_x)comb(af_y)]
-\end{aligned} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200313011318.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;代入夫琅禾费公式：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-    U(x,y)&amp;=\frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)}\mathscr{F}\{U_o(f_x,f_y)\}|_{f_x=\frac{x}{\lambda z},f_y=\frac{y}{\lambda z}} \\
-    &amp;= \frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)}T(\frac{x}{\lambda z},\frac{y}{\lambda z}) \\
-    &amp;= \frac{1}{j \lambda z}e^{jkz}e^{j\frac{k}{2z}(x^2+y^2)} \cdot a^2[1+e^{-j0.2 \pi af_x}][comb(af_x)comb(af_y)]
-\end{aligned} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;注：这里得到的已经是复振幅强度对坐标(x,y)的分布了，而不是对频率对$(f_x,f_y)$的分布。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;这就是z处的夫琅禾费衍射复振幅分布函数了，但通常人眼和探测器都仅仅对衍射强度敏感，所以我们求得其功率谱分布：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-    I(f_x,f_y) &amp;= \mid U(f_x,f_y) \mid^2
-\end{aligned} %]]&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;附录&quot;&gt;附录&lt;/h2&gt;
-&lt;h3 id=&quot;本例中用到的常用-katex-表达式&quot;&gt;本例中用到的常用 Katex 表达式&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$a \cdot b$&lt;/code&gt;             –&amp;gt;  $a \cdot b$&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$$\mathscr{F} = $$&lt;/code&gt;  –&amp;gt;  $\mathscr{F}$&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$$\boxed{...}$$&lt;/code&gt;     –&amp;gt;  $\boxed{ABC}$&lt;/p&gt;</content><author><name>Dexfire Alex</name></author><category term="math" /><category term="optics" /><summary type="html">光学中有关衍射的推论与计算</summary></entry><entry><title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title><link href="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" /><published>2020-03-10T01:00:00+00:00</published><updated>2020-03-10T01:00:00+00:00</updated><id>/%E3%80%90%E6%A4%8D%E6%A0%91%E8%8A%82%E3%80%91%E3%80%8A%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8%E3%80%8B%E7%AE%80%E8%AF%84</id><content type="html" xml:base="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84">&lt;p&gt;25分钟，收集资料，完成一个简单书评：&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Dexfire Alex</name></author><category term="spider" /><category term="python" /><category term="dev" /><summary type="html">【爬虫】QQ空间爬虫简单思路</summary></entry><entry><title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title><link href="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" /><published>2020-03-10T01:00:00+00:00</published><updated>2020-03-10T01:00:00+00:00</updated><id>/%E3%80%90%E6%A4%8D%E6%A0%91%E8%8A%82%E3%80%91%E3%80%8A%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8%E3%80%8B%E7%AE%80%E8%AF%84</id><content type="html" xml:base="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84">&lt;p&gt;25分钟，收集资料，完成一个简单书评：&lt;/p&gt;
 
 &lt;h1 id=&quot;云边有个小卖部简评&quot;&gt;《云边有个小卖部》简评&lt;/h1&gt;
 
@@ -678,4 +630,4 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 
 &lt;span class=&quot;mi&quot;&gt;72&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;108&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;108&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;111&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;121&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;116&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;104&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;111&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;110&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Dexfire Alex</name></author><category term="python" /><category term="dev" /><summary type="html">【python】基本数据类型字符串处理</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Dexfire Alex</name></author><category term="python" /><category term="dev" /><summary type="html">【python】基本数据类型字符串处理</summary></entry><entry><title type="html">【喜欢】no.0005</title><link href="/%E5%96%9C%E6%AC%A2-No.0005" rel="alternate" type="text/html" title="【喜欢】no.0005" /><published>2020-03-10T00:00:00+00:00</published><updated>2020-03-10T00:00:00+00:00</updated><id>/%E3%80%90%E5%96%9C%E6%AC%A2%E3%80%91No.0005</id><content type="html" xml:base="/%E5%96%9C%E6%AC%A2-No.0005">&lt;p&gt;思念算什么，你知道喜欢一个人却又得不到是什么感受吗？&lt;/p&gt;</content><author><name></name></author><summary type="html">思念算什么，你知道喜欢一个人却又得不到是什么感受吗？</summary></entry></feed>
