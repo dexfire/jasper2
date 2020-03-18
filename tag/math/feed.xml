@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="/tag/math/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2020-03-18T15:53:42+00:00</updated>
+  <id>/tag/math/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Ghost | </title>
+  
+
+  
+    <subtitle>The professional publishing platform</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">【光学】球面波 – 光学基础</title>
+      <link href="/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <published>2020-03-17T16:49:00+00:00</published>
+      <updated>2020-03-17T16:49:00+00:00</updated>
+      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8</id>
+      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8">&lt;h1 id=&quot;光学光学分界面上的光学性质&quot;&gt;【光学】光学分界面上的光学性质&lt;/h1&gt;
+
+&lt;p&gt;波矢的大小的含义，即光波能量传播的&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;投影对任意坐标轴的投影会变小，因为可以投影成三个坐标分量，故任意波可以分解为三个平面波场，波矢大小分别为 $kx,ky,kz$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;波矢已经确定了，本征模就不能分解了。那么怎么理解呢，平面波场就是等相位面沿着波矢的传播，等相位面之间的间距就是波长，沿着传播方向看肯定就是 $\lambda$ ，但是波矢不一定是沿着 $x, y, z$ 方向，沿着不同方向上看（$x, y, z$），反应出来的波场不同，结果导致的波场分布&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;平面波矢确定以后，沿着不同的方向去看，其表现出的波场现象不同。
+已经是本征波解，不能分解是合理的。&lt;/p&gt;
+
+&lt;h2 id=&quot;引入&quot;&gt;引入&lt;/h2&gt;
+
+&lt;p&gt;光线在&lt;br /&gt;
+$r_s^2+r_p^2 \neq 1$
+这里是不是能量不守恒？还是我们推导有问题呢？
+&lt;img src=&quot;/assets/images/QQ截图20200317172755.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为：光场在投射时光束宽度发生了变化。&lt;/p&gt;
+
+&lt;p&gt;光强是单位面积上的能量强度。
+光强和功率之间的区别，总功率是和面积相关的。
+所以，激光器的功率与激光器光强是两个概念。&lt;/p&gt;
+
+&lt;p&gt;要得到能量守恒的结论，需要加入&lt;/p&gt;
+
+&lt;p&gt;因为光束发生了变化。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【光学】光学分界面上的光学性质</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】球面波 – 光学基础</title>
+      <link href="/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <published>2020-03-17T00:10:00+00:00</published>
+      <updated>2020-03-17T00:10:00+00:00</updated>
+      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E7%90%83%E9%9D%A2%E6%B3%A2%20--%20%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;光学球面波--光学基础&quot;&gt;【光学】球面波 – 光学基础&lt;/h1&gt;
+&lt;p&gt;光学中最常用的球面波公式：
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y,z) = \frac{a_0}{r}e^{j \theta} = \frac{a_0}{r}e^{j\overrightarrow{k} \cdot \overrightarrow{r}}&lt;/script&gt;
+事实上，这个等式是&lt;strong&gt;亥姆霍兹方程&lt;/strong&gt;的一组简单解。&lt;/p&gt;
+
+&lt;p&gt;并且，其中 $\overrightarrow{k} \cdot \overrightarrow{r}$ 是光波位相，$\displaystyle \theta =\frac{2 \pi}{\lambda} \overrightarrow{n}\cdot \overrightarrow{r}$，其中$n$是波矢 $\overrightarrow{k}$ 的单位方向向量，$\overrightarrow{n}\cdot \overrightarrow{r}$是有效光程，$\displaystyle \frac{1}{\lambda}\overrightarrow{k} \cdot \overrightarrow{r}$则代表了通过$\overrightarrow{n} \cdot \overrightarrow{r}$的有效光程中经过了多少个&lt;strong&gt;空间周期$\lambda$&lt;/strong&gt;，再乘以$2\pi$则成为位相变化因子，即 $\displaystyle \theta=\overrightarrow{k} \cdot \overrightarrow{r} = \frac{2 \pi}{\lambda}\overrightarrow{n} \cdot \overrightarrow{r}$。&lt;/p&gt;
+
+&lt;p&gt;在通常的光学问题分析中，我们并不关心共同位相初始量（通常为一个巨大常数，且随着共同时间位相因子$j\omega t$迅速变化），而仅仅考虑相对位相差，而将共同位相初始量排除在振幅因子 $A$ 中。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【光学】球面波 – 光学基础 光学中最常用的球面波公式： 事实上，这个等式是亥姆霍兹方程的一组简单解。</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】数字图像处理</title>
+      <link href="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】数字图像处理" />
+      <published>2020-03-16T11:24:00+00:00</published>
+      <updated>2020-03-16T11:24:00+00:00</updated>
+      <id>/%E3%80%90%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;数字图像处理基础&quot;&gt;数字图像处理基础&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;低级图像处理
+    &lt;ul&gt;
+      &lt;li&gt;增强&lt;/li&gt;
+      &lt;li&gt;修复&lt;/li&gt;
+      &lt;li&gt;平滑&lt;/li&gt;
+      &lt;li&gt;压缩
+        &lt;ul&gt;
+          &lt;li&gt;信噪比&lt;/li&gt;
+          &lt;li&gt;压缩比&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;中级图像处理
+    &lt;ul&gt;
+      &lt;li&gt;分形&lt;/li&gt;
+      &lt;li&gt;滤镜&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;高级图像处理
+    &lt;ul&gt;
+      &lt;li&gt;人脸识别&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">数字图像处理基础 低级图像处理 增强 修复 平滑 压缩 信噪比 压缩比 中级图像处理 分形 滤镜 高级图像处理 人脸识别</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】数字图像处理</title>
+      <link href="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA" rel="alternate" type="text/html" title="【光学】数字图像处理" />
+      <published>2020-03-16T11:24:00+00:00</published>
+      <updated>2020-03-16T11:24:00+00:00</updated>
+      <id>/%E3%80%90%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6%E3%80%91%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA</id>
+      <content type="html" xml:base="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA">&lt;h1 id=&quot;信息光学几个重要推论&quot;&gt;【信息光学】几个重要推论&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;光波通过孔径、半透明物体、遮挡面等光学元件时，其幅度收到元件透过率影响。
+&lt;script type=&quot;math/tex&quot;&gt;U_o(x,y) = U_i(x,y) \cdot t(x,y)&lt;/script&gt;
+而在频域，则表现为&lt;em&gt;入射光场频谱&lt;/em&gt;与&lt;em&gt;透过率函数频谱&lt;/em&gt;成&lt;strong&gt;卷积关系&lt;/strong&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;孔径的周期性排列，由阵列定理，其透过率表达式为单孔径透过率函数与向各位置位移的δ函数的卷积，即：
+&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = t(x,y) * \sum_{n=1}^N \delta (x-\xi_n,y-\eta_n)&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;几种常见孔径的透过率函数及其频谱：&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;矩形孔，$x$ 方向长度为 $a$，$y$ 方向长度为 $b$ &lt;br /&gt;
+透过率函数：
+&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = rect(\frac{x}{a}) \cdot rect(\frac{y}{b})&lt;/script&gt;&lt;br /&gt;
+频谱为：
+&lt;script type=&quot;math/tex&quot;&gt;T(\frac{x}{\lambda z}, \frac{y}{\lambda z}) = ab \cdot \mathrm{sinc}(a\frac{x}{\lambda z} ) \cdot \mathrm{sinc}(b\frac{y}{\lambda z})&lt;/script&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;透镜，二次曲面
+透镜可看做特殊的孔径遮挡物体，其透过率很高，通过时会产生一个随空间位置呈现二次型分布的相移。&lt;br /&gt;
+透镜的&lt;strong&gt;等效透过率函数&lt;/strong&gt;：&lt;br /&gt;
+&lt;em&gt;注：通常，输入为发散球面波，输出为会聚球面波。&lt;/em&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+  t(x,y) &amp;= \frac{U'(x,y)}{U(x,y)} \\
+  &amp;=  \Large{ \frac{ A e^{-jkd_i}\cdot e^{-\frac{jk}{2d_i}[(x-x_0)^2+(y-y_0)^2]} }{Ae^{jkd_o}\cdot e^{\frac{jk}{2d_o}[(x-x_0)^2+(y-y_0)^2]}}} \\
+  &amp;= \Large{e^{-jk(d_i+d_o)} \cdot e^{-\frac{jk}{2}(\frac{1}{d_i}+\frac{1}{d_o})[(x-x_0)^2+(y-y_0)^2]} }
+\end{aligned} %]]&gt;&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其中 $U’(x,y)$ 为透射光波， $U(x,y)$ 为入射光波，以相距透镜，$\displaystyle e^{-jk(d_i+d_o)}$ 不随空间位置而发生变化，称为常数位相因子。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【信息光学】几个重要推论</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】数字图像处理</title>
+      <link href="/%E8%BD%AC%E5%8F%91-%E6%A2%A6%E7%BB%88%E5%BD%92%E5%8F%AA%E6%98%AF%E6%A2%A6-%E5%8F%AA%E6%9C%89%E8%A1%8C%E5%8A%A8%E6%89%8D%E8%83%BD%E6%9C%89%E6%89%80%E6%94%B6%E8%8E%B7" rel="alternate" type="text/html" title="【光学】数字图像处理" />
+      <published>2020-03-16T11:24:00+00:00</published>
+      <updated>2020-03-16T11:24:00+00:00</updated>
+      <id>/%E3%80%90%E8%BD%AC%E5%8F%91%E3%80%91%E6%A2%A6%E7%BB%88%E5%BD%92%E5%8F%AA%E6%98%AF%E6%A2%A6,%E5%8F%AA%E6%9C%89%E8%A1%8C%E5%8A%A8%E6%89%8D%E8%83%BD%E6%9C%89%E6%89%80%E6%94%B6%E8%8E%B7</id>
+      <content type="html" xml:base="/%E8%BD%AC%E5%8F%91-%E6%A2%A6%E7%BB%88%E5%BD%92%E5%8F%AA%E6%98%AF%E6%A2%A6-%E5%8F%AA%E6%9C%89%E8%A1%8C%E5%8A%A8%E6%89%8D%E8%83%BD%E6%9C%89%E6%89%80%E6%94%B6%E8%8E%B7">&lt;h1 id=&quot;转发梦终归只是梦只有行动才能有所收获&quot;&gt;【转发】梦终归只是梦，只有行动才能有所收获&lt;/h1&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【转发】梦终归只是梦，只有行动才能有所收获</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】数字图像处理</title>
+      <link href="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86" rel="alternate" type="text/html" title="【光学】数字图像处理" />
+      <published>2020-03-16T11:24:00+00:00</published>
+      <updated>2020-03-16T11:24:00+00:00</updated>
+      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86</id>
+      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">&lt;p&gt;（1）静止图像 $\displaystyle I=f(x,y,z,\lambda)$&lt;br /&gt;
+（2）平面图像 $\displaystyle I=f(x,y,\lambda,t)$ &lt;br /&gt;
+（3）灰度图像 $\displaystyle I=f(x,y,z,t)$&lt;br /&gt;
+（4）模拟图像 $\displaystyle I=f(x,y,z,\lambda,t)$  xyz连续&lt;br /&gt;
+（5）数字图像 $\displaystyle I=f(x,y,z,\lambda,t)$  xyz离散&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">（1）静止图像 $\displaystyle I=f(x,y,z,\lambda)$ （2）平面图像 $\displaystyle I=f(x,y,\lambda,t)$ （3）灰度图像 $\displaystyle I=f(x,y,z,t)$ （4）模拟图像 $\displaystyle I=f(x,y,z,\lambda,t)$ xyz连续 （5）数字图像 $\displaystyle I=f(x,y,z,\lambda,t)$ xyz离散</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【数学】现代工程学数学基础</title>
+      <link href="/%E6%95%B0%E5%AD%A6-%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【数学】现代工程学数学基础" />
+      <published>2020-03-15T22:11:00+00:00</published>
+      <updated>2020-03-15T22:11:00+00:00</updated>
+      <id>/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="/%E6%95%B0%E5%AD%A6-%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;数学现代工程学数学基础&quot;&gt;【数学】现代工程学数学基础&lt;/h1&gt;
+
+&lt;h2 id=&quot;极限与连续&quot;&gt;极限与连续&lt;/h2&gt;
+
+&lt;h3 id=&quot;微分&quot;&gt;微分&lt;/h3&gt;
+
+&lt;h4 id=&quot;多元函数微分法&quot;&gt;多元函数微分法&lt;/h4&gt;
+
+&lt;h3 id=&quot;积分&quot;&gt;积分&lt;/h3&gt;
+
+&lt;h3 id=&quot;向量微分&quot;&gt;向量微分&lt;/h3&gt;
+
+&lt;h2 id=&quot;复变函数&quot;&gt;复变函数&lt;/h2&gt;
+
+&lt;h2 id=&quot;线性代数&quot;&gt;线性代数&lt;/h2&gt;
+
+&lt;h2 id=&quot;无穷级数&quot;&gt;无穷级数&lt;/h2&gt;
+
+&lt;h3 id=&quot;泰勒级数&quot;&gt;泰勒级数&lt;/h3&gt;
+&lt;p&gt;数学中，泰勒级数用于展开任意函数，常用于复杂函数的近似计算，如正弦函数 $y(x) = \sin x$，由英国数学家布鲁克·泰勒（Sir Brook Taylor）于1715年发表.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;在自变量零点处求得的泰勒级数又称&lt;strong&gt;麦克劳林级数&lt;/strong&gt;，以英格兰数学家柯林·麦克劳林的名字命名。&lt;/li&gt;
+  &lt;li&gt;泰勒级数在近似计算中有着广泛应用。&lt;/li&gt;
+  &lt;li&gt;在复变函数的求解中，也常常用到泰勒展开的几种常用形式。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+    f(x) &amp;= \sum_{n=0} ^{\infty} \frac{f^{(n)}(x_0)}{n!}\left(x-x_0\right)^n \\
+    &amp;= f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)(x-x_0)^2}{2!}+...+ \frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+...
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$f(x) = \sqrt{1+x}$
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+  f(x) &amp;= f(0) + f'(0)(x-0) + \frac{f^{(2)}(x_0)x^2}+\frac{f^{(3)}x^3}{3!}+... \\
+  &amp;= \sqrt{1+0} + \left(\frac{1}{2}\frac{(1+0)^{-\frac{1}{2}}}{1!}x\right) + \left( -\frac{1}{4}\frac{(1+0)^{-\frac{3}{2}}}{2!} x^2\right) + \left( \frac{3}{8} \frac{(1+0)^{-\frac{5}{2}}}{3!}x^3 \right) +... \\
+  &amp;= 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3+...
+\end{aligned} %]]&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;$y = \sin x$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/taylor-series18.png&quot; alt=&quot;taylor-series&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;傅里叶级数&quot;&gt;傅里叶级数&lt;/h3&gt;
+
+&lt;h4 id=&quot;傅里叶变换&quot;&gt;傅里叶变换&lt;/h4&gt;
+
+&lt;h3 id=&quot;拉普拉斯变换&quot;&gt;拉普拉斯变换&lt;/h3&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【数学】现代工程学数学基础</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】透镜的位相调制及傅里叶变换作用</title>
+      <link href="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8" rel="alternate" type="text/html" title="【光学】透镜的位相调制及傅里叶变换作用" />
+      <published>2020-03-15T15:37:00+00:00</published>
+      <updated>2020-03-15T15:37:00+00:00</updated>
+      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8</id>
+      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8">&lt;h1 id=&quot;光学透镜的位相调制及傅里叶变换作用&quot;&gt;【光学】透镜的位相调制及傅里叶变换作用&lt;/h1&gt;
+
+&lt;p&gt;透镜的透过率函数定义式：
+&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = \large{\frac{\text{输出光波}}{输入光波}}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;t(x,y)=\frac{U_i^{\prime}(x,y)}{U_i(x,y)}&lt;/script&gt;
+考虑入射光波为球面波情形：
+&lt;img src=&quot;/assets/images/QQ截图20200315160209.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;球面波&quot;&gt;球面波&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;球面波&lt;/strong&gt;即波阵面为同心球面的波。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;光源尺度远小于波长$\lambda$时，光源发出的光波可近似为球面波。&lt;/li&gt;
+  &lt;li&gt;球面波在自由场（无束缚作用）中传播时，其振幅&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;随距离&lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;成反比例衰减。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参考：&lt;a href=&quot;https://www.zhihu.com/question/35163381?sort=created&quot;&gt;通过亥姆霍兹方程是如何推导出球面波表达式的？&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;发散单色球面波定义式：
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{jkr}&lt;/script&gt;
+取发射方向为 &lt;code class=&quot;highlighter-rouge&quot;&gt;z&lt;/code&gt; 轴正半轴，则有：&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;若为会聚球面波，则为：
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{-jkr}&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;U_i(x,y)=&lt;/script&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【光学】透镜的位相调制及傅里叶变换作用</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【衍射】光学中的衍射现象推论与计算</title>
+      <link href="/%E9%9A%8F%E6%83%B3-%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%88%9B%E9%80%A0%E5%8A%9B-%E7%81%B5%E9%AD%82%E7%9A%84%E9%97%AA%E5%85%89%E7%82%B9" rel="alternate" type="text/html" title="【衍射】光学中的衍射现象推论与计算" />
+      <published>2020-03-13T01:38:00+00:00</published>
+      <updated>2020-03-13T01:38:00+00:00</updated>
+      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%88%9B%E9%80%A0%E5%8A%9B%E2%80%94%E2%80%94%E7%81%B5%E9%AD%82%E7%9A%84%E9%97%AA%E5%85%89%E7%82%B9</id>
+      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%88%9B%E9%80%A0%E5%8A%9B-%E7%81%B5%E9%AD%82%E7%9A%84%E9%97%AA%E5%85%89%E7%82%B9">&lt;h1 id=&quot;随想每个人都有创造力灵魂的闪光点md&quot;&gt;【随想】每个人都有创造力——灵魂的闪光点.md&lt;/h1&gt;
+
+&lt;p&gt;尽管这个世界上平凡的人居多，可是我始终相信的一点就是，尽管有很多平庸的人，可没有任何一个生来就平庸的灵魂。人在出生的那一刻起，发展潜力都是几乎均等的，并没有孰优孰劣之分，可究竟是什么导致了某个人成为国家领袖，行业精英，或者无业游民，劫匪暴徒的呢？
+&lt;em&gt;点评：这并不是一个好的开头，因为没有结合具体实例，太过直白，毫无吸引力。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;我想是因为生活环境，经历和思维，加之一点点运气吧！有些人说，可能是机遇吧！某些人生来便是天选之子，赶上了的历史动荡巨变的大潮，正是那极少数成为了浪潮顶尖的英雄，他们家底丰厚，运气爆棚，所以成功的是他而非自己。可事情若是如此简单，和他们同时代的人不说几十亿，同样也有成千上万吧？为何最终成功的是他们呢？&lt;/p&gt;
+
+&lt;p&gt;目的性，在感情中是杀手，在事业中则是杀手锏。做事一定要有很强的目的性，换言之：少做或者不做“无用功”，这里需要我们注意的是，对“无用功”的定义，是那些短期收益不高，长期收益几乎没有的工作。比如对于青少年，相比于出门打工一时来钱快，学习是长期回报更高的选择；相比于闷头学习课本固化知识来说，额外真正训练自己的能力是回报更高的选择；相比于沉醉于微博、贴吧、论坛上的片段、低容量信息，自己看书、思考，看看知乎业内人士的见解，吸收品评借鉴，则是更有价值和眼光的选择；。很多时候你并非真正想要学会一门技能，你只是喜欢这种技能带给你的欣慰和满足感，尽管那中快感仅仅是短暂不可持续增值的泡影，你选择了一个缺少对比，相对不那么残酷的社区，来逃避自己当下在这一领域的无知，顺带还不知要努力。&lt;/p&gt;
+
+&lt;p&gt;你要成为勇士，就不应该畏惧演武场。很多时候，想是比较容易的。你想获得对电影更深刻的理解，自然应当直接面向最高层次的影评社区，而不是在QQ空间这种流通性差、专业性几乎为零的社区里垂死挣扎或者秀优越感、暴露智商。&lt;/p&gt;
+
+&lt;p&gt;你要成为勇士，是要学会战斗，而不是学会欣赏战斗。很多时候，我们都太看重学的过程，而轻视了实操演练的过程，“多看看优秀名家的示例，直接吸纳其精华要点，不是更有效的方式吗？”————“那么，请问，有多少名门大家，不是自学为主，而是投机取巧，照抄他们灵感而来呢？”许多时候，经验和潜意识都告诉我们要多学而后练，自己的哪点三角猫功夫，并不可能创造出什么奇迹之作。可如果你真这样想，那么你就掉进了“惰性思维”的陷阱啦。为什么叫做“惰性思维”呢？因为那是你的舒适区，你坐在那里不动，甚至不需要思考，就能看到惊人程度的杰作诞生，你会不自觉将这一现象代入自己身上，或者换种说法，将自己代入到场景之中，认为那些杰作的诞生，不过只是顺手拈来、唾手可得的事，从而跳过或者&lt;strong&gt;逃避&lt;/strong&gt;了自己长时间看不到回报努力的环节，忽略了实战演练，练习的重要性，还想着一步登天，你，凭什么呢？&lt;/p&gt;
+
+&lt;p&gt;走出舒适区，摆脱“习得性无助”。什么是“舒适区”？“就是那些给你温暖，让你相信自己天生丽质，自带光环，我可以不努力或者不再努力，就可以拥有一个‘让自己满意的结果’”。&lt;/p&gt;
+
+&lt;p&gt;“每天被工作占满了全部时间，这才是一个职场人的悲哀。”&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【随想】每个人都有创造力——灵魂的闪光点.md</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【衍射】光学中的衍射现象推论与计算</title>
+      <link href="/%E5%8F%A5%E5%AD%90-%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BA%86%E5%8F%88%E8%83%BD%E6%80%8E%E6%A0%B7" rel="alternate" type="text/html" title="【衍射】光学中的衍射现象推论与计算" />
+      <published>2020-03-13T01:38:00+00:00</published>
+      <updated>2020-03-13T01:38:00+00:00</updated>
+      <id>/%E3%80%90%E5%8F%A5%E5%AD%90%E3%80%91%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BA%86%E5%8F%88%E8%83%BD%E6%80%8E%E6%A0%B7%3F</id>
+      <content type="html" xml:base="/%E5%8F%A5%E5%AD%90-%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BA%86%E5%8F%88%E8%83%BD%E6%80%8E%E6%A0%B7">&lt;h1 id=&quot;和喜欢的人在一起了又能怎样&quot;&gt;和喜欢的人在一起了又能怎样？&lt;/h1&gt;
+
+&lt;p&gt;“在一起了又能怎样？”&lt;/p&gt;
+
+&lt;p&gt;女人：“能做的事可多了，要打扮得像个洋娃娃，要穿漂亮小裙子给他看，要陪他看日出日落，要”&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">和喜欢的人在一起了又能怎样？</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

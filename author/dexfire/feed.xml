@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/author/dexfire/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-12T17:40:57+00:00</updated>
+  <updated>2020-03-18T15:53:42+00:00</updated>
   <id>/author/dexfire/feed.xml</id>
 
   
@@ -46,136 +46,82 @@
 
   
     <entry>
-      <title type="html">【Python】Python正则表达式re.sub()之原位替换</title>
-      <link href="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" rel="alternate" type="text/html" title="【Python】Python正则表达式re.sub()之原位替换" />
-      <published>2020-03-11T00:49:00+00:00</published>
-      <updated>2020-03-11T00:49:00+00:00</updated>
-      <id>/%E3%80%90Python%E3%80%91Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2</id>
-      <content type="html" xml:base="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2">&lt;h1 id=&quot;pythonpython正则表达式resub之原位替换&quot;&gt;【Python】Python正则表达式re.sub()之原位替换&lt;/h1&gt;
+      <title type="html">【Python基础】日志处理之logging模块</title>
+      <link href="/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97" rel="alternate" type="text/html" title="【Python基础】日志处理之logging模块" />
+      <published>2020-03-17T23:10:00+00:00</published>
+      <updated>2020-03-17T23:10:00+00:00</updated>
+      <id>/%E3%80%90Python%E5%9F%BA%E7%A1%80%E3%80%91%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97</id>
+      <content type="html" xml:base="/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">&lt;h1 id=&quot;python基础日志处理之logging模块&quot;&gt;【Python基础】日志处理之logging模块&lt;/h1&gt;
 
-&lt;p&gt;首先讲一下背景，这里是一个API网页接口，其中的html内容为了便于使用json进行传输，使用了许多escape 格式，类似 &lt;code class=&quot;highlighter-rouge&quot;&gt;\x22&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;\x3C&lt;/code&gt; 的样子，这里贴一部分：&lt;/p&gt;
+&lt;p&gt;logging 是 Python 内建的实用日志输出模块，可以为应用与库定义了实现灵活的事件日志系统的函数与类.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;r'class=\x22info-detail\x22&amp;gt;\x3Cspan  class=\x22 ui-mr8 state\x22 &amp;gt;3月7日 22:01\x3C\/span&amp;gt;\x3Ca href=\x22javascript:;\x22 data-cmd=\x22qz_sign\x22 class=\x22f-sign-show state\x22 title=\x22我也要设置\x22&amp;gt;\x3C\/a&amp;gt;\x3C\/div&amp;gt;\x3C\/div&amp;gt;\x3C\/div&amp;gt;\x3Cdiv class=\x22f-single-content f-wrap\x22&amp;gt;\x3Cdiv class=\x22f-item f-s-i\x22 id=\x22feed_....._311_0_1583589681_0_1\x22 data-feedsflag=\x22\x22 data-iswupfeed=\x221\x22 data-key=\x227e6e330318a9635e0a8f0000\x22 data-specialtype=\x22\x22 data-extend-info=\x220_0_1_0_0_0_0|08009cc0040f5001|0008000000000000\x22 data-functype=\x22\x22 data-hasfollowed=\x221\x22&amp;gt;\x3Cdiv class=\x22f-info qz_info_cut\x22&amp;gt;我教你们怎么做舔狗，一天三遍请安记得把称呼带上，哥哥早上好，哥哥晚上好，对方回你一句话赶紧十句话顶上去嘘寒问暖要安排上，吃了吗？在干嘛？下雪了吗？下雨了吗？冷吗？加衣服了吗？哥哥你那里降温了记得添衣服，哥哥你那里下雨了记得带伞，哥哥你在哪？哥哥我请你吃饭，哥哥晚上有时间吗？哥哥中午有时间吗？哥哥辛苦了，哥哥穿这身真帅，哥哥你看今晚的星星，哥哥你要睡觉了吗？哥哥我觉得这个特别适合你就给你买了你别不高 \x3Ca'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;使用标准库提提供的 logging API 最主要的好处是，所有的 Python 模块都可能参与日志输出，包括你的日志消息和第三方模块的日志消息。&lt;/p&gt;
 
-&lt;p&gt;经过一反度娘科普，发现其实也就是对html标签tag中的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;'&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;'&lt;/code&gt; 进行了转义，但又不一定只有这几种情况，总的来讲，这些符号全都属于 ascii 编码的范畴，所以我们要做的就是对这些转义字符进行逆向解码。&lt;/p&gt;
+&lt;p&gt;这个模块提供许多强大而灵活的功能。如果你对 logging 不太熟悉的话， 掌握它最好的方式就是查看它对应的教程。&lt;/p&gt;
 
-&lt;p&gt;首先呢，二狗在这里尽量尝试不借助Python文档以外的外界超自然力量进行研究，首先想到这个可否使用 Python 自带的编解码函数进行解码呢？毕竟 Python3 对自然语言编码可是增强了一大截，这点小问题应该难不倒万能胶语言的嘛？&lt;/p&gt;
+&lt;p&gt;该模块定义的基础类和函数都列在下面。&lt;/p&gt;
 
-&lt;p&gt;我们的基本思路是：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;方案一&lt;/strong&gt;：首先看是否存在 &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; 类的二次解码函数。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;方案二&lt;/strong&gt;：其次就是曲线救国路线，线进行一次额外的编码，而后再进行一次解码。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;ul&gt;
+  &lt;li&gt;记录器[&lt;code class=&quot;highlighter-rouge&quot;&gt;Logger&lt;/code&gt;]暴露了应用程序代码直接使用的接口。&lt;/li&gt;
+  &lt;li&gt;处理程序[&lt;code class=&quot;highlighter-rouge&quot;&gt;Handler&lt;/code&gt;]将日志记录（由记录器创建）发送到适当的目标。&lt;/li&gt;
+  &lt;li&gt;过滤器[&lt;code class=&quot;highlighter-rouge&quot;&gt;Filter&lt;/code&gt;]提供了更精细的设施，用于确定要输出的日志记录。&lt;/li&gt;
+  &lt;li&gt;格式化程序[&lt;code class=&quot;highlighter-rouge&quot;&gt;Formatter&lt;/code&gt;]指定最终输出中日志记录的样式。&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;那么问题来了，怎样进行编解码呢？我首先想到的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; 类的 &lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt; 函数,以及其对应的解码函数 &lt;code class=&quot;highlighter-rouge&quot;&gt;byte.decode()&lt;/code&gt; ，这两个函数的功能分别是：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode(encoding=&quot;utf-8&quot;, errors=&quot;strict&quot;)&lt;/code&gt; 对文本字符串进行编码，接收一个编码类型参数，编码结果为一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;byte&lt;/code&gt; 型的编码数据。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;byte.decode()&lt;/code&gt; 用于对 字节型 数据进行解码，解码结果为一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; 字符串，可以传递一个编码参数，也可以不提供，这时函数库会自动根据编码特性进行 &lt;strong&gt;猜测&lt;/strong&gt; ，这当然本身是一个复杂的工作，不过我们用的是python，强大的函数库的确为我们大幅度减少了工作量。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/zh-cn/3/library/logging.html?highlight=argparse#logging.Formatter&quot;&gt;Python 文档： logging — Python 的日志记录工具&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;那么又问题来了，Python到底支持那些编码格式，我们又该用哪种方案进行解码呢？
-这里贴出Python的两处文档，一个是&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;函数，一个是&lt;code class=&quot;highlighter-rouge&quot;&gt;codecs&lt;/code&gt; 专栏，也就是专门讲解python中编解码的详尽列表。&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/zh-cn/3/library/stdtypes.html?highlight=str%20encode#str.encode&quot;&gt;内置类型 - str.encode(encoding=”utf-8”, errors=”strict”)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/zh-cn/3/library/codecs.html#standard-encodings&quot;&gt;codecs — 编解码器注册和相关基类&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&quot;logging-测试代码&quot;&gt;logging 测试代码&lt;/h2&gt;
 
-&lt;p&gt;我们可以看到这里一个非常权威且霸道的用词：&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;7.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e09359112e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Jul&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2019&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MSC&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1916&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;64&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AMD64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;win32&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;help&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;copyright&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;credits&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;license()&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;more&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;logging&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'log'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 测试一下异常处理&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NoneType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;BaseException&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'OK!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;OK&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NoneType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;标准编码&lt;/strong&gt;
-Python 自带了许多内置的编解码器，它们的实现或者是通过 C 函数，或者是通过映射表。 以下表格是按名称排序的编解码器列表，并提供了一些常见别名以及编码格式通常针对的语言。 别名和语言列表都不是&lt;strong&gt;详尽无遗&lt;/strong&gt;的。 请注意仅有大小写区别或使用连字符替代下划线的拼写形式也都是有效的别名；因此，’utf-8’ 是 ‘utf_8’ 编解码器的有效别名。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这个表格大体是这个格式：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200311010842.png&quot; alt=&quot;Python支持的编码格式&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们搜索ASCII关键字，发现其中涉及到ASCII的寥寥无几，反正是为了偷懒，司马当活马医，看上哪个就用哪个了。&lt;/p&gt;
-
-&lt;h2 id=&quot;首先是方案一&quot;&gt;首先是方案一&lt;/h2&gt;
-&lt;p&gt;这里，通过python文档并没有看到这种奇奇怪怪的解码函数，因为的确有些小众了，这里实在有些按耐不住，还是动用了外部力量，发现的确曾经有前辈研究过这类问题：&lt;/p&gt;
-
-&lt;p&gt;参考链接：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jingyan.baidu.com/article/a3aad71ab430e8b1fb0096c6.html&quot;&gt;Python教程：[37]处理网页源码中的\x22字符 - 百度经验&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/tiwoo/article/details/50334515&quot;&gt;Python 中使用 string-escape 将带转义的字节码字符串转换为 utf-8 字符串&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;没错，结果呢，我们发现这两个都使用了一个非常神奇的操作，一下子就得到了解码后的结果：都是用了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;str.decode('string-escape')&lt;/code&gt; 称之为“&lt;strong&gt;文本转义&lt;/strong&gt;”的解码方式，然鹅，我们用的是Py3，其中已经找不到这个函数了。&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'string-escape'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#287&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'string-escape'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;AttributeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'str'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;no&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'decode'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#4&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;TypeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;missing&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;positional&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'msg'&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 日志文件输出&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Formatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(asctime)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(filename)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s[line:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(lineno)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d] &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(levelname)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(message)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FileHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;a.log&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#8&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;AttributeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'FileHandler'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;no&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'setLevell'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setFormatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 设置以后，终端讲不再看到 日志输出&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#14&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;NameError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defined&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, Foolish Logging.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;要相信天无绝人之路，我们继续搜搜，发现了这个stackoverflow的贴子，其中介绍的是关于python3 中的实现方法。&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/14820429/how-do-i-decodestring-escape-in-python3&quot;&gt;how do I .decode(‘string-escape’) in Python3?&lt;/a&gt;
-问法非常直接粗暴，果然是老外的办事风格，严谨认真且直捣黄龙。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&quot;输出结果&quot;&gt;输出结果&lt;/h2&gt;
 
-&lt;p&gt;I have some escaped strings that need to be unescaped. I’d like to do this in Python.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;输出：&lt;/strong&gt; a.log&lt;/p&gt;
 
-&lt;p&gt;For example, in python2.7 I can do this:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;123omething special&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'string-escape'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'Something special'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;How&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Python3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doesn&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'t work:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;gt;&amp;gt;&amp;gt; b&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;123omething special&quot;.decode('&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;escape&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;')&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Traceback (most recent call last):&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;  File &quot;&amp;lt;stdin&amp;gt;&quot;, line 1, in &amp;lt;module&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;LookupError: unknown encoding: string-escape&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;My goal is to be abel to take a string like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;s\000u\000p\000p\000o\000r\000t\000@\000p\000s\000i\000l\000o\000c\000.\000c\000o\000m\000&lt;/code&gt;
-And turn it into:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;support@psiloc.com&quot;&lt;/code&gt;
-After I do the conversion, I’ll probe to see if the string I have is encoded in UTF-8 or UTF-16.&lt;/p&gt;
-
-&lt;p&gt;我们看到了几个提供了线索的答案，也就是：
-&lt;img src=&quot;/assets/images/QQ截图20200311012229.png&quot; alt=&quot;p1&quot; /&gt;
-这里是使用了编码后解码的方案，这里我也找到了另外一个看起来比较靠谱的代码：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;feed.encode('utf8').decode('unicode_escape')&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这个代码也就是首先对 &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; 进行utf8编码，而后作为unicode的escape文本进行解码，完成解码操作，我们实际操作一番：&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;r'\x23\x45\x3C'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'unicode_escape'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'#E&amp;lt;'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;似乎效果立杆见影！看来这里在进行utf8编码时，并没有将转义符号进行二次编码，而后一次解码则刚刚好将utf8编码时的新转义字符连同原有的转义字符一起进行了解码，实现最终解码的效果，管它具体原理呢，把代码超过来试一把…果然，抄代码一时爽，一直抄…结果终于就出事故了：&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'unicode_escape'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'class=&quot;info-detail&quot;&amp;gt;&amp;lt;span  class=&quot; ui-mr8 state&quot; &amp;gt;3æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9c\x88&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;7æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥ 22:01&amp;lt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/span&amp;gt;&amp;lt;a href=&quot;javascript:;&quot; data-cmd=&quot;qz_sign&quot; class=&quot;f-sign-show state&quot; title=&quot;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x88\x91&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¹&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è¦&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x81&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è®¾ç½®&quot;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/a&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/div&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/div&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/div&amp;gt;&amp;lt;div class=&quot;f-single-content f-wrap&quot;&amp;gt;&amp;lt;div class=&quot;f-item f-s-i&quot; id=&quot;feed_53702270_311_0_1583589681_0_1&quot; data-feedsflag=&quot;&quot; data-iswupfeed=&quot;1&quot; data-key=&quot;7e6e330318a9635e0a8f0000&quot; data-specialtype=&quot;&quot; data-extend-info=&quot;0_0_1_0_0_0_0|08009cc0040f5001|0008000000000000&quot; data-functype=&quot;&quot; data-hasfollowed=&quot;1&quot;&amp;gt;&amp;lt;div class=&quot;f-info qz_info_cut&quot;&amp;gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x88\x91&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x95\x99&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä»¬æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x80\x8e&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¹&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x88&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x81\x9a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x88\x94&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ç&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8b\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x80&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å¤©ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x89&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x81\x8d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è¯·å®&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x89&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è®°å¾&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8a\x8a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ç§°å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x91&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¼å¸¦ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;©ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å¥½ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x99\x9a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å¥½ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å¯¹æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x96&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¹å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9b\x9e&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x80&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥è¯&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;èµ¶ç´§å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8d\x81&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥è¯&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é¡¶ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8e&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;»å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x98\x98&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å¯&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x92&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;®æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9a\x96&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è¦&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x81&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å®&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x89&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8e\x92&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x83&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;äº&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¨å¹²å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x98\x9b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ªäº&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¨äº&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;·å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8a\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è¡£æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9c\x8d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;äº&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x82&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;£é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x87\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x99\x8d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ¸©äº&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è®°å¾&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ·»è¡£æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9c\x8d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x82&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;£é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x87\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¨äº&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è®°å¾&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å¸¦ä¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9e&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¨å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ªï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x88\x91&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è¯·ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x83&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é¥&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xad&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x99\x9a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9c\x89&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¶é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;´å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xad&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8d\x88&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9c\x89&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¶é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;´å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥è¾&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¦äº&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥ç©¿è¿&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x99&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;èº«ç&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9c\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x85&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ç&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9c\x8b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä»&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x99\x9a&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ç&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9a\x84&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x98\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x98\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8c&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è¦&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x81&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ç&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¡è§&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x89&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;äº&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ï¼&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x9f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x93&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¥æ&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x88\x91&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è§&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x89&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å¾&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x97&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;è¿&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x99&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¸ªç&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x89&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;¹å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x88&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;«é&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x80\x82&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x90\x88&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å°±ç»&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x99&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä¹°äº&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ä½&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xa0&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;å&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x88&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;«ä¸&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x8d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;é«&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x98&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; &amp;lt;a'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这种操作对中文似乎有致命伤啊，所有中文经过这样操作以后，全成乱码了…这可咋整捏？&lt;/p&gt;
-
-&lt;h2 id=&quot;方案二&quot;&gt;方案二&lt;/h2&gt;
-&lt;p&gt;下面验证另外一种方法：
-&lt;img src=&quot;/assets/images/QQ截图20200311012330.png&quot; alt=&quot;p2&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;方案三使用codecs类进行escape_decode&quot;&gt;方案三：使用&lt;code class=&quot;highlighter-rouge&quot;&gt;codecs&lt;/code&gt;类进行escape_decode&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200311013556.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;方案四使用re进行正则替换&quot;&gt;方案四：使用&lt;code class=&quot;highlighter-rouge&quot;&gt;re&lt;/code&gt;进行正则替换&lt;/h2&gt;</content>
+&lt;pre&gt;&lt;code class=&quot;language-log&quot;&gt;2020-03-17 23:06:46,292 &amp;lt;pyshell#12&amp;gt;[line:1] INFO Hello
+2020-03-17 23:07:39,933 &amp;lt;pyshell#15&amp;gt;[line:1] INFO Hello, Foolish Logging.
+&lt;/code&gt;&lt;/pre&gt;</content>
 
       
       
@@ -198,7 +144,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
       
 
       
-        <summary type="html">【Python】Python正则表达式re.sub()之原位替换</summary>
+        <summary type="html">【Python基础】日志处理之logging模块</summary>
       
 
       
@@ -206,236 +152,501 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
     </entry>
   
     <entry>
-      <title type="html">【爬虫】QQ空间爬虫简单思路</title>
-      <link href="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF" rel="alternate" type="text/html" title="【爬虫】QQ空间爬虫简单思路" />
-      <published>2020-03-10T11:33:00+00:00</published>
-      <updated>2020-03-10T11:33:00+00:00</updated>
-      <id>/%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF</id>
-      <content type="html" xml:base="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF">&lt;h1 id=&quot;爬虫qq空间爬虫简单思路&quot;&gt;【爬虫】QQ空间爬虫简单思路&lt;/h1&gt;
+      <title type="html">【光学】球面波 – 光学基础</title>
+      <link href="/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <published>2020-03-17T16:49:00+00:00</published>
+      <updated>2020-03-17T16:49:00+00:00</updated>
+      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8</id>
+      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8">&lt;h1 id=&quot;光学光学分界面上的光学性质&quot;&gt;【光学】光学分界面上的光学性质&lt;/h1&gt;
 
-&lt;p&gt;我们继续尝试爬取QQ空间的好友动态。现在是大数据当道的时代，爬虫工程师也成了一个关键性的抢手职位，你可以不做一个优秀的爬虫工程师，但掌握一门扎实的爬虫编写技能，是可以为你的职业技能加分的。同时&lt;/p&gt;
+&lt;p&gt;波矢的大小的含义，即光波能量传播的&lt;/p&gt;
 
-&lt;h2 id=&quot;展开全文读取完整的说说-feed-内容&quot;&gt;展开全文：读取完整的说说 feed 内容&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;投影对任意坐标轴的投影会变小，因为可以投影成三个坐标分量，故任意波可以分解为三个平面波场，波矢大小分别为 $kx,ky,kz$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;波矢已经确定了，本征模就不能分解了。那么怎么理解呢，平面波场就是等相位面沿着波矢的传播，等相位面之间的间距就是波长，沿着传播方向看肯定就是 $\lambda$ ，但是波矢不一定是沿着 $x, y, z$ 方向，沿着不同方向上看（$x, y, z$），反应出来的波场不同，结果导致的波场分布&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;QQ 空间说说常见如图所示的展开全文选项，那么怎样实现一次性爬取完整说说内容呢？&lt;/p&gt;
+&lt;p&gt;平面波矢确定以后，沿着不同的方向去看，其表现出的波场现象不同。
+已经是本征波解，不能分解是合理的。&lt;/p&gt;
 
-&lt;p&gt;单条说说的html层级结构：
-&lt;img src=&quot;/assets/images/QQ截图20200312110802.png&quot; alt=&quot;p-1&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;引入&quot;&gt;引入&lt;/h2&gt;
+
+&lt;p&gt;光线在&lt;br /&gt;
+$r_s^2+r_p^2 \neq 1$
+这里是不是能量不守恒？还是我们推导有问题呢？
+&lt;img src=&quot;/assets/images/QQ截图20200317172755.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为：光场在投射时光束宽度发生了变化。&lt;/p&gt;
+
+&lt;p&gt;光强是单位面积上的能量强度。
+光强和功率之间的区别，总功率是和面积相关的。
+所以，激光器的功率与激光器光强是两个概念。&lt;/p&gt;
+
+&lt;p&gt;要得到能量守恒的结论，需要加入&lt;/p&gt;
+
+&lt;p&gt;因为光束发生了变化。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【光学】光学分界面上的光学性质</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】球面波 – 光学基础</title>
+      <link href="/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <published>2020-03-17T00:10:00+00:00</published>
+      <updated>2020-03-17T00:10:00+00:00</updated>
+      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E7%90%83%E9%9D%A2%E6%B3%A2%20--%20%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;光学球面波--光学基础&quot;&gt;【光学】球面波 – 光学基础&lt;/h1&gt;
+&lt;p&gt;光学中最常用的球面波公式：
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y,z) = \frac{a_0}{r}e^{j \theta} = \frac{a_0}{r}e^{j\overrightarrow{k} \cdot \overrightarrow{r}}&lt;/script&gt;
+事实上，这个等式是&lt;strong&gt;亥姆霍兹方程&lt;/strong&gt;的一组简单解。&lt;/p&gt;
+
+&lt;p&gt;并且，其中 $\overrightarrow{k} \cdot \overrightarrow{r}$ 是光波位相，$\displaystyle \theta =\frac{2 \pi}{\lambda} \overrightarrow{n}\cdot \overrightarrow{r}$，其中$n$是波矢 $\overrightarrow{k}$ 的单位方向向量，$\overrightarrow{n}\cdot \overrightarrow{r}$是有效光程，$\displaystyle \frac{1}{\lambda}\overrightarrow{k} \cdot \overrightarrow{r}$则代表了通过$\overrightarrow{n} \cdot \overrightarrow{r}$的有效光程中经过了多少个&lt;strong&gt;空间周期$\lambda$&lt;/strong&gt;，再乘以$2\pi$则成为位相变化因子，即 $\displaystyle \theta=\overrightarrow{k} \cdot \overrightarrow{r} = \frac{2 \pi}{\lambda}\overrightarrow{n} \cdot \overrightarrow{r}$。&lt;/p&gt;
+
+&lt;p&gt;在通常的光学问题分析中，我们并不关心共同位相初始量（通常为一个巨大常数，且随着共同时间位相因子$j\omega t$迅速变化），而仅仅考虑相对位相差，而将共同位相初始量排除在振幅因子 $A$ 中。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【光学】球面波 – 光学基础 光学中最常用的球面波公式： 事实上，这个等式是亥姆霍兹方程的一组简单解。</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】数字图像处理</title>
+      <link href="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86" rel="alternate" type="text/html" title="【光学】数字图像处理" />
+      <published>2020-03-16T11:24:00+00:00</published>
+      <updated>2020-03-16T11:24:00+00:00</updated>
+      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86</id>
+      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">&lt;p&gt;（1）静止图像 $\displaystyle I=f(x,y,z,\lambda)$&lt;br /&gt;
+（2）平面图像 $\displaystyle I=f(x,y,\lambda,t)$ &lt;br /&gt;
+（3）灰度图像 $\displaystyle I=f(x,y,z,t)$&lt;br /&gt;
+（4）模拟图像 $\displaystyle I=f(x,y,z,\lambda,t)$  xyz连续&lt;br /&gt;
+（5）数字图像 $\displaystyle I=f(x,y,z,\lambda,t)$  xyz离散&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">（1）静止图像 $\displaystyle I=f(x,y,z,\lambda)$ （2）平面图像 $\displaystyle I=f(x,y,\lambda,t)$ （3）灰度图像 $\displaystyle I=f(x,y,z,t)$ （4）模拟图像 $\displaystyle I=f(x,y,z,\lambda,t)$ xyz连续 （5）数字图像 $\displaystyle I=f(x,y,z,\lambda,t)$ xyz离散</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】数字图像处理</title>
+      <link href="/%E8%BD%AC%E5%8F%91-%E6%A2%A6%E7%BB%88%E5%BD%92%E5%8F%AA%E6%98%AF%E6%A2%A6-%E5%8F%AA%E6%9C%89%E8%A1%8C%E5%8A%A8%E6%89%8D%E8%83%BD%E6%9C%89%E6%89%80%E6%94%B6%E8%8E%B7" rel="alternate" type="text/html" title="【光学】数字图像处理" />
+      <published>2020-03-16T11:24:00+00:00</published>
+      <updated>2020-03-16T11:24:00+00:00</updated>
+      <id>/%E3%80%90%E8%BD%AC%E5%8F%91%E3%80%91%E6%A2%A6%E7%BB%88%E5%BD%92%E5%8F%AA%E6%98%AF%E6%A2%A6,%E5%8F%AA%E6%9C%89%E8%A1%8C%E5%8A%A8%E6%89%8D%E8%83%BD%E6%9C%89%E6%89%80%E6%94%B6%E8%8E%B7</id>
+      <content type="html" xml:base="/%E8%BD%AC%E5%8F%91-%E6%A2%A6%E7%BB%88%E5%BD%92%E5%8F%AA%E6%98%AF%E6%A2%A6-%E5%8F%AA%E6%9C%89%E8%A1%8C%E5%8A%A8%E6%89%8D%E8%83%BD%E6%9C%89%E6%89%80%E6%94%B6%E8%8E%B7">&lt;h1 id=&quot;转发梦终归只是梦只有行动才能有所收获&quot;&gt;【转发】梦终归只是梦，只有行动才能有所收获&lt;/h1&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【转发】梦终归只是梦，只有行动才能有所收获</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【CS】编译原理</title>
+      <link href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【CS】编译原理" />
+      <published>2020-03-16T11:24:00+00:00</published>
+      <updated>2020-03-16T11:24:00+00:00</updated>
+      <id>/%E3%80%90CS%E3%80%91%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</id>
+      <content type="html" xml:base="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">&lt;h1 id=&quot;编译原理&quot;&gt;编译原理&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;什么是编译？&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;编译是指将&lt;strong&gt;高级语言&lt;/strong&gt;代码（C，C++，Java等），通过低级语言（通常为&lt;strong&gt;汇编&lt;/strong&gt;）实现的过程，最终输出为机器可执行的&lt;strong&gt;二进制机器码&lt;/strong&gt;文件。&lt;/p&gt;
+
+&lt;p&gt;最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;编译工作的几个步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;编译过程通常可以抽象为几个过程：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;预处理&lt;/li&gt;
+  &lt;li&gt;编译&lt;/li&gt;
+  &lt;li&gt;链接&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;C/C++ 语言编译流程与编译工具链(toolchain)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。&lt;/p&gt;
+
+&lt;p&gt;一款盛名远扬的开源编译工具链：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GCC&lt;/strong&gt;: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)：&lt;/p&gt;
+
+&lt;p&gt;以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，&lt;strong&gt;现在由自由软件基金会负责维护工作&lt;/strong&gt;。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;ul &amp;gt; [data-page=’5’]
+  &lt;li&gt;
+    &lt;p&gt;GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;编译器前端：编译组织器（典例：clang）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。&lt;/p&gt;
+
+&lt;p&gt;Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。&lt;/p&gt;
+
+&lt;p&gt;Clang本身性能优异，其生成的AST所耗用掉的内存仅仅是GCC的20%左右。2014年1月发行的FreeBSD 10.0版将Clang/LLVM作为默认编译器。&lt;/p&gt;
+
+&lt;p&gt;Clang性能：测试证明Clang编译Objective-C代码时速度为GCC的3倍，还能针对用户发生的编译错误准确地给出建议。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;作者：跃文
+链接：https://www.jianshu.com/p/ed17352299ec
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="cs" />
+      
+        <category term="dev" />
+      
+        <category term="embd" />
+      
+
+      
+        <summary type="html">编译原理</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】数字图像处理</title>
+      <link href="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA" rel="alternate" type="text/html" title="【光学】数字图像处理" />
+      <published>2020-03-16T11:24:00+00:00</published>
+      <updated>2020-03-16T11:24:00+00:00</updated>
+      <id>/%E3%80%90%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6%E3%80%91%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA</id>
+      <content type="html" xml:base="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA">&lt;h1 id=&quot;信息光学几个重要推论&quot;&gt;【信息光学】几个重要推论&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;光波通过孔径、半透明物体、遮挡面等光学元件时，其幅度收到元件透过率影响。
+&lt;script type=&quot;math/tex&quot;&gt;U_o(x,y) = U_i(x,y) \cdot t(x,y)&lt;/script&gt;
+而在频域，则表现为&lt;em&gt;入射光场频谱&lt;/em&gt;与&lt;em&gt;透过率函数频谱&lt;/em&gt;成&lt;strong&gt;卷积关系&lt;/strong&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;孔径的周期性排列，由阵列定理，其透过率表达式为单孔径透过率函数与向各位置位移的δ函数的卷积，即：
+&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = t(x,y) * \sum_{n=1}^N \delta (x-\xi_n,y-\eta_n)&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;几种常见孔径的透过率函数及其频谱：&lt;/p&gt;
     &lt;ul&gt;
-      &lt;li&gt;li &amp;gt; f-single f-s-s
+      &lt;li&gt;矩形孔，$x$ 方向长度为 $a$，$y$ 方向长度为 $b$ &lt;br /&gt;
+透过率函数：
+&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = rect(\frac{x}{a}) \cdot rect(\frac{y}{b})&lt;/script&gt;&lt;br /&gt;
+频谱为：
+&lt;script type=&quot;math/tex&quot;&gt;T(\frac{x}{\lambda z}, \frac{y}{\lambda z}) = ab \cdot \mathrm{sinc}(a\frac{x}{\lambda z} ) \cdot \mathrm{sinc}(b\frac{y}{\lambda z})&lt;/script&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;透镜，二次曲面
+透镜可看做特殊的孔径遮挡物体，其透过率很高，通过时会产生一个随空间位置呈现二次型分布的相移。&lt;br /&gt;
+透镜的&lt;strong&gt;等效透过率函数&lt;/strong&gt;：&lt;br /&gt;
+&lt;em&gt;注：通常，输入为发散球面波，输出为会聚球面波。&lt;/em&gt;
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+  t(x,y) &amp;= \frac{U'(x,y)}{U(x,y)} \\
+  &amp;=  \Large{ \frac{ A e^{-jkd_i}\cdot e^{-\frac{jk}{2d_i}[(x-x_0)^2+(y-y_0)^2]} }{Ae^{jkd_o}\cdot e^{\frac{jk}{2d_o}[(x-x_0)^2+(y-y_0)^2]}}} \\
+  &amp;= \Large{e^{-jk(d_i+d_o)} \cdot e^{-\frac{jk}{2}(\frac{1}{d_i}+\frac{1}{d_o})[(x-x_0)^2+(y-y_0)^2]} }
+\end{aligned} %]]&gt;&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其中 $U’(x,y)$ 为透射光波， $U(x,y)$ 为入射光波，以相距透镜，$\displaystyle e^{-jk(d_i+d_o)}$ 不随空间位置而发生变化，称为常数位相因子。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【信息光学】几个重要推论</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】数字图像处理</title>
+      <link href="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】数字图像处理" />
+      <published>2020-03-16T11:24:00+00:00</published>
+      <updated>2020-03-16T11:24:00+00:00</updated>
+      <id>/%E3%80%90%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;数字图像处理基础&quot;&gt;数字图像处理基础&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;低级图像处理
+    &lt;ul&gt;
+      &lt;li&gt;增强&lt;/li&gt;
+      &lt;li&gt;修复&lt;/li&gt;
+      &lt;li&gt;平滑&lt;/li&gt;
+      &lt;li&gt;压缩
         &lt;ul&gt;
-          &lt;li&gt;div &amp;gt; f-single-head f-aside&lt;/li&gt;
-          &lt;li&gt;div &amp;gt; f-single-content f-wrap
-            &lt;ul&gt;
-              &lt;li&gt;div &amp;gt; f-item f-s-i
-                &lt;ul&gt;
-                  &lt;li&gt;div &amp;gt; f-info qz_info_cut none&lt;/li&gt;
-                  &lt;li&gt;div &amp;gt; f-info qz_info_complete&lt;/li&gt;
-                  &lt;li&gt;div &amp;gt; qz_summary wupfeed&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;div &amp;gt; f-single-foot&lt;/li&gt;
+          &lt;li&gt;信噪比&lt;/li&gt;
+          &lt;li&gt;压缩比&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;ul &amp;gt; [data-page=’6’]
-&lt;img src=&quot;/assets/images/QQ截图20200311232102.png&quot; alt=&quot;p0&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;中级图像处理
+    &lt;ul&gt;
+      &lt;li&gt;分形&lt;/li&gt;
+      &lt;li&gt;滤镜&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;高级图像处理
+    &lt;ul&gt;
+      &lt;li&gt;人脸识别&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">数字图像处理基础 低级图像处理 增强 修复 平滑 压缩 信噪比 压缩比 中级图像处理 分形 滤镜 高级图像处理 人脸识别</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【数学】现代工程学数学基础</title>
+      <link href="/%E6%95%B0%E5%AD%A6-%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【数学】现代工程学数学基础" />
+      <published>2020-03-15T22:11:00+00:00</published>
+      <updated>2020-03-15T22:11:00+00:00</updated>
+      <id>/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="/%E6%95%B0%E5%AD%A6-%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;数学现代工程学数学基础&quot;&gt;【数学】现代工程学数学基础&lt;/h1&gt;
+
+&lt;h2 id=&quot;极限与连续&quot;&gt;极限与连续&lt;/h2&gt;
+
+&lt;h3 id=&quot;微分&quot;&gt;微分&lt;/h3&gt;
+
+&lt;h4 id=&quot;多元函数微分法&quot;&gt;多元函数微分法&lt;/h4&gt;
+
+&lt;h3 id=&quot;积分&quot;&gt;积分&lt;/h3&gt;
+
+&lt;h3 id=&quot;向量微分&quot;&gt;向量微分&lt;/h3&gt;
+
+&lt;h2 id=&quot;复变函数&quot;&gt;复变函数&lt;/h2&gt;
+
+&lt;h2 id=&quot;线性代数&quot;&gt;线性代数&lt;/h2&gt;
+
+&lt;h2 id=&quot;无穷级数&quot;&gt;无穷级数&lt;/h2&gt;
+
+&lt;h3 id=&quot;泰勒级数&quot;&gt;泰勒级数&lt;/h3&gt;
+&lt;p&gt;数学中，泰勒级数用于展开任意函数，常用于复杂函数的近似计算，如正弦函数 $y(x) = \sin x$，由英国数学家布鲁克·泰勒（Sir Brook Taylor）于1715年发表.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;在自变量零点处求得的泰勒级数又称&lt;strong&gt;麦克劳林级数&lt;/strong&gt;，以英格兰数学家柯林·麦克劳林的名字命名。&lt;/li&gt;
+  &lt;li&gt;泰勒级数在近似计算中有着广泛应用。&lt;/li&gt;
+  &lt;li&gt;在复变函数的求解中，也常常用到泰勒展开的几种常用形式。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;读取完整 Feed 内容，这里可以使用 浏览器调试工具中的 Elements -&amp;gt; Event Listener
-可以读取并定位 js 调用堆栈，达到监视 js 运行的目的。&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+    f(x) &amp;= \sum_{n=0} ^{\infty} \frac{f^{(n)}(x_0)}{n!}\left(x-x_0\right)^n \\
+    &amp;= f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)(x-x_0)^2}{2!}+...+ \frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+...
+\end{aligned} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200311231857.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$f(x) = \sqrt{1+x}$
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+  f(x) &amp;= f(0) + f'(0)(x-0) + \frac{f^{(2)}(x_0)x^2}+\frac{f^{(3)}x^3}{3!}+... \\
+  &amp;= \sqrt{1+0} + \left(\frac{1}{2}\frac{(1+0)^{-\frac{1}{2}}}{1!}x\right) + \left( -\frac{1}{4}\frac{(1+0)^{-\frac{3}{2}}}{2!} x^2\right) + \left( \frac{3}{8} \frac{(1+0)^{-\frac{5}{2}}}{3!}x^3 \right) +... \\
+  &amp;= 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3+...
+\end{aligned} %]]&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;$y = \sin x$&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;我们追踪一次看看：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/taylor-series18.png&quot; alt=&quot;taylor-series&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200311232244.png&quot; alt=&quot;p3&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;傅里叶级数&quot;&gt;傅里叶级数&lt;/h3&gt;
 
-&lt;p&gt;发现其中在777行：&lt;/p&gt;
+&lt;h4 id=&quot;傅里叶变换&quot;&gt;傅里叶变换&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200312000407.png&quot; alt=&quot;p4&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hasOwnProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;delegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;queryFeedByElem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getFeedIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handleObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handleObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'[data-clicklog=&quot;ignore&quot;]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handleObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;[data-clicklog]&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data-clicklog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'[data-clicklog=&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data-clicklog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&quot;]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pingType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data-clicklog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setDatas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;flushFeedDataList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addFeedDataList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pingGDClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;调用了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;var r = QZONE.Feeds.queryFeedByElem(this);&lt;/code&gt; 函数，而这个疑似就是获取Feed的最终函数，查找定义为：&lt;/p&gt;
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a[data-cmd=&quot;qz_popup&quot;][data-version=&quot;3&quot;]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;parseInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data-newplayer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;feeds_core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1548&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;queryFeedByElem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nodeType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hasClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;f-s-s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.f-s-s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;__cuid__&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getFeedByElem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;feeds_core&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;929&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sortsession&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;extend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bindClicklog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;updateSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sortsession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ICFeeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;VideoManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ICFeeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;VideoManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;feeds_core&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;980&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getFeedByElem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendFeedsData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNewFeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNewFeed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;__cuid__&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addFeedsToPool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getFeedIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]]);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getFeedByElem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeFeedsByUin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opuin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;feed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;77&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;initFirstPageFeeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_csfeedsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;qzlog&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;consoleFM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;qzlog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;feeds&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;initFirstPageFeeds&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sence&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}});&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;home_personal&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req_sence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;home&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;currentContainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;FeedsCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getHomeFeedsContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;currentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initFirstPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feedsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;famous_feeds&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req_sence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ic&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;FeedsCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getFamousFeedsContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req_sence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ic&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;_csfeedsData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;g_Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feedsPart1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;_csfeedsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;g_Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feedsPart2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;_csfeedsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;G_Param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;g_Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feeds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;currentContainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;FeedsCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getHostFeedsContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;currentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initFirstPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_csfeedsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;G_Param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;FeedsCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getCareFeedsContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;currentContainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;FeedsCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getFriendFeedsContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;currentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initFirstPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_csfeedsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;cpujs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;v8/ic/hotfeeds&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;showHotFeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onNewFeedsRender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;feedsContainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getFeedsCurrent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;feedsContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendFeedsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;qzEvent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZONE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;qzEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dispatch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;QZ_ON_NEW_FEEDS_RENDER&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;feedsData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;datas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+&lt;h3 id=&quot;拉普拉斯变换&quot;&gt;拉普拉斯变换&lt;/h3&gt;</content>
 
       
       
@@ -452,15 +663,13 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
       
 
       
-        <category term="spider" />
+        <category term="math" />
       
-        <category term="python" />
-      
-        <category term="dev" />
+        <category term="optics" />
       
 
       
-        <summary type="html">【爬虫】QQ空间爬虫简单思路</summary>
+        <summary type="html">【数学】现代工程学数学基础</summary>
       
 
       
@@ -468,56 +677,41 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
     </entry>
   
     <entry>
-      <title type="html">【经济】基金下跌时，应该赎回吗？</title>
-      <link href="/%E7%BB%8F%E6%B5%8E-%E5%9F%BA%E9%87%91%E4%B8%8B%E8%B7%8C%E6%97%B6-%E5%BA%94%E8%AF%A5%E8%B5%8E%E5%9B%9E%E5%90%97" rel="alternate" type="text/html" title="【经济】基金下跌时，应该赎回吗？" />
-      <published>2020-03-10T11:33:00+00:00</published>
-      <updated>2020-03-10T11:33:00+00:00</updated>
-      <id>/%E3%80%90%E7%BB%8F%E6%B5%8E%E3%80%91%E5%9F%BA%E9%87%91%E4%B8%8B%E8%B7%8C%E6%97%B6,%E5%BA%94%E8%AF%A5%E8%B5%8E%E5%9B%9E%E5%90%97%3F</id>
-      <content type="html" xml:base="/%E7%BB%8F%E6%B5%8E-%E5%9F%BA%E9%87%91%E4%B8%8B%E8%B7%8C%E6%97%B6-%E5%BA%94%E8%AF%A5%E8%B5%8E%E5%9B%9E%E5%90%97">&lt;h1 id=&quot;经济基金下跌时应该赎回吗&quot;&gt;【经济】基金下跌时，应该赎回吗？&lt;/h1&gt;
+      <title type="html">【光学】透镜的位相调制及傅里叶变换作用</title>
+      <link href="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8" rel="alternate" type="text/html" title="【光学】透镜的位相调制及傅里叶变换作用" />
+      <published>2020-03-15T15:37:00+00:00</published>
+      <updated>2020-03-15T15:37:00+00:00</updated>
+      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8</id>
+      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8">&lt;h1 id=&quot;光学透镜的位相调制及傅里叶变换作用&quot;&gt;【光学】透镜的位相调制及傅里叶变换作用&lt;/h1&gt;
 
-&lt;p&gt;来源：&lt;a href=&quot;https://t.10jqka.com.cn/pid_118268210.shtml&quot;&gt;同花顺圈子&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;透镜的透过率函数定义式：
+&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = \large{\frac{\text{输出光波}}{输入光波}}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;t(x,y)=\frac{U_i^{\prime}(x,y)}{U_i(x,y)}&lt;/script&gt;
+考虑入射光波为球面波情形：
+&lt;img src=&quot;/assets/images/QQ截图20200315160209.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;自己买的基金一直下跌，究竟要怎么做，补仓还是赎回？&lt;/p&gt;
+&lt;h2 id=&quot;球面波&quot;&gt;球面波&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;球面波&lt;/strong&gt;即波阵面为同心球面的波。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;光源尺度远小于波长$\lambda$时，光源发出的光波可近似为球面波。&lt;/li&gt;
+  &lt;li&gt;球面波在自由场（无束缚作用）中传播时，其振幅&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;随距离&lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;成反比例衰减。&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://e.thsi.cn/img/4d13e10460727926&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考：&lt;a href=&quot;https://www.zhihu.com/question/35163381?sort=created&quot;&gt;通过亥姆霍兹方程是如何推导出球面波表达式的？&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;自从入了基金的坑，就再也出不来了。看到收益变红的时候，心情会特别好，就好像赌徒赌赢的那一刻，双眼放光，然而这种非理性基金投资实在太危险了。机会是跌出来的，当遇到市场大跌时，是该减仓落袋为安还是该加仓布局未来？&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;发散单色球面波定义式：
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{jkr}&lt;/script&gt;
+取发射方向为 &lt;code class=&quot;highlighter-rouge&quot;&gt;z&lt;/code&gt; 轴正半轴，则有：&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;若为会聚球面波，则为：
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{-jkr}&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h2 id=&quot;一了解基金下跌的原因&quot;&gt;一、了解基金下跌的原因&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;基金本身性质&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;基金的种类很多，其中有一些高风险的投资基金本身就具有高风险，其价格波动明显，下跌的情况很容易发生。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;收到当期市场的影响&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;中国的投资基金依赖于中国市场，如果当期市场价格呈下行趋势的话，对基金走势有着一定影响。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;基金操作问题&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;除去客观市场原因，另一重要原因就是基金管理人对基金运行配置问题。有些抗风险能力差的基金公司，或是基金经理决策失误，会造成投资基金的下跌。&lt;/p&gt;
-
-&lt;h2 id=&quot;二检查持仓基金&quot;&gt;二、检查持仓基金&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;把自己的持仓基金检查一遍。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;如果是低估值，或者估值合理的指数基金，没有问题，继续坚持定投。但是，切勿匆忙加仓减仓，可以提前设置止盈点和止损点，但是设置的点要合理，符合市场趋势，这样才能既不错过基金下跌时平摊成本的机会，也不一次将资金全部投入。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;可以与同类基金业绩进行比较&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;如果业绩有大幅度的落后，判断继续持有或定投是否已经不符合当初买入的理由。如果确实是业绩不稳定，可以趁着下跌进行调仓，换入&lt;/p&gt;
-
-&lt;p&gt;3.&lt;/p&gt;</content>
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;U_i(x,y)=&lt;/script&gt;</content>
 
       
       
@@ -534,498 +728,13 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
       
 
       
-        <category term="eco" />
+        <category term="math" />
       
-
-      
-        <summary type="html">【经济】基金下跌时，应该赎回吗？</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【经济】基金下跌时，应该赎回吗？</title>
-      <link href="/%E9%9A%8F%E6%83%B3-%E8%BF%99%E4%B8%96%E4%B8%8A%E4%B8%8D%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA-%E5%A4%A7%E5%A4%9A%E6%98%AF%E8%BF%87%E5%88%86%E8%87%AA%E7%A7%81%E7%9A%84%E4%BA%BA" rel="alternate" type="text/html" title="【经济】基金下跌时，应该赎回吗？" />
-      <published>2020-03-10T11:33:00+00:00</published>
-      <updated>2020-03-10T11:33:00+00:00</updated>
-      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E8%BF%99%E4%B8%96%E4%B8%8A%E4%B8%8D%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA,%E5%A4%A7%E5%A4%9A%E6%98%AF%E8%BF%87%E5%88%86%E8%87%AA%E7%A7%81%E7%9A%84%E4%BA%BA</id>
-      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E8%BF%99%E4%B8%96%E4%B8%8A%E4%B8%8D%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA-%E5%A4%A7%E5%A4%9A%E6%98%AF%E8%BF%87%E5%88%86%E8%87%AA%E7%A7%81%E7%9A%84%E4%BA%BA">&lt;h1 id=&quot;随想这世上不幸福的人大多是过分自私的人&quot;&gt;【随想】这世上不幸福的人，大多是过分自私的人&lt;/h1&gt;
-
-&lt;p&gt;为什么自己似乎并不缺什么，有家人有朋友，并非不努力，却始终不快乐。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="eco" />
-      
-
-      
-        <summary type="html">【随想】这世上不幸福的人，大多是过分自私的人</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
-      <link href="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
-      <published>2020-03-10T01:00:00+00:00</published>
-      <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/%E3%80%90QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E3%80%91%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0</id>
-      <content type="html" xml:base="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0">&lt;h1 id=&quot;qq空间爬虫关于qq空间g_tk的生成方法的python实现&quot;&gt;【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现&lt;/h1&gt;
-
-&lt;p&gt;QQ空间中的许多API都需要使用一个名叫 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 的请求参数，而实验中证明，如果这个参数错误，会直接导致访问失败，而实际必须参数中也仅仅只有&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;qzonetoken&lt;/code&gt;两个参数是授权必须的（当然还要提供cookie啦）。&lt;/p&gt;
-
-&lt;p&gt;那么这个 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 是怎样生成的呢？&lt;/p&gt;
-
-&lt;p&gt;我们首先打开QQ空间，发现QQ动态数据是动态加载的，那么一定涉及到了 XHR 请求，也就是在js代码中使用HTTP请求动态调用了数据，我们使用开发工具 Network 监视调用，发现向下刷新时，QQ空间网页请求了这样一个资源：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=【你的QQ号】&amp;amp;hostuin=【当前访问用户的QQ号】&amp;amp;scope=7&amp;amp;filter=all&amp;amp;flag=1&amp;amp;refresh=0&amp;amp;firstGetGroup=0&amp;amp;mixnocache=0&amp;amp;scene=0&amp;amp;start=10&amp;amp;count=10&amp;amp;sidomain=qzonestyle.gtimg.cn&amp;amp;useutf8=1&amp;amp;outputhtmlfeed=1&amp;amp;refer=specialcare&amp;amp;r=0.7234408300556543&amp;amp;g_tk=70237777&amp;amp;qzonetoken=【QQ空间加密口令】&amp;amp;g_tk=70237777&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;其中包含了&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;字段，而这个参数并非Cookie的一部分，所以我们进一步尝试在 Source 中搜索这个关键字，发现并没有找到，那么可以推断，这个&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;字段是在独立js文件中进行的调用。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200310011158.png&quot; alt=&quot;Network监控日志&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在新Tab中打开是这样的，其中可以看到html格式的动态信息！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200310011349.png&quot; alt=&quot;QQ动态feeds&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们继续观察，发现其中加载了一个名叫 &lt;code class=&quot;highlighter-rouge&quot;&gt;qzfl_v8_[version].js&lt;/code&gt; 的文件，在其中我们找到了我们关注的 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 关键字！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200310011608.png&quot; alt=&quot;qzfl_v8.js&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;QQ截图20200310011836.png&quot; alt=&quot;g_tk 的线索&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;发现其调用了一行 &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;g_tk=&quot; + QZFL.pluginsDefine.getACSRFToken(t);&lt;/code&gt; 显然，这正是我们关心的代码，跟踪其调用，发现这个关键函数的定义：
-似乎已经发掘到矿山深处，开心！！(*^▽^*)&lt;/p&gt;
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pluginsDefine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getACSRFToken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;util&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;URI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;qzone.qq.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p_skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p_skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;qq.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p_skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_DJB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这里使用了一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;arguments.callee&lt;/code&gt; 引用，在 js 语法中，这个引用指向当前调用的函数体，也就是 &lt;code class=&quot;highlighter-rouge&quot;&gt;QZFL.pluginsDefine.getACSRFToken&lt;/code&gt; 这个对象，但这个 &lt;code class=&quot;highlighter-rouge&quot;&gt;._DJB()&lt;/code&gt; 又是个什么函数呢？我们继续挖掘！&lt;/p&gt;
-
-&lt;p&gt;结果就在这个函数体下方，我们看到这样一个函数定义：&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pluginsDefine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getACSRFToken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_DJB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;charCodeAt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2147483647&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;嘿嘿嘿，剩下的都是基本算法和基本函数，我们就可以用自己的代码来实现这个函数的移植版本啦！值得注意的是，这里第一个函数，使用了一个名为 &lt;code class=&quot;highlighter-rouge&quot;&gt;p_skey&lt;/code&gt; 的cookie值，需要从浏览器中提取，提取方法是在QQ空间页面请求中 Network 中，查看html主页面的请求Cookie项，这里使用的是：
-&lt;code class=&quot;highlighter-rouge&quot;&gt;pskey = 'Reo7rMXWccIn0wX4vy3PqkhcmGx93k6c7JTWjWfseVg_'&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;我们在 Python IDLE 中进行试验：&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# function(e) {&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     var t = 5381;&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     for (var n=0,&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#          r=e.length; n &amp;lt; r; ++n) {&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#         t += (t &amp;lt;&amp;lt; 5) + e.charCodeAt(n)&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     }&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     return t &amp;amp; 2147483647&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# };&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2147483647&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pskey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Reo7rMXWccIn0wX4vy3PqkhcmGx93k6c7JTWjWfseVg_'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pskey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;结果呢，发现有什么不对劲，明明刚刚调用的 URL 中使用的是很长一串的才对？
-&lt;code class=&quot;highlighter-rouge&quot;&gt;...300556543&amp;amp;g_tk=70237777&amp;amp;qzonetoken=...&lt;/code&gt; 这个才是原版？&lt;/p&gt;
-
-&lt;p&gt;哪里的bug呢？捏死它丫的！&lt;/p&gt;
-
-&lt;p&gt;…
-↑ 此处省略var个字…&lt;/p&gt;
-
-&lt;p&gt;结果还是基本功不扎实，这里的移位操作符优先级是低于加法的，所以要优先移位必须加括号，也就是如下版本：&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# function(e) {&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     var t = 5381;&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     for (var n=0,&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#          r=e.length; n &amp;lt; r; ++n) {&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#         t += (t &amp;lt;&amp;lt; 5) + e.charCodeAt(n)&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     }&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     return t &amp;amp; 2147483647&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# };&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2147483647&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pskey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;635563388&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这就对了噻！和我们源 URL 中的结果完全一致！！我滚去继续爬后续代码了…！&lt;/p&gt;
-
-&lt;p&gt;另：今晚 00:45 分有前后N年来难得一见的大月亮出现，纪念。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-        <category term="spider" />
-      
-        <category term="dev" />
-      
-
-      
-        <summary type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
-      <link href="/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
-      <published>2020-03-10T01:00:00+00:00</published>
-      <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD,%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B%3F</id>
-      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B">&lt;h1 id=&quot;随想我什么都做不好我真的是天生的废物嘛&quot;&gt;【随想】我什么都做不好，我真的是天生的废物嘛？&lt;/h1&gt;
-
-&lt;p&gt;“天生我材必有用，千金散尽还复来。”
-在《亲密关系》一书中，&lt;/p&gt;
-
-&lt;p&gt;其实心态很重要。努力和方法也是。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-        <category term="spider" />
-      
-        <category term="dev" />
-      
-
-      
-        <summary type="html">【随想】我什么都做不好，我真的是天生的废物嘛？</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
-      <link href="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
-      <published>2020-03-10T01:00:00+00:00</published>
-      <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/%E3%80%90%E6%A4%8D%E6%A0%91%E8%8A%82%E3%80%91%E3%80%8A%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8%E3%80%8B%E7%AE%80%E8%AF%84</id>
-      <content type="html" xml:base="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84">&lt;p&gt;25分钟，收集资料，完成一个简单书评：&lt;/p&gt;
-
-&lt;h1 id=&quot;云边有个小卖部简评&quot;&gt;《云边有个小卖部》简评&lt;/h1&gt;
-
-&lt;p&gt;遥远的云边镇里，住着悠闲自得的云边人。小镇里常年安静，尽管也有迷人的风光，也有质朴亲切的父老乡亲，有狂风和暴雨，也有黑夜和黎明，这里百姓安居乐业，尽管交通不便，消息闭塞，却也都能自给自足，云边镇的人们生活安静而祥和，男孩子们总喜欢聚众做些或英雄气概或大反派才做的事，偶尔也有调皮的小孩子在路边做妈见打的勾当，而女孩子们最大的乐趣就是闲下来讨论邻班上的八卦趣闻，隔壁班叫“青柠”的小女孩又有好几个男孩子表白，这座边缘小城似乎是活的，有自己的生命，会呼吸，偶尔微笑，有时也会哭泣。可仔细想来，似乎还是少了些什么，到底是什么呢？&lt;/p&gt;
-
-&lt;p&gt;应该，是梦想和城市间残酷得不忍去面对的现实吧？&lt;/p&gt;
-
-&lt;p&gt;如果这部小说，仅仅是描绘一个十八线小镇山间的风风雨雨，小孩子间的情愁恩怨，这家那户的冷冷暖暖，那它就不值得得到如此丰厚的称道和掌声了！&lt;/p&gt;
-
-&lt;p&gt;刘十三，是这座小城里的一个普通小康家庭的孩子，家里有着一个开小卖部的奶奶，她不是坐家里的老婆子，相反她很有活力，她还有个特别悦耳年轻的名字————“王莺莺”。&lt;/p&gt;
-
-&lt;p&gt;每个生命总会遇到几个重要的，彻彻底底改变自己命运的人，刘十三运气不差，遇到了很好很好的人，一些刺激他让他成长，一些一直和他站在一边，安慰他支持他，温暖着他飘摇的心。&lt;/p&gt;
-
-&lt;p&gt;付出而没有回报的人和事多得是，你又凭什么以为自己喜欢了很久很久的人会反过来喜欢自己呢？&lt;/p&gt;
-
-&lt;p&gt;我陪了你，你却从未选择过我。你陪着他寻找快乐，又为什么还要回来找我？我不喜欢你，不喜欢总是消耗我对你的喜欢的你，不喜欢仗着我喜欢你就彻彻底底忽视我的存在的你。我会删掉你的，等到我下定决心以后。如果不再喜欢你，我觉得还会那样同情你吗，又有何意义？徒然建立一种病态的依恋关系，明知不会有结果的，却还是反反复复地打扰我的生活。&lt;/p&gt;
-
-&lt;p&gt;原本我可以另寻希望，你却反反复复地闯进我的生活，打乱我的一切计划。最后再以一个无关紧要的陌生人身份，从我的视线里消失。你以为你很酷吗，很温柔吗，很委屈，很无辜吗？&lt;/p&gt;
-
-&lt;p&gt;对不起，我不想再骗你。你曾经打破了我的原则，因为我曾经太害怕，怕我什么都没有做，就错过了生命中那个最能深深打动我的人。&lt;/p&gt;
-
-&lt;p&gt;超越时空的思念。
-一个卑微如草芥的生命，也有他的形而上的追求，&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-        <category term="spider" />
-      
-        <category term="dev" />
-      
-
-      
-        <summary type="html">25分钟，收集资料，完成一个简单书评：</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【python】基本数据类型字符串处理</title>
-      <link href="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" rel="alternate" type="text/html" title="【python】基本数据类型字符串处理" />
-      <published>2020-03-10T00:39:00+00:00</published>
-      <updated>2020-03-10T00:39:00+00:00</updated>
-      <id>/%E3%80%90python%E3%80%91%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86</id>
-      <content type="html" xml:base="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86">&lt;h1 id=&quot;python基本数据类型字符串处理&quot;&gt;【python】基本数据类型字符串处理&lt;/h1&gt;
-
-&lt;h2 id=&quot;1-整型int-关键字&quot;&gt;1. 整型：&lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt; 关键字&lt;/h2&gt;
-
-&lt;p&gt;整数型是最基本的数据类型，python中可以直接使用数字来定义一个数值型常量&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10086&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;数值字符串 -&amp;gt; 整型&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 使用int()函数直接转化str&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'100'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'100h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#87&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'100h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;ValueError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invalid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;literal&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'100h'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#88&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;ValueError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invalid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;literal&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'0x100h'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#89&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;ValueError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invalid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;literal&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'0x100'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;十六进制字符串转int&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;2-字符型-charchr函数&quot;&gt;2. 字符型 char：chr()函数&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chr(i)&lt;/code&gt; 返回 Unicode 码位为整数 i 的字符的字符串格式。例如，chr(97) 返回字符串 ‘a’，chr(8364) 返回字符串 ‘€’。这是 ord() 的逆函数。&lt;/p&gt;
-
-&lt;p&gt;实参的合法范围是 0 到 1,114,111（16 进制表示是 0x10FFFF）。如果 i 超过这个范围，会触发 ValueError 异常。&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;134&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'!'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-  &lt;span class=&quot;err&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; # $ &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;% &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;amp; ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; &amp;lt; = &amp;gt; ? @ A B C D E F G H I J K L M N O P Q R S&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Python中是否存在&lt;code class=&quot;highlighter-rouge&quot;&gt;char&lt;/code&gt;这种数据类型？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;输出为 &lt;code class=&quot;highlighter-rouge&quot;&gt;class str&lt;/code&gt; ，说明python语言中并没有单独定义char这种类型的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;求char类型的ASCII代码？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ord(c)&lt;/code&gt; 对表示单个 Unicode 字符的字符串，返回代表它 Unicode 码点的整数。例如 ord(‘a’) 返回整数 97， ord(‘€’) （欧元符号）返回 8364 。这是 chr() 的逆函数。&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;97&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Hello, Python!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;mi&quot;&gt;72&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;108&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;108&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;111&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;121&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;116&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;104&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;111&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;110&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-        <category term="dev" />
-      
-
-      
-        <summary type="html">【python】基本数据类型字符串处理</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【经济】股票评估技巧</title>
-      <link href="/%E7%BB%8F%E6%B5%8E-%E8%82%A1%E7%A5%A8%E4%BC%B0%E5%80%BC%E6%8A%80%E5%B7%A7" rel="alternate" type="text/html" title="【经济】股票评估技巧" />
-      <published>2020-03-09T11:21:00+00:00</published>
-      <updated>2020-03-09T11:21:00+00:00</updated>
-      <id>/%E3%80%90%E7%BB%8F%E6%B5%8E%E3%80%91%E8%82%A1%E7%A5%A8%E4%BC%B0%E5%80%BC%E6%8A%80%E5%B7%A7</id>
-      <content type="html" xml:base="/%E7%BB%8F%E6%B5%8E-%E8%82%A1%E7%A5%A8%E4%BC%B0%E5%80%BC%E6%8A%80%E5%B7%A7">&lt;p&gt;股票评估技巧&lt;/p&gt;
-
-&lt;p&gt;股票是一种严格的经济产品，是有实际&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;股票基本性质&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;基本面&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;股票基本面是指股票所属上市公司的经营状况，历年业绩，融资情况，商品质量，市场，近期诉讼纠纷&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="eco" />
-      
-
-      
-        <summary type="html">股票评估技巧</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【随想】你的读书境界，决定你的人生高度</title>
-      <link href="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C-%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6" rel="alternate" type="text/html" title="【随想】你的读书境界，决定你的人生高度" />
-      <published>2020-03-08T14:27:00+00:00</published>
-      <updated>2020-03-08T14:27:00+00:00</updated>
-      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C,%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6</id>
-      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C-%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6">&lt;h1 id=&quot;你的读书境界决定你的人生高度&quot;&gt;你的读书境界，决定你的人生高度&lt;/h1&gt;
-
-&lt;p&gt;读书，是世界上门槛最低的高贵举动。它改变你的容颜，丰富你的思想，提升你的逻辑、谈吐。在阅读上花的每一秒，都将沉淀成将来更好的你。&lt;/p&gt;
-
-&lt;p&gt;据说，全世界最爱读书的是德国人，几乎每一个德国家庭，都有书架，或设在书房，或摆放与客厅，似乎成为了家里的一件装饰，但很多德国人的书架上的书，他们几乎全部都读过。德国每个家庭平均藏书近300册，人均藏书一百多册。他们认为，一个家庭没有书籍，等于一间房子没有窗户。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="idea" />
-      
-        <category term="article" />
-      
-        <category term="book" />
+        <category term="optics" />
       
 
       
-        <summary type="html">你的读书境界，决定你的人生高度</summary>
+        <summary type="html">【光学】透镜的位相调制及傅里叶变换作用</summary>
       
 
       
