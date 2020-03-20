@@ -8,6 +8,81 @@
     
       
       <item>
+        <title>【redis】一、Redis 数据库入门初体验</title>
+        
+          <description>&lt;h1 id=&quot;redis一redis-数据库入门初体验&quot;&gt;【redis】一、Redis 数据库入门初体验&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Thu, 19 Mar 2020 09:16:00 +0000</pubDate>
+        <link>
+        /redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C</link>
+        <guid isPermaLink="true">/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>【随想】你为什么境界如此低下？</title>
+        
+          <description>&lt;h1 id=&quot;随想你为什么境界如此低下&quot;&gt;【随想】你为什么境界如此低下？&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Thu, 19 Mar 2020 08:42:00 +0000</pubDate>
+        <link>
+        /%E9%9A%8F%E6%83%B3-%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A2%83%E7%95%8C%E5%A6%82%E6%AD%A4%E4%BD%8E%E4%B8%8B</link>
+        <guid isPermaLink="true">/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A2%83%E7%95%8C%E5%A6%82%E6%AD%A4%E4%BD%8E%E4%B8%8B</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>【随想】对人来说，什么才是最重要的呢？</title>
+        
+          <description>
+&lt;h1 id=&quot;随想对人来说什么才是最重要的呢&quot;&gt;【随想】对人来说，什么才是最重要的呢？&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+        <link>
+        /%E9%9A%8F%E6%83%B3-%E5%AF%B9%E4%BA%BA%E6%9D%A5%E8%AF%B4-%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%91%A2</link>
+        <guid isPermaLink="true">/%E9%9A%8F%E6%83%B3-%E5%AF%B9%E4%BA%BA%E6%9D%A5%E8%AF%B4-%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%91%A2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>【随想】2020是一个动荡的历史灾年</title>
+        
+          <description>&lt;p&gt;这一年见证了百年不遇的新冠肺炎疫情，见证了良心的医生被医闹犯&lt;/p&gt;
+</description>
+        
+        <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+        <link>
+        /%E9%9A%8F%E6%83%B3-2020%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8A%A8%E8%8D%A1%E7%9A%84%E5%8E%86%E5%8F%B2%E7%81%BE%E5%B9%B4</link>
+        <guid isPermaLink="true">/%E9%9A%8F%E6%83%B3-2020%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8A%A8%E8%8D%A1%E7%9A%84%E5%8E%86%E5%8F%B2%E7%81%BE%E5%B9%B4</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>【CS】编译原理</title>
+        
+          <description>&lt;h1 id=&quot;编译原理&quot;&gt;编译原理&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Wed, 18 Mar 2020 23:58:00 +0000</pubDate>
+        <link>
+        /CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</link>
+        <guid isPermaLink="true">/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>【Python基础】日志处理之logging模块</title>
         
           <description>&lt;h1 id=&quot;python基础日志处理之logging模块&quot;&gt;【Python基础】日志处理之logging模块&lt;/h1&gt;
@@ -106,21 +181,6 @@
         <link>
         /%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA</link>
         <guid isPermaLink="true">/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>【CS】编译原理</title>
-        
-          <description>&lt;h1 id=&quot;编译原理&quot;&gt;编译原理&lt;/h1&gt;
-
-</description>
-        
-        <pubDate>Mon, 16 Mar 2020 11:24:00 +0000</pubDate>
-        <link>
-        /CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</link>
-        <guid isPermaLink="true">/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</guid>
       </item>
       
     
@@ -427,7 +487,7 @@ comment: True
     
       
       <item>
-        <title>【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
+        <title>【随想】我什么都做不好，我真的是天生的废物嘛？</title>
         
           <description>&lt;h1 id=&quot;随想我什么都做不好我真的是天生的废物嘛&quot;&gt;【随想】我什么都做不好，我真的是天生的废物嘛？&lt;/h1&gt;
 

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/author/dexfire/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-18T15:53:42+00:00</updated>
+  <updated>2020-03-20T04:04:23+00:00</updated>
   <id>/author/dexfire/feed.xml</id>
 
   
@@ -44,6 +44,279 @@
   
   
 
+  
+    <entry>
+      <title type="html">【redis】一、Redis 数据库入门初体验</title>
+      <link href="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C" rel="alternate" type="text/html" title="【redis】一、Redis 数据库入门初体验" />
+      <published>2020-03-19T09:16:00+00:00</published>
+      <updated>2020-03-19T09:16:00+00:00</updated>
+      <id>/%E3%80%90redis%E3%80%91%E4%B8%80%E3%80%81Redis%20%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C</id>
+      <content type="html" xml:base="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C">&lt;h1 id=&quot;redis一redis-数据库入门初体验&quot;&gt;【redis】一、Redis 数据库入门初体验&lt;/h1&gt;
+
+&lt;p&gt;Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（strings）， 散列（hashes）， 列表（lists）， 集合（sets）， 有序集合（sorted sets） 与范围查询， bitmaps， hyperloglogs 和 地理空间（geospatial） 索引半径查询。 Redis 内置了 复制（replication），LUA脚本（Lua scripting）， LRU驱动事件（LRU eviction），事务（transactions） 和不同级别的 磁盘持久化（persistence）， 并通过 Redis哨兵（Sentinel）和自动 分区（Cluster）提供高可用性（high availability）。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;简介：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Redis 是一个开源的，使用 ANSI C 语言编写的，可基于内存亦可持久化的日志型 Key-Value数据库，提供多种语言的 API。 从2010年3月15日起，Redis的开发工作由VMware主持。从2013年5月开始，Redis的开发由Pivotal赞助。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Redis 中文官方网站&lt;/strong&gt;：&lt;a href=&quot;http://www.redis.cn/&quot;&gt;http://www.redis.cn/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Redis 官网&lt;/strong&gt;：&lt;a href=&quot;https://redis.io/&quot;&gt;https://redis.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;redis-为什么这么受欢迎--redis-八大特性&quot;&gt;Redis 为什么这么受欢迎？ ———— Redis 八大特性&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;速度快
+Redis 使用 C 语言实现;&lt;br /&gt;
+Redis 所有的数据均存储于内存中。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;持久化
+Redis所有数据存储在内存中，对数据的更新将异步地保存到磁盘内。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;支持多种数据结构&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Redis 支持五种数据结构： String, List, Hash, Set, Zset&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;支持多种编程语言&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;支持 Java，php，Python，Ruby，Lua，Node.js&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;功能丰富&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;除了支持五种数据结构以外，还支持&lt;strong&gt;事务、流水线、发布/订阅、消息队列&lt;/strong&gt;等功能。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;轻量级源码&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;约23000行C语言源代码，相比于mysql，MongoDB，Oracle等应用级数据库少太多。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;主从复制&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;主服务器执行添加、修改、删除，从服务器执行查询。主从可以自动进行数据同步。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;高可用及可分布式
+    &lt;ul&gt;
+      &lt;li&gt;Redis-Sentinel (v2.8) 支持高可用性&lt;/li&gt;
+      &lt;li&gt;Redis-Cluster (v3.0) 支持分布式&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="redis" />
+      
+        <category term="cs" />
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">【redis】一、Redis 数据库入门初体验</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【随想】你为什么境界如此低下？</title>
+      <link href="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A2%83%E7%95%8C%E5%A6%82%E6%AD%A4%E4%BD%8E%E4%B8%8B" rel="alternate" type="text/html" title="【随想】你为什么境界如此低下？" />
+      <published>2020-03-19T08:42:00+00:00</published>
+      <updated>2020-03-19T08:42:00+00:00</updated>
+      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A2%83%E7%95%8C%E5%A6%82%E6%AD%A4%E4%BD%8E%E4%B8%8B%3F</id>
+      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A2%83%E7%95%8C%E5%A6%82%E6%AD%A4%E4%BD%8E%E4%B8%8B">&lt;h1 id=&quot;随想你为什么境界如此低下&quot;&gt;【随想】你为什么境界如此低下？&lt;/h1&gt;
+
+&lt;p&gt;因为你害怕付出，害怕努力没有回报，又觉得配不上别人对自己的尊敬和喜欢。&lt;/p&gt;
+
+&lt;p&gt;你以为自己虽是咸鱼，终有一天会翻身，可你想过吗？咸鱼翻个身，就不是咸鱼了吗？
+不重积累，没有气质的积淀，注定你过去是个，本质未变，不敢从根本上改变自己，注定了你将来也是个境界低下的人。&lt;/p&gt;
+
+&lt;p&gt;不必害怕输出，不存在无效的输出，并且事实上只有输出的东西，才能转化为你的内在知识储备。很多时候我们发觉，生活中总是存在着循环往复的重复，熟悉的人，熟悉的街道，熟悉的清晨，熟悉得不能再熟悉的知识，熟悉的无所事事之感。&lt;/p&gt;
+
+&lt;p&gt;记下来的东西，学会的东西并非就是你的，而只有深入记忆，深入理解以后，那才转化为你真正能够活学活用的一部分。&lt;/p&gt;
+
+&lt;p&gt;弄清什么事更重要是十分×十分×十分×十分=&amp;gt;万分重要的。&lt;/p&gt;
+
+&lt;p&gt;许多时候你步行的原因，不是你不行，不是你知识不够，不是你出身太卑微，不是你童年太不幸，不是你曾经浪费了大好的时光，那么，是什么呢？应该，是你觉悟已经到位，行动却总是跟不上节奏吧！&lt;/p&gt;
+
+&lt;p&gt;不怕，就怕心已经在路上了，身体还来在被窝里不愿出来；最怕你习惯了沉浸于污浊的空气中，心却向往着高山秀水、海阔天青。&lt;/p&gt;
+
+&lt;p&gt;没有觉悟的人是有药可救的，因为他们只是缺乏一个方向。而觉悟很高的人，却更难自救，因为他们似乎什么都能明白，却什么都没做好，心高气傲，却一事无成。&lt;/p&gt;
+
+&lt;h2 id=&quot;你此刻可以平庸可你不能平庸一生&quot;&gt;你此刻可以平庸，可你不能平庸一生。&lt;/h2&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="idea" />
+      
+
+      
+        <summary type="html">【随想】你为什么境界如此低下？</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【CS】编译原理</title>
+      <link href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【CS】编译原理" />
+      <published>2020-03-18T23:58:00+00:00</published>
+      <updated>2020-03-18T23:58:00+00:00</updated>
+      <id>/%E3%80%90CS%E3%80%91%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</id>
+      <content type="html" xml:base="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">&lt;h1 id=&quot;编译原理&quot;&gt;编译原理&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;什么是编译？&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;编译是指将&lt;strong&gt;高级语言&lt;/strong&gt;代码（C，C++，Java等），通过低级语言（通常为&lt;strong&gt;汇编&lt;/strong&gt;）实现的过程，最终输出为机器可执行的&lt;strong&gt;二进制机器码&lt;/strong&gt;文件。&lt;/p&gt;
+
+&lt;p&gt;最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;编译工作的几个步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;编译过程通常可以抽象为几个过程：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;预处理&lt;/li&gt;
+  &lt;li&gt;编译&lt;/li&gt;
+  &lt;li&gt;链接&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;C/C++ 语言编译流程与编译工具链(toolchain)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。&lt;/p&gt;
+
+&lt;p&gt;一款盛名远扬的开源编译工具链：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GCC&lt;/strong&gt;: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)：&lt;/p&gt;
+
+&lt;p&gt;以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，&lt;strong&gt;现在由自由软件基金会负责维护工作&lt;/strong&gt;。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;编译器前端：编译组织器（典例：clang）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。&lt;/p&gt;
+
+&lt;p&gt;Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。&lt;/p&gt;
+
+&lt;p&gt;Clang本身性能优异，其生成的AST所耗用掉的内存仅仅是GCC的20%左右。2014年1月发行的FreeBSD 10.0版将Clang/LLVM作为默认编译器。&lt;/p&gt;
+
+&lt;p&gt;Clang性能：测试证明Clang编译Objective-C代码时速度为GCC的3倍，还能针对用户发生的编译错误准确地给出建议。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;作者：跃文
+链接：https://www.jianshu.com/p/ed17352299ec
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="cs" />
+      
+        <category term="dev" />
+      
+        <category term="embd" />
+      
+
+      
+        <summary type="html">编译原理</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">【Python基础】日志处理之logging模块</title>
@@ -338,121 +611,6 @@ $r_s^2+r_p^2 \neq 1$
     </entry>
   
     <entry>
-      <title type="html">【CS】编译原理</title>
-      <link href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【CS】编译原理" />
-      <published>2020-03-16T11:24:00+00:00</published>
-      <updated>2020-03-16T11:24:00+00:00</updated>
-      <id>/%E3%80%90CS%E3%80%91%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</id>
-      <content type="html" xml:base="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">&lt;h1 id=&quot;编译原理&quot;&gt;编译原理&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;什么是编译？&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;编译是指将&lt;strong&gt;高级语言&lt;/strong&gt;代码（C，C++，Java等），通过低级语言（通常为&lt;strong&gt;汇编&lt;/strong&gt;）实现的过程，最终输出为机器可执行的&lt;strong&gt;二进制机器码&lt;/strong&gt;文件。&lt;/p&gt;
-
-&lt;p&gt;最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;编译工作的几个步骤：&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;编译过程通常可以抽象为几个过程：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;预处理&lt;/li&gt;
-  &lt;li&gt;编译&lt;/li&gt;
-  &lt;li&gt;链接&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;C/C++ 语言编译流程与编译工具链(toolchain)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。&lt;/p&gt;
-
-&lt;p&gt;一款盛名远扬的开源编译工具链：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;GCC&lt;/strong&gt;: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)：&lt;/p&gt;
-
-&lt;p&gt;以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，&lt;strong&gt;现在由自由软件基金会负责维护工作&lt;/strong&gt;。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;编译器前端：编译组织器（典例：clang）&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。&lt;/p&gt;
-
-&lt;p&gt;Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。&lt;/p&gt;
-
-&lt;p&gt;Clang本身性能优异，其生成的AST所耗用掉的内存仅仅是GCC的20%左右。2014年1月发行的FreeBSD 10.0版将Clang/LLVM作为默认编译器。&lt;/p&gt;
-
-&lt;p&gt;Clang性能：测试证明Clang编译Objective-C代码时速度为GCC的3倍，还能针对用户发生的编译错误准确地给出建议。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;作者：跃文
-链接：https://www.jianshu.com/p/ed17352299ec
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="cs" />
-      
-        <category term="dev" />
-      
-        <category term="embd" />
-      
-
-      
-        <summary type="html">编译原理</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
       <title type="html">【光学】数字图像处理</title>
       <link href="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA" rel="alternate" type="text/html" title="【光学】数字图像处理" />
       <published>2020-03-16T11:24:00+00:00</published>
@@ -585,156 +743,6 @@ $r_s^2+r_p^2 \neq 1$
 
       
         <summary type="html">数字图像处理基础 低级图像处理 增强 修复 平滑 压缩 信噪比 压缩比 中级图像处理 分形 滤镜 高级图像处理 人脸识别</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【数学】现代工程学数学基础</title>
-      <link href="/%E6%95%B0%E5%AD%A6-%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【数学】现代工程学数学基础" />
-      <published>2020-03-15T22:11:00+00:00</published>
-      <updated>2020-03-15T22:11:00+00:00</updated>
-      <id>/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80</id>
-      <content type="html" xml:base="/%E6%95%B0%E5%AD%A6-%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;数学现代工程学数学基础&quot;&gt;【数学】现代工程学数学基础&lt;/h1&gt;
-
-&lt;h2 id=&quot;极限与连续&quot;&gt;极限与连续&lt;/h2&gt;
-
-&lt;h3 id=&quot;微分&quot;&gt;微分&lt;/h3&gt;
-
-&lt;h4 id=&quot;多元函数微分法&quot;&gt;多元函数微分法&lt;/h4&gt;
-
-&lt;h3 id=&quot;积分&quot;&gt;积分&lt;/h3&gt;
-
-&lt;h3 id=&quot;向量微分&quot;&gt;向量微分&lt;/h3&gt;
-
-&lt;h2 id=&quot;复变函数&quot;&gt;复变函数&lt;/h2&gt;
-
-&lt;h2 id=&quot;线性代数&quot;&gt;线性代数&lt;/h2&gt;
-
-&lt;h2 id=&quot;无穷级数&quot;&gt;无穷级数&lt;/h2&gt;
-
-&lt;h3 id=&quot;泰勒级数&quot;&gt;泰勒级数&lt;/h3&gt;
-&lt;p&gt;数学中，泰勒级数用于展开任意函数，常用于复杂函数的近似计算，如正弦函数 $y(x) = \sin x$，由英国数学家布鲁克·泰勒（Sir Brook Taylor）于1715年发表.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;在自变量零点处求得的泰勒级数又称&lt;strong&gt;麦克劳林级数&lt;/strong&gt;，以英格兰数学家柯林·麦克劳林的名字命名。&lt;/li&gt;
-  &lt;li&gt;泰勒级数在近似计算中有着广泛应用。&lt;/li&gt;
-  &lt;li&gt;在复变函数的求解中，也常常用到泰勒展开的几种常用形式。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-    f(x) &amp;= \sum_{n=0} ^{\infty} \frac{f^{(n)}(x_0)}{n!}\left(x-x_0\right)^n \\
-    &amp;= f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)(x-x_0)^2}{2!}+...+ \frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+...
-\end{aligned} %]]&gt;&lt;/script&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$f(x) = \sqrt{1+x}$
-&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-  f(x) &amp;= f(0) + f'(0)(x-0) + \frac{f^{(2)}(x_0)x^2}+\frac{f^{(3)}x^3}{3!}+... \\
-  &amp;= \sqrt{1+0} + \left(\frac{1}{2}\frac{(1+0)^{-\frac{1}{2}}}{1!}x\right) + \left( -\frac{1}{4}\frac{(1+0)^{-\frac{3}{2}}}{2!} x^2\right) + \left( \frac{3}{8} \frac{(1+0)^{-\frac{5}{2}}}{3!}x^3 \right) +... \\
-  &amp;= 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3+...
-\end{aligned} %]]&gt;&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;$y = \sin x$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/taylor-series18.png&quot; alt=&quot;taylor-series&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;傅里叶级数&quot;&gt;傅里叶级数&lt;/h3&gt;
-
-&lt;h4 id=&quot;傅里叶变换&quot;&gt;傅里叶变换&lt;/h4&gt;
-
-&lt;h3 id=&quot;拉普拉斯变换&quot;&gt;拉普拉斯变换&lt;/h3&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【数学】现代工程学数学基础</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【光学】透镜的位相调制及傅里叶变换作用</title>
-      <link href="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8" rel="alternate" type="text/html" title="【光学】透镜的位相调制及傅里叶变换作用" />
-      <published>2020-03-15T15:37:00+00:00</published>
-      <updated>2020-03-15T15:37:00+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8</id>
-      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8">&lt;h1 id=&quot;光学透镜的位相调制及傅里叶变换作用&quot;&gt;【光学】透镜的位相调制及傅里叶变换作用&lt;/h1&gt;
-
-&lt;p&gt;透镜的透过率函数定义式：
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = \large{\frac{\text{输出光波}}{输入光波}}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y)=\frac{U_i^{\prime}(x,y)}{U_i(x,y)}&lt;/script&gt;
-考虑入射光波为球面波情形：
-&lt;img src=&quot;/assets/images/QQ截图20200315160209.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;球面波&quot;&gt;球面波&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;球面波&lt;/strong&gt;即波阵面为同心球面的波。&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;光源尺度远小于波长$\lambda$时，光源发出的光波可近似为球面波。&lt;/li&gt;
-  &lt;li&gt;球面波在自由场（无束缚作用）中传播时，其振幅&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;随距离&lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;成反比例衰减。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;参考：&lt;a href=&quot;https://www.zhihu.com/question/35163381?sort=created&quot;&gt;通过亥姆霍兹方程是如何推导出球面波表达式的？&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;发散单色球面波定义式：
-&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{jkr}&lt;/script&gt;
-取发射方向为 &lt;code class=&quot;highlighter-rouge&quot;&gt;z&lt;/code&gt; 轴正半轴，则有：&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;若为会聚球面波，则为：
-&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{-jkr}&lt;/script&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;U_i(x,y)=&lt;/script&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【光学】透镜的位相调制及傅里叶变换作用</summary>
       
 
       
