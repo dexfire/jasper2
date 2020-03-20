@@ -137,3 +137,8 @@ optics:
   name: 光学
   description: 为爱发电
   cover: assets/images/math.jpg
+
+redis:
+  name: Redis
+  description: Redis 数据库缓存框架
+  cover: assets/images/redis.png

@@ -1,7 +1,7 @@
 ---
 layout: post
 current: post
-cover:  python.jpg
+cover:  python.png
 navigation: True
 title: 【Python基础】日志处理之logging模块
 date: 2020-03-17 23:10:00

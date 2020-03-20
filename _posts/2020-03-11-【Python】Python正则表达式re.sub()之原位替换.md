@@ -1,7 +1,7 @@
 ---
 layout: post
 current: post
-cover:  python.jpg
+cover:  python.png
 navigation: True
 title: 【Python】Python正则表达式re.sub()之原位替换
 date: 2020-03-11 00:49:00
