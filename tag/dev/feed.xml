@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/dev/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-20T04:04:23+00:00</updated>
+  <updated>2020-04-03T14:46:55+00:00</updated>
   <id>/tag/dev/feed.xml</id>
 
   
@@ -44,6 +44,479 @@
   
   
 
+  
+    <entry>
+      <title type="html">【Python】使用语句筛选和构建新的list, dict, set等集合</title>
+      <link href="/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88" rel="alternate" type="text/html" title="【Python】使用语句筛选和构建新的list, dict, set等集合" />
+      <published>2020-03-28T14:17:00+00:00</published>
+      <updated>2020-03-28T14:17:00+00:00</updated>
+      <id>/%E3%80%90Python%E3%80%91%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,%20dict,%20set%E7%AD%89%E9%9B%86%E5%90%88</id>
+      <content type="html" xml:base="/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88">&lt;h1 id=&quot;python使用语句筛选和构建新的list-dict-set等集合&quot;&gt;【Python】使用语句筛选和构建新的list, dict, set等集合&lt;/h1&gt;
+
+&lt;p&gt;List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.&lt;/p&gt;
+
+&lt;p&gt;使用这种理解性语句，可以快速从已有的序列中构造新的序列，类似于lambda函数。&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;435&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;66&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;435&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;66&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;嵌套的理解性list构造&quot;&gt;嵌套的理解性list构造&lt;/h2&gt;
+
+&lt;p&gt;实现矩阵的转置。&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;遍历器-enmuerate---idx-obj&quot;&gt;遍历器 &lt;code class=&quot;highlighter-rouge&quot;&gt;enmuerate() -&amp;gt; (idx, obj)&lt;/code&gt;&lt;/h2&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;其他类型的理解性语句&quot;&gt;其他类型的理解性语句&lt;/h2&gt;
+
+&lt;p&gt;Sequence objects may be compared to other objects with the same sequence type. The comparison uses lexicographical ordering: first the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted. If two items to be compared are themselves sequences of the same type, the lexicographical comparison is carried out recursively. If all items of two sequences compare equal, the sequences are considered equal. If one sequence is an initial sub-sequence of the other, the shorter sequence is the smaller (lesser) one. Lexicographical ordering for strings uses the Unicode code point number to order individual characters. Some examples of comparisons between sequences of the same type:&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="python" />
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">【Python】使用语句筛选和构建新的list, dict, set等集合</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【CS】有限状态机（FSM）模型</title>
+      <link href="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" rel="alternate" type="text/html" title="【CS】有限状态机（FSM）模型" />
+      <published>2020-03-22T19:32:00+00:00</published>
+      <updated>2020-03-22T19:32:00+00:00</updated>
+      <id>/%E3%80%90CS%E3%80%91%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA(FSM)%E6%A8%A1%E5%9E%8B</id>
+      <content type="html" xml:base="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B">&lt;h1 id=&quot;cs有限状态机fsm模型&quot;&gt;【CS】有限状态机（FSM）模型&lt;/h1&gt;
+
+&lt;h2 id=&quot;什么是有限状态机&quot;&gt;什么是有限状态机？&lt;/h2&gt;
+
+&lt;p&gt;什么是状态机（State Mechine）？顾名思义，即一种可以在一些状态中进行转换的机器，显然这仅仅是一种理想模型，并没有考虑具体的实现方式。&lt;/p&gt;
+
+&lt;h3 id=&quot;定义&quot;&gt;定义&lt;/h3&gt;
+&lt;p&gt;有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。&lt;/p&gt;
+
+&lt;h3 id=&quot;有什么用&quot;&gt;有什么用？&lt;/h3&gt;
+&lt;p&gt;虽然听起来仅仅是一个不沾边、不实用、不靠谱的理论模型，但在生活中的例子实在太多了，状态机模型广泛可见于机械结构、电子元件、计算机编程算法当中，只要是在确定的状态间切换的逻辑，都可以归纳为状态机模型。&lt;/p&gt;
+
+&lt;p&gt;有限状态机是一种用来进行对象行为建模的工具，其作用主要是描述对象在它的生命周期内所经历的状态序列，以及如何响应来自外界的各种事件。在计算机科学中，有限状态机被广泛用于建模应用行为、硬件电路系统设计、软件工程，编译器、网络协议、和计算与语言的研究。比如下图非常有名的TCP协议状态机。&lt;/p&gt;
+
+&lt;h2 id=&quot;状态机模型&quot;&gt;状态机模型&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;有限状态机一般都有以下特点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;可以用状态来描述事物，并且任一时刻，事物总是处于一种状态；&lt;/li&gt;
+  &lt;li&gt;事物拥有的状态总数是有限的；&lt;/li&gt;
+  &lt;li&gt;通过触发事物的某些行为，可以导致事物从一种状态过渡到另一种状态；&lt;/li&gt;
+  &lt;li&gt;事物状态变化是有规则的，A状态可以变换到B，B可以变换到C，A却不一定能变换到C；&lt;/li&gt;
+  &lt;li&gt;同一种行为，可以将事物从多种状态变成同种状态，但是不能从同种状态变成多种状态。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;状态&quot;&gt;状态&lt;/h3&gt;
+&lt;p&gt;状态机可归纳为4个要素，即现态、条件、动作、次态。“现态”和“条件”是因，“动作”和“次态”是果。详解如下：&lt;/p&gt;
+
+&lt;h4 id=&quot;现态&quot;&gt;现态：&lt;/h4&gt;
+
+&lt;p&gt;指当前所处的状态。&lt;/p&gt;
+
+&lt;h4 id=&quot;次态&quot;&gt;次态：&lt;/h4&gt;
+
+&lt;p&gt;条件满足后要迁往的新状态。“次态”是相对于“现态”而言的，“次态”一旦被激活，就转变成新的“现态”了。&lt;/p&gt;
+
+&lt;h3 id=&quot;状态转换动作条件&quot;&gt;状态转换动作条件&lt;/h3&gt;
+
+&lt;p&gt;状态机在满足触发条件时进行状态切换，如当计数达到指定大小进行下一个阶段操作。&lt;/p&gt;
+
+&lt;h4 id=&quot;条件&quot;&gt;条件：&lt;/h4&gt;
+
+&lt;p&gt;又称为“事件”。当一个条件被满足，将会触发一个动作，或者执行一次状态的迁移。&lt;/p&gt;
+
+&lt;h4 id=&quot;动作&quot;&gt;动作：&lt;/h4&gt;
+
+&lt;p&gt;条件满足后执行的动作。动作执行完毕后，可以迁移到新的状态，也可以仍旧保持原状态。动作不是必需的，当条件满足后，也可以不执行任何动作，直接迁移到新状态。&lt;/p&gt;
+&lt;h2 id=&quot;状态机的描述&quot;&gt;状态机的描述&lt;/h2&gt;
+
+&lt;p&gt;状态机模型可以使用关系表达式（状态方程）、状态转换图、状态转换表等多种方式进行描述。&lt;/p&gt;
+
+&lt;h3 id=&quot;状态转换图&quot;&gt;状态转换图&lt;/h3&gt;
+
+&lt;p&gt;STD图(State Transform Diagram)状态转换图,表示行为模型。STD通过描述系统的状态和引起系统状态转换的事件，来表示系统的行为，指出作为特定事件的结果将执行哪些动作（例如，处理数据等）。STD描述系统对外部事件如何响应，如何动作。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/759985-20151102201009492-11387200.png&quot; alt=&quot;状态转换图&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为。此外状态转换图还指明了作为特定事件的结果系统将做哪些动作（例如，处理数据）。因此状态转换图提供了行为建模机制。&lt;/p&gt;
+
+&lt;p&gt;在状态转换图中，每一个节点代表一个状态，其中双圈是终结状态。许多单片机教材上对工作模式的表达通常采用状态图的形式。&lt;/p&gt;
+
+&lt;h3 id=&quot;状态转换表&quot;&gt;状态转换表&lt;/h3&gt;
+
+&lt;p&gt;状态机模型可以用状态转换表来简化状态切换逻辑，因为只要输入变量处于确定状态，其输出也应当是一个确定态，也即状态互转可以使用输入/输出一一对应关系表来描述。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2020年3月22日p1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;应用举例&quot;&gt;应用举例&lt;/h2&gt;
+
+&lt;h3 id=&quot;例1-tcp状态转换图&quot;&gt;例1. TCP状态转换图&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/v2-5180168c77c7b67780fe2dc604fdfef3_r.jpg&quot; alt=&quot;TCP&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;例2-javascript中对用户鼠标状态的交互动作&quot;&gt;例2. JavaScript中对用户鼠标状态的交互动作&lt;/h3&gt;
+
+&lt;p&gt;在js中，新建一个对象，用这个对象的属性来模拟元素的状态,用这个对象的方法模拟元素在不同状态的转变,那么这个对象就是一个有限状态机。是否可用有限状态机来描述，却决于：当前状态确定，有限个状态，响应事件，在不同状态间有规律的转变。它对JavaScript的意义在于，很多对象可以写成有限状态机。举例来说，网页上有一个菜单元素。鼠标悬停的时候，菜单显示；鼠标移开的时候，菜单隐藏。如果使用有限状态机描述，就是这个菜单只有两种状态（显示和隐藏），鼠标会引发状态转变。&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;menu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 当前状态&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;currentState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hide'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 绑定事件&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hover&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 状态转换&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;hide&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'show'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;show&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hide'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Invalid State!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;可以看到，有限状态机的写法，逻辑清晰，表达力强，有利于封装事件。一个对象的状态越多、发生的事件越多，就越适合采用有限状态机的写法。另外，JavaScript语言是一种异步操作特别多的语言，常用的解决方法是指定回调函数，但这样会造成代码结构混乱、难以测试和除错等问题。有限状态机提供了更好的办法：把异步操作与对象的状态改变挂钩，当异步操作结束的时候，发生相应的状态改变，由此再触发其他操作。这要比回调函数、事件监听、发布/订阅等解决方案，在逻辑上更合理，更易于降低代码的复杂度。&lt;/p&gt;
+
+&lt;h3 id=&quot;例3-正则表达式-匹配所有3的倍数&quot;&gt;例3. 正则表达式: 匹配所有3的倍数&lt;/h3&gt;
+
+&lt;p&gt;使用如下pattern可以匹配文本中的独行文本中的3的整数倍数字。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;^[0369]*(([147][0369]*|[258][0369]*[258][0369]*)([147][0369]*[258][0369]*)*([258][0369]*|[147][0369]*[147][0369]*)|[258][0369]*[147][0369]*)*$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这个正则是真正正确的，适用于任意十进制数，而不是下面那样作弊的手段。
+从下面这个有限自动机逆变得到：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/b88c4e71ffe1b92ee92adbc253654c34_720w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ 
+  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;其实，写一个正则匹配 10 进制下 n 的倍数的思路是这样：构造一个有 n 个状态的 DFA，状态为$q_0,q_1, …, q_{n-1}$，其中起始和接受状态都是$q_0$。DFA 中$q_k$的含义是「当前读入的数可以被 n 除余 k」。
+对每个$q_k$和$m\in{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}$，计算$r=(10k+m)\ \mathrm{mod}\ n$，构造一条$q_k\xrightarrow{m} q_r$的转移边这张 DFA 就可以匹配能被 n 整除的十进制数。下面是被 7 整除的十进制数的正则，长达 12000 余字：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0|(7|[18]5*4|(2|9|[18]5*6)(3|[29]5*6)*(1|8|[29]5*4)|(3|[18]5*[07]|(2|9|[18]5*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))*(5|65*4|(0|7|65*6)(3|[29]5*6)*(1|8|[29]5*4))|(4|[18]5*[18]|(2|9|[18]5*6)(3|[29]5*6)*(5|[29]5*[18])|(3|[18]5*[07]|(2|9|[18]5*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))*(2|9|65*[18]|(0|7|65*6)(3|[29]5*6)*(5|[29]5*[18])))(6|35*[18]|(4|35*6)(3|[29]5*6)*(5|[29]5*[18])|(5|35*[07]|(4|35*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))*(2|9|65*[18]|(0|7|65*6)(3|[29]5*6)*(5|[29]5*[18])))*(2|9|35*4|(4|35*6)(3|[29]5*6)*(1|8|[29]5*4)|(5|35*[07]|(4|35*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;下面教你怎么把 DFA 转正则：&lt;/p&gt;
+
+&lt;p&gt;还是从它开始&lt;img src=&quot;/assets/images/b88c4e71ffe1b92ee92adbc253654c34_720w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们记 A 为终止到状态 A 的字符串集合，BC 类似，那么可以列出三个方程：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A = A[0369] | B[258] | C[147] |
+B = A[147] | B[0369] | C[258]
+C = A[258] | B[147] | C[0369]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;根据正则语言的特性，可以推导出如下形式的方程L = LU|V有解L = VU&lt;em&gt;因此上面方程可以修改为
+```A = (| B[258] | C[147])[0369]&lt;/em&gt; (1)
+B = (A[147] | C[258])[0369]* (2)
+C = (A[258] | B[147])[0369]* (3)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;将 (3) 代入 (1) (2) 得A = (| B[258] | (A[258] | B[147])[0369]*[147])[0369]* (4)
+B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) 中的竖线得到
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;B = A[147][0369]* | A[258][0369]&lt;em&gt;[258][0369]&lt;/em&gt; | B[147][0369]&lt;em&gt;[258][0369]&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;故
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;B = A[147][0369]&lt;em&gt;([147][0369]&lt;/em&gt;[258][0369]&lt;em&gt;)&lt;/em&gt; 
+  | A[258][0369]&lt;em&gt;[258][0369]&lt;/em&gt;([147][0369]&lt;em&gt;[258][0369]&lt;/em&gt;)*&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;把它代入 (4) 得
+```A = (| B[258] | (A[258] | B[147])[0369]*[147])[0369]*
+  =   [0369]* 
+    | B[258][0369]*
+    | A[258][0369]*[147][0369]*
+    | B[147][0369]*[147][0369]* 
+  =   [0369]* 
+    | A[147][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    | A[258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    | A[258][0369]*[147][0369]*
+    | A[147][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]* 
+    | A[258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]* 
+  = [0369]* (
+                  [147][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    | [258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    |             [147][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]* 
+    | [258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]*
+    | [258][0369]*[147][0369]* )*
+  = [0369]* (
+      (
+        [147][0369]*
+      | [258][0369]*[258][0369]*
+      ) ([147][0369]*[258][0369]*)* (
+        [258][0369]*
+ 
+      | [147][0369]*[147][0369]*
+      )
+    | [258][0369]*[147][0369]* )*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;加上 ^ 和 $ 就行了，放去测试，全部正确。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imagess/QQ截图20200322204459.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="cs" />
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">【CS】有限状态机（FSM）模型</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【redis】一、Redis 数据库入门初体验</title>
+      <link href="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" rel="alternate" type="text/html" title="【redis】一、Redis 数据库入门初体验" />
+      <published>2020-03-21T23:17:00+00:00</published>
+      <updated>2020-03-21T23:17:00+00:00</updated>
+      <id>/%E3%80%90Redis%E3%80%91%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A</id>
+      <content type="html" xml:base="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A">&lt;h1 id=&quot;redis使用redis的心得体会&quot;&gt;【Redis】使用Redis的心得体会&lt;/h1&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+▉▉▉／◢▉◣◢▉◣◥◣／◢◤／／／／／／／／  
+／▉／／▉／◥◤／▉／◥▉◤／◢▉◣／▉／▉／  
+／▉／／◥◣／／◢◤／／▉／／▉／▉／▉／▉／  
+／▉／／／◥◣◢◤／／／▉／／▉／▉／▉／▉ ／  
+▉▉▉／／／◥◤／／／／▉／／◥▉◤／◥▉◤／ 
+  
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;工具并无善恶之分，同样的一把利剑在不同的人手里，发光或是消亡。
+Redis 是一款 K/V （键值对）数据库，通常作缓存之用，&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这样一件强大的神器在手，你是否也会感到难以驾驭，以至于杀鸡用了屠龙刀，只是拿来当成“变量暂存器”，还一边抱怨它不方便使用也不见得高效呢？&lt;/p&gt;
+
+&lt;p&gt;那么，你的却没有用对地方，一起来感受这款新晋轻量网红数据库的魅力吧！&lt;/p&gt;
+
+&lt;p&gt;首先，这东东到底有毛用啊？你不会用并不代表它没有用，我们应抱着敬畏之心对待这样一款开源良心产品的，你怀着恶意而来，便无人欢迎你再来采拮他人智慧的成果。&lt;/p&gt;
+
+&lt;p&gt;市面上已经有许多款数据库产品，当然也不乏3A级商业大作(Oracle, Access)，也有开源而气势不减的良心精品（MYSQL, MongoDB），那么它，Redia，又是凭着哪里来的勇气诞生于世的呢？&lt;/p&gt;
+
+&lt;h2 id=&quot;redis-的优越特性&quot;&gt;Redis 的优越特性&lt;/h2&gt;
+
+&lt;p&gt;谈到特性不得不了解一下它的定位，这是一款缓存或者轻量级数据库，面对的是轻量级的简单应用，并且配套了极致简单的API，支持多种主流语言，也就是说，这也是类似于变成语言界的Python一样，Redis是一款万金油的中转缓存工具。&lt;/p&gt;
+
+&lt;p&gt;不谈钱的生意都是在耍无赖，不谈性的恋爱都是在浪费双方生命，那么不谈优势的数据库产品自然也只能是吸引下广大IT民工一时的眼球而已，显然，Redis并非此类浅薄货色。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;高性能&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;存取速度快&lt;/strong&gt;
+缓存于内存区域之中，无需每次调用磁盘文件。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;查询速度快&lt;/strong&gt;
+非关系型数据库，查询时只需要遍历key，降低了查询成本。&lt;/li&gt;
+      &lt;li&gt;内存效率高
+动态申请内存，无需预占用空余内存。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;内存数据库&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;近期火热&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;备受好评&lt;/li&gt;
+  &lt;li&gt;非关系型数据库&lt;/li&gt;
+  &lt;li&gt;NoSQL&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;借用《Redis入门指南》篇首的描述：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Redis 如今已经成为Web开发社区中最火热的内存数据库之一，而它的诞生距现在不过才4年，随着Web2.0的蓬勃发展，网站数据快速增长，对高性能读写的要求越来越高，再加上半结构化数据比重不断变发大，人们早已对铺天盖地运行着的关系型数据库能否适应现今的存储需求产生疑问。而Redis的迅猛发展为这个领域注入了全新的思维。
+Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企业到新浪微博这样的大公司（拥有几百台Redis服务器），都能看到Redis的身影。Redis是个名副其实的多面手，无论是存储、队列还是缓存系统，都有着独到的功底。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;要是把“谁在使用Redis”换成“谁没在使用Redis”，那么这个页面的内容一定会精简不少。                              &lt;br /&gt;
+                                          ———— Redis作者 Salvatore Sanfilippo&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;那么怎样将 Redis 用到实际工程中，又该怎样使用 redis 来处理复杂数据呢？&lt;/p&gt;
+
+&lt;h2 id=&quot;redis-数据类型&quot;&gt;Redis 数据类型&lt;/h2&gt;
+
+&lt;h3 id=&quot;string-字符串&quot;&gt;string ：字符串&lt;/h3&gt;
+&lt;p&gt;是的，redis不支持int类型数据，而仅仅有string类型可供使用，这一点无疑是有争议的，数据类型的减少意味着需要额外的转换识别算法，但增加了操作的通用性。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;存储字符串&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I have a cat that fall in love with a rat&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OK&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I have a cat that fall in love with a rat&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;存储int？&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OK&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;判别 Key 的数据类型&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Dump命令&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;list--链表&quot;&gt;list ： 链表&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;查询&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lrange&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;增加元素&lt;/strong&gt;：&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;lpush key value [value...]&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lpush&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;plmm&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lrange&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;plmm&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rpush key value [value...]&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rpush&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;love&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;little&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;staryberry.&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lrange&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;plmm&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;love&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;little&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;staryberry.&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="redis" />
+      
+        <category term="cs" />
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">【Redis】使用Redis的心得体会</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">【redis】一、Redis 数据库入门初体验</title>
@@ -1805,9 +2278,104 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
     &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h4 id=&quot;5-单条说说页面及数据提取&quot;&gt;5. 单条说说页面及数据提取&lt;/h4&gt;
+
+&lt;p&gt;可以用于点赞或者评论提取等。
+&lt;strong&gt;API&lt;/strong&gt;: &lt;img src=&quot;https://user.qzone.qq.com/2392827600/mood/d0a69f8e261f7b5e3cbe0200&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;好友相关的-api&quot;&gt;好友相关的 API&lt;/h3&gt;
+
+&lt;p&gt;抓取好友列表，以及好友的动态信息就。&lt;/p&gt;
+
+&lt;h4 id=&quot;获取好友列表&quot;&gt;获取好友列表&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;来源&lt;/strong&gt;：QQ空间，分享到好友列表/群。&lt;br /&gt;
+&lt;strong&gt;API&lt;/strong&gt;：&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/proxy/domain/r.qzone.qq.com/cgi-bin/tfriend/friend_mngfrd_get.cgi?&lt;/code&gt;&lt;br /&gt;
+&lt;strong&gt;需要Cookie&lt;/strong&gt;：是&lt;br /&gt;
+&lt;strong&gt;参数&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;_payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;275176629&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;fupdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// scene 参数：应用场景&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 1 - 获取 QQ 好友实际用户分组，和QQ里看到的组别是一样的。&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 21 - 只获取好友列表和昵称&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1187391538&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;qzonetoken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;f41f19ad39a0fcbb541466439227532560e49233164aafb8933930d3d687aae571c12e9f8963aef81c6&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1187391538&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;获取好友说说html格式&quot;&gt;获取好友说说（HTML格式）&lt;/h4&gt;
+
+&lt;p&gt;用这个API可以获取html格式的说说，用于预览显示之用。使用ascii escape格式，需要手动代码转化编码。&lt;br /&gt;
+如果对方未开放空间权限，则会返回 &lt;code class=&quot;highlighter-rouge&quot;&gt;Invaild Right&lt;/code&gt; 的消息。&lt;br /&gt;
+其他参数正确的前提下，直接更换 hostuin 可以访问不同用户的数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;来源&lt;/strong&gt;：好友 QQ 空间首页，抓取后台xhr数据。&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/■■■■■■■■&lt;/code&gt;
+&lt;strong&gt;API&lt;/strong&gt;：&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=■■■■■■■■&amp;amp;hostuin=■■■■■■■■4&amp;amp;scope=0&amp;amp;filter=all&amp;amp;flag=1&amp;amp;refresh=0&amp;amp;firstGetGroup=0&amp;amp;mixnocache=0&amp;amp;scene=0&amp;amp;begintime=undefined&amp;amp;icServerTime=&amp;amp;start=10&amp;amp;count=10&amp;amp;sidomain=qzonestyle.gtimg.cn&amp;amp;useutf8=1&amp;amp;outputhtmlfeed=1&amp;amp;refer=2&amp;amp;r=0.724668591109972&amp;amp;g_tk=245479846&amp;amp;qzonetoken=25105477cf5e45db75157ccacd852d6020dc379ce80b4bd004f10499ae88bc2c2ef5f4208a3cdee4&amp;amp;g_tk=245479846&lt;/code&gt;&lt;br /&gt;
+&lt;strong&gt;参数&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 访客用户名&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;■■■■■■&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 目标用户名&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;hostuin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;■■■■■■&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;all&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;refresh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;firstGetGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;mixnocache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;begintime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;icServerTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sidomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;qzonestyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gtimg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cn&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;useutf8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;outputhtmlfeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;refer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.724668591109972&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;245479846&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;qzonetoken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25105477&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cf5e45db75157ccacd852d6020dc379ce80b4bd004f10499ae88bc2c2ef5f4208a3cdee4&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;245479846&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;获取好友说说js缩简格式&quot;&gt;获取好友说说（js缩简格式）&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;API&lt;/strong&gt;：&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/proxy/domain/taotao.qq.com/cgi-bin/emotion_cgi_msglist_v6?&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;参数列表&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3202&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xxxx&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ftype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;replynum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_preloadCallback&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;code_version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jsonp&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;need_private_comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;qzonetoken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e727e2174faccf5d2fa5866ad798652e5297dc5931c6a0a61f87c5d43aa2eaba1bac20a9738525af&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1289413842&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h3 id=&quot;杂项&quot;&gt;杂项&lt;/h3&gt;
+&lt;p&gt;一些工具API，获取QQ签名，头像，资料等内容。&lt;/p&gt;
 
 &lt;h4 id=&quot;qq空间头像&quot;&gt;QQ空间头像&lt;/h4&gt;
+
+&lt;p&gt;最后的参数决定了图像大小，可选值：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;50    50*50 像素&lt;/li&gt;
+  &lt;li&gt;100   100*100 像素&lt;/li&gt;
+  &lt;li&gt;200   100*100 像素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;需要Cookie&lt;/strong&gt;：否&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -1818,6 +2386,31 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 &lt;p&gt;&lt;a href=&quot;https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625&quot;&gt;https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625&quot;&gt;https://qlogo4.store.qq.com/qzone/4483538/4483538/200?1564108625&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;qq头像&quot;&gt;QQ头像&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;API&lt;/strong&gt;：`&lt;em&gt;**&lt;/em&gt;“http://q2.qlogo.cn/headimg_dl?bs=qq&amp;amp;dst_uin=51550&amp;amp;src_uin=51550&amp;amp;fid=51550&amp;amp;spec=5&amp;amp;url_enc=0&amp;amp;referer=bu_interface”&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;spec参数&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;: 40*40&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;: 40*40&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;: 100*100&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;4&lt;/code&gt;: 140*140&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;5&lt;/code&gt;: 430*429&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;160&lt;/code&gt;: 140*140&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;参数&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;qq&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;dst_uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1944404463&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;160&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;src_uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;51550&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;fid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;51550&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;url_enc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;referer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bu_interface&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;空间侧边栏&quot;&gt;空间侧边栏&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&quot;https://user.qzone.qq.com/275176629/infocenter?qz_referrer=special&amp;amp;uin=53702270&amp;amp;msg_id=110374&quot;&gt;https://user.qzone.qq.com/275176629/infocenter?qz_referrer=special&amp;amp;uin=53702270&amp;amp;msg_id=110374&lt;/a&gt;
@@ -2008,7 +2601,10 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 &lt;p&gt;“天生我材必有用，千金散尽还复来。”
 在《亲密关系》一书中，&lt;/p&gt;
 
-&lt;p&gt;其实心态很重要。努力和方法也是。&lt;/p&gt;</content>
+&lt;p&gt;其实心态很重要。努力和方法也是。&lt;/p&gt;
+
+&lt;p&gt;没有人愿意听道理，所有人都喜欢听故事。
+因为你思考的深度不够。&lt;/p&gt;</content>
 
       
       
@@ -2034,339 +2630,6 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 
       
         <summary type="html">【随想】我什么都做不好，我真的是天生的废物嘛？</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
-      <link href="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
-      <published>2020-03-10T01:00:00+00:00</published>
-      <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/%E3%80%90QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E3%80%91%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0</id>
-      <content type="html" xml:base="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0">&lt;h1 id=&quot;qq空间爬虫关于qq空间g_tk的生成方法的python实现&quot;&gt;【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现&lt;/h1&gt;
-
-&lt;p&gt;QQ空间中的许多API都需要使用一个名叫 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 的请求参数，而实验中证明，如果这个参数错误，会直接导致访问失败，而实际必须参数中也仅仅只有&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;qzonetoken&lt;/code&gt;两个参数是授权必须的（当然还要提供cookie啦）。&lt;/p&gt;
-
-&lt;p&gt;那么这个 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 是怎样生成的呢？&lt;/p&gt;
-
-&lt;p&gt;我们首先打开QQ空间，发现QQ动态数据是动态加载的，那么一定涉及到了 XHR 请求，也就是在js代码中使用HTTP请求动态调用了数据，我们使用开发工具 Network 监视调用，发现向下刷新时，QQ空间网页请求了这样一个资源：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=【你的QQ号】&amp;amp;hostuin=【当前访问用户的QQ号】&amp;amp;scope=7&amp;amp;filter=all&amp;amp;flag=1&amp;amp;refresh=0&amp;amp;firstGetGroup=0&amp;amp;mixnocache=0&amp;amp;scene=0&amp;amp;start=10&amp;amp;count=10&amp;amp;sidomain=qzonestyle.gtimg.cn&amp;amp;useutf8=1&amp;amp;outputhtmlfeed=1&amp;amp;refer=specialcare&amp;amp;r=0.7234408300556543&amp;amp;g_tk=70237777&amp;amp;qzonetoken=【QQ空间加密口令】&amp;amp;g_tk=70237777&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;其中包含了&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;字段，而这个参数并非Cookie的一部分，所以我们进一步尝试在 Source 中搜索这个关键字，发现并没有找到，那么可以推断，这个&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;字段是在独立js文件中进行的调用。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200310011158.png&quot; alt=&quot;Network监控日志&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在新Tab中打开是这样的，其中可以看到html格式的动态信息！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200310011349.png&quot; alt=&quot;QQ动态feeds&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们继续观察，发现其中加载了一个名叫 &lt;code class=&quot;highlighter-rouge&quot;&gt;qzfl_v8_[version].js&lt;/code&gt; 的文件，在其中我们找到了我们关注的 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 关键字！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200310011608.png&quot; alt=&quot;qzfl_v8.js&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;QQ截图20200310011836.png&quot; alt=&quot;g_tk 的线索&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;发现其调用了一行 &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;g_tk=&quot; + QZFL.pluginsDefine.getACSRFToken(t);&lt;/code&gt; 显然，这正是我们关心的代码，跟踪其调用，发现这个关键函数的定义：
-似乎已经发掘到矿山深处，开心！！(*^▽^*)&lt;/p&gt;
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pluginsDefine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getACSRFToken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;util&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;URI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;qzone.qq.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p_skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p_skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;qq.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p_skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;skey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_DJB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这里使用了一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;arguments.callee&lt;/code&gt; 引用，在 js 语法中，这个引用指向当前调用的函数体，也就是 &lt;code class=&quot;highlighter-rouge&quot;&gt;QZFL.pluginsDefine.getACSRFToken&lt;/code&gt; 这个对象，但这个 &lt;code class=&quot;highlighter-rouge&quot;&gt;._DJB()&lt;/code&gt; 又是个什么函数呢？我们继续挖掘！&lt;/p&gt;
-
-&lt;p&gt;结果就在这个函数体下方，我们看到这样一个函数定义：&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;QZFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pluginsDefine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getACSRFToken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_DJB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;charCodeAt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2147483647&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;嘿嘿嘿，剩下的都是基本算法和基本函数，我们就可以用自己的代码来实现这个函数的移植版本啦！值得注意的是，这里第一个函数，使用了一个名为 &lt;code class=&quot;highlighter-rouge&quot;&gt;p_skey&lt;/code&gt; 的cookie值，需要从浏览器中提取，提取方法是在QQ空间页面请求中 Network 中，查看html主页面的请求Cookie项，这里使用的是：
-&lt;code class=&quot;highlighter-rouge&quot;&gt;pskey = 'Reo7rMXWccIn0wX4vy3PqkhcmGx93k6c7JTWjWfseVg_'&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;我们在 Python IDLE 中进行试验：&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# function(e) {&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     var t = 5381;&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     for (var n=0,&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#          r=e.length; n &amp;lt; r; ++n) {&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#         t += (t &amp;lt;&amp;lt; 5) + e.charCodeAt(n)&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     }&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     return t &amp;amp; 2147483647&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# };&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2147483647&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pskey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Reo7rMXWccIn0wX4vy3PqkhcmGx93k6c7JTWjWfseVg_'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pskey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;结果呢，发现有什么不对劲，明明刚刚调用的 URL 中使用的是很长一串的才对？
-&lt;code class=&quot;highlighter-rouge&quot;&gt;...300556543&amp;amp;g_tk=70237777&amp;amp;qzonetoken=...&lt;/code&gt; 这个才是原版？&lt;/p&gt;
-
-&lt;p&gt;哪里的bug呢？捏死它丫的！&lt;/p&gt;
-
-&lt;p&gt;…
-↑ 此处省略var个字…&lt;/p&gt;
-
-&lt;p&gt;结果还是基本功不扎实，这里的移位操作符优先级是低于加法的，所以要优先移位必须加括号，也就是如下版本：&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# function(e) {&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     var t = 5381;&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     for (var n=0,&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#          r=e.length; n &amp;lt; r; ++n) {&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#         t += (t &amp;lt;&amp;lt; 5) + e.charCodeAt(n)&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     }&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;#     return t &amp;amp; 2147483647&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# };&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5381&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_skey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2147483647&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gen_gtk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pskey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;635563388&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这就对了噻！和我们源 URL 中的结果完全一致！！我滚去继续爬后续代码了…！&lt;/p&gt;
-
-&lt;p&gt;另：今晚 00:45 分有前后N年来难得一见的大月亮出现，纪念。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-        <category term="spider" />
-      
-        <category term="dev" />
-      
-
-      
-        <summary type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【python】基本数据类型字符串处理</title>
-      <link href="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" rel="alternate" type="text/html" title="【python】基本数据类型字符串处理" />
-      <published>2020-03-10T00:39:00+00:00</published>
-      <updated>2020-03-10T00:39:00+00:00</updated>
-      <id>/%E3%80%90python%E3%80%91%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86</id>
-      <content type="html" xml:base="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86">&lt;h1 id=&quot;python基本数据类型字符串处理&quot;&gt;【python】基本数据类型字符串处理&lt;/h1&gt;
-
-&lt;h2 id=&quot;1-整型int-关键字&quot;&gt;1. 整型：&lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt; 关键字&lt;/h2&gt;
-
-&lt;p&gt;整数型是最基本的数据类型，python中可以直接使用数字来定义一个数值型常量&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10086&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;数值字符串 -&amp;gt; 整型&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 使用int()函数直接转化str&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'100'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'100h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#87&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'100h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;ValueError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invalid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;literal&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'100h'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#88&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;ValueError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invalid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;literal&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'0x100h'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#89&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;ValueError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invalid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;literal&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'0x100'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;十六进制字符串转int&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0x100'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;2-字符型-charchr函数&quot;&gt;2. 字符型 char：chr()函数&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chr(i)&lt;/code&gt; 返回 Unicode 码位为整数 i 的字符的字符串格式。例如，chr(97) 返回字符串 ‘a’，chr(8364) 返回字符串 ‘€’。这是 ord() 的逆函数。&lt;/p&gt;
-
-&lt;p&gt;实参的合法范围是 0 到 1,114,111（16 进制表示是 0x10FFFF）。如果 i 超过这个范围，会触发 ValueError 异常。&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;134&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x86&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'!'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;84&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-  &lt;span class=&quot;err&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; # $ &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;% &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;amp; ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; &amp;lt; = &amp;gt; ? @ A B C D E F G H I J K L M N O P Q R S&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Python中是否存在&lt;code class=&quot;highlighter-rouge&quot;&gt;char&lt;/code&gt;这种数据类型？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;输出为 &lt;code class=&quot;highlighter-rouge&quot;&gt;class str&lt;/code&gt; ，说明python语言中并没有单独定义char这种类型的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;求char类型的ASCII代码？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ord(c)&lt;/code&gt; 对表示单个 Unicode 字符的字符串，返回代表它 Unicode 码点的整数。例如 ord(‘a’) 返回整数 97， ord(‘€’) （欧元符号）返回 8364 。这是 chr() 的逆函数。&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;97&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Hello, Python!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;mi&quot;&gt;72&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;108&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;108&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;111&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;121&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;116&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;104&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;111&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;110&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-        <category term="dev" />
-      
-
-      
-        <summary type="html">【python】基本数据类型字符串处理</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">MSP430 ASM汇编基础语法：点亮一个 BLING, BLING 的 LED 灯</title>
-      <link href="/msp430-MSP430%E7%9A%84%E6%B1%87%E7%BC%96%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="MSP430 ASM汇编基础语法：点亮一个 BLING, BLING 的 LED 灯" />
-      <published>2020-03-04T00:19:00+00:00</published>
-      <updated>2020-03-04T00:19:00+00:00</updated>
-      <id>/%E3%80%90msp430%E3%80%91MSP430%E7%9A%84%E6%B1%87%E7%BC%96%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80</id>
-      <content type="html" xml:base="/msp430-MSP430%E7%9A%84%E6%B1%87%E7%BC%96%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;msp430-asm汇编基础语法点亮一个-bling-bling-的-led-灯&quot;&gt;MSP430 ASM汇编基础语法：点亮一个 BLING, BLING 的 LED 灯&lt;/h1&gt;
-
-&lt;p&gt;核心目标，是掌握 asm 汇编语法，熟悉msp430的开发流程与实际开发过程遇到的种种问题。&lt;/p&gt;
-
-&lt;h2 id=&quot;msp430-平台汇编语法&quot;&gt;msp430 平台汇编语法&lt;/h2&gt;
-
-&lt;p&gt;msp430 的汇编语法不同寻常的 x86 或者 51，STM32 平台，有些标新立异，其实对于任意一个硬件平台来讲，其底层汇编代码，都会在很多细节之处有出入，这让许多代码对开发平台产生了很高的依赖，即软硬件之间存在着 &lt;strong&gt;高度耦合性&lt;/strong&gt;，使得嵌入式开发复杂化，但这也是嵌入式开发中的一大特点与共识，并不需要当作一个疑难杂症，这是一定会面对的问题，那么逢山开路，遇水搭桥，兵来将挡，水来土掩，道高一尺魔高一丈，总会有办法解决的，要对自己的解决问题能力有信心。&lt;/p&gt;
-
-&lt;p&gt;msp430 平台的最大特点是超低功耗，这是德仪430系列在众多优秀嵌入式平台中独占一隅的看家本领，所以处于这一要求，MSP430 平台多出了许多特性：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;全线采取 16 Bits MCU 架构，满足多数应用场合。&lt;/li&gt;
-  &lt;li&gt;数据指令均统一为 16 Bits ，方便开发。&lt;/li&gt;
-  &lt;li&gt;使用 RISC 精简指令集。&lt;/li&gt;
-  &lt;li&gt;集成了部分常用外设：
-    &lt;ol&gt;
-      &lt;li&gt;GPIO&lt;/li&gt;
-      &lt;li&gt;Timer&lt;/li&gt;
-      &lt;li&gt;ADC&lt;/li&gt;
-      &lt;li&gt;WatchDog&lt;/li&gt;
-      &lt;li&gt;RTC&lt;/li&gt;
-      &lt;li&gt;DAC&lt;/li&gt;
-      &lt;li&gt;LCD Controller&lt;/li&gt;
-      &lt;li&gt;Comparator&lt;/li&gt;
-      &lt;li&gt;USB&lt;/li&gt;
-      &lt;li&gt;UART/SPI&lt;/li&gt;
-      &lt;li&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;这里着重讲两句有关片上集成 ADC 的解释。&lt;/p&gt;
-
-&lt;p&gt;MSP430系列通常集成了多个且多种的ADC模块，包括一个ADC10（10Bits），一个ADC12（12 Bits）以及一个SD24（Sigma-Delta型，高精度低速24Bits ADC），满足高速以及高精度应用场合。&lt;/p&gt;
-
-&lt;p&gt;虽然TI的模电器件并非特别出众，但也的确不差，高端运放，比较器，滤波器，振荡器一样不少，当然模拟信号发生器自然还是 AD 家的更专业、更靠谱一些，但 TI 数十年军民双路芯片供应，基本奠定了 TI 在半导体方面的独门绝技，这么小一片芯片，集成众多处理与外设单元，还能综合考虑到足够的性能与低功耗要求，可以说 TI 的雪球越滚越大并非偶然，国内半导体芯片仍需努力呀！&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="msp430" />
-      
-        <category term="dev" />
-      
-        <category term="mbed" />
-      
-
-      
-        <summary type="html">MSP430 ASM汇编基础语法：点亮一个 BLING, BLING 的 LED 灯</summary>
       
 
       

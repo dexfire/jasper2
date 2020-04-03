@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/math/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-20T04:04:23+00:00</updated>
+  <updated>2020-04-03T14:46:55+00:00</updated>
   <id>/tag/math/feed.xml</id>
 
   
@@ -44,6 +44,440 @@
   
   
 
+  
+    <entry>
+      <title type="html">【信息光学】第五章 光学成像系统的频率特性</title>
+      <link href="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7" rel="alternate" type="text/html" title="【信息光学】第五章 光学成像系统的频率特性" />
+      <published>2020-03-20T10:46:00+00:00</published>
+      <updated>2020-03-20T10:46:00+00:00</updated>
+      <id>/%E3%80%90%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6%E3%80%91%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7</id>
+      <content type="html" xml:base="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7">&lt;h1 id=&quot;信息光学第五章-光学成像系统的频率特性&quot;&gt;【信息光学】第五章 光学成像系统的频率特性&lt;/h1&gt;
+
+&lt;h2 id=&quot;物理光学&quot;&gt;物理光学&lt;/h2&gt;
+
+&lt;h3 id=&quot;光波&quot;&gt;光波&lt;/h3&gt;
+
+&lt;h4 id=&quot;光波的表达式&quot;&gt;光波的表达式&lt;/h4&gt;
+
+&lt;p&gt;平面波：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;E = \overlinesegment{}&lt;/script&gt;
+
+&lt;h3 id=&quot;光学参数&quot;&gt;光学参数&lt;/h3&gt;
+
+&lt;h4 id=&quot;振幅&quot;&gt;振幅&lt;/h4&gt;
+
+&lt;h4 id=&quot;时间频率&quot;&gt;时间频率&lt;/h4&gt;
+
+&lt;h4 id=&quot;空间频率波长&quot;&gt;空间频率，波长&lt;/h4&gt;
+
+&lt;h4 id=&quot;偏振&quot;&gt;偏振&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;只有&lt;strong&gt;横波&lt;/strong&gt;才有偏振方向之分，而纵波的震动方向始终与传播方向相同，不存在偏振。&lt;/li&gt;
+  &lt;li&gt;对于平面波，其振动方向&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;成像光学基础&quot;&gt;成像光学基础&lt;/h2&gt;
+
+&lt;h3 id=&quot;常见光波形式&quot;&gt;常见光波形式&lt;/h3&gt;
+
+&lt;h4 id=&quot;球面波&quot;&gt;球面波&lt;/h4&gt;
+
+&lt;p&gt;复振幅表达式( 距原点 z处的 xOy平面 ):
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{z}&lt;/script&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;成像&quot;&gt;成像&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;成像&lt;/strong&gt;是指照明一个放置于透镜之前的物体，使其经由透镜在另一位置，出现与物体非常相似的光场强度分布。这个强度分布称之为该物体的&lt;strong&gt;像&lt;/strong&gt;。可以用光屏接收的实际强度分布，称为&lt;strong&gt;实像&lt;/strong&gt;。如果透镜后方的光可等效与透镜前另一个位置发出的，称之为&lt;strong&gt;虚像&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;理想成像&quot;&gt;理想成像&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;理想成像&lt;/strong&gt;：&lt;br /&gt;
+理想的透镜成像系统，对入射光波在像面上进行还原：
+假设输入光波为：
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+    U(x,y) &amp;= A_0\sum_{n=1}^{N} e^{jk(x \cos \alpha_n + y \cos \beta_n)} \\
+    &amp;= A_0 \sum_{n=1}^{N} e^{jk\left(  \right)}
+\end{aligned} %]]&gt;&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = A_0\sum_{n=1}^{N} \delta \left( \frac{x}{\lambda z}-an,\frac{y}{\lambda z}-bn \right)&lt;/script&gt;
+则&lt;/p&gt;
+
+&lt;p&gt;受限衍射系统：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;例题1：&lt;/strong&gt; 
+&lt;img src=&quot;/assets/images/QQ截图20200320111158.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;解题思路：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;先求透镜理想像的幅度表达式：$\displaystyle U_g(x,y)$&lt;/li&gt;
+  &lt;li&gt;再求得孔径的傅里叶变换。&lt;/li&gt;
+  &lt;li&gt;输出频谱：$\displaystyle U_i(f_x,f_y) = G(f_x,f_y) \cdot H(f_x,f_y)$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320110615.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/QQ截图20200320110956.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;例题2：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320112711.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320112357.png&quot; alt=&quot;&quot; /&gt;
+注：这里由于是与z轴夹角，所以代入$\sin \theta$。
+光波斜入射引入的位相因子，$e^{jkx_0}$ -&amp;gt; $e^{jk\sin \theta x_0}$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320112632.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320113539.png&quot; alt=&quot;&quot; /&gt;
+像频谱：是经过出瞳函数进行带通滤波后的物像，必须要有物体的频率成分通过。
+&lt;img src=&quot;/assets/images/QQ截图20200320113740.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320113530.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;注：常考题型，物面、像变、输入光波变化后，分析截止频率的变化。&lt;/p&gt;
+
+&lt;h3 id=&quot;相干照明系统的传递函数ctf&quot;&gt;相干照明系统的传递函数（CTF）&lt;/h3&gt;
+
+&lt;p&gt;$H_C(f_x,f_y)$&lt;/p&gt;
+
+&lt;h3 id=&quot;非相干照明系统的传递函数otf&quot;&gt;非相干照明系统的传递函数（OTF）&lt;/h3&gt;
+
+&lt;p&gt;$H(f_x,f_y)$&lt;/p&gt;
+
+&lt;p&gt;由自相干定理。&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;H(f_x,f_y) = \frac{P(\lambda d_i f_x, \lambda d_i f_y)}{\iint_{-\infty}^{\infty}P(\xi, \eta)\mathrm{d}\xi \mathrm{d}\eta}&lt;/script&gt;
+
+&lt;h3 id=&quot;衍射受限系统的传递函数otf&quot;&gt;衍射受限系统的传递函数（OTF）&lt;/h3&gt;
+
+&lt;p&gt;根据物理意义，其可以通过交叠部分面积来求解其传递函数值（自相关）。&lt;/p&gt;
+
+&lt;p&gt;例1：衍射受限的非相干OTF的计算
+&lt;img src=&quot;/assets/images/QQ截图20200323172134.png&quot; alt=&quot;&quot; /&gt;
+衍射受限的非相干照明情形，其截止频率是相干照明情形下截止频率的两倍。&lt;/p&gt;
+
+&lt;h2 id=&quot;五-像差对成像系统传递函数的影响&quot;&gt;五、 像差对成像系统传递函数的影响&lt;/h2&gt;
+
+&lt;p&gt;既影响对比度（振幅），也会影响相位传递。&lt;/p&gt;
+
+&lt;h3 id=&quot;51-广义光瞳函数&quot;&gt;5.1 广义光瞳函数&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;系统像差&lt;/strong&gt;效应集中表现为：&lt;/p&gt;
+
+&lt;p&gt;出瞳面上的波前会偏离理想会聚球面波的像面。
+以波像差 $w(x,y)$ 描述该像差（光程差），像差产生的位相差：
+&lt;script type=&quot;math/tex&quot;&gt;e^{jkW(x,y)}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;广义光瞳函数&lt;/strong&gt;：
+&lt;script type=&quot;math/tex&quot;&gt;P(x,y)=e^{jkW(x,y)}P(x,y)&lt;/script&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;离焦系统otf&quot;&gt;离焦系统OTF&lt;/h3&gt;
+
+&lt;p&gt;不需要计算，只需要了解分析的过程，知道离焦像差会带来何种影响。&lt;/p&gt;
+
+&lt;p&gt;非相干照明，存在固定分辨极限。&lt;/p&gt;
+
+&lt;p&gt;相干照明，不存在固定分辨极限，分辨率随着位相而改变。&lt;/p&gt;
+
+&lt;h1 id=&quot;第七章-全息投影&quot;&gt;第七章 全息投影&lt;/h1&gt;
+
+&lt;h2 id=&quot;74-制作全息光栅&quot;&gt;7.4 制作全息光栅&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;先写出两种光波&lt;/li&gt;
+  &lt;li&gt;写出在记录平面上的，两光束的振幅叠加振幅 -&amp;gt; 双光束干涉。&lt;/li&gt;
+  &lt;li&gt;求得平面光强（包含频率）&lt;/li&gt;
+  &lt;li&gt;得到频率项（展开）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I(x,y) = 2 + 2 \cos \left[ 2 \pi x \frac{2\sin (\theta/2)}{\lambda} \right]&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;记录结果：记录介质透过率函数 与 相干光强 成正比 -&amp;gt; 记录下相干条纹。&lt;/li&gt;
+  &lt;li&gt;空间频率：把已知参数代入，求得：
+&lt;script type=&quot;math/tex&quot;&gt;f = \frac{2\sin(\theta / 2)}{\lambda}&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;平面波---基元光栅&quot;&gt;平面波 -&amp;gt; 基元光栅&lt;/h3&gt;
+
+&lt;h3 id=&quot;点光源---基元波带片&quot;&gt;点光源 -&amp;gt; 基元波带片&lt;/h3&gt;
+
+&lt;p&gt;把物体看做是很多点源，记录光波为他们在记录介质平面上的相干叠加光波强度。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;相关假设&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;物光：$O(x_o,y_o,z_o)$&lt;/li&gt;
+  &lt;li&gt;参考光源：$R(x_r,y_r,z_r)$&lt;/li&gt;
+  &lt;li&gt;照明光波：$C(x,y)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;比较近，满足菲涅尔近似 -&amp;gt; &lt;strong&gt;菲涅尔全息图&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;注：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;物光和参考光，通过菲涅尔衍射到达介质平面&lt;/li&gt;
+  &lt;li&gt;在介质平面上产生相干叠加&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I(x,y) = |R|^2 + |O|^2 + R_o+O_o^{*}e^{j\frac{2 \pi}{\lambda}\left[ (x-x_r) + (y-y_r) \right]}&lt;/script&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;怎样理解结果？&lt;br /&gt;
+结果是：沿着某个方向的平面波，乘上了一个球面波因子，结果是一个与平面波同向的&lt;strong&gt;球面波&lt;/strong&gt;。
+    &lt;ul&gt;
+      &lt;li&gt;–&amp;gt; &lt;strong&gt;承载了球面波信息的空间平面波&lt;/strong&gt;。&lt;/li&gt;
+      &lt;li&gt;相当于一个透镜和棱镜的组合。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$z_i&amp;lt;0$ 为发散球面波（实像），否则为会聚球面波（虚像）。&lt;/li&gt;
+  &lt;li&gt;存在放大率问题：
+    &lt;ul&gt;
+      &lt;li&gt;横向放大率：&lt;/li&gt;
+      &lt;li&gt;纵向放大率：z方向比值&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;几种特殊情形&quot;&gt;几种特殊情形&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;再现光波与参考光波完全一样时
+&lt;script type=&quot;math/tex&quot;&gt;x_c,=x_r&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;x&lt;/li&gt;
+  &lt;li&gt;当&lt;strong&gt;参考光&lt;/strong&gt;和&lt;strong&gt;照明光波&lt;/strong&gt;为&lt;strong&gt;平面波&lt;/strong&gt;，物体是点光源，则物体与成像得到的位置是关于介质平面&lt;strong&gt;对称&lt;/strong&gt;的。
+可以得到准确位置；&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;75-傅里叶变换全息图&quot;&gt;7.5 傅里叶变换全息图&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;物体和图像的光信息，既表现在它的物体光波中，也蕴含在它的空间频谱内。&lt;/li&gt;
+  &lt;li&gt;用全息方法，可以在空域中记录物光波，也可以在频域记录它的频谱。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;假设&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;物光： $O(x,y)$&lt;/li&gt;
+  &lt;li&gt;频谱： $G(f_x,f_y)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;可以记录：物频谱信息、物频谱的共轭信息&lt;/li&gt;
+  &lt;li&gt;也许共轭信息比物体信息更为重要（光学信息处理）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;再现&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;平面波入射&lt;/li&gt;
+  &lt;li&gt;需要使用透镜，进行傅里叶变换&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;几何光学：放大率分
+    &lt;ul&gt;
+      &lt;li&gt;轴向放大率&lt;/li&gt;
+      &lt;li&gt;垂轴放大率&lt;/li&gt;
+      &lt;li&gt;角放大率&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;含有一次位相因子：&lt;strong&gt;一个特定方向的平面波&lt;/strong&gt;&lt;br /&gt;
+一次位相因子：
+&lt;script type=&quot;math/tex&quot;&gt;e^{j2a \pi f_x} , e^{j2b \pi f_y}, e^{j2a\pif_x + f_y}&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;球面波：没有传播的优先方向。&lt;/li&gt;
+  &lt;li&gt;球面波的完整性：球面波部分遮挡，其他部分会不会发生改变？&lt;/li&gt;
+  &lt;li&gt;频谱函数平凡的傅里叶：自相关&lt;/li&gt;
+  &lt;li&gt;★ 共轭：位相像差为 $\pi$&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【信息光学】第五章 光学成像系统的频率特性</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】球面波 – 光学基础</title>
+      <link href="/%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <published>2020-03-17T16:49:00+00:00</published>
+      <updated>2020-03-17T16:49:00+00:00</updated>
+      <id>/%E3%80%90%E2%98%85%E3%80%91%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86</id>
+      <content type="html" xml:base="/%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86">&lt;h3 id=&quot;153-光学仪器&quot;&gt;1.5.3 光学仪器&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;传感器&lt;/li&gt;
+  &lt;li&gt;全站仪&lt;/li&gt;
+  &lt;li&gt;成像光谱仪
+最初设计用于探矿，采集二维图像，+ 三维扫描信息，仅仅可见光，看不清楚。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;质谱仪&lt;/strong&gt;
+质谱分析是一种测量离子&lt;strong&gt;质荷比&lt;/strong&gt;的分析方法，其基本原理是是物质电离，经过加速电场，形成离子束，&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;色谱仪&lt;/strong&gt;：
+利用色谱分离原理和各种分析测定器件对物质进行分析的仪器。几乎可以对有机、无机、大分子，生物大分子等几乎所有化合物进行分离。&lt;/p&gt;
+
+&lt;p&gt;对混合物的精细分离能力。&lt;/p&gt;
+
+&lt;p&gt;工作原理：本质是带份力物质分子，在固定相和流动相之间的转化。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;光谱仪&lt;/strong&gt;：
+用光栅分光原理，拆分不同成分。
+&lt;img src=&quot;/assets/images/QQ截图20200403085625.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;SMA Connector&lt;/li&gt;
+  &lt;li&gt;Slit 狭缝，物平面&lt;/li&gt;
+  &lt;li&gt;Filter， 滤光片，选定测量范围
+原理上不会到达，便宜的不加，消除光谱仪范围内的杂散光。&lt;/li&gt;
+  &lt;li&gt;Collimating Mirror 准直镜&lt;/li&gt;
+  &lt;li&gt;Grating 光栅，技术瓶颈
+民用器件国内水平很差，狗啃。&lt;/li&gt;
+  &lt;li&gt;Focusing Mirror 聚焦&lt;/li&gt;
+  &lt;li&gt;L2 Detector Collection Lens&lt;/li&gt;
+  &lt;li&gt;CCD Detector（UV，VIS）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200403090220.png&quot; alt=&quot;&quot; /&gt;
+吊打？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200403090342.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;荧光分广度
+&lt;img src=&quot;/assets/images/QQ截图20200403090607.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;三、单色器
+平面衍射光栅，
+四、光电倍增管
+五、样品池&lt;/p&gt;
+
+&lt;h3 id=&quot;154-分析仪器&quot;&gt;1.5.4 分析仪器&lt;/h3&gt;
+&lt;p&gt;以某些物理或者化学性质为基础（光、电、磁、热）。
+例如：拉曼光谱仪，可以分辨、判断一个粒子的姿态角度，判别物质类型。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;灵敏度高&lt;/li&gt;
+  &lt;li&gt;准确&lt;/li&gt;
+  &lt;li&gt;样品用量少&lt;/li&gt;
+  &lt;li&gt;价格昂贵&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;155-趋势发展&quot;&gt;1.5.5 趋势发展&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;小型化，专用化，简用化，家用化，个人化&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;落地式 -&amp;gt; 台式 -&amp;gt; 可移动 -&amp;gt; 便携式 -&amp;gt; 袋装 -&amp;gt; 芯片&lt;/li&gt;
+  &lt;li&gt;芯片实验室&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">1.5.3 光学仪器</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】球面波 – 光学基础</title>
+      <link href="/%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6-%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <published>2020-03-17T16:49:00+00:00</published>
+      <updated>2020-03-17T16:49:00+00:00</updated>
+      <id>/%E3%80%90%E2%98%85%20%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E3%80%91%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0</id>
+      <content type="html" xml:base="/%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6-%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0">&lt;h1 id=&quot;-物理光学物理光学笔记&quot;&gt;【★ 物理光学】物理光学笔记&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;物理光学&lt;/strong&gt;是研究光的&lt;strong&gt;本性&lt;/strong&gt;、&lt;strong&gt;规律&lt;/strong&gt;及其应用、&lt;strong&gt;造福于人类&lt;/strong&gt;的一门学科。
+&lt;em&gt;注：以人为本，脱离人类的科学是无意义的。&lt;/em&gt;物理光学在近代发展中起到了重要的作用，是许多现代光学仪器的设计与应用基础，在以下领域有着广泛的应用：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;光纤通信&lt;/li&gt;
+  &lt;li&gt;微纳制造&lt;/li&gt;
+  &lt;li&gt;集成电路
+    &lt;ul&gt;
+      &lt;li&gt;芯片制造&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;信息获取
+    &lt;ul&gt;
+      &lt;li&gt;传感器&lt;/li&gt;
+      &lt;li&gt;三维显示&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;全息光学存储&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【★ 物理光学】物理光学笔记</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">【光学】球面波 – 光学基础</title>
@@ -184,10 +618,35 @@ $r_s^2+r_p^2 \neq 1$
   &lt;/li&gt;
   &lt;li&gt;高级图像处理
     &lt;ul&gt;
-      &lt;li&gt;人脸识别&lt;/li&gt;
+      &lt;li&gt;人脸识别
+        &lt;ul&gt;
+          &lt;li&gt;人脸检测&lt;/li&gt;
+          &lt;li&gt;人脸特征提取&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;计算机视觉&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content>
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;313-灰度直方图&quot;&gt;3.1.3 灰度直方图&lt;/h3&gt;
+
+&lt;p&gt;用于判别&lt;/p&gt;
+
+&lt;p&gt;是进行图像增强时的重要评判依据。&lt;/p&gt;
+
+&lt;h3 id=&quot;314-直方图均衡化&quot;&gt;3.1.4 直方图均衡化&lt;/h3&gt;
+
+&lt;p&gt;算法：设灰度变换 $s=f(r)$ 为斜率有限的非减连续可微函数，它将输入图像 $A(x,y)$ 转换为 $B(x,y)$ ，摄入图像的直方图 $H_A(r)$，输出直方图为 $H_B(r)$。&lt;/p&gt;
+
+&lt;p&gt;根据直方图定义，变换前后直方图面积相等。
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+  H_B(s)\mathrm{d}s &amp;= H_A(r)\mathrm{d}r \\
+  &amp;= \frac{H_A(r)}{\mathrm{d}s/\mathrm{d}r} \\
+  &amp;= 
+\end{aligned} %]]&gt;&lt;/script&gt; 
+相当于频域变换，拉伸等，可能使得部分色彩失真，部分峰值会被拉伸为高对比度。&lt;/p&gt;</content>
 
       
       
@@ -210,7 +669,7 @@ $r_s^2+r_p^2 \neq 1$
       
 
       
-        <summary type="html">数字图像处理基础 低级图像处理 增强 修复 平滑 压缩 信噪比 压缩比 中级图像处理 分形 滤镜 高级图像处理 人脸识别</summary>
+        <summary type="html">数字图像处理基础 低级图像处理 增强 修复 平滑 压缩 信噪比 压缩比 中级图像处理 分形 滤镜 高级图像处理 人脸识别 人脸检测 人脸特征提取 计算机视觉</summary>
       
 
       
@@ -386,6 +845,15 @@ $r_s^2+r_p^2 \neq 1$
 
 &lt;h3 id=&quot;积分&quot;&gt;积分&lt;/h3&gt;
 
+&lt;h4 id=&quot;反常积分&quot;&gt;反常积分&lt;/h4&gt;
+
+&lt;p&gt;信号与系统、傅里叶变换中常用的无穷积分：
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+    \mathscr{F}\left\{ 1 \right\} &amp;= \int_{-\infty}^{\infty} 1 \cdot e^{-jwt}dt \\
+    &amp;= -\frac{1}{jw}e^{-jwt} \Big| ^{t=\infty} _{t=-\infty}
+\end{aligned} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
 &lt;h3 id=&quot;向量微分&quot;&gt;向量微分&lt;/h3&gt;
 
 &lt;h2 id=&quot;复变函数&quot;&gt;复变函数&lt;/h2&gt;
@@ -423,6 +891,83 @@ $r_s^2+r_p^2 \neq 1$
 
 &lt;h3 id=&quot;傅里叶级数&quot;&gt;傅里叶级数&lt;/h3&gt;
 
+&lt;h4 id=&quot;傅里叶变换对&quot;&gt;傅里叶变换对&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;傅里叶变换&lt;/strong&gt;：
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+    \mathscr{F} \left\{ f(t)  \right \} &amp;= \int_{-\infty} ^{\infty} f(t) \cdot e^{-jwt} \mathrm{d}t \\
+    &amp;= \int_{-\infty} ^{\infty} f(t) \cdot e^{-j2\pi wt} \mathrm{d}t \\
+    &amp;= F(jw) \\
+    &amp;= F(j 2 \pi f)
+\end{aligned} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;傅里叶反变换&lt;/strong&gt;：
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+    \mathscr {F^{-1}} \left\{ F(jw) \right\} &amp;= \int_{-\infty} ^{\infty} F(jw) \cdot e^{jwt} \mathrm{d}w \\
+\end{aligned} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;常用的傅里叶变换对&quot;&gt;常用的傅里叶变换对&lt;/h5&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;原函数&lt;/th&gt;
+      &lt;th&gt;傅里叶变换&lt;/th&gt;
+      &lt;th&gt;备注&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$1$&lt;/td&gt;
+      &lt;td&gt;$2\pi\delta(jw)$&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$\delta(t)$&lt;/td&gt;
+      &lt;td&gt;$1$&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\boxed{1\ \ \text{»}\ \ 2\pi\delta(jw)}$&lt;br /&gt;
+通常由 $(2)$ 式反推 $(1)$ 式，$\delta(t)$ 的傅里叶变换是 $1$，所以 $F(jw) = 1$ 的傅里叶反变换是 $\delta(t)$，即$\frac{1}{2 \pi}\int_{-\infty}^{\infty} 1 \cdot e^{jwt} dw = \delta(t)$，又由积分的对称性（从$-\infty$到$\infty$），所以对 $e^{jwt}$ 积分与 对$e^{-jwt}$ 积分并没有数值上的区别，所以$\int_{-\infty}^{\infty}1 \cdot e^{-jwt}dt = 2\pi \delta(jw)$。
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\tag{1} \begin{aligned} 
+\int_{-\infty}^{\infty}1 \cdot e^{-jwt}dt &amp;= \int_{-\infty}^{0} e^{-jwt}dt + \int_{0}^{\infty}e^{-jwt}dt \\
+&amp;= -\frac{1}{jw}e^{-jwt}\Big|_{-\infty}^{0}+ -\frac{1}{jw}e^{-jwt}\Big|^{\infty}_0
+\\ &amp;= 2\pi\delta(jw) \end{aligned} %]]&gt;&lt;/script&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag{2} \frac{1}{2\pi}\int_{-\infty}^{\infty} \delta(jw) \cdot e^{jwt}dw = \frac{1}{2\pi}&lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$\boxed{\delta(t)\ \ \text{»}\ \ 1}$
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag{3} \int_{-\infty}^{\infty} \delta(t)\cdot e^{-jwt}dt = 1&lt;/script&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag{4} \frac{1}{2 \pi}\int_{-\infty}^{\infty} 1 \cdot e^{jwt} dw = \delta(t)&lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;faq&quot;&gt;FAQ&lt;/h5&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;为什么用 $jw$ 作为傅里叶变换表达式的自变量而不是 $w$？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/8cb1cb13495409232979c9899c58d109b3de4931.jpg&quot; alt=&quot;傅里叶变换&quot; /&gt;&lt;/p&gt;
+
 &lt;h4 id=&quot;傅里叶变换&quot;&gt;傅里叶变换&lt;/h4&gt;
 
 &lt;h3 id=&quot;拉普拉斯变换&quot;&gt;拉普拉斯变换&lt;/h3&gt;</content>
@@ -449,162 +994,6 @@ $r_s^2+r_p^2 \neq 1$
 
       
         <summary type="html">【数学】现代工程学数学基础</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【光学】透镜的位相调制及傅里叶变换作用</title>
-      <link href="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8" rel="alternate" type="text/html" title="【光学】透镜的位相调制及傅里叶变换作用" />
-      <published>2020-03-15T15:37:00+00:00</published>
-      <updated>2020-03-15T15:37:00+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8</id>
-      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8">&lt;h1 id=&quot;光学透镜的位相调制及傅里叶变换作用&quot;&gt;【光学】透镜的位相调制及傅里叶变换作用&lt;/h1&gt;
-
-&lt;p&gt;透镜的透过率函数定义式：
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = \large{\frac{\text{输出光波}}{输入光波}}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y)=\frac{U_i^{\prime}(x,y)}{U_i(x,y)}&lt;/script&gt;
-考虑入射光波为球面波情形：
-&lt;img src=&quot;/assets/images/QQ截图20200315160209.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;球面波&quot;&gt;球面波&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;球面波&lt;/strong&gt;即波阵面为同心球面的波。&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;光源尺度远小于波长$\lambda$时，光源发出的光波可近似为球面波。&lt;/li&gt;
-  &lt;li&gt;球面波在自由场（无束缚作用）中传播时，其振幅&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;随距离&lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;成反比例衰减。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;参考：&lt;a href=&quot;https://www.zhihu.com/question/35163381?sort=created&quot;&gt;通过亥姆霍兹方程是如何推导出球面波表达式的？&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;发散单色球面波定义式：
-&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{jkr}&lt;/script&gt;
-取发射方向为 &lt;code class=&quot;highlighter-rouge&quot;&gt;z&lt;/code&gt; 轴正半轴，则有：&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;若为会聚球面波，则为：
-&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{-jkr}&lt;/script&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;U_i(x,y)=&lt;/script&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【光学】透镜的位相调制及傅里叶变换作用</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【衍射】光学中的衍射现象推论与计算</title>
-      <link href="/%E9%9A%8F%E6%83%B3-%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%88%9B%E9%80%A0%E5%8A%9B-%E7%81%B5%E9%AD%82%E7%9A%84%E9%97%AA%E5%85%89%E7%82%B9" rel="alternate" type="text/html" title="【衍射】光学中的衍射现象推论与计算" />
-      <published>2020-03-13T01:38:00+00:00</published>
-      <updated>2020-03-13T01:38:00+00:00</updated>
-      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%88%9B%E9%80%A0%E5%8A%9B%E2%80%94%E2%80%94%E7%81%B5%E9%AD%82%E7%9A%84%E9%97%AA%E5%85%89%E7%82%B9</id>
-      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%88%9B%E9%80%A0%E5%8A%9B-%E7%81%B5%E9%AD%82%E7%9A%84%E9%97%AA%E5%85%89%E7%82%B9">&lt;h1 id=&quot;随想每个人都有创造力灵魂的闪光点md&quot;&gt;【随想】每个人都有创造力——灵魂的闪光点.md&lt;/h1&gt;
-
-&lt;p&gt;尽管这个世界上平凡的人居多，可是我始终相信的一点就是，尽管有很多平庸的人，可没有任何一个生来就平庸的灵魂。人在出生的那一刻起，发展潜力都是几乎均等的，并没有孰优孰劣之分，可究竟是什么导致了某个人成为国家领袖，行业精英，或者无业游民，劫匪暴徒的呢？
-&lt;em&gt;点评：这并不是一个好的开头，因为没有结合具体实例，太过直白，毫无吸引力。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;我想是因为生活环境，经历和思维，加之一点点运气吧！有些人说，可能是机遇吧！某些人生来便是天选之子，赶上了的历史动荡巨变的大潮，正是那极少数成为了浪潮顶尖的英雄，他们家底丰厚，运气爆棚，所以成功的是他而非自己。可事情若是如此简单，和他们同时代的人不说几十亿，同样也有成千上万吧？为何最终成功的是他们呢？&lt;/p&gt;
-
-&lt;p&gt;目的性，在感情中是杀手，在事业中则是杀手锏。做事一定要有很强的目的性，换言之：少做或者不做“无用功”，这里需要我们注意的是，对“无用功”的定义，是那些短期收益不高，长期收益几乎没有的工作。比如对于青少年，相比于出门打工一时来钱快，学习是长期回报更高的选择；相比于闷头学习课本固化知识来说，额外真正训练自己的能力是回报更高的选择；相比于沉醉于微博、贴吧、论坛上的片段、低容量信息，自己看书、思考，看看知乎业内人士的见解，吸收品评借鉴，则是更有价值和眼光的选择；。很多时候你并非真正想要学会一门技能，你只是喜欢这种技能带给你的欣慰和满足感，尽管那中快感仅仅是短暂不可持续增值的泡影，你选择了一个缺少对比，相对不那么残酷的社区，来逃避自己当下在这一领域的无知，顺带还不知要努力。&lt;/p&gt;
-
-&lt;p&gt;你要成为勇士，就不应该畏惧演武场。很多时候，想是比较容易的。你想获得对电影更深刻的理解，自然应当直接面向最高层次的影评社区，而不是在QQ空间这种流通性差、专业性几乎为零的社区里垂死挣扎或者秀优越感、暴露智商。&lt;/p&gt;
-
-&lt;p&gt;你要成为勇士，是要学会战斗，而不是学会欣赏战斗。很多时候，我们都太看重学的过程，而轻视了实操演练的过程，“多看看优秀名家的示例，直接吸纳其精华要点，不是更有效的方式吗？”————“那么，请问，有多少名门大家，不是自学为主，而是投机取巧，照抄他们灵感而来呢？”许多时候，经验和潜意识都告诉我们要多学而后练，自己的哪点三角猫功夫，并不可能创造出什么奇迹之作。可如果你真这样想，那么你就掉进了“惰性思维”的陷阱啦。为什么叫做“惰性思维”呢？因为那是你的舒适区，你坐在那里不动，甚至不需要思考，就能看到惊人程度的杰作诞生，你会不自觉将这一现象代入自己身上，或者换种说法，将自己代入到场景之中，认为那些杰作的诞生，不过只是顺手拈来、唾手可得的事，从而跳过或者&lt;strong&gt;逃避&lt;/strong&gt;了自己长时间看不到回报努力的环节，忽略了实战演练，练习的重要性，还想着一步登天，你，凭什么呢？&lt;/p&gt;
-
-&lt;p&gt;走出舒适区，摆脱“习得性无助”。什么是“舒适区”？“就是那些给你温暖，让你相信自己天生丽质，自带光环，我可以不努力或者不再努力，就可以拥有一个‘让自己满意的结果’”。&lt;/p&gt;
-
-&lt;p&gt;“每天被工作占满了全部时间，这才是一个职场人的悲哀。”&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【随想】每个人都有创造力——灵魂的闪光点.md</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【衍射】光学中的衍射现象推论与计算</title>
-      <link href="/%E5%8F%A5%E5%AD%90-%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BA%86%E5%8F%88%E8%83%BD%E6%80%8E%E6%A0%B7" rel="alternate" type="text/html" title="【衍射】光学中的衍射现象推论与计算" />
-      <published>2020-03-13T01:38:00+00:00</published>
-      <updated>2020-03-13T01:38:00+00:00</updated>
-      <id>/%E3%80%90%E5%8F%A5%E5%AD%90%E3%80%91%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BA%86%E5%8F%88%E8%83%BD%E6%80%8E%E6%A0%B7%3F</id>
-      <content type="html" xml:base="/%E5%8F%A5%E5%AD%90-%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BA%86%E5%8F%88%E8%83%BD%E6%80%8E%E6%A0%B7">&lt;h1 id=&quot;和喜欢的人在一起了又能怎样&quot;&gt;和喜欢的人在一起了又能怎样？&lt;/h1&gt;
-
-&lt;p&gt;“在一起了又能怎样？”&lt;/p&gt;
-
-&lt;p&gt;女人：“能做的事可多了，要打扮得像个洋娃娃，要穿漂亮小裙子给他看，要陪他看日出日落，要”&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">和喜欢的人在一起了又能怎样？</summary>
       
 
       

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/author/dexfire/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-20T04:04:23+00:00</updated>
+  <updated>2020-04-03T14:46:55+00:00</updated>
   <id>/author/dexfire/feed.xml</id>
 
   
@@ -46,247 +46,138 @@
 
   
     <entry>
-      <title type="html">【redis】一、Redis 数据库入门初体验</title>
-      <link href="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C" rel="alternate" type="text/html" title="【redis】一、Redis 数据库入门初体验" />
-      <published>2020-03-19T09:16:00+00:00</published>
-      <updated>2020-03-19T09:16:00+00:00</updated>
-      <id>/%E3%80%90redis%E3%80%91%E4%B8%80%E3%80%81Redis%20%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C</id>
-      <content type="html" xml:base="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C">&lt;h1 id=&quot;redis一redis-数据库入门初体验&quot;&gt;【redis】一、Redis 数据库入门初体验&lt;/h1&gt;
+      <title type="html">【书评】《爱的艺术》弗洛姆</title>
+      <link href="/%E4%B9%A6%E8%AF%84-%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF-%E5%BC%97%E6%B4%9B%E5%A7%86" rel="alternate" type="text/html" title="【书评】《爱的艺术》弗洛姆" />
+      <published>2020-03-29T03:29:00+00:00</published>
+      <updated>2020-03-29T03:29:00+00:00</updated>
+      <id>/%E3%80%90%E4%B9%A6%E8%AF%84%E3%80%91%E3%80%8A%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E5%BC%97%E6%B4%9B%E5%A7%86</id>
+      <content type="html" xml:base="/%E4%B9%A6%E8%AF%84-%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF-%E5%BC%97%E6%B4%9B%E5%A7%86">&lt;h1 id=&quot;书评爱的艺术弗洛姆&quot;&gt;【书评】《爱的艺术》弗洛姆&lt;/h1&gt;
 
-&lt;p&gt;Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（strings）， 散列（hashes）， 列表（lists）， 集合（sets）， 有序集合（sorted sets） 与范围查询， bitmaps， hyperloglogs 和 地理空间（geospatial） 索引半径查询。 Redis 内置了 复制（replication），LUA脚本（Lua scripting）， LRU驱动事件（LRU eviction），事务（transactions） 和不同级别的 磁盘持久化（persistence）， 并通过 Redis哨兵（Sentinel）和自动 分区（Cluster）提供高可用性（high availability）。&lt;/p&gt;
+&lt;p&gt;这是一本深入探讨爱的意义与爱的理论实践的书，但如作者在前言中所说，这并非一本传授所谓爱的艺术秘诀的书。&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;在这本书中，弗洛姆把爱提到了一种新的高度，他认为“爱情是人类对生存问题的回答”，当然他这里所说的“爱情”并不单指男女之间的爱情。&lt;/p&gt;
 
-&lt;p&gt;简介：&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Redis 是一个开源的，使用 ANSI C 语言编写的，可基于内存亦可持久化的日志型 Key-Value数据库，提供多种语言的 API。 从2010年3月15日起，Redis的开发工作由VMware主持。从2013年5月开始，Redis的开发由Pivotal赞助。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;同时他认为爱是一门可以学习的艺术，是一种能力，但是爱的能力并非单纯的技巧，必须与发展自己的人格紧密结合，它需要行动，需要付出，他说：&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Redis 中文官方网站&lt;/strong&gt;：&lt;a href=&quot;http://www.redis.cn/&quot;&gt;http://www.redis.cn/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Redis 官网&lt;/strong&gt;：&lt;a href=&quot;https://redis.io/&quot;&gt;https://redis.io/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;“一个时代是否伟大，在我看来，在于它是否会产生伟大而高贵的爱情，高贵的爱情产生于高贵的人格，而高贵的人格产生于高贵的文化。所以，爱情始终是我的一架高倍显微镜，我想见微知著，以管窥豹。始于管，终于豹，这一直是我写爱情小说的小小野心。“&lt;/p&gt;
 
-&lt;h2 id=&quot;redis-为什么这么受欢迎--redis-八大特性&quot;&gt;Redis 为什么这么受欢迎？ ———— Redis 八大特性&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;速度快
-Redis 使用 C 语言实现;&lt;br /&gt;
-Redis 所有的数据均存储于内存中。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;持久化
-Redis所有数据存储在内存中，对数据的更新将异步地保存到磁盘内。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;支持多种数据结构&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;———— 作家阿袁这段访谈，似乎是对书中所说“爱情是人类对生存问题的回答”的一个呼应。&lt;/p&gt;
 
-&lt;p&gt;Redis 支持五种数据结构： String, List, Hash, Set, Zset&lt;/p&gt;
+&lt;p&gt;弗洛姆认为人是一种意识到自我存在的生命，孤独感也由此而生，但人同时无法忍受这种孤独，如果他无法从这种孤独的监禁中解放出来，与他人或周围世界结合在一起，他就会疯狂。因此&lt;strong&gt;如何克服这种孤独感，是人类生存的一个基本问题&lt;/strong&gt;。他指出人类克服这种孤独有三种方式，一是不同形式的&lt;strong&gt;放纵&lt;/strong&gt;，二是寻找&lt;strong&gt;同一性&lt;/strong&gt;，如很多群体行为，三是&lt;strong&gt;创造性劳动&lt;/strong&gt;，人在创造性劳动中实现与世界的统一，但弗洛姆认为这种方式达到的统一不是人与人之间的统一。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;支持多种编程语言&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&quot;爱的对象&quot;&gt;爱的对象&lt;/h2&gt;
 
-&lt;p&gt;支持 Java，php，Python，Ruby，Lua，Node.js&lt;/p&gt;
+&lt;p&gt;我看的是爱的对象，前两节，
+立论就是“&lt;strong&gt;爱不是同一个特殊的人的关系。&lt;/strong&gt;”，而更多的是一种态度，性格上的一种倾向。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;功能丰富&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;　　书中说可以有一种人的爱与画画作比较：
+这个人虽然想画画，但他不是去学绘画这门艺术，而是强调他首先要找到他愿意画的合适的对象。如果他找到了这么一样东西，他也就能画了。从爱的角度来说，他觉得一定要找到合适爱的人，这样他才能爱了。但是他没有考虑到，连爱是什么样的东西都不知道的人，他怎么知道自己能爱，会爱呢？即便找到了画画的合适对象，但是没有一点绘画技巧，又怎么画得出来呢？所以首先要学会画画，再找合适的对象，懂得越多，看见的才更多。&lt;/p&gt;
 
-&lt;p&gt;除了支持五种数据结构以外，还支持&lt;strong&gt;事务、流水线、发布/订阅、消息队列&lt;/strong&gt;等功能。&lt;/p&gt;
+&lt;h3 id=&quot;1-博爱&quot;&gt;(1) 博爱&lt;/h3&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;轻量级源码&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;什么是博爱？有种翻译是同胞的爱。&lt;/p&gt;
 
-&lt;p&gt;约23000行C语言源代码，相比于mysql，MongoDB，Oracle等应用级数据库少太多。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;主从复制&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;主服务器执行添加、修改、删除，从服务器执行查询。主从可以自动进行数据同步。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;高可用及可分布式
-    &lt;ul&gt;
-      &lt;li&gt;Redis-Sentinel (v2.8) 支持高可用性&lt;/li&gt;
-      &lt;li&gt;Redis-Cluster (v3.0) 支持分布式&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="redis" />
-      
-        <category term="cs" />
-      
-        <category term="dev" />
-      
-
-      
-        <summary type="html">【redis】一、Redis 数据库入门初体验</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【随想】你为什么境界如此低下？</title>
-      <link href="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A2%83%E7%95%8C%E5%A6%82%E6%AD%A4%E4%BD%8E%E4%B8%8B" rel="alternate" type="text/html" title="【随想】你为什么境界如此低下？" />
-      <published>2020-03-19T08:42:00+00:00</published>
-      <updated>2020-03-19T08:42:00+00:00</updated>
-      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A2%83%E7%95%8C%E5%A6%82%E6%AD%A4%E4%BD%8E%E4%B8%8B%3F</id>
-      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A2%83%E7%95%8C%E5%A6%82%E6%AD%A4%E4%BD%8E%E4%B8%8B">&lt;h1 id=&quot;随想你为什么境界如此低下&quot;&gt;【随想】你为什么境界如此低下？&lt;/h1&gt;
-
-&lt;p&gt;因为你害怕付出，害怕努力没有回报，又觉得配不上别人对自己的尊敬和喜欢。&lt;/p&gt;
-
-&lt;p&gt;你以为自己虽是咸鱼，终有一天会翻身，可你想过吗？咸鱼翻个身，就不是咸鱼了吗？
-不重积累，没有气质的积淀，注定你过去是个，本质未变，不敢从根本上改变自己，注定了你将来也是个境界低下的人。&lt;/p&gt;
-
-&lt;p&gt;不必害怕输出，不存在无效的输出，并且事实上只有输出的东西，才能转化为你的内在知识储备。很多时候我们发觉，生活中总是存在着循环往复的重复，熟悉的人，熟悉的街道，熟悉的清晨，熟悉得不能再熟悉的知识，熟悉的无所事事之感。&lt;/p&gt;
-
-&lt;p&gt;记下来的东西，学会的东西并非就是你的，而只有深入记忆，深入理解以后，那才转化为你真正能够活学活用的一部分。&lt;/p&gt;
-
-&lt;p&gt;弄清什么事更重要是十分×十分×十分×十分=&amp;gt;万分重要的。&lt;/p&gt;
-
-&lt;p&gt;许多时候你步行的原因，不是你不行，不是你知识不够，不是你出身太卑微，不是你童年太不幸，不是你曾经浪费了大好的时光，那么，是什么呢？应该，是你觉悟已经到位，行动却总是跟不上节奏吧！&lt;/p&gt;
-
-&lt;p&gt;不怕，就怕心已经在路上了，身体还来在被窝里不愿出来；最怕你习惯了沉浸于污浊的空气中，心却向往着高山秀水、海阔天青。&lt;/p&gt;
-
-&lt;p&gt;没有觉悟的人是有药可救的，因为他们只是缺乏一个方向。而觉悟很高的人，却更难自救，因为他们似乎什么都能明白，却什么都没做好，心高气傲，却一事无成。&lt;/p&gt;
-
-&lt;h2 id=&quot;你此刻可以平庸可你不能平庸一生&quot;&gt;你此刻可以平庸，可你不能平庸一生。&lt;/h2&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="idea" />
-      
-
-      
-        <summary type="html">【随想】你为什么境界如此低下？</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【CS】编译原理</title>
-      <link href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【CS】编译原理" />
-      <published>2020-03-18T23:58:00+00:00</published>
-      <updated>2020-03-18T23:58:00+00:00</updated>
-      <id>/%E3%80%90CS%E3%80%91%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</id>
-      <content type="html" xml:base="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">&lt;h1 id=&quot;编译原理&quot;&gt;编译原理&lt;/h1&gt;
+&lt;p&gt;弗洛姆给了它很高的评价，认为“一切爱的形式都以博爱为基础。”
+也是一切爱的最高形式。
+因为它是整个社会和谐的守护神，能带给我们更多的温暖和感动。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;什么是编译？&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;“博爱的基础是认识到我们所有的人都是平等的。
+同人共有的核心相比，人与人之间在才能、智力和知识上的差别微不足道。”
+“爱自己的骨肉不足为奇。”
+“只有当我爱那些与我个人利益无关的人时，我的爱情才开始发展。”&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;编译是指将&lt;strong&gt;高级语言&lt;/strong&gt;代码（C，C++，Java等），通过低级语言（通常为&lt;strong&gt;汇编&lt;/strong&gt;）实现的过程，最终输出为机器可执行的&lt;strong&gt;二进制机器码&lt;/strong&gt;文件。&lt;/p&gt;
+&lt;p&gt;爱不是同某一个人的关系，而更多的是一种态度，性格上的一种倾向。
+这种态度决定一个人同整个世界，而不是同爱的唯一对象的关系。
+弗洛姆的爱指的是广义的爱，爱情、亲情、友情等等。&lt;/p&gt;
 
-&lt;p&gt;最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。&lt;/p&gt;
+&lt;p&gt;　　博爱，指的是对所有的人都有一种责任感，关心尊重和了解他人，也就是愿意提高其他人的生活情况。特点是没有独占性。&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;编译工作的几个步骤：&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;　　互助并不意味着一个人弱小，另一个人强大，弱小是暂时状态，而自力更生、走自己的路的能力是普遍的持续状态。&lt;/p&gt;
 
-&lt;p&gt;编译过程通常可以抽象为几个过程：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;预处理&lt;/li&gt;
-  &lt;li&gt;编译&lt;/li&gt;
-  &lt;li&gt;链接&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;　　爱自己的同时，也爱那些需要帮助自己的人，爱那些虚弱和惶恐不安的生命。&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;C/C++ 语言编译流程与编译工具链(toolchain)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;　　我觉得博爱是基础，让我们的内心能时刻充满阳光，每一天醒来，告诉自己，这个世界多么美好，我们才能享受和爱这个世界。爱自己是前提，一个连自己也不爱的人，必定是内心空虚的人，又怎么会去爱世界呢？这让我想起曾经在网络上直播屠猫的视频，正常的人都会觉得很残忍，但偏偏有那么一部份人，在残忍中获得快感，因为他们内心缺失的一部份是爱，他们无法用爱的目光却观察对待周围的世界，只能用攻击的方式欺负弱小，而这样的爱是需要从小培养的。&lt;/p&gt;
 
-&lt;p&gt;C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。&lt;/p&gt;
-
-&lt;p&gt;一款盛名远扬的开源编译工具链：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;GCC&lt;/strong&gt;: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)：&lt;/p&gt;
-
-&lt;p&gt;以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，&lt;strong&gt;现在由自由软件基金会负责维护工作&lt;/strong&gt;。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;编译器前端：编译组织器（典例：clang）&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。&lt;/p&gt;
-
-&lt;p&gt;Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。&lt;/p&gt;
-
-&lt;p&gt;Clang本身性能优异，其生成的AST所耗用掉的内存仅仅是GCC的20%左右。2014年1月发行的FreeBSD 10.0版将Clang/LLVM作为默认编译器。&lt;/p&gt;
-
-&lt;p&gt;Clang性能：测试证明Clang编译Objective-C代码时速度为GCC的3倍，还能针对用户发生的编译错误准确地给出建议。&lt;/p&gt;
+&lt;p&gt;对于公益和慈善事业，我非常赞成与支持！
+尽自己所能与社会爱心人士一起去传递爱心帮助到需要帮助的人，让他们感受到社会大众对他们关爱与温暖！
+只要人人都献出一点爱，世界将变成美好的人间！&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;作者：跃文
-链接：https://www.jianshu.com/p/ed17352299ec
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p&gt;</content>
+&lt;p&gt;这里可能涉及到作者和作品的创作背景，这世界上没有任何一个人，能够完全脱离社会而生存，
+自然也没有一个人可以脱离社会带给自己思维上的影响，就如同一个人不能因为讨厌空气污染就停止呼吸一样。&lt;/p&gt;
+
+&lt;p&gt;“我们最近一直在权衡自由的社会对每个人的影响，以及我们是否如我们所以为的那样快乐，能够自由地思考和感受？”&lt;/p&gt;
+
+&lt;p&gt;“从不同的角度来看，美国被认为是一个拜金、甚至是浅薄的社会，然而你最近说，没有比1958年更好的美国了？”&lt;/p&gt;
+
+&lt;p&gt;“如果继续朝着当前的方向发展，那么它将面临毁灭的风险。”&lt;/p&gt;
+
+&lt;p&gt;“我认为（很多美国人的）工作是没有意义的，因为他和他的工作是没有联系的，人越来越成为大型体制的一部分。… 因为付出大部分精力的事，是一种无意义的事。”&lt;/p&gt;
+
+&lt;p&gt;“要使一个人幸福，如果要他一天8小时都做，一件既没有意义，也没有乐趣，除了能挣钱的事，是不可能会幸福的。”&lt;/p&gt;
+
+&lt;p&gt;“工作的快乐，是一种&lt;strong&gt;创造&lt;/strong&gt;的快乐，比如，中世纪的手艺人，即创造某物的快乐。”&lt;/p&gt;
+
+&lt;p&gt;“我们其实害怕与人的亲密，即使是夫妻也是一样。我们情愿用肤浅的友谊来掩藏对真正亲密的恐惧。”
+“研究表明，大多数美国人，只关心自己的私人事务：他的健康，财务，家庭事务。他并不关心他所在的社会，虽然他谈论社会。”&lt;/p&gt;
+
+&lt;p&gt;这一点也和当代部分大学生的思维习惯一致，就是宣扬一种“一心只读圣贤书”，所以可以“两耳不闻窗外事”，我们享受了义务，所以我们也是有责任的，关于国家、社会、家庭、小小的团体。“自私的人也许会更幸福，可我们又不能活的太自私。”&lt;/p&gt;
+
+&lt;p&gt;这一点呢，我能想到的是，弗洛姆，是作为一个学者，一位社会学家的身份来写下这本自己的著作，所以站立的角度，也许并非始终面向普罗大众，那些为了生计起早贪黑的人。而平凡的我们，也许眼前的爱，才是我们能够握在手心里的爱。这里呢，也引用李诞老师的话，“我们这样自私的活着，但是我们不伤害别人，这个世界才能运转，而正是这些，为了一些所谓宏伟的事业，为了一些远大的目标，去不计后果地牺牲别人，牺牲别的小猫的人，频频地让我们这个世界，陷入大火。”&lt;/p&gt;
+
+&lt;p&gt;这里呢，我觉得最近的一个很有力的佐证，就是美国总统特朗普的近期表现，前后的言论180度大反转，从最开始对新冠肺炎病情不以为意，盲目乐观自身医疗条件，会议不佩戴口罩，被美煤记者当众“诘问”自私，3月10日特朗普个人推特，“去年有3.7万美国人死于普通流感，平均每年因流感死亡的有2.7万-7万人，但生活和经济仍在继续，而“目前我们新冠病毒确诊546例，其中22人死亡”，3月13日，朗普宣布进入“国家紧急状态”以应对新冠肺炎疫情，联邦政府将启动500亿美元的紧急资金储备，用于各州医疗机构应对新冠肺炎疫情。同时值得关注的是，由于美国股市受疫情恐慌和美国长期经济泡沫的影响，股市连续暴跌，特朗普宣布救命500亿，救市两万亿。孰轻孰重，自然就见分晓了。&lt;/p&gt;
+
+&lt;p&gt;这就是政治家的考虑，这也是考虑到美国的经济体制问题，感兴趣的同学可以再去了解一下，但它显然不能为美国人民带来“国民体验上的幸福感”。&lt;/p&gt;
+
+&lt;p&gt;相比之下呢，如果追求正确的话，我们的先贤已经给出了答案，“穷，则独善其身；达，则兼济天下。”&lt;/p&gt;
+
+&lt;p&gt;所以我认为，这是有历史背景的，我们只是普通人，或许个人来讲，一生都会在平庸中读过，但至少你来到这个世界，就应当好好享受这一生中所遇到的大大小小的事，可可爱爱的人。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“&lt;strong&gt;感到孤独并不可怕，可怕的是你将要和一个让你觉得孤独的人在一起，共度一生。&lt;/strong&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在我看来，爱有两个维度。最近看了两集《奇葩说》，被里面各位老师吸粉了，尤其是李诞老师，太喜欢他讲自己的观点了。最让人痴迷的就是，你连自己什么时候被掰弯的都不清楚，就这样猝不及防地爆出一个强有力的论点，。&lt;/p&gt;
+
+&lt;p&gt;上价值。&lt;/p&gt;
+
+&lt;p&gt;“你连近处的人都爱不好，如何能去爱得了远方的人。”&lt;/p&gt;
+
+&lt;p&gt;“你连陪在身边的人都爱不好，凭什么认为经过一段遥远的时间，就能爱好未来遇到的那个特别的人？”&lt;/p&gt;
+
+&lt;p&gt;这世界上，&lt;/p&gt;
+
+&lt;p&gt;在《奇葩说》一次辩题上，马薇薇讲过一个论点：”男人要有责任感，最起码的责任感就是，不伤害别人。所以男人对女人最起码的负责任，就是至少把短信删干净，再大大方方的给那个共同生活的人检查。“ 怎么说呢，听到这个说法，多少是有些替她悲哀的吧，看了一段关于她的访谈，她谈到对前夫的态度，”为什么离婚的时候你选择净身出户呢？“，她回答很干脆利落，说：”一个男人，要在离婚的时候跟女人要钱，说明他对自己的未来是不抱期望的，他挣不了什么钱，可我还有能力。“ 被微微这种真实和傲岸不羁打动了，也替她感到悲哀和心酸，这世界上总有人强大到我们难以想象，但我不认为会有人强大到”不需要被人爱。“，她很拼命，她特别努力，她不吝于展示自己一人就能独当一面的气势。&lt;/p&gt;
+
+&lt;p&gt;她父亲生病，胃癌晚期，她得到消息当天还要录制节目，”那个晚上，我没有失眠，睡得尤其的香“，主持人小姐姐说，”这种性格，不像是传统意义上的女人，更像是一个战士，越是有压力，越是要扛得住压力“，”互补性格的人在一起未必幸福，正因为性格反差太大了，有了矛盾，吵架都炒不到一处来。“&lt;/p&gt;
+
+&lt;h3 id=&quot;2-母爱&quot;&gt;(2) 母爱&lt;/h3&gt;
+
+&lt;p&gt;弗洛姆说 “&lt;strong&gt;母亲是我们的故乡，是大自然、大地和海洋&lt;/strong&gt;”, “&lt;strong&gt;在最初几年内孩子同父亲几乎没有什么联系&lt;/strong&gt;”&lt;/p&gt;
+
+&lt;p&gt;他说父亲代表思想的世界，“&lt;strong&gt;父亲是教育孩子，向孩子指出通往世界之路的人。&lt;/strong&gt;”&lt;/p&gt;
+
+&lt;p&gt;母爱是一场自然的、得体的退出。
+可以说世间所有的爱都是为了结合和拉近彼此之间的距离，唯独母爱是为了分离。
+当孩子从我们的子宫出生，当他学会爬、行走而逐渐挣脱我们扶持的双手，
+再到他一步步走上求学之路，我们不得不看着他一次次背过身，独自走上面对自己、面对外在世界的道路。&lt;/p&gt;
+
+&lt;p&gt;我自己对于得体的母爱的理解有两方面。作为母亲，首先自己要做好随时退出的心理准备：认识到自己和孩子都是独立人格的两个人，妈妈要积极发展自身并做到热爱生活，避免对孩子肆意的关注和过渡的担心。其次要允许，希望并促成与孩子的分离：不对孩子抱有施恩的想法，不求孩子赡养自己，尊重孩子是一个独立的个体，接纳并理解他的想法，并且积极发展他面对自己和面对社会的各种技能，为使他成为更好的自己和更棒的社会人而倾注全部的爱。&lt;/p&gt;
+
+&lt;p&gt;要使母爱更加得体，先从享受与孩子在一起的每一个时刻开始，适当降低对孩子的期待，不要因为他没有成长为你心目中的孩子而焦虑，毕竟孩子是为他自己而活的。&lt;/p&gt;
+
+&lt;p&gt;这里有些奇怪的点就是，仅仅提到了母爱而没有涉及父爱。&lt;/p&gt;
+
+&lt;p&gt;他说母爱是无条件的，也因此无法和无需去争取，父爱则可以通过自己的努力去赢得。&lt;/p&gt;
+
+&lt;p&gt;观点和我国传统“&lt;strong&gt;父严母慈&lt;/strong&gt;”如出一辙，虽然似乎与历史发展规律相吻合，但这多少有点令我惊讶，我也&lt;strong&gt;很难完全赞同&lt;/strong&gt;，感觉其中有男女不平等的影子。&lt;/p&gt;
+
+&lt;p&gt;但他也说“&lt;strong&gt;父爱应该受一定的原则支配并提出一定的要求，应是宽容的、耐心的，不应该是咄咄逼人和专横的。&lt;/strong&gt;”&lt;/p&gt;
+
+&lt;p&gt;他说一个人最后的成长成熟应该达到既是自己的母亲又是自己的父亲的高度，即一个人应该无论何时都能无条件地爱自己，同时又能对自己有所要求追求发展，这点我很赞同。&lt;/p&gt;</content>
 
       
       
@@ -303,15 +194,11 @@ Redis所有数据存储在内存中，对数据的更新将异步地保存到磁
       
 
       
-        <category term="cs" />
-      
-        <category term="dev" />
-      
-        <category term="embd" />
+        <category term="book" />
       
 
       
-        <summary type="html">编译原理</summary>
+        <summary type="html">【书评】《爱的艺术》弗洛姆</summary>
       
 
       
@@ -319,82 +206,54 @@ Redis所有数据存储在内存中，对数据的更新将异步地保存到磁
     </entry>
   
     <entry>
-      <title type="html">【Python基础】日志处理之logging模块</title>
-      <link href="/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97" rel="alternate" type="text/html" title="【Python基础】日志处理之logging模块" />
-      <published>2020-03-17T23:10:00+00:00</published>
-      <updated>2020-03-17T23:10:00+00:00</updated>
-      <id>/%E3%80%90Python%E5%9F%BA%E7%A1%80%E3%80%91%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97</id>
-      <content type="html" xml:base="/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">&lt;h1 id=&quot;python基础日志处理之logging模块&quot;&gt;【Python基础】日志处理之logging模块&lt;/h1&gt;
+      <title type="html">【Python】使用语句筛选和构建新的list, dict, set等集合</title>
+      <link href="/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88" rel="alternate" type="text/html" title="【Python】使用语句筛选和构建新的list, dict, set等集合" />
+      <published>2020-03-28T14:17:00+00:00</published>
+      <updated>2020-03-28T14:17:00+00:00</updated>
+      <id>/%E3%80%90Python%E3%80%91%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,%20dict,%20set%E7%AD%89%E9%9B%86%E5%90%88</id>
+      <content type="html" xml:base="/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88">&lt;h1 id=&quot;python使用语句筛选和构建新的list-dict-set等集合&quot;&gt;【Python】使用语句筛选和构建新的list, dict, set等集合&lt;/h1&gt;
 
-&lt;p&gt;logging 是 Python 内建的实用日志输出模块，可以为应用与库定义了实现灵活的事件日志系统的函数与类.&lt;/p&gt;
+&lt;p&gt;List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.&lt;/p&gt;
 
-&lt;p&gt;使用标准库提提供的 logging API 最主要的好处是，所有的 Python 模块都可能参与日志输出，包括你的日志消息和第三方模块的日志消息。&lt;/p&gt;
+&lt;p&gt;使用这种理解性语句，可以快速从已有的序列中构造新的序列，类似于lambda函数。&lt;/p&gt;
 
-&lt;p&gt;这个模块提供许多强大而灵活的功能。如果你对 logging 不太熟悉的话， 掌握它最好的方式就是查看它对应的教程。&lt;/p&gt;
-
-&lt;p&gt;该模块定义的基础类和函数都列在下面。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;记录器[&lt;code class=&quot;highlighter-rouge&quot;&gt;Logger&lt;/code&gt;]暴露了应用程序代码直接使用的接口。&lt;/li&gt;
-  &lt;li&gt;处理程序[&lt;code class=&quot;highlighter-rouge&quot;&gt;Handler&lt;/code&gt;]将日志记录（由记录器创建）发送到适当的目标。&lt;/li&gt;
-  &lt;li&gt;过滤器[&lt;code class=&quot;highlighter-rouge&quot;&gt;Filter&lt;/code&gt;]提供了更精细的设施，用于确定要输出的日志记录。&lt;/li&gt;
-  &lt;li&gt;格式化程序[&lt;code class=&quot;highlighter-rouge&quot;&gt;Formatter&lt;/code&gt;]指定最终输出中日志记录的样式。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.python.org/zh-cn/3/library/logging.html?highlight=argparse#logging.Formatter&quot;&gt;Python 文档： logging — Python 的日志记录工具&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;logging-测试代码&quot;&gt;logging 测试代码&lt;/h2&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;7.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e09359112e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Jul&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2019&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MSC&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1916&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;64&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AMD64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;win32&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;help&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;copyright&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;credits&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;license()&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;more&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;logging&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'log'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 测试一下异常处理&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NoneType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;BaseException&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'OK!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;OK&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NoneType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#4&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;TypeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;missing&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;required&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;positional&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'msg'&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 日志文件输出&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Formatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(asctime)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(filename)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s[line:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(lineno)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d] &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(levelname)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%(message)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FileHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;a.log&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#8&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;AttributeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'FileHandler'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;has&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;no&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'setLevell'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEBUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setFormatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 设置以后，终端讲不再看到 日志输出&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setLevel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INFO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;pyshell#14&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;NameError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defined&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, Foolish Logging.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;435&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;66&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;435&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;66&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elm&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;输出结果&quot;&gt;输出结果&lt;/h2&gt;
+&lt;h2 id=&quot;嵌套的理解性list构造&quot;&gt;嵌套的理解性list构造&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;输出：&lt;/strong&gt; a.log&lt;/p&gt;
+&lt;p&gt;实现矩阵的转置。&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-log&quot;&gt;2020-03-17 23:06:46,292 &amp;lt;pyshell#12&amp;gt;[line:1] INFO Hello
-2020-03-17 23:07:39,933 &amp;lt;pyshell#15&amp;gt;[line:1] INFO Hello, Foolish Logging.
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;h2 id=&quot;遍历器-enmuerate---idx-obj&quot;&gt;遍历器 &lt;code class=&quot;highlighter-rouge&quot;&gt;enmuerate() -&amp;gt; (idx, obj)&lt;/code&gt;&lt;/h2&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;其他类型的理解性语句&quot;&gt;其他类型的理解性语句&lt;/h2&gt;
+
+&lt;p&gt;Sequence objects may be compared to other objects with the same sequence type. The comparison uses lexicographical ordering: first the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted. If two items to be compared are themselves sequences of the same type, the lexicographical comparison is carried out recursively. If all items of two sequences compare equal, the sequences are considered equal. If one sequence is an initial sub-sequence of the other, the shorter sequence is the smaller (lesser) one. Lexicographical ordering for strings uses the Unicode code point number to order individual characters. Some examples of comparisons between sequences of the same type:&lt;/p&gt;</content>
 
       
       
@@ -417,7 +276,7 @@ Redis所有数据存储在内存中，对数据的更新将异步地保存到磁
       
 
       
-        <summary type="html">【Python基础】日志处理之logging模块</summary>
+        <summary type="html">【Python】使用语句筛选和构建新的list, dict, set等集合</summary>
       
 
       
@@ -425,239 +284,408 @@ Redis所有数据存储在内存中，对数据的更新将异步地保存到磁
     </entry>
   
     <entry>
-      <title type="html">【光学】球面波 – 光学基础</title>
-      <link href="/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
-      <published>2020-03-17T16:49:00+00:00</published>
-      <updated>2020-03-17T16:49:00+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8</id>
-      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8">&lt;h1 id=&quot;光学光学分界面上的光学性质&quot;&gt;【光学】光学分界面上的光学性质&lt;/h1&gt;
+      <title type="html">逢雪宿芙蓉山主人 [唐]刘长卿</title>
+      <link href="/%E8%AF%97%E6%83%85-%E6%9F%B4%E9%97%A8%E9%97%BB%E7%8A%AC%E5%90%A0-%E9%A3%8E%E9%9B%AA%E5%A4%9C%E5%BD%92%E4%BA%BA" rel="alternate" type="text/html" title="逢雪宿芙蓉山主人 [唐]刘长卿" />
+      <published>2020-03-28T09:32:00+00:00</published>
+      <updated>2020-03-28T09:32:00+00:00</updated>
+      <id>/%E3%80%90%E8%AF%97%E6%83%85%E3%80%91%E6%9F%B4%E9%97%A8%E9%97%BB%E7%8A%AC%E5%90%A0,%E9%A3%8E%E9%9B%AA%E5%A4%9C%E5%BD%92%E4%BA%BA</id>
+      <content type="html" xml:base="/%E8%AF%97%E6%83%85-%E6%9F%B4%E9%97%A8%E9%97%BB%E7%8A%AC%E5%90%A0-%E9%A3%8E%E9%9B%AA%E5%A4%9C%E5%BD%92%E4%BA%BA">&lt;h1 id=&quot;逢雪宿芙蓉山主人-唐刘长卿&quot;&gt;逢雪宿芙蓉山主人 [唐]刘长卿&lt;/h1&gt;
 
-&lt;p&gt;波矢的大小的含义，即光波能量传播的&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;逢雪宿芙蓉山主人
+  [唐]刘长卿 日暮苍山远，天寒白屋贫。 柴门闻犬吠，风雪夜归人。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;投影对任意坐标轴的投影会变小，因为可以投影成三个坐标分量，故任意波可以分解为三个平面波场，波矢大小分别为 $kx,ky,kz$&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;波矢已经确定了，本征模就不能分解了。那么怎么理解呢，平面波场就是等相位面沿着波矢的传播，等相位面之间的间距就是波长，沿着传播方向看肯定就是 $\lambda$ ，但是波矢不一定是沿着 $x, y, z$ 方向，沿着不同方向上看（$x, y, z$），反应出来的波场不同，结果导致的波场分布&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;平面波矢确定以后，沿着不同的方向去看，其表现出的波场现象不同。
-已经是本征波解，不能分解是合理的。&lt;/p&gt;
-
-&lt;h2 id=&quot;引入&quot;&gt;引入&lt;/h2&gt;
-
-&lt;p&gt;光线在&lt;br /&gt;
-$r_s^2+r_p^2 \neq 1$
-这里是不是能量不守恒？还是我们推导有问题呢？
-&lt;img src=&quot;/assets/images/QQ截图20200317172755.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;因为：光场在投射时光束宽度发生了变化。&lt;/p&gt;
-
-&lt;p&gt;光强是单位面积上的能量强度。
-光强和功率之间的区别，总功率是和面积相关的。
-所以，激光器的功率与激光器光强是两个概念。&lt;/p&gt;
-
-&lt;p&gt;要得到能量守恒的结论，需要加入&lt;/p&gt;
-
-&lt;p&gt;因为光束发生了变化。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【光学】光学分界面上的光学性质</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【光学】球面波 – 光学基础</title>
-      <link href="/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
-      <published>2020-03-17T00:10:00+00:00</published>
-      <updated>2020-03-17T00:10:00+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E7%90%83%E9%9D%A2%E6%B3%A2%20--%20%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80</id>
-      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;光学球面波--光学基础&quot;&gt;【光学】球面波 – 光学基础&lt;/h1&gt;
-&lt;p&gt;光学中最常用的球面波公式：
-&lt;script type=&quot;math/tex&quot;&gt;U(x,y,z) = \frac{a_0}{r}e^{j \theta} = \frac{a_0}{r}e^{j\overrightarrow{k} \cdot \overrightarrow{r}}&lt;/script&gt;
-事实上，这个等式是&lt;strong&gt;亥姆霍兹方程&lt;/strong&gt;的一组简单解。&lt;/p&gt;
-
-&lt;p&gt;并且，其中 $\overrightarrow{k} \cdot \overrightarrow{r}$ 是光波位相，$\displaystyle \theta =\frac{2 \pi}{\lambda} \overrightarrow{n}\cdot \overrightarrow{r}$，其中$n$是波矢 $\overrightarrow{k}$ 的单位方向向量，$\overrightarrow{n}\cdot \overrightarrow{r}$是有效光程，$\displaystyle \frac{1}{\lambda}\overrightarrow{k} \cdot \overrightarrow{r}$则代表了通过$\overrightarrow{n} \cdot \overrightarrow{r}$的有效光程中经过了多少个&lt;strong&gt;空间周期$\lambda$&lt;/strong&gt;，再乘以$2\pi$则成为位相变化因子，即 $\displaystyle \theta=\overrightarrow{k} \cdot \overrightarrow{r} = \frac{2 \pi}{\lambda}\overrightarrow{n} \cdot \overrightarrow{r}$。&lt;/p&gt;
-
-&lt;p&gt;在通常的光学问题分析中，我们并不关心共同位相初始量（通常为一个巨大常数，且随着共同时间位相因子$j\omega t$迅速变化），而仅仅考虑相对位相差，而将共同位相初始量排除在振幅因子 $A$ 中。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【光学】球面波 – 光学基础 光学中最常用的球面波公式： 事实上，这个等式是亥姆霍兹方程的一组简单解。</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【光学】数字图像处理</title>
-      <link href="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86" rel="alternate" type="text/html" title="【光学】数字图像处理" />
-      <published>2020-03-16T11:24:00+00:00</published>
-      <updated>2020-03-16T11:24:00+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86</id>
-      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">&lt;p&gt;（1）静止图像 $\displaystyle I=f(x,y,z,\lambda)$&lt;br /&gt;
-（2）平面图像 $\displaystyle I=f(x,y,\lambda,t)$ &lt;br /&gt;
-（3）灰度图像 $\displaystyle I=f(x,y,z,t)$&lt;br /&gt;
-（4）模拟图像 $\displaystyle I=f(x,y,z,\lambda,t)$  xyz连续&lt;br /&gt;
-（5）数字图像 $\displaystyle I=f(x,y,z,\lambda,t)$  xyz离散&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">（1）静止图像 $\displaystyle I=f(x,y,z,\lambda)$ （2）平面图像 $\displaystyle I=f(x,y,\lambda,t)$ （3）灰度图像 $\displaystyle I=f(x,y,z,t)$ （4）模拟图像 $\displaystyle I=f(x,y,z,\lambda,t)$ xyz连续 （5）数字图像 $\displaystyle I=f(x,y,z,\lambda,t)$ xyz离散</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【光学】数字图像处理</title>
-      <link href="/%E8%BD%AC%E5%8F%91-%E6%A2%A6%E7%BB%88%E5%BD%92%E5%8F%AA%E6%98%AF%E6%A2%A6-%E5%8F%AA%E6%9C%89%E8%A1%8C%E5%8A%A8%E6%89%8D%E8%83%BD%E6%9C%89%E6%89%80%E6%94%B6%E8%8E%B7" rel="alternate" type="text/html" title="【光学】数字图像处理" />
-      <published>2020-03-16T11:24:00+00:00</published>
-      <updated>2020-03-16T11:24:00+00:00</updated>
-      <id>/%E3%80%90%E8%BD%AC%E5%8F%91%E3%80%91%E6%A2%A6%E7%BB%88%E5%BD%92%E5%8F%AA%E6%98%AF%E6%A2%A6,%E5%8F%AA%E6%9C%89%E8%A1%8C%E5%8A%A8%E6%89%8D%E8%83%BD%E6%9C%89%E6%89%80%E6%94%B6%E8%8E%B7</id>
-      <content type="html" xml:base="/%E8%BD%AC%E5%8F%91-%E6%A2%A6%E7%BB%88%E5%BD%92%E5%8F%AA%E6%98%AF%E6%A2%A6-%E5%8F%AA%E6%9C%89%E8%A1%8C%E5%8A%A8%E6%89%8D%E8%83%BD%E6%9C%89%E6%89%80%E6%94%B6%E8%8E%B7">&lt;h1 id=&quot;转发梦终归只是梦只有行动才能有所收获&quot;&gt;【转发】梦终归只是梦，只有行动才能有所收获&lt;/h1&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【转发】梦终归只是梦，只有行动才能有所收获</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【光学】数字图像处理</title>
-      <link href="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA" rel="alternate" type="text/html" title="【光学】数字图像处理" />
-      <published>2020-03-16T11:24:00+00:00</published>
-      <updated>2020-03-16T11:24:00+00:00</updated>
-      <id>/%E3%80%90%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6%E3%80%91%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA</id>
-      <content type="html" xml:base="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA">&lt;h1 id=&quot;信息光学几个重要推论&quot;&gt;【信息光学】几个重要推论&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;光波通过孔径、半透明物体、遮挡面等光学元件时，其幅度收到元件透过率影响。
-&lt;script type=&quot;math/tex&quot;&gt;U_o(x,y) = U_i(x,y) \cdot t(x,y)&lt;/script&gt;
-而在频域，则表现为&lt;em&gt;入射光场频谱&lt;/em&gt;与&lt;em&gt;透过率函数频谱&lt;/em&gt;成&lt;strong&gt;卷积关系&lt;/strong&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;孔径的周期性排列，由阵列定理，其透过率表达式为单孔径透过率函数与向各位置位移的δ函数的卷积，即：
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = t(x,y) * \sum_{n=1}^N \delta (x-\xi_n,y-\eta_n)&lt;/script&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;几种常见孔径的透过率函数及其频谱：&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;矩形孔，$x$ 方向长度为 $a$，$y$ 方向长度为 $b$ &lt;br /&gt;
-透过率函数：
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = rect(\frac{x}{a}) \cdot rect(\frac{y}{b})&lt;/script&gt;&lt;br /&gt;
-频谱为：
-&lt;script type=&quot;math/tex&quot;&gt;T(\frac{x}{\lambda z}, \frac{y}{\lambda z}) = ab \cdot \mathrm{sinc}(a\frac{x}{\lambda z} ) \cdot \mathrm{sinc}(b\frac{y}{\lambda z})&lt;/script&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;当暮色降临于远方的青山之上，气象寒冷朴素的小屋不避风寒，柴门之外忽闻犬吠之声，想是主人雪夜归来。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;透镜，二次曲面
-透镜可看做特殊的孔径遮挡物体，其透过率很高，通过时会产生一个随空间位置呈现二次型分布的相移。&lt;br /&gt;
-透镜的&lt;strong&gt;等效透过率函数&lt;/strong&gt;：&lt;br /&gt;
-&lt;em&gt;注：通常，输入为发散球面波，输出为会聚球面波。&lt;/em&gt;
-&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-  t(x,y) &amp;= \frac{U'(x,y)}{U(x,y)} \\
-  &amp;=  \Large{ \frac{ A e^{-jkd_i}\cdot e^{-\frac{jk}{2d_i}[(x-x_0)^2+(y-y_0)^2]} }{Ae^{jkd_o}\cdot e^{\frac{jk}{2d_o}[(x-x_0)^2+(y-y_0)^2]}}} \\
-  &amp;= \Large{e^{-jk(d_i+d_o)} \cdot e^{-\frac{jk}{2}(\frac{1}{d_i}+\frac{1}{d_o})[(x-x_0)^2+(y-y_0)^2]} }
-\end{aligned} %]]&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;意象：&lt;code class=&quot;highlighter-rouge&quot;&gt;日暮&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;苍山&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;天寒&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;白屋&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;柴门&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;犬吠&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;风雪&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;夜归人&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;抒情：写环境之朴素凄清，描摹山村和谐、纯朴之风。&lt;/li&gt;
+  &lt;li&gt;注解：
+    &lt;ul&gt;
+      &lt;li&gt;日暮：黄昏时分。点明时间。&lt;/li&gt;
+      &lt;li&gt;白屋：指不事雕琢的小屋，朴素、贫苦。细节描写，言简意赅。&lt;/li&gt;
+      &lt;li&gt;苍山远：青山在暮色中影影绰绰，远在他方。意境开阔、壮美。&lt;/li&gt;
+      &lt;li&gt;夜归人：夜间才归家的人&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;其中 $U’(x,y)$ 为透射光波， $U(x,y)$ 为入射光波，以相距透镜，$\displaystyle e^{-jk(d_i+d_o)}$ 不随空间位置而发生变化，称为常数位相因子。&lt;/p&gt;
+&lt;p&gt;这首小诗读来非常清新，氛围孤寂而又冷清，却又有着满满的诗意。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="poem" />
+      
+
+      
+        <summary type="html">逢雪宿芙蓉山主人 [唐]刘长卿</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【★】你从人际交往中悟到了什么？</title>
+      <link href="/%E4%BD%A0%E4%BB%8E%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E6%82%9F%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88" rel="alternate" type="text/html" title="【★】你从人际交往中悟到了什么？" />
+      <published>2020-03-28T09:30:00+00:00</published>
+      <updated>2020-03-28T09:30:00+00:00</updated>
+      <id>/%E3%80%90%E2%98%85%E3%80%91%E4%BD%A0%E4%BB%8E%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E6%82%9F%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%3F</id>
+      <content type="html" xml:base="/%E4%BD%A0%E4%BB%8E%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E6%82%9F%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88">&lt;h1 id=&quot;你从人际交往中悟到了什么&quot;&gt;【★】你从人际交往中悟到了什么？&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;有技巧地夸奖一个人是&lt;/li&gt;
+  &lt;li&gt;没有人喜欢被欺骗，所以你在背后的默默付出某一天被发现，会给你的&lt;/li&gt;
+  &lt;li&gt;永远不要跪舔，除非你认为不跪舔就会遗憾一辈子的那种。
+跪舔得到的结果，并不会实质性地增加你的价值。&lt;/li&gt;
+  &lt;li&gt;人与人之间的亲近，永远依靠的是吸引与共性。&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="idea" />
+      
+        <category term="star" />
+      
+
+      
+        <summary type="html">【★】你从人际交往中悟到了什么？</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【随想】一些碎碎念，2020年3月27日</title>
+      <link href="/%E8%81%AA%E6%98%8E%E4%BA%BA%E6%80%8E%E6%A0%B7%E5%AD%A6%E4%B9%A0" rel="alternate" type="text/html" title="【随想】一些碎碎念，2020年3月27日" />
+      <published>2020-03-28T09:30:00+00:00</published>
+      <updated>2020-03-28T09:30:00+00:00</updated>
+      <id>/%E3%80%90%E2%98%85%E3%80%91%E8%81%AA%E6%98%8E%E4%BA%BA%E6%80%8E%E6%A0%B7%E5%AD%A6%E4%B9%A0%3F</id>
+      <content type="html" xml:base="/%E8%81%AA%E6%98%8E%E4%BA%BA%E6%80%8E%E6%A0%B7%E5%AD%A6%E4%B9%A0">&lt;h1 id=&quot;聪明人怎样学习&quot;&gt;【★】聪明人怎样学习？&lt;/h1&gt;
+
+&lt;p&gt;首先这里有标题党之嫌，“聪明人”的确有吸引眼球的意味，不过，谁让你爱看还点进来了呢？
+这种低级陷阱，虽然粗劣，但确实管用不是？&lt;/p&gt;
+
+&lt;h2 id=&quot;学习是生孩子不是过家家&quot;&gt;学习是生孩子，不是过家家。&lt;/h2&gt;
+
+&lt;p&gt;学习就像人的感情，只不过，聪明人的学习是谈一场不分手的恋爱，相遇、钟情、恋爱、结婚、生子、终老，一个完整的有深度的过程，而不是初高中生的小打小闹，更不是5岁小孩子的过家家游戏。&lt;/p&gt;
+
+&lt;p&gt;学习要有深度，深度的比喻。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="idea" />
+      
+
+      
+        <summary type="html">【★】聪明人怎样学习？</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【随想】怎样将自己提升自己的生活、品位层次</title>
+      <link href="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E5%B9%B8%E7%A6%8F%E4%BA%86%E5%90%97" rel="alternate" type="text/html" title="【随想】怎样将自己提升自己的生活、品位层次" />
+      <published>2020-03-28T09:17:00+00:00</published>
+      <updated>2020-03-28T09:17:00+00:00</updated>
+      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E4%BD%A0%E5%B9%B8%E7%A6%8F%E4%BA%86%E5%90%97%3F</id>
+      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E5%B9%B8%E7%A6%8F%E4%BA%86%E5%90%97">&lt;h1 id=&quot;随想你幸福了吗&quot;&gt;【随想】你幸福了吗？&lt;/h1&gt;
+
+&lt;p&gt;很多智力较高的人，乃至仅仅分数很高的人，其实内心是无比匮乏的。&lt;/p&gt;
+
+&lt;p&gt;简单的快乐不稳定，轻易的到的快乐不长久，我们要追求的是长远、稳定的快乐。
+你的知识全是空中楼阁，只有骨架和皮毛，没有血肉。&lt;/p&gt;
+
+&lt;p&gt;十三。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;无知的人是幸福的&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这是一种一叶障目式的快乐，鸵鸟伏地式的快乐。
+但不可否认的是，这也是一种快乐。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;格登·史密斯说过，他曾经见过的最幸福的人就是在德兰德斯的防御工事上劳动的一个奴隶——他仅有一条腿，相貌极其丑陋，身上还戴着沉重的锁链。他被判处终生为奴，不得不夜以继日地做繁重的劳动，然而他每天都非常快乐地面对生活。他一边笑一边唱歌，成为那个边塞里面最快乐的人。&lt;/code&gt;·&lt;/p&gt;
+
+&lt;p&gt;其实他的快乐也是可以理解的，这种快乐也可能是真实的快乐，但一定是比较低层次的快乐，是一种心理的自我调节，更像是自我麻痹式的快乐。&lt;/p&gt;
+
+&lt;p&gt;嗯嗯，对，所以我无法认同这种快乐呀&lt;/p&gt;
+
+&lt;p&gt;不自律是什么体验 —— 被命运反复羞辱，却无力反抗。&lt;/p&gt;
+
+&lt;p&gt;这样的幸福，也许对那个奴隶来讲，我不是他，所以不能妄谈他是否真的快乐，何况真正的快乐又是另外一个哲学范畴。但非要做出一个判断的话。&lt;/p&gt;
+
+&lt;p&gt;所以我认同的幸福和快乐，是在有一定思维高度，见证了人间的离合悲欢，之后。&lt;/p&gt;
+
+&lt;p&gt;贫穷真的能限制一个人的想象力，学历也是。 《反脆弱》&lt;br /&gt;
+很多时候你没有远大的梦想，只是因为你没有见过更大的世界。&lt;br /&gt;
+“有钱人的生活，就是这么朴实无华，且枯燥。” ———— 朱一旦（一个网络自媒体视频创作组织）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;客观条件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;物质，金钱&lt;/li&gt;
+  &lt;li&gt;健康的身体&lt;/li&gt;
+  &lt;li&gt;自由的时间&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;主观条件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;健康的精神&lt;/li&gt;
+  &lt;li&gt;回避依恋&lt;/li&gt;
+  &lt;li&gt;尊重
+从初中思修课上，有一句话“每个人都由被尊重的需要”&lt;/li&gt;
+  &lt;li&gt;感恩之心&lt;/li&gt;
+  &lt;li&gt;洞察力&lt;/li&gt;
+  &lt;li&gt;亲密关系，安全与归属感&lt;/li&gt;
+  &lt;li&gt;能力&lt;/li&gt;
+  &lt;li&gt;做有意义的事
+不要因为事情简单而你刚好有时间就去做，要因为“值得”才去。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一分钱难倒英雄好汉&lt;/p&gt;
+
+&lt;p&gt;很佩服有民族气节的人，因为我真的学不来，这本身也不是学来的，是我格局不高吧&lt;/p&gt;
+
+&lt;p&gt;热爱可抵岁月漫长。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;你对这个世界的认知越高，你听到的哭声就越遥远。&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;什么是幸福？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;有个喜欢的人，手上有恰好能做完的工作，实现自身价值。
+做好真正的自己，同时不丢失自己的责任与价值。
+做好自己也许只是必要条件，但我觉得呢，能做到一点，已经可以达到普遍意义上的“幸福”了呀。&lt;/p&gt;
+
+&lt;p&gt;快乐和幸福并不等价，也就是快乐的人，不一定能叫做幸福。
+快乐是分不分层次的，不过&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;幸福是人生的最终目标吗？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;人生永远只在当下，没有最终目标。就好像很多时候我们好像永远都有忙不完的事，看到感兴趣的文章，好看的图片，都是先加个收藏，这已动作似乎已经上升到了仪式感的层面，仿若点亮了那颗小星星，就已经把这份感动，永久的，藏进了心底。随后再匆匆一扫而过，也不会觉得错失了什么。但我们很少会再有回头去看的机会，多数的好文好图进了收藏夹就基本意味着要流传给子孙后代了。&lt;/p&gt;
+
+&lt;p&gt;许多人的知识内涵和层次，都蕴含在了他的收藏夹，而非在他的谈吐、行为举止中。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;幸福的必要因素是什么？&lt;/li&gt;
+  &lt;li&gt;感恩之心&lt;/li&gt;
+  &lt;li&gt;如何才能幸福&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;人首先要成为他自己，再去寻求爱情。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;你真的快乐吗？&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;你见过最幸福的人是什么样子的？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;2017-07-05 是个特殊的日子，因为就在那天一觉醒来韩国民众的国民老公和国民老婆都没了~
+主演《太阳的后裔》男女主角宋仲基和宋慧乔发布婚讯，两人预计在10月31日完婚。
+让我觉得最幸福的，高中时候火热的一部韩剧《太阳的后裔》。&lt;/p&gt;
+
+&lt;p&gt;两个从《太阳的后裔》开始就一直是最佳CP，现在CP变成夫妻，这应该是幸福最好的模样吧，CP粉的愿望也终于成真了。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;做个“自私”的人？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;记得不少公众人物都提过“自私”和快乐的关系，至今还有印象的就是papi酱，还有李诞，都谈过这个观点：
+&lt;img src=&quot;/assets/images/QQ截图20200328153513.png&quot; alt=&quot;做一个“自私”的俗人，真的很爽&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;哪种人不可深交？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;只会耍嘴皮子功夫的，嘴上积极的人。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;没有那种经历，就不要妄谈大道理。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;只会讲大道理的人，总是让人觉得，内心无比空虚。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;最痛苦的人，就是不快乐，还不愿努力的人吧
+不愿尝试&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;你很自私，因为你连自己的事情都做不好，而一旦你开始做那件事，又会忘掉所有的人，所以你还不配去说爱一个人。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“艺术文明，对人类真的很重要。”
+———— 评《杨超越》&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;刘十三&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;刚见面那天他陪着听了一晚上的歌，起初觉得&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content>
+  &lt;li&gt;你觉得幸福是人生的最终目的吗？&lt;/li&gt;
+  &lt;li&gt;没有感恩之心的人，是否也可以获得幸福？&lt;/li&gt;
+  &lt;li&gt;人生最重要的不是看你做过多少非做不可的事，当你老去以后才会明白，那些可做可不做的事，才是让你最终念念不忘、让你的人生闪闪发光的事。&lt;/li&gt;
+  &lt;li&gt;入定，禅意，正念 –&amp;gt; &lt;strong&gt;冥想&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;毛泽东，蔡和森，曾国藩，王阳明《心学》。&lt;/li&gt;
+  &lt;li&gt;我们生来不是为了改变世界，而是保持自己不为世界所改变。———— 《熔炉》&lt;/li&gt;
+  &lt;li&gt;最可怜的，是那些自认为可怜，还要等着别人来可怜的人。&lt;/li&gt;
+  &lt;li&gt;重要的是思考道理背后的原因，而不是道理本身是否正确。&lt;/li&gt;
+  &lt;li&gt;不为什么而去做的事，可能才是你真正心之所向的事。
+不为什么而去做点什么，随心而动。&lt;/li&gt;
+  &lt;li&gt;花落花飞花满天，红断香残有谁怜。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;戒，定，慧。
+一境心，乐受。
+慎独陈意镇心。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;快乐之前，明白自己为什么开心，为什么不开心，比一直保持开心更重要。&lt;/li&gt;
+  &lt;li&gt;欲望是不可以压制的，因为它是自己身体的一部分，每一种情绪都有它存在的意义，你是身体的管理者，而不是剥削者。&lt;/li&gt;
+  &lt;li&gt;中医不应当靠经验来行医，因为用药者需要有信任。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;自我实现，得到理解，&lt;/p&gt;
+
+&lt;p&gt;比如关于自卑心与嫉妒心
+关于如何实现人生幸福
+你昨天说的感恩那个也可以&lt;/p&gt;
+
+&lt;p&gt;我感觉乐观是面对不太好的事情时候
+但是感恩就不一定啦&lt;/p&gt;
+
+&lt;p&gt;丰富的内心世界？行的行的&lt;/p&gt;
+
+&lt;p&gt;没有感恩之心的人，才会整日怨天尤人，不找主观原因，怨天怨地怨父母怨出身呀，所以懂得感恩的人才会感受到什么是美什么是快乐，以及什么是爱，这样…&lt;/p&gt;
+
+&lt;p&gt;没有感恩的心也可以不怨天尤人，只是觉得现在都是自己改得的呀&lt;/p&gt;
+
+&lt;p&gt;我觉得，这应该只有极少数极端分子吧，没有感恩的心，很少能保持善良正直吧。毕竟他们会觉得所有的爱所有人的好都是自己该得的，停止这种关系之后还很容易反目成仇&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;我眼里最美好的爱情。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;童话故事里通常都只讲“王子和公主最后幸福地在一起了”，却从来没有讲过公主和王子是怎样共同走过生活中的鸡毛小事、柴米油盐的。所以说，我可能是个比较孤僻的人，但我很少羡慕别人的爱情，因为他们秀恩爱的背后，也有他们一起经历的喜怒哀乐。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;原来讲自己的话不被嫌弃，是这样的快乐。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;任何一个人都是伟大的，都有必要为自己，每个人的生命都应当是独立的，每个人都为自己而活着。&lt;/p&gt;
+
+&lt;p&gt;人贵在真实，而不是自我安慰式的平凡可贵。&lt;/p&gt;
+
+&lt;p&gt;修炼：心理常态
+学历。
+小黄片，郭德纲，《红楼梦》&lt;/p&gt;
+
+&lt;p&gt;性欲的放纵，郭德纲能给你带来快乐，红楼梦的快乐。&lt;/p&gt;
+
+&lt;p&gt;聪明人是会从生活中学习的，无时无刻不在学习。即便没有直接的教育，也有启发的作用。会观察，洞察力惊人的人不会是愚笨的人。&lt;/p&gt;
+
+&lt;p&gt;聪明，智慧，化于无形的智慧。（扁鹊三兄弟的股市） 更高境界的。&lt;/p&gt;
+
+&lt;p&gt;快乐事有层次的，要追求更高级的快乐。&lt;/p&gt;
+
+&lt;p&gt;最幸福的情侣，是柳时镇和姜暮烟，不是宋慧乔和宋仲基。&lt;/p&gt;
+
+&lt;p&gt;来学师兄的生活风范情趣的，。&lt;/p&gt;
+
+&lt;p&gt;活在当下，所有的美好都应当存进心底，而不是放进收藏夹。 ↑&lt;/p&gt;
+
+&lt;p&gt;人民有信仰，民族有希望，国家有力量，红色文化中最能打动我的口号就是这一句。
+不能是因为不敢，而应当是因为不想，不愿，不能，这是原则性问题。&lt;/p&gt;
+
+&lt;p&gt;爱奇艺上推荐的书单，其中5本都是讲说话的艺术。&lt;/p&gt;
+
+&lt;p&gt;《狼道》
+《鬼谷子》
+《人性的弱点》
+《墨菲定律》
+《羊皮卷》
+《所谓情商高，就是会说话》&lt;br /&gt;
+《别输在不会表达上》
+《回话的技术》
+《跟任何人聊得来》
+《说话心理学》&lt;/p&gt;
+
+&lt;p&gt;这当然是值得我们思考的，因为表达真的太重要了。相对来说，男性比女性在表达上更有欠缺，人的两种社会性质，工具性和表达性，男性似乎与生俱来就有着一定的压力与责任，所以&lt;/p&gt;
+
+&lt;p&gt;曾经看到过一句话：你可曾想过，猿对古代人理解多少？古代人对现代人理解多少？
+精神生活贫乏对精神生活丰富的人理解多少？痴迷的人对彻悟的人又可以理解多少？
+同样的，痛苦的人对幸福的人理解多少？一个活在痛苦中的人就像一个牙疼而不自知
+的人，因为没有体会过牙不疼的感觉，所以以为牙疼便是常态，殊不知牙不疼有多么
+幸福。那么接下来就有请师兄为我们讲解何谓牙疼，何谓牙不疼，我们又该如何从牙疼
+到牙不疼。&lt;/p&gt;
+
+&lt;p&gt;这里不是特别理解，
+30岁之前就应该让自己勇敢地去闯，去硬碰硬，去撞破南墙。因为往后你变得成熟了，变得理智了，也再也做不出那样傻乎乎的事。如果没有&lt;/p&gt;
+
+&lt;p&gt;“美国是一个没有现金储蓄的经济体，上至国家、下至国民，债台高筑。社会第三产业作为支撑，停工会导致”&lt;/p&gt;
+
+&lt;p&gt;虽然我一直觉得人在本质上是孤独的，爱也不能使其消除，
+但我赞同弗洛姆所说的只有爱才能真正抵御孤独。
+当然前提是这种爱情必须是真正的成熟的爱情而非共生有机体的结合，
+是要在保留自己完整性和独立性的条件下与他人合二为一，在克服孤寂的同时保留自己的个性。&lt;/p&gt;
+
+&lt;p&gt;作者说，并不能真正坠落。
+神爱世人&lt;/p&gt;
+
+&lt;p&gt;这里借题发挥，来讲讲自己关于自己对爱情的理解。&lt;/p&gt;
+
+&lt;p&gt;英文里关于爱情的表达是 “fail in love.” 而不是 “i love her.” ，爱情能够如此的让人迷住双眼，而且，心甘情愿。我觉得白岩松老师讲的很对，年轻的时候，真的应该好好去爱一个人，轰轰烈烈，遍体鳞伤。“有人说，爱情是大学的必修课。” 《初恋那一天所听到的故事》日本剧名的一大特色，长到让你怀疑人生的名字，里面阐述了一个很打动人的点，叫做“青春，原来是不可储蓄的。你曾经没有，”&lt;/p&gt;
+
+&lt;p&gt;“对一个人的爱，而对他以外的人无动于衷。”&lt;/p&gt;
+
+&lt;p&gt;爱情是带有幻想和泡沫的，是书中的月，镜中花。爱情如果不能为自己带来幻想，带来不切实际的梦，那么它就不能算是一段刻骨铭心的爱情。
+有种理论讲的是，人一生都会遇到三个人，一个&lt;/p&gt;</content>
 
       
       
@@ -674,13 +702,11 @@ $r_s^2+r_p^2 \neq 1$
       
 
       
-        <category term="math" />
-      
-        <category term="optics" />
+        <category term="idea" />
       
 
       
-        <summary type="html">【信息光学】几个重要推论</summary>
+        <summary type="html">【随想】你幸福了吗？</summary>
       
 
       
@@ -688,37 +714,20 @@ $r_s^2+r_p^2 \neq 1$
     </entry>
   
     <entry>
-      <title type="html">【光学】数字图像处理</title>
-      <link href="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】数字图像处理" />
-      <published>2020-03-16T11:24:00+00:00</published>
-      <updated>2020-03-16T11:24:00+00:00</updated>
-      <id>/%E3%80%90%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80</id>
-      <content type="html" xml:base="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;数字图像处理基础&quot;&gt;数字图像处理基础&lt;/h1&gt;
+      <title type="html">【随想】怎样将自己提升自己的生活、品位层次</title>
+      <link href="/%E9%9A%8F%E6%83%B3-%E6%80%8E%E6%A0%B7%E5%B0%86%E8%87%AA%E5%B7%B1%E6%8F%90%E5%8D%87%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%9F%E6%B4%BB-%E5%93%81%E4%BD%8D%E5%B1%82%E6%AC%A1" rel="alternate" type="text/html" title="【随想】怎样将自己提升自己的生活、品位层次" />
+      <published>2020-03-28T09:17:00+00:00</published>
+      <updated>2020-03-28T09:17:00+00:00</updated>
+      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%80%8E%E6%A0%B7%E5%B0%86%E8%87%AA%E5%B7%B1%E6%8F%90%E5%8D%87%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%9F%E6%B4%BB%E3%80%81%E5%93%81%E4%BD%8D%E5%B1%82%E6%AC%A1</id>
+      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E6%80%8E%E6%A0%B7%E5%B0%86%E8%87%AA%E5%B7%B1%E6%8F%90%E5%8D%87%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%9F%E6%B4%BB-%E5%93%81%E4%BD%8D%E5%B1%82%E6%AC%A1">&lt;h1 id=&quot;随想怎样将自己提升自己的生活品位层次&quot;&gt;【随想】怎样将自己提升自己的生活、品位层次&lt;/h1&gt;
+
+&lt;p&gt;为什么舔狗永远是舔狗，菜鸡永远是菜鸡，因为你的自我认知当中的自我是相对固定的，所以你要改变，会触及自己的根基，会痛苦，会回避。所以，我们不能用恒常的眼光看待自己，但也不必妄想一个人。&lt;/p&gt;
+
+&lt;h2 id=&quot;你为什么不受待见&quot;&gt;你为什么不受待见？&lt;/h2&gt;
+
+&lt;p&gt;人际交往常识：&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;低级图像处理
-    &lt;ul&gt;
-      &lt;li&gt;增强&lt;/li&gt;
-      &lt;li&gt;修复&lt;/li&gt;
-      &lt;li&gt;平滑&lt;/li&gt;
-      &lt;li&gt;压缩
-        &lt;ul&gt;
-          &lt;li&gt;信噪比&lt;/li&gt;
-          &lt;li&gt;压缩比&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;中级图像处理
-    &lt;ul&gt;
-      &lt;li&gt;分形&lt;/li&gt;
-      &lt;li&gt;滤镜&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;高级图像处理
-    &lt;ul&gt;
-      &lt;li&gt;人脸识别&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;学会夸人&lt;/li&gt;
 &lt;/ol&gt;</content>
 
       
@@ -736,13 +745,174 @@ $r_s^2+r_p^2 \neq 1$
       
 
       
-        <category term="math" />
-      
-        <category term="optics" />
+        <category term="idea" />
       
 
       
-        <summary type="html">数字图像处理基础 低级图像处理 增强 修复 平滑 压缩 信噪比 压缩比 中级图像处理 分形 滤镜 高级图像处理 人脸识别</summary>
+        <summary type="html">【随想】怎样将自己提升自己的生活、品位层次</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【随想】一些碎碎念，2020年3月27日</title>
+      <link href="/%E9%B8%A1%E6%B1%A4-%E5%8F%AA%E8%A6%81%E5%96%84%E4%BA%8E%E6%8C%96%E6%8E%98-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E5%8F%91%E5%B1%95%E6%BD%9C%E5%8A%9B%E6%98%AF%E4%B8%8D%E5%8F%AF%E9%99%90%E9%87%8F%E7%9A%84" rel="alternate" type="text/html" title="【随想】一些碎碎念，2020年3月27日" />
+      <published>2020-03-28T08:22:00+00:00</published>
+      <updated>2020-03-28T08:22:00+00:00</updated>
+      <id>/%E3%80%90%E9%B8%A1%E6%B1%A4%E3%80%91%E5%8F%AA%E8%A6%81%E5%96%84%E4%BA%8E%E6%8C%96%E6%8E%98,%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E5%8F%91%E5%B1%95%E6%BD%9C%E5%8A%9B%E6%98%AF%E4%B8%8D%E5%8F%AF%E9%99%90%E9%87%8F%E7%9A%84</id>
+      <content type="html" xml:base="/%E9%B8%A1%E6%B1%A4-%E5%8F%AA%E8%A6%81%E5%96%84%E4%BA%8E%E6%8C%96%E6%8E%98-%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E5%8F%91%E5%B1%95%E6%BD%9C%E5%8A%9B%E6%98%AF%E4%B8%8D%E5%8F%AF%E9%99%90%E9%87%8F%E7%9A%84">&lt;h1 id=&quot;鸡汤只要善于挖掘一个人的发展潜力是不可限量的&quot;&gt;【鸡汤】只要善于挖掘，一个人的发展潜力是不可限量的&lt;/h1&gt;
+
+&lt;p&gt;纽约里士满有一所穷人学校，它是贝纳特在美国经济萧条时期创办的。1983年，一位叫普热罗夫的捷克籍法学博士，在做毕业论文时发现，50年来，该校出来的学生在纽约警察局的犯罪率最低。&lt;/p&gt;
+
+&lt;p&gt;为延长在美国的居住期，他突发奇想，上书时任纽约市市长布隆伯格，要求得到一笔市长基金，以便就这一课题深入展开调查。当时布隆伯格正因纽约的犯罪率居高不下而备受市民指责，于是很快同意了普热罗夫的请求，给他提供了1.5万美元的经费。&lt;/p&gt;
+
+&lt;p&gt;普热罗夫凭借这笔钱，展开了漫长的调查活动。从80岁的老人到7岁的学童，从贝纳特牧师的亲属到在校老师，凡事在该学校学习和工作过的人，只要能打听到他们的住址或信箱，他都要给他们寄去一份调查表，问：“圣·贝纳特学院教会了你什么？”在将近6年的时间里，他共收到了3700多份答卷。这些答卷里有74%的人回答，他们知道了一根铅笔有多少种用途。&lt;/p&gt;
+
+&lt;p&gt;普热罗夫的本来目的并不是真的想搞清楚这些没有进过监狱的人&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="chickensoup" />
+      
+        <category term="idea" />
+      
+
+      
+        <summary type="html">【鸡汤】只要善于挖掘，一个人的发展潜力是不可限量的</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【随想】一些碎碎念，2020年3月27日</title>
+      <link href="/%E9%9A%8F%E6%83%B3-%E4%B8%80%E4%BA%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5-2020%E5%B9%B43%E6%9C%8827%E6%97%A5" rel="alternate" type="text/html" title="【随想】一些碎碎念，2020年3月27日" />
+      <published>2020-03-27T23:52:00+00:00</published>
+      <updated>2020-03-27T23:52:00+00:00</updated>
+      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E4%B8%80%E4%BA%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5,2020%E5%B9%B43%E6%9C%8827%E6%97%A5</id>
+      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E4%B8%80%E4%BA%9B%E7%A2%8E%E7%A2%8E%E5%BF%B5-2020%E5%B9%B43%E6%9C%8827%E6%97%A5">&lt;h1 id=&quot;随想一些碎碎念2020年3月27日&quot;&gt;【随想】一些碎碎念，2020年3月27日&lt;/h1&gt;
+
+&lt;p&gt;什么是幸福呢？
+你羡慕过这样的人？
+你见过最幸福的人是什么样子的？&lt;/p&gt;
+
+&lt;p&gt;学姐的智慧：
+会倾听，会等待，不打扰。仿佛有些人扁鹊的故事一般，魏王问扁鹊家里三兄弟谁的医术最高。扁鹊答大哥最高，二哥次之，我最差。&lt;/p&gt;
+
+&lt;p&gt;真正让我心生羡慕而又能坦然祝福的情侣，应该就是柳时镇和姜暮烟吧，太般配，怎么看就怎么顺眼。&lt;/p&gt;
+
+&lt;p&gt;其实我很少羡慕其他情侣，因为我知道和谐的关系是一点一滴经营来的，而自己没有那个耐心来经营一段感情，我会过敏，我会难受，我会疯狂。至于偶尔不小心冒出来的羡慕乃至嫉妒，我知道，我只是想求幸福的瞬间而不愿用长久的付出、坚持与陪伴来换，我是适合一个人的，没有那个愿意一直陪着我的人，我就一直一个人。有的话也算了，我根本不值得她对我那样的好。所以我也会一个人孤独好久好久的，再耐心一点，多等等叭~ 说不定你就孤独到终老了呢？&lt;/p&gt;
+
+&lt;p&gt;你一直在逃避人际关系，实际上你只是在逃避社交。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;逢雪宿芙蓉山主人
+  [唐]刘长卿 日暮苍山远，天寒白屋贫。 柴门闻犬吠，风雪夜归人。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;当暮色降临于远方的青山之上，气象寒冷朴素的小屋不避风寒，柴门之外忽闻犬吠之声，想是主人雪夜归来。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;意象：&lt;code class=&quot;highlighter-rouge&quot;&gt;日暮&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;苍山&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;天寒&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;白屋&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;柴门&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;犬吠&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;风雪&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;夜归人&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;抒情：写环境之朴素凄清，描摹山村和谐、纯朴之风。&lt;/li&gt;
+  &lt;li&gt;注解：
+    &lt;ul&gt;
+      &lt;li&gt;日暮：黄昏时分。点明时间。&lt;/li&gt;
+      &lt;li&gt;白屋：指不事雕琢的小屋，朴素、贫苦。细节描写，言简意赅。&lt;/li&gt;
+      &lt;li&gt;苍山远：青山在暮色中影影绰绰，远在他方。意境开阔、壮美。&lt;/li&gt;
+      &lt;li&gt;夜归人：夜间才归家的人。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;感性气质是需要培养的，也就是说，语言、口头表达、书面表达、即兴抒情等能力是非自遣意识控制的，所以要经过练习，经过人文艺术的浸染，才能培养到的能力。&lt;/p&gt;
+
+&lt;p&gt;此外，人文艺术讲究深刻而非广泛，更不可急功近利，生活是留给慢节奏的人来享受的，当然前提是，你是否处在那个应当慢下来享受生活的年纪。小孩子有着充裕的时间，可以多多品位经典，年轻人正值自我增值的黄金时间，应当充分挖掘自身潜力，潜力是越挖掘才越丰富的，而非越使用越是才思枯竭，语言、思维也是一样。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="idea" />
+      
+
+      
+        <summary type="html">【随想】一些碎碎念，2020年3月27日</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【经济学】大户出逃、小户跟进后的股市现象</title>
+      <link href="/%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E5%A4%A7%E6%88%B7%E5%87%BA%E9%80%83-%E5%B0%8F%E6%88%B7%E8%B7%9F%E8%BF%9B%E5%90%8E%E7%9A%84%E8%82%A1%E5%B8%82%E7%8E%B0%E8%B1%A1" rel="alternate" type="text/html" title="【经济学】大户出逃、小户跟进后的股市现象" />
+      <published>2020-03-24T14:21:00+00:00</published>
+      <updated>2020-03-24T14:21:00+00:00</updated>
+      <id>/%E3%80%90%E7%BB%8F%E6%B5%8E%E5%AD%A6%E3%80%91%E5%A4%A7%E6%88%B7%E5%87%BA%E9%80%83%E3%80%81%E5%B0%8F%E6%88%B7%E8%B7%9F%E8%BF%9B%E5%90%8E%E7%9A%84%E8%82%A1%E5%B8%82%E7%8E%B0%E8%B1%A1</id>
+      <content type="html" xml:base="/%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E5%A4%A7%E6%88%B7%E5%87%BA%E9%80%83-%E5%B0%8F%E6%88%B7%E8%B7%9F%E8%BF%9B%E5%90%8E%E7%9A%84%E8%82%A1%E5%B8%82%E7%8E%B0%E8%B1%A1">&lt;h1 id=&quot;经济学大户出逃小户跟进后的股市现象&quot;&gt;【经济学】大户出逃、小户跟进后的股市现象&lt;/h1&gt;
+
+&lt;p&gt;今日美股多次熔断，市场不断&lt;/p&gt;
+
+&lt;h2 id=&quot;2015年牛市及其崩盘后的现象分析&quot;&gt;2015年牛市及其崩盘后的现象分析&lt;/h2&gt;
+&lt;p&gt;A股在2015年前后出现过一个超级大牛市，上证指数上涨到5800余点，随后循序回落，并维持中高位继续长线平盘。&lt;/p&gt;
+
+&lt;p&gt;那么我们可以看到什么信息呢？&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;持续时长：5个月&lt;/li&gt;
+  &lt;li&gt;回落时长：2个月15天&lt;/li&gt;
+  &lt;li&gt;其中有两次回调，随后继续下跌&lt;/li&gt;
+  &lt;li&gt;上涨过程中的&lt;strong&gt;资金博弈&lt;/strong&gt;：超大户，大户&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="eco" />
+      
+
+      
+        <summary type="html">【经济学】大户出逃、小户跟进后的股市现象</summary>
       
 
       

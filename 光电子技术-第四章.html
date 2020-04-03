@@ -1,0 +1,233 @@
+
+<h1 id="光电子技术">光电子技术</h1>
+
+<h2 id="第三章-光波的传输">第三章 光波的传输</h2>
+
+<h3 id="波动光学基础">波动光学基础</h3>
+
+<p>对光的解释，有射线光、波动光、量子光几类解释，分别对应用到几何光学，物理光学，量子力学领域知识。</p>
+
+<p>什么是<strong>波</strong>？不仅仅是软绵绵、圆鼓鼓的那个，物理学中的波是一种随时间推移，在空间内发生转移的能量。</p>
+
+<blockquote>
+  <p><strong>波</strong>：<strong>在空间中</strong>以特定形式<strong>传播</strong>的<strong>物理量</strong>。</p>
+</blockquote>
+
+<ul>
+  <li><strong>波与空间 $r$</strong>：波在空间中的分布发生变化才有研究意义，所以通常的波表达式中，包含空间位置参数 $r$.</li>
+  <li><strong>波与时间 $t$</strong>：这里的说法并非十分准确，因为我们没有考虑时间效应。这个说法听起来有些怪怪的，时间静止，还会有物体能运动吗？…</li>
+</ul>
+
+<p>答案是显而易见的————时间停转，水止风静，同样的，时间静止的时候，波一定也是停止传播的；那么，波的传播的另一个条件，就应当是随着时间的推移，也就是<strong>波的传播是与时间和空间都有联系的</strong>，波向前运动时，时间增加，走过的路径也<strong>同时</strong>增加。</p>
+
+<p>所以说，波的传播与时间有关，通常包含时间参量 $t$。</p>
+
+<p>那么，我们就可以根据这一定义，发现一些波的例子，比如:</p>
+<ul>
+  <li><strong>声波</strong>：声音是一种振动的能量，即其能量会随着</li>
+  <li><strong>机械波</strong></li>
+  <li>
+    <hr />
+  </li>
+</ul>
+
+<p>一般形式的光波：</p>
+
+<ol>
+  <li><strong>单色光</strong>：单一频率的光波（平面/球面）。</li>
+</ol>
+
+<ul>
+  <li><strong>光波</strong>：是一种电磁现象，即一种电场能、次场能相互转化并在空间中传播的能量波，电能和磁场能周期性转化。</li>
+  <li><strong>光矢量</strong>：光波中通常同时具有电场能和磁场能，但对于光波表现出光的特性来说，电场效应的贡献占绝对主导地位，所以通常使用电场强度E的变化情况（表达式）来表征光场的强弱变化，即光波表达式通常仅表示为$E$的函数。</li>
+  <li><strong>单色光</strong>：由于在人眼视觉中，可见光波段的光波可以映射为人眼中的不同颜色，也就是频率可以与颜色之间形成函数对应关系，光学中的“单色光”指的就是单一频率的光。</li>
+</ul>
+
+<ol>
+  <li><strong>（单色）平面波</strong>
+    <ul>
+      <li><strong>平面波</strong>：波前为一个平面的光波。</li>
+      <li><strong>波前</strong>：即光波“最前方”的一个<strong>等相面</strong>。</li>
+      <li><strong>单色平面波的表述</strong>：单色平面波可以用一个特定表达式来描述
+        <ul>
+          <li>标量表达式，平面光波，(沿着Z轴正向传播)：
+<script type="math/tex">E = E_0 \cdot \cos \left( wt-kz \right)</script></li>
+          <li>复数表达式，(沿着Z轴正向传播)：
+<script type="math/tex">E = E_0 \cdot \mathscr{Re} \left\{ e^{-j \left( wt-kz \right)} \right\}</script></li>
+          <li>复数表达式的简化记法：
+<script type="math/tex">E=E_0 \cdot e^{-j \left( wt-kz \right)}</script></li>
+        </ul>
+      </li>
+      <li><strong>为什么采用复数形式来表达光波？</strong>
+为了简化计算，将三角恒等式计算和化简问题转化为复指数计算，减少了计算量，且需要求得实际光波强度时，仅需要对复数表达式取实数部分即可，结果没有任何误差。</li>
+    </ul>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>时间域</th>
+      <th>空间域</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>周期</td>
+      <td>$T$</td>
+      <td>$\lambda$</td>
+    </tr>
+    <tr>
+      <td>频率</td>
+      <td>$v$</td>
+      <td>$f$</td>
+    </tr>
+    <tr>
+      <td>角频率</td>
+      <td>$\omega=2\pi v=\frac{2\pi}{T}$</td>
+      <td>$k=2 \pi f = \frac{2\pi}{\lambda}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="各向异性介质传播晶体光学双折射现象">各向异性介质传播（晶体光学）：双折射现象</h3>
+
+<p>e光：由于波矢动量守恒，所以其等相位面依然与入射等相位面一致，只是</p>
+
+<h3 id="薄膜波导">薄膜波导</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#------------------------#</span>
+<span class="c">#     限制层 $n_1$        #</span>
+<span class="c">#     波导层 $n_1$        #</span>
+<span class="c">#     限制层 $n_2$        #</span>
+<span class="c">#------------------------#</span>
+</code></pre></div></div>
+
+<p>作用：可以在两个方向上都控制住光的折射损耗。</p>
+
+<p>$n_1&gt;n_2, n_1&gt;n_3$</p>
+
+<p>通常：波导一定是在折射率最大的层中传播的，否则损耗非常大。</p>
+
+<h4 id="圆柱形波导">圆柱形波导</h4>
+<p><img src="/assets/images/QQ截图20200320170700.png" alt="" /></p>
+
+<p><strong>结构</strong>：</p>
+<ul>
+  <li>纤芯:</li>
+  <li>包层：防止能量扩散。</li>
+  <li>涂覆层：保护作用。</li>
+  <li>护套层：多束光纤集成。</li>
+</ul>
+
+<p><strong>应用</strong>：</p>
+<ol>
+  <li>集成光路</li>
+  <li>光纤通信</li>
+  <li>传感技术</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>射线光学</th>
+      <th>波动光学</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>适用条件</td>
+      <td>$\lambda « d$</td>
+      <td>$\lambda ~ d$</td>
+    </tr>
+    <tr>
+      <td>研究对象</td>
+      <td>光线</td>
+      <td>模式</td>
+    </tr>
+    <tr>
+      <td>基本方程</td>
+      <td>射线方程</td>
+      <td>波导场方程</td>
+    </tr>
+    <tr>
+      <td>研究方法</td>
+      <td>折射、反射定理</td>
+      <td>边值问题</td>
+    </tr>
+    <tr>
+      <td>主要特点</td>
+      <td>约束光线</td>
+      <td>模式</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>用不同的坐标系，可以得到不同的边界条件的，更复杂的解。</p>
+
+<p><img src="/assets/images/QQ截图20200320171324.png" alt="" /></p>
+
+<blockquote>
+  <p>如果只停留在全反射层面，说明你的波导理论还没有入门？
+实际传输的不是一根光线，而是一束等相位光场传播，当发生反射时，空间局部会发生交叠。
+平面光束越宽，交叠区域越大 -&gt; 引发一个核心问题：输出为若干光场的叠加，薄膜光场输出为一个干涉光场。</p>
+</blockquote>
+
+<ul>
+  <li>反射光场与入射光场，是同一个光场吗？
+<img src="/assets/images/QQ截图20200320172113.png" alt="" />
+两者虽然可以由相同的（波矢）等相位面方向，但是其位相会发生偏移。两者在空间中叠加时，传输方向相同，同频率，等相位面相同，可产生干涉。<br />
+<em>注：全反射会产生半波损失。</em><br />
+<em>注2：找相位差步骤，选取等相位面，回溯该波段起点。</em><br />
+<em>注3：若其两次反射，刚好相位差为$\pi$，则光束不会沿着波导传播，会由其他路径损耗、散射到空间中。</em></li>
+</ul>
+
+<p><img src="QQ截图20200320181454.png" alt="" />
+波矢在两次反射中上下两次</p>
+
+<p><strong>局域场中的普适结论</strong>：</p>
+
+<ul>
+  <li>有效折射率: $n_3 &lt; n_2 &lt; n &lt; n_1$</li>
+</ul>
+
+<h2 id="光纤">光纤</h2>
+
+<h3 id="典型光纤">典型光纤</h3>
+
+<p>分阶跃型光纤、梯度折射率光纤。</p>
+
+<p>通信常用：阶跃型单模光纤。</p>
+
+<h3 id="阶跃型单模光纤">阶跃型单模光纤</h3>
+
+<p>对称型平板波导，其TE、TM模式同时存在、且无法区分，所以可以认为是单个模式，即单模光纤。</p>
+
+<h3 id="重要参数">重要参数</h3>
+
+<h4 id="数值孔径">数值孔径</h4>
+
+<p>对应临界折射角，存在一个<strong>临界入射角 $\varphi$</strong>，
+则数值孔径：
+<script type="math/tex">NA = n\sin \varphi = \sqrt{n_1^2 - n_2^2}</script></p>
+
+<p><strong>物理意义：</strong>表示光纤捕捉光线的能力，NA越大，捕获能力越强。</p>
+
+<p>对于 $\lambda = 1.55\mu m$ 处典型值 $$</p>
+
+<h4 id="相对折射率">相对折射率</h4>
+<p>不考。</p>
+
+<script type="math/tex; mode=display">\Delta = \frac{n_1^2 - n_2^2}{2n_1^2}</script>
+
+<p>当 $n_1,\ n_2$ 都很小时，可以近似为
+<script type="math/tex">N.A. = \sqrt{}</script></p>
+
+<p>数值孔径：与纤芯与包层的折射率差（又与$\Delta$有关）有关。</p>
+
+<hr />
+<ol>
+  <li>电磁场仿真软件</li>
+</ol>

@@ -1466,9 +1466,104 @@ into the {body} of the default.hbs template -->
     <span class="mi">0</span>
 </code></pre></div></div>
 
+<h4 id="5-单条说说页面及数据提取">5. 单条说说页面及数据提取</h4>
+
+<p>可以用于点赞或者评论提取等。
+<strong>API</strong>: <img src="https://user.qzone.qq.com/2392827600/mood/d0a69f8e261f7b5e3cbe0200" alt="" /></p>
+
+<h3 id="好友相关的-api">好友相关的 API</h3>
+
+<p>抓取好友列表，以及好友的动态信息就。</p>
+
+<h4 id="获取好友列表">获取好友列表</h4>
+
+<p><strong>来源</strong>：QQ空间，分享到好友列表/群。<br />
+<strong>API</strong>：<code class="highlighter-rouge">https://user.qzone.qq.com/proxy/domain/r.qzone.qq.com/cgi-bin/tfriend/friend_mngfrd_get.cgi?</code><br />
+<strong>需要Cookie</strong>：是<br />
+<strong>参数</strong>：</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">_payload</span><span class="p">{</span>
+    <span class="nl">uin</span><span class="p">:</span> <span class="mi">275176629</span>
+    <span class="nx">fupdate</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="c1">// scene 参数：应用场景</span>
+    <span class="c1">// 1 - 获取 QQ 好友实际用户分组，和QQ里看到的组别是一样的。</span>
+    <span class="c1">// 21 - 只获取好友列表和昵称</span>
+    <span class="nx">scene</span><span class="p">:</span> <span class="mi">21</span>
+    <span class="nx">g_tk</span><span class="p">:</span> <span class="mi">1187391538</span>
+    <span class="nx">qzonetoken</span><span class="p">:</span> <span class="mi">9</span><span class="nx">f41f19ad39a0fcbb541466439227532560e49233164aafb8933930d3d687aae571c12e9f8963aef81c6</span>
+    <span class="nx">g_tk</span><span class="p">:</span> <span class="mi">1187391538</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="获取好友说说html格式">获取好友说说（HTML格式）</h4>
+
+<p>用这个API可以获取html格式的说说，用于预览显示之用。使用ascii escape格式，需要手动代码转化编码。<br />
+如果对方未开放空间权限，则会返回 <code class="highlighter-rouge">Invaild Right</code> 的消息。<br />
+其他参数正确的前提下，直接更换 hostuin 可以访问不同用户的数据。</p>
+
+<p><strong>来源</strong>：好友 QQ 空间首页，抓取后台xhr数据。<br />
+<code class="highlighter-rouge">https://user.qzone.qq.com/■■■■■■■■</code>
+<strong>API</strong>：<code class="highlighter-rouge">https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=■■■■■■■■&amp;hostuin=■■■■■■■■4&amp;scope=0&amp;filter=all&amp;flag=1&amp;refresh=0&amp;firstGetGroup=0&amp;mixnocache=0&amp;scene=0&amp;begintime=undefined&amp;icServerTime=&amp;start=10&amp;count=10&amp;sidomain=qzonestyle.gtimg.cn&amp;useutf8=1&amp;outputhtmlfeed=1&amp;refer=2&amp;r=0.724668591109972&amp;g_tk=245479846&amp;qzonetoken=25105477cf5e45db75157ccacd852d6020dc379ce80b4bd004f10499ae88bc2c2ef5f4208a3cdee4&amp;g_tk=245479846</code><br />
+<strong>参数</strong>：</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="c1">// 访客用户名</span>
+    <span class="nl">uin</span><span class="p">:</span> <span class="err">■■■■■■</span>
+    <span class="c1">// 目标用户名</span>
+    <span class="nx">hostuin</span><span class="p">:</span> <span class="err">■■■■■■</span>
+    <span class="nx">scope</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nx">filter</span><span class="p">:</span> <span class="nx">all</span>
+    <span class="nx">flag</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="nx">refresh</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nx">firstGetGroup</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nx">mixnocache</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nx">scene</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nx">begintime</span><span class="p">:</span> <span class="kc">undefined</span>
+    <span class="nx">icServerTime</span><span class="p">:</span> 
+    <span class="nx">start</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="nx">count</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="nx">sidomain</span><span class="p">:</span> <span class="nx">qzonestyle</span><span class="p">.</span><span class="nx">gtimg</span><span class="p">.</span><span class="nx">cn</span>
+    <span class="nx">useutf8</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="nx">outputhtmlfeed</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="nx">refer</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="nx">r</span><span class="p">:</span> <span class="mf">0.724668591109972</span>
+    <span class="nx">g_tk</span><span class="p">:</span> <span class="mi">245479846</span>
+    <span class="nx">qzonetoken</span><span class="p">:</span> <span class="mi">25105477</span><span class="nx">cf5e45db75157ccacd852d6020dc379ce80b4bd004f10499ae88bc2c2ef5f4208a3cdee4</span>
+    <span class="nx">g_tk</span><span class="p">:</span> <span class="mi">245479846</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="获取好友说说js缩简格式">获取好友说说（js缩简格式）</h4>
+<p><strong>API</strong>：<code class="highlighter-rouge">https://user.qzone.qq.com/proxy/domain/taotao.qq.com/cgi-bin/emotion_cgi_msglist_v6?</code></p>
+
+<p><strong>参数列表</strong>：</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="nl">uin</span><span class="p">:</span> <span class="mi">3202</span><span class="nx">xxxx</span>
+    <span class="nx">ftype</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nx">sort</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nx">pos</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nx">num</span><span class="p">:</span> <span class="mi">20</span>
+    <span class="nx">replynum</span><span class="p">:</span> <span class="mi">100</span>
+    <span class="nx">callback</span><span class="p">:</span> <span class="nx">_preloadCallback</span>
+    <span class="nx">code_version</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="nx">format</span><span class="p">:</span> <span class="nx">jsonp</span>
+    <span class="nx">need_private_comment</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="nx">qzonetoken</span><span class="p">:</span> <span class="nx">e727e2174faccf5d2fa5866ad798652e5297dc5931c6a0a61f87c5d43aa2eaba1bac20a9738525af</span>
+    <span class="nx">g_tk</span><span class="p">:</span> <span class="mi">1289413842</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 <h3 id="杂项">杂项</h3>
+<p>一些工具API，获取QQ签名，头像，资料等内容。</p>
 
 <h4 id="qq空间头像">QQ空间头像</h4>
+
+<p>最后的参数决定了图像大小，可选值：</p>
+<ul>
+  <li>50    50*50 像素</li>
+  <li>100   100*100 像素</li>
+  <li>200   100*100 像素</li>
+</ul>
+
+<p><strong>需要Cookie</strong>：否</p>
 
 <p><img src="https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625" alt="" /></p>
 
@@ -1479,6 +1574,31 @@ into the {body} of the default.hbs template -->
 <p><a href="https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625">https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625</a></p>
 
 <p><a href="https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625">https://qlogo4.store.qq.com/qzone/4483538/4483538/200?1564108625</a></p>
+
+<h4 id="qq头像">QQ头像</h4>
+<p><strong>API</strong>：`<em>**</em>“http://q2.qlogo.cn/headimg_dl?bs=qq&amp;dst_uin=51550&amp;src_uin=51550&amp;fid=51550&amp;spec=5&amp;url_enc=0&amp;referer=bu_interface”</p>
+
+<p><strong>spec参数</strong>：</p>
+<ul>
+  <li><code class="highlighter-rouge">1</code>: 40*40</li>
+  <li><code class="highlighter-rouge">2</code>: 40*40</li>
+  <li><code class="highlighter-rouge">3</code>: 100*100</li>
+  <li><code class="highlighter-rouge">4</code>: 140*140</li>
+  <li><code class="highlighter-rouge">5</code>: 430*429</li>
+  <li><code class="highlighter-rouge">160</code>: 140*140</li>
+</ul>
+
+<p><strong>参数</strong>：</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="nl">bs</span><span class="p">:</span> <span class="nx">qq</span>
+    <span class="nx">dst_uin</span><span class="p">:</span> <span class="mi">1944404463</span>
+    <span class="nx">spec</span><span class="p">:</span> <span class="mi">160</span>
+    <span class="nx">src_uin</span><span class="p">:</span> <span class="mi">51550</span>
+    <span class="nx">fid</span><span class="p">:</span> <span class="mi">51550</span>
+    <span class="nx">url_enc</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nx">referer</span><span class="p">:</span> <span class="nx">bu_interface</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h4 id="空间侧边栏">空间侧边栏</h4>
 <p><a href="https://user.qzone.qq.com/275176629/infocenter?qz_referrer=special&amp;uin=53702270&amp;msg_id=110374">https://user.qzone.qq.com/275176629/infocenter?qz_referrer=special&amp;uin=53702270&amp;msg_id=110374</a>
@@ -1680,6 +1800,64 @@ into the {body} of the default.hbs template -->
                         <div class="read-next-card-content">
                             <ul>
                                 
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
                                 
                                     
                                 

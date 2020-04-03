@@ -1,0 +1,91 @@
+
+<h1 id="uart-串行通信">UART 串行通信</h1>
+
+<p><strong>常用术语</strong>：</p>
+<ul>
+  <li>并行：数据各位同时进行</li>
+  <li>
+    <p>串行：数据逐位进行传输</p>
+  </li>
+  <li>全双工：（串行）收发同时进行，需要多条线
+    <ul>
+      <li>对于485（差分传输），则需要4根数据线</li>
+    </ul>
+  </li>
+  <li>
+    <p>半双工：（串行）收发分时进行</p>
+  </li>
+  <li>波特率(bit per second, bps)：单位时间发送的字符数量</li>
+</ul>
+
+<h2 id="硬件uart">硬件UART</h2>
+
+<p><strong>硬件UART特性</strong></p>
+<ul>
+  <li>全双工</li>
+  <li>异步模式可编程 7/8 位数据</li>
+  <li>独立波特率发生器</li>
+  <li>最大波特率是时钟频率的 1/16</li>
+  <li>发送、接收共两个缓冲区</li>
+  <li>可编程的奇偶校验</li>
+  <li>检测帧错误、纠错</li>
+  <li>发送、接收中断</li>
+</ul>
+
+<h2 id="校验方式">校验方式</h2>
+
+<p><strong>奇校验</strong>：
+即：<strong>校验位+数据位</strong>中 “<strong>1</strong>” 的<strong>总数</strong>必须为<strong>奇数</strong>。</p>
+
+<p><strong>偶校验</strong>：
+即：<strong>校验位+数据位</strong>中 “<strong>1</strong>” 的<strong>总数</strong>必须为<strong>偶数</strong>。</p>
+
+<h2 id="数据帧格式">数据帧格式</h2>
+<p><img src="/assets/images/QQ截图20200401155658.png" alt="数据帧格式" /></p>
+
+<p><code class="highlighter-rouge">起始位 数据位 校验位 停止位</code></p>
+
+<ul>
+  <li>静止状态：高电平</li>
+  <li>低位(LSB)先发，高位(MSB)在后</li>
+  <li>实现方式：移位寄存器</li>
+  <li>静止状态：高电平</li>
+  <li>起始位：低电平</li>
+  <li>停止位：高电平，1位，或者2位</li>
+</ul>
+
+<h2 id="两种实现">两种实现</h2>
+
+<h3 id="rs232">RS232</h3>
+<ul>
+  <li>±15V</li>
+</ul>
+
+<h3 id="rs485">RS485</h3>
+<ul>
+  <li>差分传输</li>
+  <li>双线制/四线制</li>
+  <li>波特率设置</li>
+</ul>
+
+<h2 id="代码">代码</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span><span class="n">BAKCTL</span> <span class="o">&amp;</span> <span class="n">LOCKIO</span><span class="p">){</span>
+    <span class="n">BAKCTL</span> <span class="o">&amp;=</span> <span class="o">~</span> <span class="n">LOCKIO</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">UCSCTL6</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">XT1OFF</span><span class="o">:</span>
+<span class="n">UCSCTL7</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="n">XT1OFFG</span> <span class="o">+</span> <span class="n">DCOEFFG</span> <span class="o">+</span> <span class="p">);</span>
+
+</code></pre></div></div>
+
+<p><img src="/assets/images/QQ截图20200401161445.png" alt="代码3" />
+<img src="/assets/images/QQ截图20200401161922.png" alt="代码4" /></p>
+
+<hr />
+<ol>
+  <li>默认：DCO @ 1.048Mhz -&gt; MCLK, SMCLK</li>
+  <li>要求高稳定性：使用外部时钟，使能XT1，外部时钟</li>
+  <li>不需要辅助时钟时，不需要使用XT1</li>
+  <li>确定时钟源，才能确定UART时钟，整数位，小数位设置</li>
+</ol>

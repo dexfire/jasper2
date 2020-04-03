@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/spider/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-20T04:04:23+00:00</updated>
+  <updated>2020-04-03T14:46:55+00:00</updated>
   <id>/tag/spider/feed.xml</id>
 
   
@@ -1319,9 +1319,104 @@
     &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h4 id=&quot;5-单条说说页面及数据提取&quot;&gt;5. 单条说说页面及数据提取&lt;/h4&gt;
+
+&lt;p&gt;可以用于点赞或者评论提取等。
+&lt;strong&gt;API&lt;/strong&gt;: &lt;img src=&quot;https://user.qzone.qq.com/2392827600/mood/d0a69f8e261f7b5e3cbe0200&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;好友相关的-api&quot;&gt;好友相关的 API&lt;/h3&gt;
+
+&lt;p&gt;抓取好友列表，以及好友的动态信息就。&lt;/p&gt;
+
+&lt;h4 id=&quot;获取好友列表&quot;&gt;获取好友列表&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;来源&lt;/strong&gt;：QQ空间，分享到好友列表/群。&lt;br /&gt;
+&lt;strong&gt;API&lt;/strong&gt;：&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/proxy/domain/r.qzone.qq.com/cgi-bin/tfriend/friend_mngfrd_get.cgi?&lt;/code&gt;&lt;br /&gt;
+&lt;strong&gt;需要Cookie&lt;/strong&gt;：是&lt;br /&gt;
+&lt;strong&gt;参数&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;_payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;275176629&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;fupdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// scene 参数：应用场景&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 1 - 获取 QQ 好友实际用户分组，和QQ里看到的组别是一样的。&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 21 - 只获取好友列表和昵称&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1187391538&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;qzonetoken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;f41f19ad39a0fcbb541466439227532560e49233164aafb8933930d3d687aae571c12e9f8963aef81c6&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1187391538&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;获取好友说说html格式&quot;&gt;获取好友说说（HTML格式）&lt;/h4&gt;
+
+&lt;p&gt;用这个API可以获取html格式的说说，用于预览显示之用。使用ascii escape格式，需要手动代码转化编码。&lt;br /&gt;
+如果对方未开放空间权限，则会返回 &lt;code class=&quot;highlighter-rouge&quot;&gt;Invaild Right&lt;/code&gt; 的消息。&lt;br /&gt;
+其他参数正确的前提下，直接更换 hostuin 可以访问不同用户的数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;来源&lt;/strong&gt;：好友 QQ 空间首页，抓取后台xhr数据。&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/■■■■■■■■&lt;/code&gt;
+&lt;strong&gt;API&lt;/strong&gt;：&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/proxy/domain/ic2.qzone.qq.com/cgi-bin/feeds/feeds_html_act_all?uin=■■■■■■■■&amp;amp;hostuin=■■■■■■■■4&amp;amp;scope=0&amp;amp;filter=all&amp;amp;flag=1&amp;amp;refresh=0&amp;amp;firstGetGroup=0&amp;amp;mixnocache=0&amp;amp;scene=0&amp;amp;begintime=undefined&amp;amp;icServerTime=&amp;amp;start=10&amp;amp;count=10&amp;amp;sidomain=qzonestyle.gtimg.cn&amp;amp;useutf8=1&amp;amp;outputhtmlfeed=1&amp;amp;refer=2&amp;amp;r=0.724668591109972&amp;amp;g_tk=245479846&amp;amp;qzonetoken=25105477cf5e45db75157ccacd852d6020dc379ce80b4bd004f10499ae88bc2c2ef5f4208a3cdee4&amp;amp;g_tk=245479846&lt;/code&gt;&lt;br /&gt;
+&lt;strong&gt;参数&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 访客用户名&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;■■■■■■&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 目标用户名&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;hostuin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;■■■■■■&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;all&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;refresh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;firstGetGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;mixnocache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;begintime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;icServerTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sidomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;qzonestyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gtimg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cn&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;useutf8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;outputhtmlfeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;refer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.724668591109972&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;245479846&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;qzonetoken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25105477&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cf5e45db75157ccacd852d6020dc379ce80b4bd004f10499ae88bc2c2ef5f4208a3cdee4&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;245479846&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;获取好友说说js缩简格式&quot;&gt;获取好友说说（js缩简格式）&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;API&lt;/strong&gt;：&lt;code class=&quot;highlighter-rouge&quot;&gt;https://user.qzone.qq.com/proxy/domain/taotao.qq.com/cgi-bin/emotion_cgi_msglist_v6?&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;参数列表&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3202&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xxxx&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ftype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;replynum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_preloadCallback&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;code_version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jsonp&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;need_private_comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;qzonetoken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e727e2174faccf5d2fa5866ad798652e5297dc5931c6a0a61f87c5d43aa2eaba1bac20a9738525af&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;g_tk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1289413842&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h3 id=&quot;杂项&quot;&gt;杂项&lt;/h3&gt;
+&lt;p&gt;一些工具API，获取QQ签名，头像，资料等内容。&lt;/p&gt;
 
 &lt;h4 id=&quot;qq空间头像&quot;&gt;QQ空间头像&lt;/h4&gt;
+
+&lt;p&gt;最后的参数决定了图像大小，可选值：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;50    50*50 像素&lt;/li&gt;
+  &lt;li&gt;100   100*100 像素&lt;/li&gt;
+  &lt;li&gt;200   100*100 像素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;需要Cookie&lt;/strong&gt;：否&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -1332,6 +1427,31 @@
 &lt;p&gt;&lt;a href=&quot;https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625&quot;&gt;https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://qlogo3.store.qq.com/qzone/4483538/4483538/200?1564108625&quot;&gt;https://qlogo4.store.qq.com/qzone/4483538/4483538/200?1564108625&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;qq头像&quot;&gt;QQ头像&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;API&lt;/strong&gt;：`&lt;em&gt;**&lt;/em&gt;“http://q2.qlogo.cn/headimg_dl?bs=qq&amp;amp;dst_uin=51550&amp;amp;src_uin=51550&amp;amp;fid=51550&amp;amp;spec=5&amp;amp;url_enc=0&amp;amp;referer=bu_interface”&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;spec参数&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;: 40*40&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;: 40*40&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;: 100*100&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;4&lt;/code&gt;: 140*140&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;5&lt;/code&gt;: 430*429&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;160&lt;/code&gt;: 140*140&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;参数&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;qq&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;dst_uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1944404463&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;160&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;src_uin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;51550&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;fid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;51550&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;url_enc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;referer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bu_interface&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;空间侧边栏&quot;&gt;空间侧边栏&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&quot;https://user.qzone.qq.com/275176629/infocenter?qz_referrer=special&amp;amp;uin=53702270&amp;amp;msg_id=110374&quot;&gt;https://user.qzone.qq.com/275176629/infocenter?qz_referrer=special&amp;amp;uin=53702270&amp;amp;msg_id=110374&lt;/a&gt;
@@ -1522,7 +1642,10 @@
 &lt;p&gt;“天生我材必有用，千金散尽还复来。”
 在《亲密关系》一书中，&lt;/p&gt;
 
-&lt;p&gt;其实心态很重要。努力和方法也是。&lt;/p&gt;</content>
+&lt;p&gt;其实心态很重要。努力和方法也是。&lt;/p&gt;
+
+&lt;p&gt;没有人愿意听道理，所有人都喜欢听故事。
+因为你思考的深度不够。&lt;/p&gt;</content>
 
       
       

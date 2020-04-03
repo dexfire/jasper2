@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/cs/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-20T04:04:23+00:00</updated>
+  <updated>2020-04-03T14:46:55+00:00</updated>
   <id>/tag/cs/feed.xml</id>
 
   
@@ -44,6 +44,401 @@
   
   
 
+  
+    <entry>
+      <title type="html">【CS】有限状态机（FSM）模型</title>
+      <link href="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" rel="alternate" type="text/html" title="【CS】有限状态机（FSM）模型" />
+      <published>2020-03-22T19:32:00+00:00</published>
+      <updated>2020-03-22T19:32:00+00:00</updated>
+      <id>/%E3%80%90CS%E3%80%91%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA(FSM)%E6%A8%A1%E5%9E%8B</id>
+      <content type="html" xml:base="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B">&lt;h1 id=&quot;cs有限状态机fsm模型&quot;&gt;【CS】有限状态机（FSM）模型&lt;/h1&gt;
+
+&lt;h2 id=&quot;什么是有限状态机&quot;&gt;什么是有限状态机？&lt;/h2&gt;
+
+&lt;p&gt;什么是状态机（State Mechine）？顾名思义，即一种可以在一些状态中进行转换的机器，显然这仅仅是一种理想模型，并没有考虑具体的实现方式。&lt;/p&gt;
+
+&lt;h3 id=&quot;定义&quot;&gt;定义&lt;/h3&gt;
+&lt;p&gt;有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。&lt;/p&gt;
+
+&lt;h3 id=&quot;有什么用&quot;&gt;有什么用？&lt;/h3&gt;
+&lt;p&gt;虽然听起来仅仅是一个不沾边、不实用、不靠谱的理论模型，但在生活中的例子实在太多了，状态机模型广泛可见于机械结构、电子元件、计算机编程算法当中，只要是在确定的状态间切换的逻辑，都可以归纳为状态机模型。&lt;/p&gt;
+
+&lt;p&gt;有限状态机是一种用来进行对象行为建模的工具，其作用主要是描述对象在它的生命周期内所经历的状态序列，以及如何响应来自外界的各种事件。在计算机科学中，有限状态机被广泛用于建模应用行为、硬件电路系统设计、软件工程，编译器、网络协议、和计算与语言的研究。比如下图非常有名的TCP协议状态机。&lt;/p&gt;
+
+&lt;h2 id=&quot;状态机模型&quot;&gt;状态机模型&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;有限状态机一般都有以下特点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;可以用状态来描述事物，并且任一时刻，事物总是处于一种状态；&lt;/li&gt;
+  &lt;li&gt;事物拥有的状态总数是有限的；&lt;/li&gt;
+  &lt;li&gt;通过触发事物的某些行为，可以导致事物从一种状态过渡到另一种状态；&lt;/li&gt;
+  &lt;li&gt;事物状态变化是有规则的，A状态可以变换到B，B可以变换到C，A却不一定能变换到C；&lt;/li&gt;
+  &lt;li&gt;同一种行为，可以将事物从多种状态变成同种状态，但是不能从同种状态变成多种状态。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;状态&quot;&gt;状态&lt;/h3&gt;
+&lt;p&gt;状态机可归纳为4个要素，即现态、条件、动作、次态。“现态”和“条件”是因，“动作”和“次态”是果。详解如下：&lt;/p&gt;
+
+&lt;h4 id=&quot;现态&quot;&gt;现态：&lt;/h4&gt;
+
+&lt;p&gt;指当前所处的状态。&lt;/p&gt;
+
+&lt;h4 id=&quot;次态&quot;&gt;次态：&lt;/h4&gt;
+
+&lt;p&gt;条件满足后要迁往的新状态。“次态”是相对于“现态”而言的，“次态”一旦被激活，就转变成新的“现态”了。&lt;/p&gt;
+
+&lt;h3 id=&quot;状态转换动作条件&quot;&gt;状态转换动作条件&lt;/h3&gt;
+
+&lt;p&gt;状态机在满足触发条件时进行状态切换，如当计数达到指定大小进行下一个阶段操作。&lt;/p&gt;
+
+&lt;h4 id=&quot;条件&quot;&gt;条件：&lt;/h4&gt;
+
+&lt;p&gt;又称为“事件”。当一个条件被满足，将会触发一个动作，或者执行一次状态的迁移。&lt;/p&gt;
+
+&lt;h4 id=&quot;动作&quot;&gt;动作：&lt;/h4&gt;
+
+&lt;p&gt;条件满足后执行的动作。动作执行完毕后，可以迁移到新的状态，也可以仍旧保持原状态。动作不是必需的，当条件满足后，也可以不执行任何动作，直接迁移到新状态。&lt;/p&gt;
+&lt;h2 id=&quot;状态机的描述&quot;&gt;状态机的描述&lt;/h2&gt;
+
+&lt;p&gt;状态机模型可以使用关系表达式（状态方程）、状态转换图、状态转换表等多种方式进行描述。&lt;/p&gt;
+
+&lt;h3 id=&quot;状态转换图&quot;&gt;状态转换图&lt;/h3&gt;
+
+&lt;p&gt;STD图(State Transform Diagram)状态转换图,表示行为模型。STD通过描述系统的状态和引起系统状态转换的事件，来表示系统的行为，指出作为特定事件的结果将执行哪些动作（例如，处理数据等）。STD描述系统对外部事件如何响应，如何动作。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/759985-20151102201009492-11387200.png&quot; alt=&quot;状态转换图&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为。此外状态转换图还指明了作为特定事件的结果系统将做哪些动作（例如，处理数据）。因此状态转换图提供了行为建模机制。&lt;/p&gt;
+
+&lt;p&gt;在状态转换图中，每一个节点代表一个状态，其中双圈是终结状态。许多单片机教材上对工作模式的表达通常采用状态图的形式。&lt;/p&gt;
+
+&lt;h3 id=&quot;状态转换表&quot;&gt;状态转换表&lt;/h3&gt;
+
+&lt;p&gt;状态机模型可以用状态转换表来简化状态切换逻辑，因为只要输入变量处于确定状态，其输出也应当是一个确定态，也即状态互转可以使用输入/输出一一对应关系表来描述。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2020年3月22日p1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;应用举例&quot;&gt;应用举例&lt;/h2&gt;
+
+&lt;h3 id=&quot;例1-tcp状态转换图&quot;&gt;例1. TCP状态转换图&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/v2-5180168c77c7b67780fe2dc604fdfef3_r.jpg&quot; alt=&quot;TCP&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;例2-javascript中对用户鼠标状态的交互动作&quot;&gt;例2. JavaScript中对用户鼠标状态的交互动作&lt;/h3&gt;
+
+&lt;p&gt;在js中，新建一个对象，用这个对象的属性来模拟元素的状态,用这个对象的方法模拟元素在不同状态的转变,那么这个对象就是一个有限状态机。是否可用有限状态机来描述，却决于：当前状态确定，有限个状态，响应事件，在不同状态间有规律的转变。它对JavaScript的意义在于，很多对象可以写成有限状态机。举例来说，网页上有一个菜单元素。鼠标悬停的时候，菜单显示；鼠标移开的时候，菜单隐藏。如果使用有限状态机描述，就是这个菜单只有两种状态（显示和隐藏），鼠标会引发状态转变。&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;menu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 当前状态&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;currentState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hide'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 绑定事件&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hover&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 状态转换&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;hide&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'show'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;show&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hide'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Invalid State!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;可以看到，有限状态机的写法，逻辑清晰，表达力强，有利于封装事件。一个对象的状态越多、发生的事件越多，就越适合采用有限状态机的写法。另外，JavaScript语言是一种异步操作特别多的语言，常用的解决方法是指定回调函数，但这样会造成代码结构混乱、难以测试和除错等问题。有限状态机提供了更好的办法：把异步操作与对象的状态改变挂钩，当异步操作结束的时候，发生相应的状态改变，由此再触发其他操作。这要比回调函数、事件监听、发布/订阅等解决方案，在逻辑上更合理，更易于降低代码的复杂度。&lt;/p&gt;
+
+&lt;h3 id=&quot;例3-正则表达式-匹配所有3的倍数&quot;&gt;例3. 正则表达式: 匹配所有3的倍数&lt;/h3&gt;
+
+&lt;p&gt;使用如下pattern可以匹配文本中的独行文本中的3的整数倍数字。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;^[0369]*(([147][0369]*|[258][0369]*[258][0369]*)([147][0369]*[258][0369]*)*([258][0369]*|[147][0369]*[147][0369]*)|[258][0369]*[147][0369]*)*$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这个正则是真正正确的，适用于任意十进制数，而不是下面那样作弊的手段。
+从下面这个有限自动机逆变得到：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/b88c4e71ffe1b92ee92adbc253654c34_720w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ 
+  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;258&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;147&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;其实，写一个正则匹配 10 进制下 n 的倍数的思路是这样：构造一个有 n 个状态的 DFA，状态为$q_0,q_1, …, q_{n-1}$，其中起始和接受状态都是$q_0$。DFA 中$q_k$的含义是「当前读入的数可以被 n 除余 k」。
+对每个$q_k$和$m\in{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}$，计算$r=(10k+m)\ \mathrm{mod}\ n$，构造一条$q_k\xrightarrow{m} q_r$的转移边这张 DFA 就可以匹配能被 n 整除的十进制数。下面是被 7 整除的十进制数的正则，长达 12000 余字：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0|(7|[18]5*4|(2|9|[18]5*6)(3|[29]5*6)*(1|8|[29]5*4)|(3|[18]5*[07]|(2|9|[18]5*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))*(5|65*4|(0|7|65*6)(3|[29]5*6)*(1|8|[29]5*4))|(4|[18]5*[18]|(2|9|[18]5*6)(3|[29]5*6)*(5|[29]5*[18])|(3|[18]5*[07]|(2|9|[18]5*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))*(2|9|65*[18]|(0|7|65*6)(3|[29]5*6)*(5|[29]5*[18])))(6|35*[18]|(4|35*6)(3|[29]5*6)*(5|[29]5*[18])|(5|35*[07]|(4|35*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))*(2|9|65*[18]|(0|7|65*6)(3|[29]5*6)*(5|[29]5*[18])))*(2|9|35*4|(4|35*6)(3|[29]5*6)*(1|8|[29]5*4)|(5|35*[07]|(4|35*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;下面教你怎么把 DFA 转正则：&lt;/p&gt;
+
+&lt;p&gt;还是从它开始&lt;img src=&quot;/assets/images/b88c4e71ffe1b92ee92adbc253654c34_720w.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们记 A 为终止到状态 A 的字符串集合，BC 类似，那么可以列出三个方程：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A = A[0369] | B[258] | C[147] |
+B = A[147] | B[0369] | C[258]
+C = A[258] | B[147] | C[0369]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;根据正则语言的特性，可以推导出如下形式的方程L = LU|V有解L = VU&lt;em&gt;因此上面方程可以修改为
+```A = (| B[258] | C[147])[0369]&lt;/em&gt; (1)
+B = (A[147] | C[258])[0369]* (2)
+C = (A[258] | B[147])[0369]* (3)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;将 (3) 代入 (1) (2) 得A = (| B[258] | (A[258] | B[147])[0369]*[147])[0369]* (4)
+B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) 中的竖线得到
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;B = A[147][0369]* | A[258][0369]&lt;em&gt;[258][0369]&lt;/em&gt; | B[147][0369]&lt;em&gt;[258][0369]&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;故
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;B = A[147][0369]&lt;em&gt;([147][0369]&lt;/em&gt;[258][0369]&lt;em&gt;)&lt;/em&gt; 
+  | A[258][0369]&lt;em&gt;[258][0369]&lt;/em&gt;([147][0369]&lt;em&gt;[258][0369]&lt;/em&gt;)*&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;把它代入 (4) 得
+```A = (| B[258] | (A[258] | B[147])[0369]*[147])[0369]*
+  =   [0369]* 
+    | B[258][0369]*
+    | A[258][0369]*[147][0369]*
+    | B[147][0369]*[147][0369]* 
+  =   [0369]* 
+    | A[147][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    | A[258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    | A[258][0369]*[147][0369]*
+    | A[147][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]* 
+    | A[258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]* 
+  = [0369]* (
+                  [147][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    | [258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    |             [147][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]* 
+    | [258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]*
+    | [258][0369]*[147][0369]* )*
+  = [0369]* (
+      (
+        [147][0369]*
+      | [258][0369]*[258][0369]*
+      ) ([147][0369]*[258][0369]*)* (
+        [258][0369]*
+ 
+      | [147][0369]*[147][0369]*
+      )
+    | [258][0369]*[147][0369]* )*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;加上 ^ 和 $ 就行了，放去测试，全部正确。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imagess/QQ截图20200322204459.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="cs" />
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">【CS】有限状态机（FSM）模型</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【redis】一、Redis 数据库入门初体验</title>
+      <link href="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" rel="alternate" type="text/html" title="【redis】一、Redis 数据库入门初体验" />
+      <published>2020-03-21T23:17:00+00:00</published>
+      <updated>2020-03-21T23:17:00+00:00</updated>
+      <id>/%E3%80%90Redis%E3%80%91%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A</id>
+      <content type="html" xml:base="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A">&lt;h1 id=&quot;redis使用redis的心得体会&quot;&gt;【Redis】使用Redis的心得体会&lt;/h1&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+▉▉▉／◢▉◣◢▉◣◥◣／◢◤／／／／／／／／  
+／▉／／▉／◥◤／▉／◥▉◤／◢▉◣／▉／▉／  
+／▉／／◥◣／／◢◤／／▉／／▉／▉／▉／▉／  
+／▉／／／◥◣◢◤／／／▉／／▉／▉／▉／▉ ／  
+▉▉▉／／／◥◤／／／／▉／／◥▉◤／◥▉◤／ 
+  
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;工具并无善恶之分，同样的一把利剑在不同的人手里，发光或是消亡。
+Redis 是一款 K/V （键值对）数据库，通常作缓存之用，&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这样一件强大的神器在手，你是否也会感到难以驾驭，以至于杀鸡用了屠龙刀，只是拿来当成“变量暂存器”，还一边抱怨它不方便使用也不见得高效呢？&lt;/p&gt;
+
+&lt;p&gt;那么，你的却没有用对地方，一起来感受这款新晋轻量网红数据库的魅力吧！&lt;/p&gt;
+
+&lt;p&gt;首先，这东东到底有毛用啊？你不会用并不代表它没有用，我们应抱着敬畏之心对待这样一款开源良心产品的，你怀着恶意而来，便无人欢迎你再来采拮他人智慧的成果。&lt;/p&gt;
+
+&lt;p&gt;市面上已经有许多款数据库产品，当然也不乏3A级商业大作(Oracle, Access)，也有开源而气势不减的良心精品（MYSQL, MongoDB），那么它，Redia，又是凭着哪里来的勇气诞生于世的呢？&lt;/p&gt;
+
+&lt;h2 id=&quot;redis-的优越特性&quot;&gt;Redis 的优越特性&lt;/h2&gt;
+
+&lt;p&gt;谈到特性不得不了解一下它的定位，这是一款缓存或者轻量级数据库，面对的是轻量级的简单应用，并且配套了极致简单的API，支持多种主流语言，也就是说，这也是类似于变成语言界的Python一样，Redis是一款万金油的中转缓存工具。&lt;/p&gt;
+
+&lt;p&gt;不谈钱的生意都是在耍无赖，不谈性的恋爱都是在浪费双方生命，那么不谈优势的数据库产品自然也只能是吸引下广大IT民工一时的眼球而已，显然，Redis并非此类浅薄货色。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;高性能&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;存取速度快&lt;/strong&gt;
+缓存于内存区域之中，无需每次调用磁盘文件。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;查询速度快&lt;/strong&gt;
+非关系型数据库，查询时只需要遍历key，降低了查询成本。&lt;/li&gt;
+      &lt;li&gt;内存效率高
+动态申请内存，无需预占用空余内存。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;内存数据库&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;近期火热&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;备受好评&lt;/li&gt;
+  &lt;li&gt;非关系型数据库&lt;/li&gt;
+  &lt;li&gt;NoSQL&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;借用《Redis入门指南》篇首的描述：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Redis 如今已经成为Web开发社区中最火热的内存数据库之一，而它的诞生距现在不过才4年，随着Web2.0的蓬勃发展，网站数据快速增长，对高性能读写的要求越来越高，再加上半结构化数据比重不断变发大，人们早已对铺天盖地运行着的关系型数据库能否适应现今的存储需求产生疑问。而Redis的迅猛发展为这个领域注入了全新的思维。
+Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企业到新浪微博这样的大公司（拥有几百台Redis服务器），都能看到Redis的身影。Redis是个名副其实的多面手，无论是存储、队列还是缓存系统，都有着独到的功底。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;要是把“谁在使用Redis”换成“谁没在使用Redis”，那么这个页面的内容一定会精简不少。                              &lt;br /&gt;
+                                          ———— Redis作者 Salvatore Sanfilippo&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;那么怎样将 Redis 用到实际工程中，又该怎样使用 redis 来处理复杂数据呢？&lt;/p&gt;
+
+&lt;h2 id=&quot;redis-数据类型&quot;&gt;Redis 数据类型&lt;/h2&gt;
+
+&lt;h3 id=&quot;string-字符串&quot;&gt;string ：字符串&lt;/h3&gt;
+&lt;p&gt;是的，redis不支持int类型数据，而仅仅有string类型可供使用，这一点无疑是有争议的，数据类型的减少意味着需要额外的转换识别算法，但增加了操作的通用性。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;存储字符串&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I have a cat that fall in love with a rat&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OK&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I have a cat that fall in love with a rat&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;存储int？&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OK&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;判别 Key 的数据类型&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Dump命令&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;list--链表&quot;&gt;list ： 链表&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;查询&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lrange&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;增加元素&lt;/strong&gt;：&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;lpush key value [value...]&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lpush&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;plmm&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lrange&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;plmm&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rpush key value [value...]&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rpush&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;love&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;little&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;staryberry.&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lrange&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;plmm&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;asdf&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;love&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;little&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;staryberry.&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="redis" />
+      
+        <category term="cs" />
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">【Redis】使用Redis的心得体会</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">【redis】一、Redis 数据库入门初体验</title>

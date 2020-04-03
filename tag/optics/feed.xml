@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/optics/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-03-20T04:04:23+00:00</updated>
+  <updated>2020-04-03T14:46:55+00:00</updated>
   <id>/tag/optics/feed.xml</id>
 
   
@@ -44,6 +44,719 @@
   
   
 
+  
+    <entry>
+      <title type="html">【论文】光电测量与传感课题——传感技术稳定性标准</title>
+      <link href="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86" rel="alternate" type="text/html" title="【论文】光电测量与传感课题——传感技术稳定性标准" />
+      <published>2020-03-22T19:32:00+00:00</published>
+      <updated>2020-03-22T19:32:00+00:00</updated>
+      <id>/%E3%80%90%E8%AE%BA%E6%96%87%E3%80%91%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98%E2%80%94%E2%80%94%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86</id>
+      <content type="html" xml:base="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86">&lt;h1 id=&quot;论文光电测量与传感课题传感技术稳定性标准&quot;&gt;【论文】光电测量与传感课题——传感技术稳定性标准&lt;/h1&gt;
+
+&lt;p&gt;标准乍一看是很枯燥的东西，仔细看过之后才知道，原来它是真的枯燥。
+为什么要指定标准呢？那些又算是稳定性标准呢？&lt;/p&gt;
+
+&lt;p&gt;指标，可以用来标准化生产流程，控制产品质量。&lt;/p&gt;
+
+&lt;p&gt;检验合格，合格标准（图），检验员（张全蛋）。&lt;/p&gt;
+
+&lt;p&gt;常见产品中的标准。
+为了达到标准，乃至超越标准所需要做的努力。&lt;/p&gt;
+
+&lt;h2 id=&quot;什么是标准化&quot;&gt;什么是标准化&lt;/h2&gt;
+
+&lt;p&gt;标准化是指在经济、技术、科学和管理等社会实践中，对重复性的事物和概念，通过制订、发布和实施标准达到统一，以获得最佳秩序和社会效益。公司标准化是以获得公司的最佳生产经营秩序和经济效益为目标，对公司生产经营活动范围内的重复性事物和概念，以制定和实施公司标准，以及贯彻实施相关的国家、行业、地方标准等为主要内容的过程。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;项目&lt;/th&gt;
+      &lt;th&gt;内容&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;中文名&lt;/td&gt;
+      &lt;td&gt;标准化&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;外文名&lt;/td&gt;
+      &lt;td&gt;standardizing，normalizing&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;过    程&lt;/td&gt;
+      &lt;td&gt;制定、发布及实施标准&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;基本方法&lt;/td&gt;
+      &lt;td&gt;简化，统一化，通用化等&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;基本原理&lt;/td&gt;
+      &lt;td&gt;统一原理、简化原理&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;基本特性&lt;/td&gt;
+      &lt;td&gt;抽象性；技术性；经济性等&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;作    用&lt;/td&gt;
+      &lt;td&gt;组织现代化生产的重要手段&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;国家标准《标准化工作指南 第1部分：标准化和相关活动的通用词汇》（GB/T20000.1—2002）对“标准化”的定义是：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“为了在一定范围内获得最佳秩序，对现实问题或潜在问题制定共同使用和重复使用的条款的活动。”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;同时在定义后注明：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;（1）上述活动主要包括编制、发布和实施标准的过程；&lt;br /&gt;
+（2）标准化的主要作用在于为了其预期目的改造产品、过程或服务的适用性，防止贸易壁垒，并促进技术合作。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;标准有什么用&quot;&gt;标准有什么用？&lt;/h2&gt;
+&lt;p&gt;标准是可以拿来卖钱的，例子：&lt;br /&gt;
+&lt;img src=&quot;/assets/images/ISO9001标准.png&quot; alt=&quot;ISO9001标准&quot; /&gt;
+这是国际标准化组织（ISO）官网上的一个非常有名的标准，&lt;/p&gt;
+
+&lt;h2 id=&quot;国际国内标准化组织&quot;&gt;国际国内标准化组织&lt;/h2&gt;
+
+&lt;h3 id=&quot;国际&quot;&gt;国际&lt;/h3&gt;
+
+&lt;h4 id=&quot;iec&quot;&gt;IEC&lt;/h4&gt;
+
+&lt;h4 id=&quot;isointernational-standardlization-organization&quot;&gt;ISO：International Standardlization Organization&lt;/h4&gt;
+
+&lt;p&gt;国际标准化组织。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ISO9001&lt;/strong&gt;
+&lt;a href=&quot;https://www.zhihu.com/question/278740612&quot;&gt;什么是ISO9001？&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;itointernational-telephony-organization&quot;&gt;ITO：International Telephony Organization&lt;/h4&gt;
+
+&lt;p&gt;国际电信组织。&lt;/p&gt;
+
+&lt;h3 id=&quot;国内&quot;&gt;国内&lt;/h3&gt;
+
+&lt;h4 id=&quot;gbt国标&quot;&gt;GB/T：国标&lt;/h4&gt;
+
+&lt;h2 id=&quot;标准化的意义&quot;&gt;标准化的意义&lt;/h2&gt;
+
+&lt;p&gt;在国民经济的各个领域中，凡具有多次重复使用和需要制定标准的具体产品，以及各种定额、规划、要求、方法、概念等，都可称为标准化对象。&lt;/p&gt;
+
+&lt;p&gt;标准化对象一般可分为两大类：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一类是标准化的具体对象，即需要制定标准的具体事物；
+    &lt;ul&gt;
+      &lt;li&gt;例如：《茶馆经营服务规范》从制度规范、从业人员的基本条件、职业道德、服务操作、卫生要求等几个方面做出了详细规定，填补了茶馆行业在标准规范上的空白，解决了茶馆行业无标准可依的问题，有利于对茶馆行业进行管理和指导，及茶馆企业进行标准化经营，对推动茶馆行业健康有序发展具有重要意义。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;另一类是标准化总体对象，即各种具体对象的总和所构成的整体，通过它可以研究各种具体对象的共同属性、本质和普遍规律。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;实施标准化的意义如下：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;标准化的主要作用是组织现代化生产的重要手段和必要条件；&lt;/li&gt;
+  &lt;li&gt;是合理发展产品品种、组织专业化生产的前提；&lt;/li&gt;
+  &lt;li&gt;是公司实现科学管理和现代化管理的基础；&lt;/li&gt;
+  &lt;li&gt;是提高产品质量保证安全、卫生的技术保证；&lt;/li&gt;
+  &lt;li&gt;是国家资源合理利用、节约能源和节约原材料的有效途径；&lt;/li&gt;
+  &lt;li&gt;是推广新材料、新技术、新科研成果的桥梁；&lt;/li&gt;
+  &lt;li&gt;是消除贸易障碍、促进国际贸易发展的通行证。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;具体在以下十一个方面&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;标准化为科学管理奠定了基础。所谓科学管理，就是依据生产技术的发展规律和客观经济规律对企业进行管理，而各种科学管理制度的形式，都以标准化为基础；&lt;/li&gt;
+  &lt;li&gt;促进经济全面发展，提高经济效益。标准化应用于科学研究，可以避免在研究上的重复劳动；应用于产品设计，可以缩短设计周期；应用于生产，可使生产在科学的和有秩序的基础上进行；应用于管理，可促进统一、协调、高效率等；&lt;/li&gt;
+  &lt;li&gt;标准化是科研、生产、使用三者之间的桥梁。一项科研成果，一旦纳入相应标准，就能迅速得到推广和应用。因此，标准化可使新技术和新科研成果得到推广应用，从而促进技术进步；&lt;/li&gt;
+  &lt;li&gt;随着科学技术的发展，生产的社会化程度越来越高，生产规模越来越大，技术要求越来越复杂，分工越来越细，生产协作越来越广泛，这就必须通过制定和使用标准，来保证各生产部门的活动，在技术上保持高度的统一和协调，以使生产正常进行；所以，我们说标准化为组织现代化生产创造了前提条件；&lt;/li&gt;
+  &lt;li&gt;合理发展产品品种，提高企业应变能力，以更好的满足社会需求；&lt;/li&gt;
+  &lt;li&gt;保证产品质量，维护消费者利益；&lt;/li&gt;
+  &lt;li&gt;保障身体健康和生命安全，大量的环保标准、卫生标准和安全标准制定发布后，用法律形式强制执行，对保障人民的身体健康和生命财产安全具有重大作用。&lt;/li&gt;
+  &lt;li&gt;标准化标志着一个行业新的标准的产生。
+通过标准化以及相关技术政策的实施，可以整合和引导社会资源，激活科技要素，推动自主创新与开放创新，加速技术积累、科技进步、成果推广、创新扩散、产业升级以及经济、社会、环境的全面、协调、可持续发展。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;表现形式：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;标准化为科学管理奠定了基础。所谓科学管理，就是依据生产技术的发展规律和客观经济规律对企业进行管理，而各种科学管理制度的形成，都是以标准化为基础的；&lt;/li&gt;
+  &lt;li&gt;促进经济全面发展，提高经济效益。标准化应用于科学研究，可以避免在研究上的重复劳动；应用于产品设计，可以缩短设计周期；应用于生产，可使生产在科学的和有秩序的基础上进行；应用于管理，可促进统一、协调、高效率等；&lt;/li&gt;
+  &lt;li&gt;标准化是科研、生产、使用三者之间的桥梁。一项科研成果，一旦纳入相应标准，就能迅速得到推广和应用。因此，标准化可使新技术和新科研成果得到推广应用，从而促进技术进步；&lt;/li&gt;
+  &lt;li&gt;随着科学技术的发展，生产的社会化程度越来越高，生产规模越来越大，技术要求越来越复杂，分工越来越细，生产协作越来越广泛，这就必须通过制定和使用标准，来保证各生产部门的活动，在技术上保持高度的统一和协调，以使生产正常进行；所以，我们说标准化为组织现代化生产创造了前提条件；&lt;/li&gt;
+  &lt;li&gt;促进对自然资源的合理利用，保持生态平衡，维护人类社会当前和长远的利益；&lt;/li&gt;
+  &lt;li&gt;合理发展产品品种，提高企业应变能力，以更好地满足社会需求；&lt;/li&gt;
+  &lt;li&gt;保证产品质量，维护消费者利益；
+8.在社会生产组成部分之间进行协调，确立共同遵循的准则，建立稳定的秩序；&lt;/li&gt;
+  &lt;li&gt;保障身体健康和生命安全。大量的环保标准、卫生标准和安全标准制定发布后，用法律形式强制执行，对保障人民的身体健康和生命财产安全具有重大作用。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;基本原理&quot;&gt;基本原理&lt;/h2&gt;
+
+&lt;h3 id=&quot;统一原理&quot;&gt;统一原理&lt;/h3&gt;
+&lt;p&gt;就是为了保证事物发展所必须的秩序和效率，对事物的形成、功能或其他特性，确定适合于一定时期和一定条件的一致规范，并使这种一致规范与被取代的对象在功能上达到等效。
+统一原理包含以下要点：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;统一是为了确定一组对象的一致规范，其目的是保证事物所必须的秩序和效率；&lt;/li&gt;
+  &lt;li&gt;统一的原则是功能等效，从一组对象中选择确定一致规范，应能包含被取代对象所具备的必要功能；&lt;/li&gt;
+  &lt;li&gt;统一是相对的，确定的一致规范，只适用于一定时期和一定条件，随着时间的推移和条件的改变，旧的统一就要由新的统一所代替。
+    &lt;h3 id=&quot;简化原理&quot;&gt;简化原理&lt;/h3&gt;
+    &lt;p&gt;就是为了经济有效地满足需要，对标准化对象的结构、型式、规格或其他性能进行筛选提炼，剔除其中多余的、低效能的、可替换的环节，精炼并确定出满足全面需要所必要的高效能的环节，保持整体构成精简合理，使之功能效率最高。
+简化原理包含以下几个要点：&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;简化的目的是为了经济，使之更有效的满足需要；&lt;/li&gt;
+  &lt;li&gt;简化的原则是从全面满足需要出发，保持整体构成精简合理，使之功能效率最高。所谓功能效率系指功能满足全面需要的能力；&lt;/li&gt;
+  &lt;li&gt;简化的基本方法是对处于自然状态的对象进行科学的筛选提炼，剔除其中多余的、低效能的、可替换的环节，精练出高效能的能满足全面需要所必要的环节；&lt;/li&gt;
+  &lt;li&gt;简化的实质不是简单化而是精练化，其结果不是以少替多，而是以少胜多。
+    &lt;h3 id=&quot;协调原理&quot;&gt;协调原理&lt;/h3&gt;
+    &lt;p&gt;就是为了使标准的整体功能达到最佳，并产生实际效果，必须通过有效的方式协调好系统内外相关因素之间的关系，确定为建立和保持相互一致，适应或平衡关系所必须具备的条件。
+协调原理包含以下要点：&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;协调的目的在于使标准系统的整体功能达到最佳并产生实际效果；&lt;/li&gt;
+  &lt;li&gt;协调对象是系统内相关因素的关系以及系统与外部相关因素的关系；&lt;/li&gt;
+  &lt;li&gt;相关因素之间需要建立相互一致关系（连接尺寸），相互适应关系（供需交换条件），相互平衡关系（技术经济招标平衡，有关各方利益矛盾的平衡），为此必须确立条件；&lt;/li&gt;
+  &lt;li&gt;协调的有效方式有：有关各方面的协商一致，多因素的综合效果最优化，多因素矛盾的综合平衡等。
+按照特定的目标，在一定的限制条件下，对标准系统的构成因素及其关系进行选择、设计或调整，使之达到最理想的效果，这样的标准化原理称为最优化原理。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;特性&quot;&gt;特性&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;标准由主要靠摸索和模仿形式产生变为有意识地制定。&lt;/li&gt;
+  &lt;li&gt;标准化活动涉及范围扩大。&lt;/li&gt;
+  &lt;li&gt;标准化活动中的政治和军事因素增加。&lt;/li&gt;
+  &lt;li&gt;标准化还不是一项有组织的活动。&lt;/li&gt;
+  &lt;li&gt;标准化没有理论指导。&lt;/li&gt;
+  &lt;li&gt;标准化发展不平衡。&lt;/li&gt;
+  &lt;li&gt;标准化是总结的结果。&lt;/li&gt;
+  &lt;li&gt;标准因行业不同也不同。&lt;/li&gt;
+  &lt;li&gt;标准可以分为框架性标准和细化标准。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;现行标准&quot;&gt;现行标准&lt;/h2&gt;
+
+&lt;h3 id=&quot;中美标准化差异编辑&quot;&gt;中美标准化差异编辑&lt;/h3&gt;
+
+&lt;p&gt;美国标准分为四种：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;国家标准&lt;/li&gt;
+  &lt;li&gt;政府各部门标准&lt;/li&gt;
+  &lt;li&gt;专业标准（或行业标准）&lt;/li&gt;
+  &lt;li&gt;公司标准&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;从美国标准体制的构成看，美国政府各部门的标准主要是从保护消费者安全和健康的角度制定的。&lt;/p&gt;
+
+&lt;p&gt;总体来说，政府在标准化活动中扮演的角色是很有限的，而作为民间机构的行业协会和专业学会的标准占据主导地位。&lt;/p&gt;
+
+&lt;p&gt;美国采用自愿标准体制，即自愿参加编写、自愿采用，行业协会和专业学会的成员也是本着自愿原则参加的企业和专业人士。美国的标准团体非常多，约有400多个，其中绝大多数都是行业协会和专业学会。由此可见，美国行业协会和专业学会在标准化活动中发挥主导作用，是美国标准化的一大特点。&lt;/p&gt;
+
+&lt;p&gt;除此之外，各级政府部门也分别在制定其各自领域的标准以及政府的采购标准，如国防部、农业部、环保局、食品与药品管理局、消费品安全委员会等。&lt;/p&gt;
+
+&lt;p&gt;由于主要的标准制定者是各民间的标准化团体，因此，标准的草案提出者主要是各企业和专业人士，在制修订标准的过程中，各个企业、专业人士以及消费者代表都会本着自身利益积极参与讨论，这样的过程确保了协商一致，也能够充分体现行业的发展状况及特性。应该说，各方讨论的过程是某种搏弈，每一方都努力把自己的利益反映到标准中去，这样的结果是既不会出现严重损害某团体利益的问题，同时也推动行业的发展。&lt;/p&gt;
+
+&lt;p&gt;中美两国的标准化工作存在的差异主要在以下几个方面：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;一是标准制定的理念不同。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;美国在标准制定中倡导“市场驱动、民间主导”的理念，这种理念要求标准化活动必须是由市场掌握主动权，遵行自愿性和协商一致的原则，在民间机构主导的基础上强化政府的参与，其表现出来的特点是一个“自下而上”的标准制定机制。美国的这种标准化理念产生于其自由市场经济体制下“大市场、小政府”的经济发展理念。以我们参观考察的ASTM为例，其标准制定活动从来就以市场需求为导向，欢迎并允许全球各个市场上对标准的建议进入ASTM的标准制定流程，经协商一致最终成为ASTM标准。在制定过程中，从标准建议、起草、投票到发行，都是民间机构起主要作用甚至是决定性作用。当然政府的参与也是必需的，但也仅作为市场上的一个分子参与其中，与民间成员平等协商，政府的行政权力在其中不得体现。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;中国的标准化活动一直是一种政府行为，标准化活动处于“行政驱动、政府主导”的局面，有时具有指令性性质，专家商定和行政宣贯是其主要手段，虽然民间力量也越来越多地参与标准制定活动，但绝大部分是受邀请参与，成为技术委员会成员需要批准，不能自由、公开地参与。2000年以来，为了适应社会主义市场经济发展的需要，提出了新的“政府引导、企业主体、市场导向”的标准制定理念，在行政驱动的基础上鼓励扩大企业的参与，但是从整体来说，表现出来的特点仍然是“自上而下”的标准制定机制。&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;二是标准化活动的视角不同。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;美国一直以来就站在全球化的视角上来开展其标准化活动，在其最初期就面向全球；而中国的标准化活动的视角着眼于本国市场，面向全球不够。&lt;/p&gt;
+
+&lt;p&gt;以ASTM为例，该组织是美国乃至世界上最早成立的标准制定机构之一，组建于1898年。在其成立之初，其标准活动就面向全球，ASTM的会员制度是全球性的，参与ASTM标准制定活动的会员是来自众多国家的技术专家，他们虽然不是代表各自的国家，而是代表他们个人或其服务的企业和机构，但却带着各自国家和市场的技术思想和技术资源参与ASTM的标准制定活动，他们制定的标准成果服务于全球市场。
+相对来说，中国的标准化活动，无论是国家标准的制定还是行业标准的制定，大多着眼于中国国内市场，标准活动的指导思想局限于解决国内市场问题，服务于国内市场需求，参与标准制定活动的专家长期以来也局限于中国公民和组织。由此可见，中国的标准化活动，无论在技术来源上还是制定者身份上，长期以来都仅面向国内市场，全球性战略有待加强。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;三是标准制定程序不同。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在美国，标准从建议、起草、协商表决、批准到发行整个过程都有一个严格的制定流程。在ASTM考察过程中，工作人员给我们介绍了该组织标准从起草到发行要经过这样的流程：工作组起草标准—送交分技术委员会（SC）进行第一次投票表决通过—呈送到主技术委员会（TC）进行更大范围的投票表决通过—提交标准化技术委员会审议通过—批准通过—发行。在分技术委员会和主技术委员会投票过程中，只要出现反对票，整个投票程序就要停下来，直到反对票解决为止。&lt;/p&gt;
+
+&lt;p&gt;在国内，无论是国家标准的制定还是行业标准的制定，也都有建议、立项、起草、表决、审批和发行整个流程，不过在制度安排上，标准的制定、审批、发行三个环节是分开管理和运行的。而在实际运行中，由于标准化技术委员会委员的代表性不够，一项标准的制定往往较难吸收到整个行业或门类的不同的技术思想和建议，协商一致的覆盖面需要加强，标准的市场适应性有待提高。&lt;/p&gt;
+
+&lt;p&gt;除了上述几点之外，美国与中国的标准化工作在标准制定的经费来源、制度安排等诸多方面都存在很大的差异。我国科技水平与国际化程度与美国还有巨大的差距，不同的文化背景和经济发展阶段，决定了我国标准化体系的现状。&lt;/p&gt;
+
+&lt;p&gt;我国正在大力实施转变经济发展方式，经历从“中国制造”向“中国创造”的战略转变，标准化工作是国民经济和社会发展的重要技术基础，是推进我国技术进步、产业升级、提高质量的重要因素，随着经济全球化的日益发展，我国的标准化也必须借鉴发达国家的先进经验，着重做好标准制定的国际化、标准运作的市场化等方面的工作。政府、企业及质检机构应切实加强对国外标准体系和先进标准的研究，在标准管理和标准制定的过程中采用全球化的视角，使我国标准化工作更加适应世界经济发展的要求，以帮助国内企业更好地参与国际竞争。&lt;/p&gt;
+
+&lt;h2 id=&quot;光学的标准化举例&quot;&gt;光学的标准化举例&lt;/h2&gt;
+
+&lt;h3 id=&quot;5g&quot;&gt;5G&lt;/h3&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【论文】光电测量与传感课题——传感技术稳定性标准</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【信息光学】第五章 光学成像系统的频率特性</title>
+      <link href="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7" rel="alternate" type="text/html" title="【信息光学】第五章 光学成像系统的频率特性" />
+      <published>2020-03-20T10:46:00+00:00</published>
+      <updated>2020-03-20T10:46:00+00:00</updated>
+      <id>/%E3%80%90%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6%E3%80%91%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7</id>
+      <content type="html" xml:base="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7">&lt;h1 id=&quot;信息光学第五章-光学成像系统的频率特性&quot;&gt;【信息光学】第五章 光学成像系统的频率特性&lt;/h1&gt;
+
+&lt;h2 id=&quot;物理光学&quot;&gt;物理光学&lt;/h2&gt;
+
+&lt;h3 id=&quot;光波&quot;&gt;光波&lt;/h3&gt;
+
+&lt;h4 id=&quot;光波的表达式&quot;&gt;光波的表达式&lt;/h4&gt;
+
+&lt;p&gt;平面波：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;E = \overlinesegment{}&lt;/script&gt;
+
+&lt;h3 id=&quot;光学参数&quot;&gt;光学参数&lt;/h3&gt;
+
+&lt;h4 id=&quot;振幅&quot;&gt;振幅&lt;/h4&gt;
+
+&lt;h4 id=&quot;时间频率&quot;&gt;时间频率&lt;/h4&gt;
+
+&lt;h4 id=&quot;空间频率波长&quot;&gt;空间频率，波长&lt;/h4&gt;
+
+&lt;h4 id=&quot;偏振&quot;&gt;偏振&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;只有&lt;strong&gt;横波&lt;/strong&gt;才有偏振方向之分，而纵波的震动方向始终与传播方向相同，不存在偏振。&lt;/li&gt;
+  &lt;li&gt;对于平面波，其振动方向&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;成像光学基础&quot;&gt;成像光学基础&lt;/h2&gt;
+
+&lt;h3 id=&quot;常见光波形式&quot;&gt;常见光波形式&lt;/h3&gt;
+
+&lt;h4 id=&quot;球面波&quot;&gt;球面波&lt;/h4&gt;
+
+&lt;p&gt;复振幅表达式( 距原点 z处的 xOy平面 ):
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{z}&lt;/script&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;成像&quot;&gt;成像&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;成像&lt;/strong&gt;是指照明一个放置于透镜之前的物体，使其经由透镜在另一位置，出现与物体非常相似的光场强度分布。这个强度分布称之为该物体的&lt;strong&gt;像&lt;/strong&gt;。可以用光屏接收的实际强度分布，称为&lt;strong&gt;实像&lt;/strong&gt;。如果透镜后方的光可等效与透镜前另一个位置发出的，称之为&lt;strong&gt;虚像&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;理想成像&quot;&gt;理想成像&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;理想成像&lt;/strong&gt;：&lt;br /&gt;
+理想的透镜成像系统，对入射光波在像面上进行还原：
+假设输入光波为：
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+    U(x,y) &amp;= A_0\sum_{n=1}^{N} e^{jk(x \cos \alpha_n + y \cos \beta_n)} \\
+    &amp;= A_0 \sum_{n=1}^{N} e^{jk\left(  \right)}
+\end{aligned} %]]&gt;&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = A_0\sum_{n=1}^{N} \delta \left( \frac{x}{\lambda z}-an,\frac{y}{\lambda z}-bn \right)&lt;/script&gt;
+则&lt;/p&gt;
+
+&lt;p&gt;受限衍射系统：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;例题1：&lt;/strong&gt; 
+&lt;img src=&quot;/assets/images/QQ截图20200320111158.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;解题思路：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;先求透镜理想像的幅度表达式：$\displaystyle U_g(x,y)$&lt;/li&gt;
+  &lt;li&gt;再求得孔径的傅里叶变换。&lt;/li&gt;
+  &lt;li&gt;输出频谱：$\displaystyle U_i(f_x,f_y) = G(f_x,f_y) \cdot H(f_x,f_y)$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320110615.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/QQ截图20200320110956.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;例题2：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320112711.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320112357.png&quot; alt=&quot;&quot; /&gt;
+注：这里由于是与z轴夹角，所以代入$\sin \theta$。
+光波斜入射引入的位相因子，$e^{jkx_0}$ -&amp;gt; $e^{jk\sin \theta x_0}$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320112632.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320113539.png&quot; alt=&quot;&quot; /&gt;
+像频谱：是经过出瞳函数进行带通滤波后的物像，必须要有物体的频率成分通过。
+&lt;img src=&quot;/assets/images/QQ截图20200320113740.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200320113530.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;注：常考题型，物面、像变、输入光波变化后，分析截止频率的变化。&lt;/p&gt;
+
+&lt;h3 id=&quot;相干照明系统的传递函数ctf&quot;&gt;相干照明系统的传递函数（CTF）&lt;/h3&gt;
+
+&lt;p&gt;$H_C(f_x,f_y)$&lt;/p&gt;
+
+&lt;h3 id=&quot;非相干照明系统的传递函数otf&quot;&gt;非相干照明系统的传递函数（OTF）&lt;/h3&gt;
+
+&lt;p&gt;$H(f_x,f_y)$&lt;/p&gt;
+
+&lt;p&gt;由自相干定理。&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;H(f_x,f_y) = \frac{P(\lambda d_i f_x, \lambda d_i f_y)}{\iint_{-\infty}^{\infty}P(\xi, \eta)\mathrm{d}\xi \mathrm{d}\eta}&lt;/script&gt;
+
+&lt;h3 id=&quot;衍射受限系统的传递函数otf&quot;&gt;衍射受限系统的传递函数（OTF）&lt;/h3&gt;
+
+&lt;p&gt;根据物理意义，其可以通过交叠部分面积来求解其传递函数值（自相关）。&lt;/p&gt;
+
+&lt;p&gt;例1：衍射受限的非相干OTF的计算
+&lt;img src=&quot;/assets/images/QQ截图20200323172134.png&quot; alt=&quot;&quot; /&gt;
+衍射受限的非相干照明情形，其截止频率是相干照明情形下截止频率的两倍。&lt;/p&gt;
+
+&lt;h2 id=&quot;五-像差对成像系统传递函数的影响&quot;&gt;五、 像差对成像系统传递函数的影响&lt;/h2&gt;
+
+&lt;p&gt;既影响对比度（振幅），也会影响相位传递。&lt;/p&gt;
+
+&lt;h3 id=&quot;51-广义光瞳函数&quot;&gt;5.1 广义光瞳函数&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;系统像差&lt;/strong&gt;效应集中表现为：&lt;/p&gt;
+
+&lt;p&gt;出瞳面上的波前会偏离理想会聚球面波的像面。
+以波像差 $w(x,y)$ 描述该像差（光程差），像差产生的位相差：
+&lt;script type=&quot;math/tex&quot;&gt;e^{jkW(x,y)}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;广义光瞳函数&lt;/strong&gt;：
+&lt;script type=&quot;math/tex&quot;&gt;P(x,y)=e^{jkW(x,y)}P(x,y)&lt;/script&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;离焦系统otf&quot;&gt;离焦系统OTF&lt;/h3&gt;
+
+&lt;p&gt;不需要计算，只需要了解分析的过程，知道离焦像差会带来何种影响。&lt;/p&gt;
+
+&lt;p&gt;非相干照明，存在固定分辨极限。&lt;/p&gt;
+
+&lt;p&gt;相干照明，不存在固定分辨极限，分辨率随着位相而改变。&lt;/p&gt;
+
+&lt;h1 id=&quot;第七章-全息投影&quot;&gt;第七章 全息投影&lt;/h1&gt;
+
+&lt;h2 id=&quot;74-制作全息光栅&quot;&gt;7.4 制作全息光栅&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;先写出两种光波&lt;/li&gt;
+  &lt;li&gt;写出在记录平面上的，两光束的振幅叠加振幅 -&amp;gt; 双光束干涉。&lt;/li&gt;
+  &lt;li&gt;求得平面光强（包含频率）&lt;/li&gt;
+  &lt;li&gt;得到频率项（展开）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I(x,y) = 2 + 2 \cos \left[ 2 \pi x \frac{2\sin (\theta/2)}{\lambda} \right]&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;记录结果：记录介质透过率函数 与 相干光强 成正比 -&amp;gt; 记录下相干条纹。&lt;/li&gt;
+  &lt;li&gt;空间频率：把已知参数代入，求得：
+&lt;script type=&quot;math/tex&quot;&gt;f = \frac{2\sin(\theta / 2)}{\lambda}&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;平面波---基元光栅&quot;&gt;平面波 -&amp;gt; 基元光栅&lt;/h3&gt;
+
+&lt;h3 id=&quot;点光源---基元波带片&quot;&gt;点光源 -&amp;gt; 基元波带片&lt;/h3&gt;
+
+&lt;p&gt;把物体看做是很多点源，记录光波为他们在记录介质平面上的相干叠加光波强度。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;相关假设&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;物光：$O(x_o,y_o,z_o)$&lt;/li&gt;
+  &lt;li&gt;参考光源：$R(x_r,y_r,z_r)$&lt;/li&gt;
+  &lt;li&gt;照明光波：$C(x,y)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;比较近，满足菲涅尔近似 -&amp;gt; &lt;strong&gt;菲涅尔全息图&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;注：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;物光和参考光，通过菲涅尔衍射到达介质平面&lt;/li&gt;
+  &lt;li&gt;在介质平面上产生相干叠加&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I(x,y) = |R|^2 + |O|^2 + R_o+O_o^{*}e^{j\frac{2 \pi}{\lambda}\left[ (x-x_r) + (y-y_r) \right]}&lt;/script&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;怎样理解结果？&lt;br /&gt;
+结果是：沿着某个方向的平面波，乘上了一个球面波因子，结果是一个与平面波同向的&lt;strong&gt;球面波&lt;/strong&gt;。
+    &lt;ul&gt;
+      &lt;li&gt;–&amp;gt; &lt;strong&gt;承载了球面波信息的空间平面波&lt;/strong&gt;。&lt;/li&gt;
+      &lt;li&gt;相当于一个透镜和棱镜的组合。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$z_i&amp;lt;0$ 为发散球面波（实像），否则为会聚球面波（虚像）。&lt;/li&gt;
+  &lt;li&gt;存在放大率问题：
+    &lt;ul&gt;
+      &lt;li&gt;横向放大率：&lt;/li&gt;
+      &lt;li&gt;纵向放大率：z方向比值&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;几种特殊情形&quot;&gt;几种特殊情形&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;再现光波与参考光波完全一样时
+&lt;script type=&quot;math/tex&quot;&gt;x_c,=x_r&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;x&lt;/li&gt;
+  &lt;li&gt;当&lt;strong&gt;参考光&lt;/strong&gt;和&lt;strong&gt;照明光波&lt;/strong&gt;为&lt;strong&gt;平面波&lt;/strong&gt;，物体是点光源，则物体与成像得到的位置是关于介质平面&lt;strong&gt;对称&lt;/strong&gt;的。
+可以得到准确位置；&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;75-傅里叶变换全息图&quot;&gt;7.5 傅里叶变换全息图&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;物体和图像的光信息，既表现在它的物体光波中，也蕴含在它的空间频谱内。&lt;/li&gt;
+  &lt;li&gt;用全息方法，可以在空域中记录物光波，也可以在频域记录它的频谱。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;假设&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;物光： $O(x,y)$&lt;/li&gt;
+  &lt;li&gt;频谱： $G(f_x,f_y)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;可以记录：物频谱信息、物频谱的共轭信息&lt;/li&gt;
+  &lt;li&gt;也许共轭信息比物体信息更为重要（光学信息处理）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;再现&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;平面波入射&lt;/li&gt;
+  &lt;li&gt;需要使用透镜，进行傅里叶变换&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;几何光学：放大率分
+    &lt;ul&gt;
+      &lt;li&gt;轴向放大率&lt;/li&gt;
+      &lt;li&gt;垂轴放大率&lt;/li&gt;
+      &lt;li&gt;角放大率&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;含有一次位相因子：&lt;strong&gt;一个特定方向的平面波&lt;/strong&gt;&lt;br /&gt;
+一次位相因子：
+&lt;script type=&quot;math/tex&quot;&gt;e^{j2a \pi f_x} , e^{j2b \pi f_y}, e^{j2a\pif_x + f_y}&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;球面波：没有传播的优先方向。&lt;/li&gt;
+  &lt;li&gt;球面波的完整性：球面波部分遮挡，其他部分会不会发生改变？&lt;/li&gt;
+  &lt;li&gt;频谱函数平凡的傅里叶：自相关&lt;/li&gt;
+  &lt;li&gt;★ 共轭：位相像差为 $\pi$&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【信息光学】第五章 光学成像系统的频率特性</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】球面波 – 光学基础</title>
+      <link href="/%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <published>2020-03-17T16:49:00+00:00</published>
+      <updated>2020-03-17T16:49:00+00:00</updated>
+      <id>/%E3%80%90%E2%98%85%E3%80%91%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86</id>
+      <content type="html" xml:base="/%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86">&lt;h3 id=&quot;153-光学仪器&quot;&gt;1.5.3 光学仪器&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;传感器&lt;/li&gt;
+  &lt;li&gt;全站仪&lt;/li&gt;
+  &lt;li&gt;成像光谱仪
+最初设计用于探矿，采集二维图像，+ 三维扫描信息，仅仅可见光，看不清楚。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;质谱仪&lt;/strong&gt;
+质谱分析是一种测量离子&lt;strong&gt;质荷比&lt;/strong&gt;的分析方法，其基本原理是是物质电离，经过加速电场，形成离子束，&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;色谱仪&lt;/strong&gt;：
+利用色谱分离原理和各种分析测定器件对物质进行分析的仪器。几乎可以对有机、无机、大分子，生物大分子等几乎所有化合物进行分离。&lt;/p&gt;
+
+&lt;p&gt;对混合物的精细分离能力。&lt;/p&gt;
+
+&lt;p&gt;工作原理：本质是带份力物质分子，在固定相和流动相之间的转化。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;光谱仪&lt;/strong&gt;：
+用光栅分光原理，拆分不同成分。
+&lt;img src=&quot;/assets/images/QQ截图20200403085625.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;SMA Connector&lt;/li&gt;
+  &lt;li&gt;Slit 狭缝，物平面&lt;/li&gt;
+  &lt;li&gt;Filter， 滤光片，选定测量范围
+原理上不会到达，便宜的不加，消除光谱仪范围内的杂散光。&lt;/li&gt;
+  &lt;li&gt;Collimating Mirror 准直镜&lt;/li&gt;
+  &lt;li&gt;Grating 光栅，技术瓶颈
+民用器件国内水平很差，狗啃。&lt;/li&gt;
+  &lt;li&gt;Focusing Mirror 聚焦&lt;/li&gt;
+  &lt;li&gt;L2 Detector Collection Lens&lt;/li&gt;
+  &lt;li&gt;CCD Detector（UV，VIS）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200403090220.png&quot; alt=&quot;&quot; /&gt;
+吊打？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ截图20200403090342.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;荧光分广度
+&lt;img src=&quot;/assets/images/QQ截图20200403090607.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;三、单色器
+平面衍射光栅，
+四、光电倍增管
+五、样品池&lt;/p&gt;
+
+&lt;h3 id=&quot;154-分析仪器&quot;&gt;1.5.4 分析仪器&lt;/h3&gt;
+&lt;p&gt;以某些物理或者化学性质为基础（光、电、磁、热）。
+例如：拉曼光谱仪，可以分辨、判断一个粒子的姿态角度，判别物质类型。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;灵敏度高&lt;/li&gt;
+  &lt;li&gt;准确&lt;/li&gt;
+  &lt;li&gt;样品用量少&lt;/li&gt;
+  &lt;li&gt;价格昂贵&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;155-趋势发展&quot;&gt;1.5.5 趋势发展&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;小型化，专用化，简用化，家用化，个人化&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;落地式 -&amp;gt; 台式 -&amp;gt; 可移动 -&amp;gt; 便携式 -&amp;gt; 袋装 -&amp;gt; 芯片&lt;/li&gt;
+  &lt;li&gt;芯片实验室&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">1.5.3 光学仪器</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">【光学】球面波 – 光学基础</title>
+      <link href="/%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6-%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <published>2020-03-17T16:49:00+00:00</published>
+      <updated>2020-03-17T16:49:00+00:00</updated>
+      <id>/%E3%80%90%E2%98%85%20%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E3%80%91%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0</id>
+      <content type="html" xml:base="/%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6-%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0">&lt;h1 id=&quot;-物理光学物理光学笔记&quot;&gt;【★ 物理光学】物理光学笔记&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;物理光学&lt;/strong&gt;是研究光的&lt;strong&gt;本性&lt;/strong&gt;、&lt;strong&gt;规律&lt;/strong&gt;及其应用、&lt;strong&gt;造福于人类&lt;/strong&gt;的一门学科。
+&lt;em&gt;注：以人为本，脱离人类的科学是无意义的。&lt;/em&gt;物理光学在近代发展中起到了重要的作用，是许多现代光学仪器的设计与应用基础，在以下领域有着广泛的应用：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;光纤通信&lt;/li&gt;
+  &lt;li&gt;微纳制造&lt;/li&gt;
+  &lt;li&gt;集成电路
+    &lt;ul&gt;
+      &lt;li&gt;芯片制造&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;信息获取
+    &lt;ul&gt;
+      &lt;li&gt;传感器&lt;/li&gt;
+      &lt;li&gt;三维显示&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;全息光学存储&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="math" />
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【★ 物理光学】物理光学笔记</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">【光学】球面波 – 光学基础</title>
@@ -184,10 +897,35 @@ $r_s^2+r_p^2 \neq 1$
   &lt;/li&gt;
   &lt;li&gt;高级图像处理
     &lt;ul&gt;
-      &lt;li&gt;人脸识别&lt;/li&gt;
+      &lt;li&gt;人脸识别
+        &lt;ul&gt;
+          &lt;li&gt;人脸检测&lt;/li&gt;
+          &lt;li&gt;人脸特征提取&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;计算机视觉&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content>
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;313-灰度直方图&quot;&gt;3.1.3 灰度直方图&lt;/h3&gt;
+
+&lt;p&gt;用于判别&lt;/p&gt;
+
+&lt;p&gt;是进行图像增强时的重要评判依据。&lt;/p&gt;
+
+&lt;h3 id=&quot;314-直方图均衡化&quot;&gt;3.1.4 直方图均衡化&lt;/h3&gt;
+
+&lt;p&gt;算法：设灰度变换 $s=f(r)$ 为斜率有限的非减连续可微函数，它将输入图像 $A(x,y)$ 转换为 $B(x,y)$ ，摄入图像的直方图 $H_A(r)$，输出直方图为 $H_B(r)$。&lt;/p&gt;
+
+&lt;p&gt;根据直方图定义，变换前后直方图面积相等。
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+  H_B(s)\mathrm{d}s &amp;= H_A(r)\mathrm{d}r \\
+  &amp;= \frac{H_A(r)}{\mathrm{d}s/\mathrm{d}r} \\
+  &amp;= 
+\end{aligned} %]]&gt;&lt;/script&gt; 
+相当于频域变换，拉伸等，可能使得部分色彩失真，部分峰值会被拉伸为高对比度。&lt;/p&gt;</content>
 
       
       
@@ -210,7 +948,7 @@ $r_s^2+r_p^2 \neq 1$
       
 
       
-        <summary type="html">数字图像处理基础 低级图像处理 增强 修复 平滑 压缩 信噪比 压缩比 中级图像处理 分形 滤镜 高级图像处理 人脸识别</summary>
+        <summary type="html">数字图像处理基础 低级图像处理 增强 修复 平滑 压缩 信噪比 压缩比 中级图像处理 分形 滤镜 高级图像处理 人脸识别 人脸检测 人脸特征提取 计算机视觉</summary>
       
 
       
@@ -364,247 +1102,6 @@ $r_s^2+r_p^2 \neq 1$
 
       
         <summary type="html">（1）静止图像 $\displaystyle I=f(x,y,z,\lambda)$ （2）平面图像 $\displaystyle I=f(x,y,\lambda,t)$ （3）灰度图像 $\displaystyle I=f(x,y,z,t)$ （4）模拟图像 $\displaystyle I=f(x,y,z,\lambda,t)$ xyz连续 （5）数字图像 $\displaystyle I=f(x,y,z,\lambda,t)$ xyz离散</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【数学】现代工程学数学基础</title>
-      <link href="/%E6%95%B0%E5%AD%A6-%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【数学】现代工程学数学基础" />
-      <published>2020-03-15T22:11:00+00:00</published>
-      <updated>2020-03-15T22:11:00+00:00</updated>
-      <id>/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80</id>
-      <content type="html" xml:base="/%E6%95%B0%E5%AD%A6-%E7%8E%B0%E4%BB%A3%E5%B7%A5%E7%A8%8B%E5%AD%A6%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;数学现代工程学数学基础&quot;&gt;【数学】现代工程学数学基础&lt;/h1&gt;
-
-&lt;h2 id=&quot;极限与连续&quot;&gt;极限与连续&lt;/h2&gt;
-
-&lt;h3 id=&quot;微分&quot;&gt;微分&lt;/h3&gt;
-
-&lt;h4 id=&quot;多元函数微分法&quot;&gt;多元函数微分法&lt;/h4&gt;
-
-&lt;h3 id=&quot;积分&quot;&gt;积分&lt;/h3&gt;
-
-&lt;h3 id=&quot;向量微分&quot;&gt;向量微分&lt;/h3&gt;
-
-&lt;h2 id=&quot;复变函数&quot;&gt;复变函数&lt;/h2&gt;
-
-&lt;h2 id=&quot;线性代数&quot;&gt;线性代数&lt;/h2&gt;
-
-&lt;h2 id=&quot;无穷级数&quot;&gt;无穷级数&lt;/h2&gt;
-
-&lt;h3 id=&quot;泰勒级数&quot;&gt;泰勒级数&lt;/h3&gt;
-&lt;p&gt;数学中，泰勒级数用于展开任意函数，常用于复杂函数的近似计算，如正弦函数 $y(x) = \sin x$，由英国数学家布鲁克·泰勒（Sir Brook Taylor）于1715年发表.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;在自变量零点处求得的泰勒级数又称&lt;strong&gt;麦克劳林级数&lt;/strong&gt;，以英格兰数学家柯林·麦克劳林的名字命名。&lt;/li&gt;
-  &lt;li&gt;泰勒级数在近似计算中有着广泛应用。&lt;/li&gt;
-  &lt;li&gt;在复变函数的求解中，也常常用到泰勒展开的几种常用形式。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-    f(x) &amp;= \sum_{n=0} ^{\infty} \frac{f^{(n)}(x_0)}{n!}\left(x-x_0\right)^n \\
-    &amp;= f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)(x-x_0)^2}{2!}+...+ \frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+...
-\end{aligned} %]]&gt;&lt;/script&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$f(x) = \sqrt{1+x}$
-&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-  f(x) &amp;= f(0) + f'(0)(x-0) + \frac{f^{(2)}(x_0)x^2}+\frac{f^{(3)}x^3}{3!}+... \\
-  &amp;= \sqrt{1+0} + \left(\frac{1}{2}\frac{(1+0)^{-\frac{1}{2}}}{1!}x\right) + \left( -\frac{1}{4}\frac{(1+0)^{-\frac{3}{2}}}{2!} x^2\right) + \left( \frac{3}{8} \frac{(1+0)^{-\frac{5}{2}}}{3!}x^3 \right) +... \\
-  &amp;= 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3+...
-\end{aligned} %]]&gt;&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;$y = \sin x$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/taylor-series18.png&quot; alt=&quot;taylor-series&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;傅里叶级数&quot;&gt;傅里叶级数&lt;/h3&gt;
-
-&lt;h4 id=&quot;傅里叶变换&quot;&gt;傅里叶变换&lt;/h4&gt;
-
-&lt;h3 id=&quot;拉普拉斯变换&quot;&gt;拉普拉斯变换&lt;/h3&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【数学】现代工程学数学基础</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【光学】透镜的位相调制及傅里叶变换作用</title>
-      <link href="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8" rel="alternate" type="text/html" title="【光学】透镜的位相调制及傅里叶变换作用" />
-      <published>2020-03-15T15:37:00+00:00</published>
-      <updated>2020-03-15T15:37:00+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8</id>
-      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E9%80%8F%E9%95%9C%E7%9A%84%E4%BD%8D%E7%9B%B8%E8%B0%83%E5%88%B6%E5%8F%8A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%BD%9C%E7%94%A8">&lt;h1 id=&quot;光学透镜的位相调制及傅里叶变换作用&quot;&gt;【光学】透镜的位相调制及傅里叶变换作用&lt;/h1&gt;
-
-&lt;p&gt;透镜的透过率函数定义式：
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = \large{\frac{\text{输出光波}}{输入光波}}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y)=\frac{U_i^{\prime}(x,y)}{U_i(x,y)}&lt;/script&gt;
-考虑入射光波为球面波情形：
-&lt;img src=&quot;/assets/images/QQ截图20200315160209.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;球面波&quot;&gt;球面波&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;球面波&lt;/strong&gt;即波阵面为同心球面的波。&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;光源尺度远小于波长$\lambda$时，光源发出的光波可近似为球面波。&lt;/li&gt;
-  &lt;li&gt;球面波在自由场（无束缚作用）中传播时，其振幅&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;随距离&lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;成反比例衰减。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;参考：&lt;a href=&quot;https://www.zhihu.com/question/35163381?sort=created&quot;&gt;通过亥姆霍兹方程是如何推导出球面波表达式的？&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;发散单色球面波定义式：
-&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{jkr}&lt;/script&gt;
-取发射方向为 &lt;code class=&quot;highlighter-rouge&quot;&gt;z&lt;/code&gt; 轴正半轴，则有：&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;若为会聚球面波，则为：
-&lt;script type=&quot;math/tex&quot;&gt;U(x,y) = \frac{a_0}{r}e^{-jkr}&lt;/script&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;U_i(x,y)=&lt;/script&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【光学】透镜的位相调制及傅里叶变换作用</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【衍射】光学中的衍射现象推论与计算</title>
-      <link href="/%E9%9A%8F%E6%83%B3-%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%88%9B%E9%80%A0%E5%8A%9B-%E7%81%B5%E9%AD%82%E7%9A%84%E9%97%AA%E5%85%89%E7%82%B9" rel="alternate" type="text/html" title="【衍射】光学中的衍射现象推论与计算" />
-      <published>2020-03-13T01:38:00+00:00</published>
-      <updated>2020-03-13T01:38:00+00:00</updated>
-      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%88%9B%E9%80%A0%E5%8A%9B%E2%80%94%E2%80%94%E7%81%B5%E9%AD%82%E7%9A%84%E9%97%AA%E5%85%89%E7%82%B9</id>
-      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E5%88%9B%E9%80%A0%E5%8A%9B-%E7%81%B5%E9%AD%82%E7%9A%84%E9%97%AA%E5%85%89%E7%82%B9">&lt;h1 id=&quot;随想每个人都有创造力灵魂的闪光点md&quot;&gt;【随想】每个人都有创造力——灵魂的闪光点.md&lt;/h1&gt;
-
-&lt;p&gt;尽管这个世界上平凡的人居多，可是我始终相信的一点就是，尽管有很多平庸的人，可没有任何一个生来就平庸的灵魂。人在出生的那一刻起，发展潜力都是几乎均等的，并没有孰优孰劣之分，可究竟是什么导致了某个人成为国家领袖，行业精英，或者无业游民，劫匪暴徒的呢？
-&lt;em&gt;点评：这并不是一个好的开头，因为没有结合具体实例，太过直白，毫无吸引力。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;我想是因为生活环境，经历和思维，加之一点点运气吧！有些人说，可能是机遇吧！某些人生来便是天选之子，赶上了的历史动荡巨变的大潮，正是那极少数成为了浪潮顶尖的英雄，他们家底丰厚，运气爆棚，所以成功的是他而非自己。可事情若是如此简单，和他们同时代的人不说几十亿，同样也有成千上万吧？为何最终成功的是他们呢？&lt;/p&gt;
-
-&lt;p&gt;目的性，在感情中是杀手，在事业中则是杀手锏。做事一定要有很强的目的性，换言之：少做或者不做“无用功”，这里需要我们注意的是，对“无用功”的定义，是那些短期收益不高，长期收益几乎没有的工作。比如对于青少年，相比于出门打工一时来钱快，学习是长期回报更高的选择；相比于闷头学习课本固化知识来说，额外真正训练自己的能力是回报更高的选择；相比于沉醉于微博、贴吧、论坛上的片段、低容量信息，自己看书、思考，看看知乎业内人士的见解，吸收品评借鉴，则是更有价值和眼光的选择；。很多时候你并非真正想要学会一门技能，你只是喜欢这种技能带给你的欣慰和满足感，尽管那中快感仅仅是短暂不可持续增值的泡影，你选择了一个缺少对比，相对不那么残酷的社区，来逃避自己当下在这一领域的无知，顺带还不知要努力。&lt;/p&gt;
-
-&lt;p&gt;你要成为勇士，就不应该畏惧演武场。很多时候，想是比较容易的。你想获得对电影更深刻的理解，自然应当直接面向最高层次的影评社区，而不是在QQ空间这种流通性差、专业性几乎为零的社区里垂死挣扎或者秀优越感、暴露智商。&lt;/p&gt;
-
-&lt;p&gt;你要成为勇士，是要学会战斗，而不是学会欣赏战斗。很多时候，我们都太看重学的过程，而轻视了实操演练的过程，“多看看优秀名家的示例，直接吸纳其精华要点，不是更有效的方式吗？”————“那么，请问，有多少名门大家，不是自学为主，而是投机取巧，照抄他们灵感而来呢？”许多时候，经验和潜意识都告诉我们要多学而后练，自己的哪点三角猫功夫，并不可能创造出什么奇迹之作。可如果你真这样想，那么你就掉进了“惰性思维”的陷阱啦。为什么叫做“惰性思维”呢？因为那是你的舒适区，你坐在那里不动，甚至不需要思考，就能看到惊人程度的杰作诞生，你会不自觉将这一现象代入自己身上，或者换种说法，将自己代入到场景之中，认为那些杰作的诞生，不过只是顺手拈来、唾手可得的事，从而跳过或者&lt;strong&gt;逃避&lt;/strong&gt;了自己长时间看不到回报努力的环节，忽略了实战演练，练习的重要性，还想着一步登天，你，凭什么呢？&lt;/p&gt;
-
-&lt;p&gt;走出舒适区，摆脱“习得性无助”。什么是“舒适区”？“就是那些给你温暖，让你相信自己天生丽质，自带光环，我可以不努力或者不再努力，就可以拥有一个‘让自己满意的结果’”。&lt;/p&gt;
-
-&lt;p&gt;“每天被工作占满了全部时间，这才是一个职场人的悲哀。”&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【随想】每个人都有创造力——灵魂的闪光点.md</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【衍射】光学中的衍射现象推论与计算</title>
-      <link href="/%E5%8F%A5%E5%AD%90-%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BA%86%E5%8F%88%E8%83%BD%E6%80%8E%E6%A0%B7" rel="alternate" type="text/html" title="【衍射】光学中的衍射现象推论与计算" />
-      <published>2020-03-13T01:38:00+00:00</published>
-      <updated>2020-03-13T01:38:00+00:00</updated>
-      <id>/%E3%80%90%E5%8F%A5%E5%AD%90%E3%80%91%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BA%86%E5%8F%88%E8%83%BD%E6%80%8E%E6%A0%B7%3F</id>
-      <content type="html" xml:base="/%E5%8F%A5%E5%AD%90-%E5%9C%A8%E4%B8%80%E8%B5%B7%E4%BA%86%E5%8F%88%E8%83%BD%E6%80%8E%E6%A0%B7">&lt;h1 id=&quot;和喜欢的人在一起了又能怎样&quot;&gt;和喜欢的人在一起了又能怎样？&lt;/h1&gt;
-
-&lt;p&gt;“在一起了又能怎样？”&lt;/p&gt;
-
-&lt;p&gt;女人：“能做的事可多了，要打扮得像个洋娃娃，要穿漂亮小裙子给他看，要陪他看日出日落，要”&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">和喜欢的人在一起了又能怎样？</summary>
       
 
       

@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>【CS】有限状态机（FSM）模型</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/tomorrow.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+    <style>
+        .hljs {
+            background: none;
+        }
+    </style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="The professional publishing platform" />
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Ghost" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="【CS】有限状态机（FSM）模型" />
+    <meta property="og:description" content="【CS】有限状态机（FSM）模型 什么是有限状态机？ 什么是状态机（State Mechine）？顾名思义，即一种可以在一些状态中进行转换的机器，显然这仅仅是一种理想模型，并没有考虑具体的实现方式。 定义 有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。 有什么用？ 虽然听起来仅仅是一个不沾边、不实用、不靠谱的理论模型，但在生活中的例子实在太多了，状态机模型广泛可见于机械结构、电子元件、计算机编程算法当中，只要是在确定的状态间切换的逻辑，都可以归纳为状态机模型。 有限状态机是一种用来进行对象行为建模的工具，其作用主要是描述对象在它的生命周期内所经历的状态序列，以及如何响应来自外界的各种事件。在计算机科学中，有限状态机被广泛用于建模应用行为、硬件电路系统设计、软件工程，编译器、网络协议、和计算与语言的研究。比如下图非常有名的TCP协议状态机。 状态机模型 有限状态机一般都有以下特点： 可以用状态来描述事物，并且任一时刻，事物总是处于一种状态； 事物拥有的状态总数是有限的； 通过触发事物的某些行为，可以导致事物从一种状态过渡到另一种状态； 事物状态变化是有规则的，A状态可以变换到B，B可以变换到C，A却不一定能变换到C； 同一种行为，可以将事物从多种状态变成同种状态，但是不能从同种状态变成多种状态。 状态 状态机可归纳为4个要素，即现态、条件、动作、次态。“现态”和“条件”是因，“动作”和“次态”是果。详解如下： 现态： 指当前所处的状态。 次态： 条件满足后要迁往的新状态。“次态”是相对于“现态”而言的，“次态”一旦被激活，就转变成新的“现态”了。 状态转换动作条件 状态机在满足触发条件时进行状态切换，如当计数达到指定大小进行下一个阶段操作。 条件： 又称为“事件”。当一个条件被满足，将会触发一个动作，或者执行一次状态的迁移。 动作： 条件满足后执行的动作。动作执行完毕后，可以迁移到新的状态，也可以仍旧保持原状态。动作不是必需的，当条件满足后，也可以不执行任何动作，直接迁移到新状态。 状态机的描述 状态机模型可以使用关系表达式（状态方程）、状态转换图、状态转换表等多种方式进行描述。 状态转换图 STD图(State Transform Diagram)状态转换图,表示行为模型。STD通过描述系统的状态和引起系统状态转换的事件，来表示系统的行为，指出作为特定事件的结果将执行哪些动作（例如，处理数据等）。STD描述系统对外部事件如何响应，如何动作。 通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为。此外状态转换图还指明了作为特定事件的结果系统将做哪些动作（例如，处理数据）。因此状态转换图提供了行为建模机制。 在状态转换图中，每一个节点代表一个状态，其中双圈是终结状态。许多单片机教材上对工作模式的表达通常采用状态图的形式。 状态转换表 状态机模型可以用状态转换表来简化状态切换逻辑，因为只要输入变量处于确定状态，其输出也应当是一个确定态，也即状态互转可以使用输入/输出一一对应关系表来描述。 应用举例 例1. TCP状态转换图 例2. JavaScript中对用户鼠标状态的交互动作 在js中，新建一个对象，用这个对象的属性来模拟元素的状态,用这个对象的方法模拟元素在不同状态的转变,那么这个对象就是一个有限状态机。是否可用有限状态机来描述，却决于：当前状态确定，有限个状态，响应事件，在不同状态间有规律的转变。它对JavaScript的意义在于，很多对象可以写成有限状态机。举例来说，网页上有一个菜单元素。鼠标悬停的时候，菜单显示；鼠标移开的时候，菜单隐藏。如果使用有限状态机描述，就是这个菜单只有两种状态（显示和隐藏），鼠标会引发状态转变。 var menu = {" />
+    <meta property="og:url" content="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" />
+    <meta property="og:image" content="/90e2e1d013a1df93933b5d34affe4568.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta property="article:author" content="https://www.facebook.com/ghost" />
+    <meta property="article:published_time" content="2020-03-22T19:32:00+00:00" />
+    <meta property="article:modified_time" content="2020-03-22T19:32:00+00:00" />
+    <meta property="article:tag" content="Cs" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="【CS】有限状态机（FSM）模型" />
+    <meta name="twitter:description" content="【CS】有限状态机（FSM）模型 什么是有限状态机？ 什么是状态机（State Mechine）？顾名思义，即一种可以在一些状态中进行转换的机器，显然这仅仅是一种理想模型，并没有考虑具体的实现方式。 定义 有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。 有什么用？ 虽然听起来仅仅是一个不沾边、不实用、不靠谱的理论模型，但在生活中的例子实在太多了，状态机模型广泛可见于机械结构、电子元件、计算机编程算法当中，只要是在确定的状态间切换的逻辑，都可以归纳为状态机模型。 有限状态机是一种用来进行对象行为建模的工具，其作用主要是描述对象在它的生命周期内所经历的状态序列，以及如何响应来自外界的各种事件。在计算机科学中，有限状态机被广泛用于建模应用行为、硬件电路系统设计、软件工程，编译器、网络协议、和计算与语言的研究。比如下图非常有名的TCP协议状态机。 状态机模型 有限状态机一般都有以下特点： 可以用状态来描述事物，并且任一时刻，事物总是处于一种状态； 事物拥有的状态总数是有限的； 通过触发事物的某些行为，可以导致事物从一种状态过渡到另一种状态； 事物状态变化是有规则的，A状态可以变换到B，B可以变换到C，A却不一定能变换到C； 同一种行为，可以将事物从多种状态变成同种状态，但是不能从同种状态变成多种状态。 状态 状态机可归纳为4个要素，即现态、条件、动作、次态。“现态”和“条件”是因，“动作”和“次态”是果。详解如下： 现态： 指当前所处的状态。 次态： 条件满足后要迁往的新状态。“次态”是相对于“现态”而言的，“次态”一旦被激活，就转变成新的“现态”了。 状态转换动作条件 状态机在满足触发条件时进行状态切换，如当计数达到指定大小进行下一个阶段操作。 条件： 又称为“事件”。当一个条件被满足，将会触发一个动作，或者执行一次状态的迁移。 动作： 条件满足后执行的动作。动作执行完毕后，可以迁移到新的状态，也可以仍旧保持原状态。动作不是必需的，当条件满足后，也可以不执行任何动作，直接迁移到新状态。 状态机的描述 状态机模型可以使用关系表达式（状态方程）、状态转换图、状态转换表等多种方式进行描述。 状态转换图 STD图(State Transform Diagram)状态转换图,表示行为模型。STD通过描述系统的状态和引起系统状态转换的事件，来表示系统的行为，指出作为特定事件的结果将执行哪些动作（例如，处理数据等）。STD描述系统对外部事件如何响应，如何动作。 通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为。此外状态转换图还指明了作为特定事件的结果系统将做哪些动作（例如，处理数据）。因此状态转换图提供了行为建模机制。 在状态转换图中，每一个节点代表一个状态，其中双圈是终结状态。许多单片机教材上对工作模式的表达通常采用状态图的形式。 状态转换表 状态机模型可以用状态转换表来简化状态切换逻辑，因为只要输入变量处于确定状态，其输出也应当是一个确定态，也即状态互转可以使用输入/输出一一对应关系表来描述。 应用举例 例1. TCP状态转换图 例2. JavaScript中对用户鼠标状态的交互动作 在js中，新建一个对象，用这个对象的属性来模拟元素的状态,用这个对象的方法模拟元素在不同状态的转变,那么这个对象就是一个有限状态机。是否可用有限状态机来描述，却决于：当前状态确定，有限个状态，响应事件，在不同状态间有规律的转变。它对JavaScript的意义在于，很多对象可以写成有限状态机。举例来说，网页上有一个菜单元素。鼠标悬停的时候，菜单显示；鼠标移开的时候，菜单隐藏。如果使用有限状态机描述，就是这个菜单只有两种状态（显示和隐藏），鼠标会引发状态转变。 var menu = {" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image" content="/90e2e1d013a1df93933b5d34affe4568.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Ghost" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Cs" />
+    <meta name="twitter:site" content="@tryghost" />
+    <meta name="twitter:creator" content="@tryghost" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Ghost",
+        "logo": "/assets/images/blog-icon.png"
+    },
+    "url": "/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B",
+    "image": {
+        "@type": "ImageObject",
+        "url": "/90e2e1d013a1df93933b5d34affe4568.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B"
+    },
+    "description": "【CS】有限状态机（FSM）模型 什么是有限状态机？ 什么是状态机（State Mechine）？顾名思义，即一种可以在一些状态中进行转换的机器，显然这仅仅是一种理想模型，并没有考虑具体的实现方式。 定义 有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。 有什么用？ 虽然听起来仅仅是一个不沾边、不实用、不靠谱的理论模型，但在生活中的例子实在太多了，状态机模型广泛可见于机械结构、电子元件、计算机编程算法当中，只要是在确定的状态间切换的逻辑，都可以归纳为状态机模型。 有限状态机是一种用来进行对象行为建模的工具，其作用主要是描述对象在它的生命周期内所经历的状态序列，以及如何响应来自外界的各种事件。在计算机科学中，有限状态机被广泛用于建模应用行为、硬件电路系统设计、软件工程，编译器、网络协议、和计算与语言的研究。比如下图非常有名的TCP协议状态机。 状态机模型 有限状态机一般都有以下特点： 可以用状态来描述事物，并且任一时刻，事物总是处于一种状态； 事物拥有的状态总数是有限的； 通过触发事物的某些行为，可以导致事物从一种状态过渡到另一种状态； 事物状态变化是有规则的，A状态可以变换到B，B可以变换到C，A却不一定能变换到C； 同一种行为，可以将事物从多种状态变成同种状态，但是不能从同种状态变成多种状态。 状态 状态机可归纳为4个要素，即现态、条件、动作、次态。“现态”和“条件”是因，“动作”和“次态”是果。详解如下： 现态： 指当前所处的状态。 次态： 条件满足后要迁往的新状态。“次态”是相对于“现态”而言的，“次态”一旦被激活，就转变成新的“现态”了。 状态转换动作条件 状态机在满足触发条件时进行状态切换，如当计数达到指定大小进行下一个阶段操作。 条件： 又称为“事件”。当一个条件被满足，将会触发一个动作，或者执行一次状态的迁移。 动作： 条件满足后执行的动作。动作执行完毕后，可以迁移到新的状态，也可以仍旧保持原状态。动作不是必需的，当条件满足后，也可以不执行任何动作，直接迁移到新状态。 状态机的描述 状态机模型可以使用关系表达式（状态方程）、状态转换图、状态转换表等多种方式进行描述。 状态转换图 STD图(State Transform Diagram)状态转换图,表示行为模型。STD通过描述系统的状态和引起系统状态转换的事件，来表示系统的行为，指出作为特定事件的结果将执行哪些动作（例如，处理数据等）。STD描述系统对外部事件如何响应，如何动作。 通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为。此外状态转换图还指明了作为特定事件的结果系统将做哪些动作（例如，处理数据）。因此状态转换图提供了行为建模机制。 在状态转换图中，每一个节点代表一个状态，其中双圈是终结状态。许多单片机教材上对工作模式的表达通常采用状态图的形式。 状态转换表 状态机模型可以用状态转换表来简化状态切换逻辑，因为只要输入变量处于确定状态，其输出也应当是一个确定态，也即状态互转可以使用输入/输出一一对应关系表来描述。 应用举例 例1. TCP状态转换图 例2. JavaScript中对用户鼠标状态的交互动作 在js中，新建一个对象，用这个对象的属性来模拟元素的状态,用这个对象的方法模拟元素在不同状态的转变,那么这个对象就是一个有限状态机。是否可用有限状态机来描述，却决于：当前状态确定，有限个状态，响应事件，在不同状态间有规律的转变。它对JavaScript的意义在于，很多对象可以写成有限状态机。举例来说，网页上有一个菜单元素。鼠标悬停的时候，菜单显示；鼠标移开的时候，菜单隐藏。如果使用有限状态机描述，就是这个菜单只有两种状态（显示和隐藏），鼠标会引发状态转变。 var menu = {"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="【CS】有限状态机（FSM）模型" href="/feed.xml" />
+
+
+</head>
+
+<body
+    class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="/"><img src="/assets/images/blog-icon.png" alt="Ghost" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/author/dexfire/">Dexfire</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/sweet/">Sweets</a>
+    </li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/ai/">AI</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/embed/">Embed</a></li>
+    <li class="nav-about" role="menuitem"><a href="/tag/star/">Stars</a></li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+                <a class="social-link social-link-fb" href="https://facebook.com/ghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/tryghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main class="site-main outer" id="site-main" role="main">
+    <div class="inner">
+
+        <article class="post-full post cs dev ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="22 March 2020">22 March 2020</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                                <a href='/tag/cs/'>CS</a>,
+                            
+                        
+                            
+                                <a href='/tag/dev/'>DEV</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">【CS】有限状态机（FSM）模型</h1>
+            </header>
+
+            
+                <figure class="post-full-image" style="background-image: url(/assets/images/90e2e1d013a1df93933b5d34affe4568.png)"></figure>
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <h1 id="cs有限状态机fsm模型">【CS】有限状态机（FSM）模型</h1>
+
+<h2 id="什么是有限状态机">什么是有限状态机？</h2>
+
+<p>什么是状态机（State Mechine）？顾名思义，即一种可以在一些状态中进行转换的机器，显然这仅仅是一种理想模型，并没有考虑具体的实现方式。</p>
+
+<h3 id="定义">定义</h3>
+<p>有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。</p>
+
+<h3 id="有什么用">有什么用？</h3>
+<p>虽然听起来仅仅是一个不沾边、不实用、不靠谱的理论模型，但在生活中的例子实在太多了，状态机模型广泛可见于机械结构、电子元件、计算机编程算法当中，只要是在确定的状态间切换的逻辑，都可以归纳为状态机模型。</p>
+
+<p>有限状态机是一种用来进行对象行为建模的工具，其作用主要是描述对象在它的生命周期内所经历的状态序列，以及如何响应来自外界的各种事件。在计算机科学中，有限状态机被广泛用于建模应用行为、硬件电路系统设计、软件工程，编译器、网络协议、和计算与语言的研究。比如下图非常有名的TCP协议状态机。</p>
+
+<h2 id="状态机模型">状态机模型</h2>
+
+<p><strong>有限状态机一般都有以下特点</strong>：</p>
+<ol>
+  <li>可以用状态来描述事物，并且任一时刻，事物总是处于一种状态；</li>
+  <li>事物拥有的状态总数是有限的；</li>
+  <li>通过触发事物的某些行为，可以导致事物从一种状态过渡到另一种状态；</li>
+  <li>事物状态变化是有规则的，A状态可以变换到B，B可以变换到C，A却不一定能变换到C；</li>
+  <li>同一种行为，可以将事物从多种状态变成同种状态，但是不能从同种状态变成多种状态。</li>
+</ol>
+
+<h3 id="状态">状态</h3>
+<p>状态机可归纳为4个要素，即现态、条件、动作、次态。“现态”和“条件”是因，“动作”和“次态”是果。详解如下：</p>
+
+<h4 id="现态">现态：</h4>
+
+<p>指当前所处的状态。</p>
+
+<h4 id="次态">次态：</h4>
+
+<p>条件满足后要迁往的新状态。“次态”是相对于“现态”而言的，“次态”一旦被激活，就转变成新的“现态”了。</p>
+
+<h3 id="状态转换动作条件">状态转换动作条件</h3>
+
+<p>状态机在满足触发条件时进行状态切换，如当计数达到指定大小进行下一个阶段操作。</p>
+
+<h4 id="条件">条件：</h4>
+
+<p>又称为“事件”。当一个条件被满足，将会触发一个动作，或者执行一次状态的迁移。</p>
+
+<h4 id="动作">动作：</h4>
+
+<p>条件满足后执行的动作。动作执行完毕后，可以迁移到新的状态，也可以仍旧保持原状态。动作不是必需的，当条件满足后，也可以不执行任何动作，直接迁移到新状态。</p>
+<h2 id="状态机的描述">状态机的描述</h2>
+
+<p>状态机模型可以使用关系表达式（状态方程）、状态转换图、状态转换表等多种方式进行描述。</p>
+
+<h3 id="状态转换图">状态转换图</h3>
+
+<p>STD图(State Transform Diagram)状态转换图,表示行为模型。STD通过描述系统的状态和引起系统状态转换的事件，来表示系统的行为，指出作为特定事件的结果将执行哪些动作（例如，处理数据等）。STD描述系统对外部事件如何响应，如何动作。</p>
+
+<p><img src="/assets/images/759985-20151102201009492-11387200.png" alt="状态转换图" /></p>
+
+<p>通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为。此外状态转换图还指明了作为特定事件的结果系统将做哪些动作（例如，处理数据）。因此状态转换图提供了行为建模机制。</p>
+
+<p>在状态转换图中，每一个节点代表一个状态，其中双圈是终结状态。许多单片机教材上对工作模式的表达通常采用状态图的形式。</p>
+
+<h3 id="状态转换表">状态转换表</h3>
+
+<p>状态机模型可以用状态转换表来简化状态切换逻辑，因为只要输入变量处于确定状态，其输出也应当是一个确定态，也即状态互转可以使用输入/输出一一对应关系表来描述。</p>
+
+<p><img src="/assets/images/2020年3月22日p1.png" alt="" /></p>
+
+<h2 id="应用举例">应用举例</h2>
+
+<h3 id="例1-tcp状态转换图">例1. TCP状态转换图</h3>
+<p><img src="/assets/images/v2-5180168c77c7b67780fe2dc604fdfef3_r.jpg" alt="TCP" /></p>
+
+<h3 id="例2-javascript中对用户鼠标状态的交互动作">例2. JavaScript中对用户鼠标状态的交互动作</h3>
+
+<p>在js中，新建一个对象，用这个对象的属性来模拟元素的状态,用这个对象的方法模拟元素在不同状态的转变,那么这个对象就是一个有限状态机。是否可用有限状态机来描述，却决于：当前状态确定，有限个状态，响应事件，在不同状态间有规律的转变。它对JavaScript的意义在于，很多对象可以写成有限状态机。举例来说，网页上有一个菜单元素。鼠标悬停的时候，菜单显示；鼠标移开的时候，菜单隐藏。如果使用有限状态机描述，就是这个菜单只有两种状态（显示和隐藏），鼠标会引发状态转变。</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// 当前状态</span>
+    <span class="na">currentState</span><span class="p">:</span> <span class="s1">'hide'</span><span class="p">,</span>
+    <span class="c1">// 绑定事件</span>
+    <span class="na">initialize</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span><span class="nb">self</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"hover"</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="nx">transition</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="c1">// 状态转换</span>
+    <span class="na">transition</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+        <span class="k">switch</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">currentState</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="s2">"hide"</span><span class="p">:</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">currentState</span> <span class="o">=</span> <span class="s1">'show'</span><span class="p">;</span>
+                <span class="nx">doSomething</span><span class="p">();</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s2">"show"</span><span class="p">:</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">currentState</span> <span class="o">=</span> <span class="s1">'hide'</span><span class="p">;</span>
+                <span class="nx">doSomething</span><span class="p">();</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="nl">default</span><span class="p">:</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Invalid State!'</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>可以看到，有限状态机的写法，逻辑清晰，表达力强，有利于封装事件。一个对象的状态越多、发生的事件越多，就越适合采用有限状态机的写法。另外，JavaScript语言是一种异步操作特别多的语言，常用的解决方法是指定回调函数，但这样会造成代码结构混乱、难以测试和除错等问题。有限状态机提供了更好的办法：把异步操作与对象的状态改变挂钩，当异步操作结束的时候，发生相应的状态改变，由此再触发其他操作。这要比回调函数、事件监听、发布/订阅等解决方案，在逻辑上更合理，更易于降低代码的复杂度。</p>
+
+<h3 id="例3-正则表达式-匹配所有3的倍数">例3. 正则表达式: 匹配所有3的倍数</h3>
+
+<p>使用如下pattern可以匹配文本中的独行文本中的3的整数倍数字。</p>
+
+<p><code class="highlighter-rouge">^[0369]*(([147][0369]*|[258][0369]*[258][0369]*)([147][0369]*[258][0369]*)*([258][0369]*|[147][0369]*[147][0369]*)|[258][0369]*[147][0369]*)*$</code></p>
+
+<p>这个正则是真正正确的，适用于任意十进制数，而不是下面那样作弊的手段。
+从下面这个有限自动机逆变得到：</p>
+
+<p><img src="/assets/images/b88c4e71ffe1b92ee92adbc253654c34_720w.jpg" alt="" /></p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">^</span><span class="p">[</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="x"> </span><span class="p">(</span><span class="x">
+  </span><span class="p">(</span><span class="x">
+    </span><span class="p">[</span><span class="m">147</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="x">
+  </span><span class="o">|</span><span class="x"> </span><span class="p">[</span><span class="m">258</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="p">[</span><span class="m">258</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="x">
+  </span><span class="p">)</span><span class="x"> </span><span class="p">([</span><span class="m">147</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="p">[</span><span class="m">258</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="p">)</span><span class="o">*</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="p">[</span><span class="m">258</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="x">
+ 
+  </span><span class="o">|</span><span class="x"> </span><span class="p">[</span><span class="m">147</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="p">[</span><span class="m">147</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="x">
+  </span><span class="p">)</span><span class="x">
+</span><span class="o">|</span><span class="x"> </span><span class="p">[</span><span class="m">258</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="p">[</span><span class="m">147</span><span class="p">][</span><span class="m">0369</span><span class="p">]</span><span class="o">*</span><span class="x"> </span><span class="p">)</span><span class="o">*</span><span class="x"> </span><span class="err">$</span><span class="x">
+</span></code></pre></div></div>
+
+<p>其实，写一个正则匹配 10 进制下 n 的倍数的思路是这样：构造一个有 n 个状态的 DFA，状态为$q_0,q_1, …, q_{n-1}$，其中起始和接受状态都是$q_0$。DFA 中$q_k$的含义是「当前读入的数可以被 n 除余 k」。
+对每个$q_k$和$m\in{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}$，计算$r=(10k+m)\ \mathrm{mod}\ n$，构造一条$q_k\xrightarrow{m} q_r$的转移边这张 DFA 就可以匹配能被 n 整除的十进制数。下面是被 7 整除的十进制数的正则，长达 12000 余字：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0|(7|[18]5*4|(2|9|[18]5*6)(3|[29]5*6)*(1|8|[29]5*4)|(3|[18]5*[07]|(2|9|[18]5*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))*(5|65*4|(0|7|65*6)(3|[29]5*6)*(1|8|[29]5*4))|(4|[18]5*[18]|(2|9|[18]5*6)(3|[29]5*6)*(5|[29]5*[18])|(3|[18]5*[07]|(2|9|[18]5*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))*(2|9|65*[18]|(0|7|65*6)(3|[29]5*6)*(5|[29]5*[18])))(6|35*[18]|(4|35*6)(3|[29]5*6)*(5|[29]5*[18])|(5|35*[07]|(4|35*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))*(2|9|65*[18]|(0|7|65*6)(3|[29]5*6)*(5|[29]5*[18])))*(2|9|35*4|(4|35*6)(3|[29]5*6)*(1|8|[29]5*4)|(5|35*[07]|(4|35*6)(3|[29]5*6)*(4|[29]5*[07]))(1|8|65*[07]|(0|7|65*6)(3|[29]5*6)*(4|[29]5*[07]))...
+</code></pre></div></div>
+<p>下面教你怎么把 DFA 转正则：</p>
+
+<p>还是从它开始<img src="/assets/images/b88c4e71ffe1b92ee92adbc253654c34_720w.jpg" alt="" /></p>
+
+<p>我们记 A 为终止到状态 A 的字符串集合，BC 类似，那么可以列出三个方程：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A = A[0369] | B[258] | C[147] |
+B = A[147] | B[0369] | C[258]
+C = A[258] | B[147] | C[0369]
+</code></pre></div></div>
+<p>根据正则语言的特性，可以推导出如下形式的方程L = LU|V有解L = VU<em>因此上面方程可以修改为
+```A = (| B[258] | C[147])[0369]</em> (1)
+B = (A[147] | C[258])[0369]* (2)
+C = (A[258] | B[147])[0369]* (3)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>将 (3) 代入 (1) (2) 得A = (| B[258] | (A[258] | B[147])[0369]*[147])[0369]* (4)
+B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) 中的竖线得到
+</code></pre></div></div>
+<p>B = A[147][0369]* | A[258][0369]<em>[258][0369]</em> | B[147][0369]<em>[258][0369]</em></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>故
+</code></pre></div></div>
+<p>B = A[147][0369]<em>([147][0369]</em>[258][0369]<em>)</em> 
+  | A[258][0369]<em>[258][0369]</em>([147][0369]<em>[258][0369]</em>)*</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>把它代入 (4) 得
+```A = (| B[258] | (A[258] | B[147])[0369]*[147])[0369]*
+  =   [0369]* 
+    | B[258][0369]*
+    | A[258][0369]*[147][0369]*
+    | B[147][0369]*[147][0369]* 
+  =   [0369]* 
+    | A[147][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    | A[258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    | A[258][0369]*[147][0369]*
+    | A[147][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]* 
+    | A[258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]* 
+  = [0369]* (
+                  [147][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    | [258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[258][0369]*
+    |             [147][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]* 
+    | [258][0369]*[258][0369]*([147][0369]*[258][0369]*)*[147][0369]*[147][0369]*
+    | [258][0369]*[147][0369]* )*
+  = [0369]* (
+      (
+        [147][0369]*
+      | [258][0369]*[258][0369]*
+      ) ([147][0369]*[258][0369]*)* (
+        [258][0369]*
+ 
+      | [147][0369]*[147][0369]*
+      )
+    | [258][0369]*[147][0369]* )*
+</code></pre></div></div>
+<p>加上 ^ 和 $ 就行了，放去测试，全部正确。</p>
+
+<p><img src="/assets/imagess/QQ截图20200322204459.png" alt="" /></p>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to
+                        Ghost</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire"/>
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name">
+                                    <a href="/author/dexfire">Dexfire Alex</a>
+                                </h4>
+                                
+                                    <p>水中月是天上月，眼前人是心上人</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/dexfire">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = '/';
+                            this.page.identifier = 'Ghost';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://dexfire.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"  style="background-image: url(/assets/images/blog-cover.jpg)" >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash;
+                                Ghost
+                                &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title">
+                                    <a href="/tag/cs/">Cs</a>
+                                </h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                                <li>
+                                                    <a href="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A">【redis】一、Redis 数据库入门初体验</a>
+                                                </li>
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                                <li>
+                                                    <a href="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C">【redis】一、Redis 数据库入门初体验</a>
+                                                </li>
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                                <li>
+                                                    <a href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">【CS】编译原理</a>
+                                                </li>
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/cs/">
+                                
+                                    See all
+                                    5
+                                    posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+<article class="post-card post-template">
+    
+        <a class="post-card-image-link" href="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86">
+            
+                <div class="post-card-image" style="background-image: url(/assets/images/90e2e1d013a1df93933b5d34affe4568.png)"></div>
+            
+            <!-- <div class="post-card-image" style="background-image: url(/90e2e1d013a1df93933b5d34affe4568.png)"></div> -->
+        </a>
+    
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86">
+            <header class="post-card-header">
+                
+                    
+                        
+                            <span class="post-card-tags">Optics</span>
+                        
+                    
+                
+
+                <h2 class="post-card-title">【论文】光电测量与传感课题——传感技术稳定性标准</h2>
+            </header>
+            <section class="post-card-excerpt">
+                
+                    <p></p>
+                
+            </section>
+        </a>
+        <footer class="post-card-meta">
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                    
+                    <span class="post-card-author">
+                        <a href="/author/dexfire/">Dexfire Alex</a>
+                    </span>
+                
+            
+            <span class="reading-time">
+                
+                
+                    1 min read
+                
+            </span>
+        </footer>
+    </div>
+</article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+<article class="post-card post-template">
+    
+        <a class="post-card-image-link" href="/%E5%BF%83%E7%90%86-%E5%BF%83%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E4%BE%9D%E6%81%8B%E7%B1%BB%E5%9E%8B">
+            
+                <div class="post-card-image" style="background-image: url(/assets/images/20180415153733_upjts.jpg)"></div>
+            
+            <!-- <div class="post-card-image" style="background-image: url(/20180415153733_upjts.jpg)"></div> -->
+        </a>
+    
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="/%E5%BF%83%E7%90%86-%E5%BF%83%E7%90%86%E5%AD%A6%E4%B8%AD%E7%9A%84%E4%BE%9D%E6%81%8B%E7%B1%BB%E5%9E%8B">
+            <header class="post-card-header">
+                
+                    
+                        
+                            <span class="post-card-tags">Idea</span>
+                        
+                    
+                
+
+                <h2 class="post-card-title">【随想】你的时间都去哪了？</h2>
+            </header>
+            <section class="post-card-excerpt">
+                
+                    <p></p>
+                
+            </section>
+        </a>
+        <footer class="post-card-meta">
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                    
+                    <span class="post-card-author">
+                        <a href="/author/dexfire/">Dexfire Alex</a>
+                    </span>
+                
+            
+            <span class="reading-time">
+                
+                
+                    1 min read
+                
+            </span>
+        </footer>
+    </div>
+</article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="/">
+            
+                <img src="/assets/images/favicon.png" alt="Ghost icon" />
+            
+            <span>Ghost</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">【CS】有限状态机（FSM）模型</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E3%80%90CS%E3%80%91%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%88FSM%EF%BC%89%E6%A8%A1%E5%9E%8B&amp;url=https://dexfire.github.io/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dexfire.github.io/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="/">Ghost</a> &copy;
+                    2020</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    <a href="https://facebook.com/ghost" target="_blank"
+                        rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/tryghost" target="_blank"
+                        rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="Ghost" />
+            
+            <h1 class="subscribe-overlay-title">Subscribe to Ghost</h1>
+            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered
+                straight to your inbox</p>
+            <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>
+        // $(document).ready(function () {
+        //     $('pre code').each(function (i, block) {
+        //         hljs.highlightBlock(block);
+        //     });
+        // });
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!--script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script-->
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69281367-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+
+</html>

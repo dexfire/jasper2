@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>【论文】光电测量与传感课题——传感技术稳定性标准</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/tomorrow.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+    <style>
+        .hljs {
+            background: none;
+        }
+    </style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="The professional publishing platform" />
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Ghost" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="【论文】光电测量与传感课题——传感技术稳定性标准" />
+    <meta property="og:description" content="【论文】光电测量与传感课题——传感技术稳定性标准 标准乍一看是很枯燥的东西，仔细看过之后才知道，原来它是真的枯燥。 为什么要指定标准呢？那些又算是稳定性标准呢？ 指标，可以用来标准化生产流程，控制产品质量。 检验合格，合格标准（图），检验员（张全蛋）。 常见产品中的标准。 为了达到标准，乃至超越标准所需要做的努力。 什么是标准化 标准化是指在经济、技术、科学和管理等社会实践中，对重复性的事物和概念，通过制订、发布和实施标准达到统一，以获得最佳秩序和社会效益。公司标准化是以获得公司的最佳生产经营秩序和经济效益为目标，对公司生产经营活动范围内的重复性事物和概念，以制定和实施公司标准，以及贯彻实施相关的国家、行业、地方标准等为主要内容的过程。 项目 内容 中文名 标准化 外文名 standardizing，normalizing 过 程 制定、发布及实施标准 基本方法 简化，统一化，通用化等 基本原理 统一原理、简化原理 基本特性 抽象性；技术性；经济性等 作 用 组织现代化生产的重要手段 国家标准《标准化工作指南 第1部分：标准化和相关活动的通用词汇》（GB/T20000.1—2002）对“标准化”的定义是： “为了在一定范围内获得最佳秩序，对现实问题或潜在问题制定共同使用和重复使用的条款的活动。” 同时在定义后注明： （1）上述活动主要包括编制、发布和实施标准的过程； （2）标准化的主要作用在于为了其预期目的改造产品、过程或服务的适用性，防止贸易壁垒，并促进技术合作。 标准有什么用？ 标准是可以拿来卖钱的，例子： 这是国际标准化组织（ISO）官网上的一个非常有名的标准， 国际国内标准化组织 国际 IEC ISO：International Standardlization Organization 国际标准化组织。 ISO9001 什么是ISO9001？ ITO：International Telephony Organization 国际电信组织。 国内" />
+    <meta property="og:url" content="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86" />
+    <meta property="og:image" content="/90e2e1d013a1df93933b5d34affe4568.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta property="article:author" content="https://www.facebook.com/ghost" />
+    <meta property="article:published_time" content="2020-03-22T19:32:00+00:00" />
+    <meta property="article:modified_time" content="2020-03-22T19:32:00+00:00" />
+    <meta property="article:tag" content="Optics" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="【论文】光电测量与传感课题——传感技术稳定性标准" />
+    <meta name="twitter:description" content="【论文】光电测量与传感课题——传感技术稳定性标准 标准乍一看是很枯燥的东西，仔细看过之后才知道，原来它是真的枯燥。 为什么要指定标准呢？那些又算是稳定性标准呢？ 指标，可以用来标准化生产流程，控制产品质量。 检验合格，合格标准（图），检验员（张全蛋）。 常见产品中的标准。 为了达到标准，乃至超越标准所需要做的努力。 什么是标准化 标准化是指在经济、技术、科学和管理等社会实践中，对重复性的事物和概念，通过制订、发布和实施标准达到统一，以获得最佳秩序和社会效益。公司标准化是以获得公司的最佳生产经营秩序和经济效益为目标，对公司生产经营活动范围内的重复性事物和概念，以制定和实施公司标准，以及贯彻实施相关的国家、行业、地方标准等为主要内容的过程。 项目 内容 中文名 标准化 外文名 standardizing，normalizing 过 程 制定、发布及实施标准 基本方法 简化，统一化，通用化等 基本原理 统一原理、简化原理 基本特性 抽象性；技术性；经济性等 作 用 组织现代化生产的重要手段 国家标准《标准化工作指南 第1部分：标准化和相关活动的通用词汇》（GB/T20000.1—2002）对“标准化”的定义是： “为了在一定范围内获得最佳秩序，对现实问题或潜在问题制定共同使用和重复使用的条款的活动。” 同时在定义后注明： （1）上述活动主要包括编制、发布和实施标准的过程； （2）标准化的主要作用在于为了其预期目的改造产品、过程或服务的适用性，防止贸易壁垒，并促进技术合作。 标准有什么用？ 标准是可以拿来卖钱的，例子： 这是国际标准化组织（ISO）官网上的一个非常有名的标准， 国际国内标准化组织 国际 IEC ISO：International Standardlization Organization 国际标准化组织。 ISO9001 什么是ISO9001？ ITO：International Telephony Organization 国际电信组织。 国内" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image" content="/90e2e1d013a1df93933b5d34affe4568.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Ghost" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Optics" />
+    <meta name="twitter:site" content="@tryghost" />
+    <meta name="twitter:creator" content="@tryghost" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Ghost",
+        "logo": "/assets/images/blog-icon.png"
+    },
+    "url": "/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86",
+    "image": {
+        "@type": "ImageObject",
+        "url": "/90e2e1d013a1df93933b5d34affe4568.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86"
+    },
+    "description": "【论文】光电测量与传感课题——传感技术稳定性标准 标准乍一看是很枯燥的东西，仔细看过之后才知道，原来它是真的枯燥。 为什么要指定标准呢？那些又算是稳定性标准呢？ 指标，可以用来标准化生产流程，控制产品质量。 检验合格，合格标准（图），检验员（张全蛋）。 常见产品中的标准。 为了达到标准，乃至超越标准所需要做的努力。 什么是标准化 标准化是指在经济、技术、科学和管理等社会实践中，对重复性的事物和概念，通过制订、发布和实施标准达到统一，以获得最佳秩序和社会效益。公司标准化是以获得公司的最佳生产经营秩序和经济效益为目标，对公司生产经营活动范围内的重复性事物和概念，以制定和实施公司标准，以及贯彻实施相关的国家、行业、地方标准等为主要内容的过程。 项目 内容 中文名 标准化 外文名 standardizing，normalizing 过 程 制定、发布及实施标准 基本方法 简化，统一化，通用化等 基本原理 统一原理、简化原理 基本特性 抽象性；技术性；经济性等 作 用 组织现代化生产的重要手段 国家标准《标准化工作指南 第1部分：标准化和相关活动的通用词汇》（GB/T20000.1—2002）对“标准化”的定义是： “为了在一定范围内获得最佳秩序，对现实问题或潜在问题制定共同使用和重复使用的条款的活动。” 同时在定义后注明： （1）上述活动主要包括编制、发布和实施标准的过程； （2）标准化的主要作用在于为了其预期目的改造产品、过程或服务的适用性，防止贸易壁垒，并促进技术合作。 标准有什么用？ 标准是可以拿来卖钱的，例子： 这是国际标准化组织（ISO）官网上的一个非常有名的标准， 国际国内标准化组织 国际 IEC ISO：International Standardlization Organization 国际标准化组织。 ISO9001 什么是ISO9001？ ITO：International Telephony Organization 国际电信组织。 国内"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="【论文】光电测量与传感课题——传感技术稳定性标准" href="/feed.xml" />
+
+
+</head>
+
+<body
+    class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="/"><img src="/assets/images/blog-icon.png" alt="Ghost" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/author/dexfire/">Dexfire</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/sweet/">Sweets</a>
+    </li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/ai/">AI</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/embed/">Embed</a></li>
+    <li class="nav-about" role="menuitem"><a href="/tag/star/">Stars</a></li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+                <a class="social-link social-link-fb" href="https://facebook.com/ghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/tryghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main class="site-main outer" id="site-main" role="main">
+    <div class="inner">
+
+        <article class="post-full post optics ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="22 March 2020">22 March 2020</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                                <a href='/tag/optics/'>OPTICS</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">【论文】光电测量与传感课题——传感技术稳定性标准</h1>
+            </header>
+
+            
+                <figure class="post-full-image" style="background-image: url(/assets/images/90e2e1d013a1df93933b5d34affe4568.png)"></figure>
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <h1 id="论文光电测量与传感课题传感技术稳定性标准">【论文】光电测量与传感课题——传感技术稳定性标准</h1>
+
+<p>标准乍一看是很枯燥的东西，仔细看过之后才知道，原来它是真的枯燥。
+为什么要指定标准呢？那些又算是稳定性标准呢？</p>
+
+<p>指标，可以用来标准化生产流程，控制产品质量。</p>
+
+<p>检验合格，合格标准（图），检验员（张全蛋）。</p>
+
+<p>常见产品中的标准。
+为了达到标准，乃至超越标准所需要做的努力。</p>
+
+<h2 id="什么是标准化">什么是标准化</h2>
+
+<p>标准化是指在经济、技术、科学和管理等社会实践中，对重复性的事物和概念，通过制订、发布和实施标准达到统一，以获得最佳秩序和社会效益。公司标准化是以获得公司的最佳生产经营秩序和经济效益为目标，对公司生产经营活动范围内的重复性事物和概念，以制定和实施公司标准，以及贯彻实施相关的国家、行业、地方标准等为主要内容的过程。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>中文名</td>
+      <td>标准化</td>
+    </tr>
+    <tr>
+      <td>外文名</td>
+      <td>standardizing，normalizing</td>
+    </tr>
+    <tr>
+      <td>过    程</td>
+      <td>制定、发布及实施标准</td>
+    </tr>
+    <tr>
+      <td>基本方法</td>
+      <td>简化，统一化，通用化等</td>
+    </tr>
+    <tr>
+      <td>基本原理</td>
+      <td>统一原理、简化原理</td>
+    </tr>
+    <tr>
+      <td>基本特性</td>
+      <td>抽象性；技术性；经济性等</td>
+    </tr>
+    <tr>
+      <td>作    用</td>
+      <td>组织现代化生产的重要手段</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>国家标准《标准化工作指南 第1部分：标准化和相关活动的通用词汇》（GB/T20000.1—2002）对“标准化”的定义是：</p>
+<blockquote>
+  <p>“为了在一定范围内获得最佳秩序，对现实问题或潜在问题制定共同使用和重复使用的条款的活动。”</p>
+</blockquote>
+
+<p>同时在定义后注明：</p>
+<blockquote>
+  <p>（1）上述活动主要包括编制、发布和实施标准的过程；<br />
+（2）标准化的主要作用在于为了其预期目的改造产品、过程或服务的适用性，防止贸易壁垒，并促进技术合作。</p>
+</blockquote>
+
+<h2 id="标准有什么用">标准有什么用？</h2>
+<p>标准是可以拿来卖钱的，例子：<br />
+<img src="/assets/images/ISO9001标准.png" alt="ISO9001标准" />
+这是国际标准化组织（ISO）官网上的一个非常有名的标准，</p>
+
+<h2 id="国际国内标准化组织">国际国内标准化组织</h2>
+
+<h3 id="国际">国际</h3>
+
+<h4 id="iec">IEC</h4>
+
+<h4 id="isointernational-standardlization-organization">ISO：International Standardlization Organization</h4>
+
+<p>国际标准化组织。</p>
+
+<p><strong>ISO9001</strong>
+<a href="https://www.zhihu.com/question/278740612">什么是ISO9001？</a></p>
+
+<h4 id="itointernational-telephony-organization">ITO：International Telephony Organization</h4>
+
+<p>国际电信组织。</p>
+
+<h3 id="国内">国内</h3>
+
+<h4 id="gbt国标">GB/T：国标</h4>
+
+<h2 id="标准化的意义">标准化的意义</h2>
+
+<p>在国民经济的各个领域中，凡具有多次重复使用和需要制定标准的具体产品，以及各种定额、规划、要求、方法、概念等，都可称为标准化对象。</p>
+
+<p>标准化对象一般可分为两大类：</p>
+
+<ul>
+  <li>一类是标准化的具体对象，即需要制定标准的具体事物；
+    <ul>
+      <li>例如：《茶馆经营服务规范》从制度规范、从业人员的基本条件、职业道德、服务操作、卫生要求等几个方面做出了详细规定，填补了茶馆行业在标准规范上的空白，解决了茶馆行业无标准可依的问题，有利于对茶馆行业进行管理和指导，及茶馆企业进行标准化经营，对推动茶馆行业健康有序发展具有重要意义。</li>
+    </ul>
+  </li>
+  <li>另一类是标准化总体对象，即各种具体对象的总和所构成的整体，通过它可以研究各种具体对象的共同属性、本质和普遍规律。</li>
+</ul>
+
+<p><strong>实施标准化的意义如下：</strong></p>
+
+<ul>
+  <li>标准化的主要作用是组织现代化生产的重要手段和必要条件；</li>
+  <li>是合理发展产品品种、组织专业化生产的前提；</li>
+  <li>是公司实现科学管理和现代化管理的基础；</li>
+  <li>是提高产品质量保证安全、卫生的技术保证；</li>
+  <li>是国家资源合理利用、节约能源和节约原材料的有效途径；</li>
+  <li>是推广新材料、新技术、新科研成果的桥梁；</li>
+  <li>是消除贸易障碍、促进国际贸易发展的通行证。</li>
+</ul>
+
+<p><strong>具体在以下十一个方面</strong>：</p>
+<ol>
+  <li>标准化为科学管理奠定了基础。所谓科学管理，就是依据生产技术的发展规律和客观经济规律对企业进行管理，而各种科学管理制度的形式，都以标准化为基础；</li>
+  <li>促进经济全面发展，提高经济效益。标准化应用于科学研究，可以避免在研究上的重复劳动；应用于产品设计，可以缩短设计周期；应用于生产，可使生产在科学的和有秩序的基础上进行；应用于管理，可促进统一、协调、高效率等；</li>
+  <li>标准化是科研、生产、使用三者之间的桥梁。一项科研成果，一旦纳入相应标准，就能迅速得到推广和应用。因此，标准化可使新技术和新科研成果得到推广应用，从而促进技术进步；</li>
+  <li>随着科学技术的发展，生产的社会化程度越来越高，生产规模越来越大，技术要求越来越复杂，分工越来越细，生产协作越来越广泛，这就必须通过制定和使用标准，来保证各生产部门的活动，在技术上保持高度的统一和协调，以使生产正常进行；所以，我们说标准化为组织现代化生产创造了前提条件；</li>
+  <li>合理发展产品品种，提高企业应变能力，以更好的满足社会需求；</li>
+  <li>保证产品质量，维护消费者利益；</li>
+  <li>保障身体健康和生命安全，大量的环保标准、卫生标准和安全标准制定发布后，用法律形式强制执行，对保障人民的身体健康和生命财产安全具有重大作用。</li>
+  <li>标准化标志着一个行业新的标准的产生。
+通过标准化以及相关技术政策的实施，可以整合和引导社会资源，激活科技要素，推动自主创新与开放创新，加速技术积累、科技进步、成果推广、创新扩散、产业升级以及经济、社会、环境的全面、协调、可持续发展。</li>
+</ol>
+
+<p><strong>表现形式：</strong></p>
+<ol>
+  <li>标准化为科学管理奠定了基础。所谓科学管理，就是依据生产技术的发展规律和客观经济规律对企业进行管理，而各种科学管理制度的形成，都是以标准化为基础的；</li>
+  <li>促进经济全面发展，提高经济效益。标准化应用于科学研究，可以避免在研究上的重复劳动；应用于产品设计，可以缩短设计周期；应用于生产，可使生产在科学的和有秩序的基础上进行；应用于管理，可促进统一、协调、高效率等；</li>
+  <li>标准化是科研、生产、使用三者之间的桥梁。一项科研成果，一旦纳入相应标准，就能迅速得到推广和应用。因此，标准化可使新技术和新科研成果得到推广应用，从而促进技术进步；</li>
+  <li>随着科学技术的发展，生产的社会化程度越来越高，生产规模越来越大，技术要求越来越复杂，分工越来越细，生产协作越来越广泛，这就必须通过制定和使用标准，来保证各生产部门的活动，在技术上保持高度的统一和协调，以使生产正常进行；所以，我们说标准化为组织现代化生产创造了前提条件；</li>
+  <li>促进对自然资源的合理利用，保持生态平衡，维护人类社会当前和长远的利益；</li>
+  <li>合理发展产品品种，提高企业应变能力，以更好地满足社会需求；</li>
+  <li>保证产品质量，维护消费者利益；
+8.在社会生产组成部分之间进行协调，确立共同遵循的准则，建立稳定的秩序；</li>
+  <li>保障身体健康和生命安全。大量的环保标准、卫生标准和安全标准制定发布后，用法律形式强制执行，对保障人民的身体健康和生命财产安全具有重大作用。</li>
+</ol>
+
+<h2 id="基本原理">基本原理</h2>
+
+<h3 id="统一原理">统一原理</h3>
+<p>就是为了保证事物发展所必须的秩序和效率，对事物的形成、功能或其他特性，确定适合于一定时期和一定条件的一致规范，并使这种一致规范与被取代的对象在功能上达到等效。
+统一原理包含以下要点：</p>
+<ol>
+  <li>统一是为了确定一组对象的一致规范，其目的是保证事物所必须的秩序和效率；</li>
+  <li>统一的原则是功能等效，从一组对象中选择确定一致规范，应能包含被取代对象所具备的必要功能；</li>
+  <li>统一是相对的，确定的一致规范，只适用于一定时期和一定条件，随着时间的推移和条件的改变，旧的统一就要由新的统一所代替。
+    <h3 id="简化原理">简化原理</h3>
+    <p>就是为了经济有效地满足需要，对标准化对象的结构、型式、规格或其他性能进行筛选提炼，剔除其中多余的、低效能的、可替换的环节，精炼并确定出满足全面需要所必要的高效能的环节，保持整体构成精简合理，使之功能效率最高。
+简化原理包含以下几个要点：</p>
+  </li>
+  <li>简化的目的是为了经济，使之更有效的满足需要；</li>
+  <li>简化的原则是从全面满足需要出发，保持整体构成精简合理，使之功能效率最高。所谓功能效率系指功能满足全面需要的能力；</li>
+  <li>简化的基本方法是对处于自然状态的对象进行科学的筛选提炼，剔除其中多余的、低效能的、可替换的环节，精练出高效能的能满足全面需要所必要的环节；</li>
+  <li>简化的实质不是简单化而是精练化，其结果不是以少替多，而是以少胜多。
+    <h3 id="协调原理">协调原理</h3>
+    <p>就是为了使标准的整体功能达到最佳，并产生实际效果，必须通过有效的方式协调好系统内外相关因素之间的关系，确定为建立和保持相互一致，适应或平衡关系所必须具备的条件。
+协调原理包含以下要点：</p>
+  </li>
+  <li>协调的目的在于使标准系统的整体功能达到最佳并产生实际效果；</li>
+  <li>协调对象是系统内相关因素的关系以及系统与外部相关因素的关系；</li>
+  <li>相关因素之间需要建立相互一致关系（连接尺寸），相互适应关系（供需交换条件），相互平衡关系（技术经济招标平衡，有关各方利益矛盾的平衡），为此必须确立条件；</li>
+  <li>协调的有效方式有：有关各方面的协商一致，多因素的综合效果最优化，多因素矛盾的综合平衡等。
+按照特定的目标，在一定的限制条件下，对标准系统的构成因素及其关系进行选择、设计或调整，使之达到最理想的效果，这样的标准化原理称为最优化原理。</li>
+</ol>
+
+<h2 id="特性">特性</h2>
+<ol>
+  <li>标准由主要靠摸索和模仿形式产生变为有意识地制定。</li>
+  <li>标准化活动涉及范围扩大。</li>
+  <li>标准化活动中的政治和军事因素增加。</li>
+  <li>标准化还不是一项有组织的活动。</li>
+  <li>标准化没有理论指导。</li>
+  <li>标准化发展不平衡。</li>
+  <li>标准化是总结的结果。</li>
+  <li>标准因行业不同也不同。</li>
+  <li>标准可以分为框架性标准和细化标准。</li>
+</ol>
+
+<h2 id="现行标准">现行标准</h2>
+
+<h3 id="中美标准化差异编辑">中美标准化差异编辑</h3>
+
+<p>美国标准分为四种：</p>
+<ul>
+  <li>国家标准</li>
+  <li>政府各部门标准</li>
+  <li>专业标准（或行业标准）</li>
+  <li>公司标准</li>
+</ul>
+
+<p>从美国标准体制的构成看，美国政府各部门的标准主要是从保护消费者安全和健康的角度制定的。</p>
+
+<p>总体来说，政府在标准化活动中扮演的角色是很有限的，而作为民间机构的行业协会和专业学会的标准占据主导地位。</p>
+
+<p>美国采用自愿标准体制，即自愿参加编写、自愿采用，行业协会和专业学会的成员也是本着自愿原则参加的企业和专业人士。美国的标准团体非常多，约有400多个，其中绝大多数都是行业协会和专业学会。由此可见，美国行业协会和专业学会在标准化活动中发挥主导作用，是美国标准化的一大特点。</p>
+
+<p>除此之外，各级政府部门也分别在制定其各自领域的标准以及政府的采购标准，如国防部、农业部、环保局、食品与药品管理局、消费品安全委员会等。</p>
+
+<p>由于主要的标准制定者是各民间的标准化团体，因此，标准的草案提出者主要是各企业和专业人士，在制修订标准的过程中，各个企业、专业人士以及消费者代表都会本着自身利益积极参与讨论，这样的过程确保了协商一致，也能够充分体现行业的发展状况及特性。应该说，各方讨论的过程是某种搏弈，每一方都努力把自己的利益反映到标准中去，这样的结果是既不会出现严重损害某团体利益的问题，同时也推动行业的发展。</p>
+
+<p>中美两国的标准化工作存在的差异主要在以下几个方面：</p>
+<ul>
+  <li>
+    <p>一是标准制定的理念不同。</p>
+
+    <ul>
+      <li>
+        <p>美国在标准制定中倡导“市场驱动、民间主导”的理念，这种理念要求标准化活动必须是由市场掌握主动权，遵行自愿性和协商一致的原则，在民间机构主导的基础上强化政府的参与，其表现出来的特点是一个“自下而上”的标准制定机制。美国的这种标准化理念产生于其自由市场经济体制下“大市场、小政府”的经济发展理念。以我们参观考察的ASTM为例，其标准制定活动从来就以市场需求为导向，欢迎并允许全球各个市场上对标准的建议进入ASTM的标准制定流程，经协商一致最终成为ASTM标准。在制定过程中，从标准建议、起草、投票到发行，都是民间机构起主要作用甚至是决定性作用。当然政府的参与也是必需的，但也仅作为市场上的一个分子参与其中，与民间成员平等协商，政府的行政权力在其中不得体现。</p>
+      </li>
+      <li>
+        <p>中国的标准化活动一直是一种政府行为，标准化活动处于“行政驱动、政府主导”的局面，有时具有指令性性质，专家商定和行政宣贯是其主要手段，虽然民间力量也越来越多地参与标准制定活动，但绝大部分是受邀请参与，成为技术委员会成员需要批准，不能自由、公开地参与。2000年以来，为了适应社会主义市场经济发展的需要，提出了新的“政府引导、企业主体、市场导向”的标准制定理念，在行政驱动的基础上鼓励扩大企业的参与，但是从整体来说，表现出来的特点仍然是“自上而下”的标准制定机制。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>二是标准化活动的视角不同。</p>
+  </li>
+</ul>
+
+<p>美国一直以来就站在全球化的视角上来开展其标准化活动，在其最初期就面向全球；而中国的标准化活动的视角着眼于本国市场，面向全球不够。</p>
+
+<p>以ASTM为例，该组织是美国乃至世界上最早成立的标准制定机构之一，组建于1898年。在其成立之初，其标准活动就面向全球，ASTM的会员制度是全球性的，参与ASTM标准制定活动的会员是来自众多国家的技术专家，他们虽然不是代表各自的国家，而是代表他们个人或其服务的企业和机构，但却带着各自国家和市场的技术思想和技术资源参与ASTM的标准制定活动，他们制定的标准成果服务于全球市场。
+相对来说，中国的标准化活动，无论是国家标准的制定还是行业标准的制定，大多着眼于中国国内市场，标准活动的指导思想局限于解决国内市场问题，服务于国内市场需求，参与标准制定活动的专家长期以来也局限于中国公民和组织。由此可见，中国的标准化活动，无论在技术来源上还是制定者身份上，长期以来都仅面向国内市场，全球性战略有待加强。</p>
+<ul>
+  <li>三是标准制定程序不同。</li>
+</ul>
+
+<p>在美国，标准从建议、起草、协商表决、批准到发行整个过程都有一个严格的制定流程。在ASTM考察过程中，工作人员给我们介绍了该组织标准从起草到发行要经过这样的流程：工作组起草标准—送交分技术委员会（SC）进行第一次投票表决通过—呈送到主技术委员会（TC）进行更大范围的投票表决通过—提交标准化技术委员会审议通过—批准通过—发行。在分技术委员会和主技术委员会投票过程中，只要出现反对票，整个投票程序就要停下来，直到反对票解决为止。</p>
+
+<p>在国内，无论是国家标准的制定还是行业标准的制定，也都有建议、立项、起草、表决、审批和发行整个流程，不过在制度安排上，标准的制定、审批、发行三个环节是分开管理和运行的。而在实际运行中，由于标准化技术委员会委员的代表性不够，一项标准的制定往往较难吸收到整个行业或门类的不同的技术思想和建议，协商一致的覆盖面需要加强，标准的市场适应性有待提高。</p>
+
+<p>除了上述几点之外，美国与中国的标准化工作在标准制定的经费来源、制度安排等诸多方面都存在很大的差异。我国科技水平与国际化程度与美国还有巨大的差距，不同的文化背景和经济发展阶段，决定了我国标准化体系的现状。</p>
+
+<p>我国正在大力实施转变经济发展方式，经历从“中国制造”向“中国创造”的战略转变，标准化工作是国民经济和社会发展的重要技术基础，是推进我国技术进步、产业升级、提高质量的重要因素，随着经济全球化的日益发展，我国的标准化也必须借鉴发达国家的先进经验，着重做好标准制定的国际化、标准运作的市场化等方面的工作。政府、企业及质检机构应切实加强对国外标准体系和先进标准的研究，在标准管理和标准制定的过程中采用全球化的视角，使我国标准化工作更加适应世界经济发展的要求，以帮助国内企业更好地参与国际竞争。</p>
+
+<h2 id="光学的标准化举例">光学的标准化举例</h2>
+
+<h3 id="5g">5G</h3>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to
+                        Ghost</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire"/>
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name">
+                                    <a href="/author/dexfire">Dexfire Alex</a>
+                                </h4>
+                                
+                                    <p>水中月是天上月，眼前人是心上人</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/dexfire">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = '/';
+                            this.page.identifier = 'Ghost';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://dexfire.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"  style="background-image: url(/assets/images/blog-cover.jpg)" >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash;
+                                Ghost
+                                &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title">
+                                    <a href="/tag/optics/">Optics</a>
+                                </h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                                <li>
+                                                    <a href="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7">【信息光学】第五章 光学成像系统的频率特性</a>
+                                                </li>
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                                <li>
+                                                    <a href="/%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86">【光学】球面波 -- 光学基础</a>
+                                                </li>
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                                <li>
+                                                    <a href="/%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6-%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0">【光学】球面波 -- 光学基础</a>
+                                                </li>
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/optics/">
+                                
+                                    See all
+                                    19
+                                    posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+<article class="post-card  no-image">
+    
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="/%E5%85%89%E5%AD%A6-%E5%85%89%E7%BA%A4%E9%80%9A%E4%BF%A1-%E6%80%8E%E6%A0%B7%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%85%89%E9%9A%94%E7%A6%BB%E5%99%A8">
+            <header class="post-card-header">
+                
+
+                <h2 class="post-card-title">【光学】光纤通信 怎样设计一个光隔离器</h2>
+            </header>
+            <section class="post-card-excerpt">
+                
+                    <p></p>
+                
+            </section>
+        </a>
+        <footer class="post-card-meta">
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            <span class="reading-time">
+                
+                
+                    1 min read
+                
+            </span>
+        </footer>
+    </div>
+</article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+<article class="post-card post-template">
+    
+        <a class="post-card-image-link" href="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B">
+            
+                <div class="post-card-image" style="background-image: url(/assets/images/90e2e1d013a1df93933b5d34affe4568.png)"></div>
+            
+            <!-- <div class="post-card-image" style="background-image: url(/90e2e1d013a1df93933b5d34affe4568.png)"></div> -->
+        </a>
+    
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B">
+            <header class="post-card-header">
+                
+                    
+                        
+                            <span class="post-card-tags">Cs</span>
+                        
+                    
+                        
+                            <span class="post-card-tags">Dev</span>
+                        
+                    
+                
+
+                <h2 class="post-card-title">【CS】有限状态机（FSM）模型</h2>
+            </header>
+            <section class="post-card-excerpt">
+                
+                    <p></p>
+                
+            </section>
+        </a>
+        <footer class="post-card-meta">
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                    
+                    <span class="post-card-author">
+                        <a href="/author/dexfire/">Dexfire Alex</a>
+                    </span>
+                
+            
+            <span class="reading-time">
+                
+                
+                    1 min read
+                
+            </span>
+        </footer>
+    </div>
+</article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="/">
+            
+                <img src="/assets/images/favicon.png" alt="Ghost icon" />
+            
+            <span>Ghost</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">【论文】光电测量与传感课题——传感技术稳定性标准</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E3%80%90%E8%AE%BA%E6%96%87%E3%80%91%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98%E2%80%94%E2%80%94%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86&amp;url=https://dexfire.github.io/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dexfire.github.io/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="/">Ghost</a> &copy;
+                    2020</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    <a href="https://facebook.com/ghost" target="_blank"
+                        rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/tryghost" target="_blank"
+                        rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="Ghost" />
+            
+            <h1 class="subscribe-overlay-title">Subscribe to Ghost</h1>
+            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered
+                straight to your inbox</p>
+            <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>
+        // $(document).ready(function () {
+        //     $('pre code').each(function (i, block) {
+        //         hljs.highlightBlock(block);
+        //     });
+        // });
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!--script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script-->
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69281367-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+
+</html>
