@@ -33,6 +33,11 @@ sweet:
   description: 永远保护好心里的小孩子，永远不要与大人为伍，无论谁欺骗了你，都永远要相信爱情。
   cover: assets/images/brooke-lark-bivUtyUT6mk-unsplash_small.jpg
 
+book:
+  name: 书评
+  description: 读书破万卷，下笔如有神。
+  cover: assets/images/thong-vo-Maf7wdHCmvo-unsplash.jpg
+  
 sentences:
   name: 书摘
   description: 一些好听的句子。
@@ -113,6 +118,11 @@ poem:
   description: 生活中有诗句，心里才有下远方。
   cover: assets/images/eco.jpg
 
+chickensoup:
+  name: 鸡汤
+  description: 少食有益，过则伤身
+  cover: assets/images/chickensoup.jpg
+  
 movie:
   name: 影评
   description: 生活中有诗句，心里才有下远方。
