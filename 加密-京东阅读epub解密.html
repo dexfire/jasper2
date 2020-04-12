@@ -1,0 +1,1015 @@
+
+<p>灵感来源于： <a href="https://bbs.pediy.com/thread-223695.htm"></a></p>
+
+<p>京东阅读android版下载jeb（epub格式）电子书后，book.db文件里有各本书解密用到的cert和random，将jeb解压后得到的文件用libjdrdrm.so里的decrypt函数解密就可得到原始内容。除了图片文件，其他所有文件都是加密的，需要用decrypt解密</p>
+
+<p>首先，下载京东阅读APP，抽取其中的 *.so 库文件。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libBDSpeechDecoder_V1.so
+libbd_etts.so
+libBugly.so
+libcrypto.so
+libdecryptionoperation.so
+libDecryptorJni.so
+libgnustl_shared.so
+libjcore121.so
+libjcore214.so
+libjdcomics.so
+libjdCorereadingengine.so
+libjdJmaEncryptUtil.so
+libjdopus.so
+libjdrdrm.so
+libjdrebr.so
+liblbs.so
+libMtaNativeCrash_v2.so
+librtmp-jni.so
+libsecure.so
+libSecurity.so
+libsqlcipher.so
+libssl.so
+libzbar.so
+libZBarDecoder.so
+</code></pre></div></div>
+
+<p>这里主要使用的是 <code class="highlighter-rouge">libsecure.so</code> <code class="highlighter-rouge">libjdrdrm.so</code> 其中，后者负责主要加密过程。</p>
+
+<p>这里我们需要获得加密解密所用到的证书，也就是存放于 <code class="highlighter-rouge">book.db</code> 中的文件。</p>
+
+<p>而这个文件是经过加密的，</p>
+
+<p>classes2.dex
+<code class="highlighter-rouge">com.jd.app.reader.downloader.core.data.database.dao.chapterdivisionsbook.DaoMaster</code></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">OpenHelper</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">str</span><span class="o">,</span> <span class="mi">6</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="nf">OpenHelper</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">String</span> <span class="n">str</span><span class="o">,</span> <span class="n">CursorFactory</span> <span class="n">cursorFactory</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">str</span><span class="o">,</span> <span class="n">cursorFactory</span><span class="o">,</span> <span class="mi">6</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="涉及到的加密算法">涉及到的加密算法</h2>
+
+<ul>
+  <li>AES, Rijndael算法 https://blog.csdn.net/thinkerleo1997/article/details/80253635
+<img src="/assets/images/QQ截图20200405234157.png" alt="AES" />
+这个是在 <code class="highlighter-rouge">libjdrdrm.so</code> 的符号表中发现的信息，也就是这个算法中采用了AES的算法，但细节可能有变化，需要使用其他的方法来探索。</li>
+  <li>数据库，使用的是 sqlcipher 的简单加密算法，解密出来就是正确的数据库文件，密匙存放在 classes.dex 的字节码中。</li>
+  <li><code class="highlighter-rouge">hmacSHA1</code> 是一种需要密码的哈希散列计算算法。</li>
+</ul>
+
+<h2 id="关于-bookdb-的线索">关于 <code class="highlighter-rouge">book.db</code> 的线索</h2>
+
+<p>以下的加密使用的都是明文密码 <code class="highlighter-rouge">password</code>
+实测发现，这个加密，仅仅使用了 <code class="highlighter-rouge">sqlcipher</code> 进行一次加密，其中的书名是乱码，应当有二次加密的过程才对。</p>
+
+<p><a href="https://github.com/CovenantEyes/sqlcipher-windows/releases">sqlcipher-windows</a></p>
+
+<ul>
+  <li><code class="highlighter-rouge">book.db</code> 的加密密匙为：<code class="highlighter-rouge">SessionBookDataUtil</code></li>
+  <li><code class="highlighter-rouge">book.db</code> 的加密密匙为：<code class="highlighter-rouge">SessionBookDataUtil</code></li>
+</ul>
+
+<p><strong>用 sqlcipher 解密流程：</strong></p>
+<ol>
+  <li>首先提取出加密的 <code class="highlighter-rouge">.db</code> 文件，比如 <code class="highlighter-rouge">books.db</code> 。
+这个文件当中存放这比较重要的两个信息：<code class="highlighter-rouge">key</code> <code class="highlighter-rouge">random</code></li>
+  <li>输出解密的数据库文件：</li>
+</ol>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">sqlite</span><span class="o">&gt;</span> <span class="n">attach</span> <span class="k">database</span> <span class="nv">"E:</span><span class="se">\b</span><span class="nv">ooks.db"</span> <span class="k">as</span> <span class="n">books</span> <span class="k">key</span> <span class="nv">"SessionBookDataUtil"</span><span class="p">;</span>
+<span class="n">sqlite</span><span class="o">&gt;</span> <span class="p">.</span><span class="n">databases</span>
+<span class="n">seq</span>  <span class="n">name</span>             <span class="n">file</span>
+<span class="c1">---  ---------------  ----------------------------------------------------------</span>
+<span class="mi">0</span>    <span class="n">main</span>             <span class="n">E</span><span class="p">:</span><span class="err">\</span><span class="n">books_unencrypted</span><span class="p">.</span><span class="n">db</span>
+<span class="mi">2</span>    <span class="n">books</span>            <span class="n">E</span><span class="p">:</span><span class="err">\</span><span class="n">books</span><span class="p">.</span><span class="n">db</span>
+
+<span class="n">sqlite</span><span class="o">&gt;</span> <span class="p">.</span><span class="n">backup</span> <span class="nv">"books"</span> <span class="nv">"E:</span><span class="se">\b</span><span class="nv">ooks_decrypted.db"</span>
+
+</code></pre></div></div>
+
+<p>重点：</p>
+
+<p><code class="highlighter-rouge">attach database "E:\books.db" as books key "SessionBookDataUtil";</code><br />
+<code class="highlighter-rouge">.backup "books" "E:\books_decrypted.db";</code></p>
+
+<h3 id="greendao">greenDAO</h3>
+
+<p>classes3.dex
+<code class="highlighter-rouge">com.jingdong.app.reader.data.a.a.z</code>
+这里使用了 greenrobot 的开源库 <code class="highlighter-rouge">DaoMaster</code> 数据库，用于对数据进行加密。</p>
+
+<blockquote>
+  <p>greenDAO: Android ORM for your SQLite database
+Note: for new apps we recommend ObjectBox, a new object-oriented database that is much faster than SQLite and easier to use. For existing apps based on greenDAO we offer DaoCompat for an easy switch (see also the announcement).</p>
+</blockquote>
+
+<blockquote>
+  <p>greenDAO Android ORMgreenDAO is an open source Android ORM making development for SQLite databases fun again. It relieves developers from dealing with low-level database requirements while saving development time. SQLite is an awesome embedded relational database. Still, writing SQL and parsing query results are quite tedious and time-consuming tasks. greenDAO frees you from these by mapping Java objects to database tables (called ORM, “object/relational mapping”). This way you can store, update, delete, and query for Java objects using a simple object oriented API.</p>
+</blockquote>
+
+<p><a href="https://greenrobot.org/greendao/">greenDAO</a></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">com.jingdong.app.reader.tools.base.b</span><span class="o">;</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="n">a</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="nf">a</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">AssertUtil</span><span class="o">.</span><span class="na">assertApplicationContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">z</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">DaoMaster</span> <span class="n">daoMaster</span><span class="o">;</span>
+            <span class="n">a</span> <span class="n">aVar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">a</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"book.db"</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">a</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">aVar</span><span class="o">.</span><span class="na">getWritableDb</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">aVar</span><span class="o">.</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"SessionBookDataUtil"</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">daoMaster</span><span class="o">.</span><span class="na">newSession</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>这是一个 <code class="highlighter-rouge">public</code> <code class="highlighter-rouge">static</code> 变量类，用于存放全局变量的。 
+classes.dex
+<code class="highlighter-rouge">com.jingdong.app.reader.tools.base.b</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">tools</span><span class="o">.</span><span class="na">base</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="cm">/* compiled from: BuildConfigUtil */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">b</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="n">a</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">b</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">c</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">d</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">e</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">f</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">g</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">h</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">i</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">j</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">k</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">l</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">m</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>初始化代码在这里：
+这里的 <code class="highlighter-rouge">b.a</code> 应该是一个 debug 标志，用于调试过程中取消加密流程。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">com.jingdong.app.reader.tools.base.b</span><span class="o">;</span>
+
+<span class="nd">@Keep</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JdReaderApp</span> <span class="kd">extends</span> <span class="n">BaseApplication</span> <span class="o">{</span>
+        
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">initPreloadedCPA</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"100000"</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">String</span><span class="o">[]</span> <span class="n">stringArray</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getStringArray</span><span class="o">(</span><span class="mi">2130903044</span><span class="o">);</span>
+            <span class="n">String</span><span class="o">[]</span> <span class="n">stringArray2</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getStringArray</span><span class="o">(</span><span class="mi">2130903043</span><span class="o">);</span>
+            <span class="n">String</span><span class="o">[]</span> <span class="n">stringArray3</span> <span class="o">=</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getStringArray</span><span class="o">(</span><span class="mi">2130903042</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">stringArray</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">stringArray2</span><span class="o">.</span><span class="na">length</span> <span class="o">&amp;&amp;</span> <span class="n">stringArray</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">stringArray3</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">stringArray</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                    <span class="n">StringBuilder</span> <span class="n">stringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+                    <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"system/etc/"</span><span class="o">);</span>
+                    <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">stringArray</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+                    <span class="k">if</span> <span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">stringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">()).</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+                        <span class="n">CharSequence</span> <span class="n">charSequence</span> <span class="o">=</span> <span class="n">stringArray2</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                        <span class="n">CharSequence</span> <span class="n">charSequence2</span> <span class="o">=</span> <span class="n">stringArray3</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                        <span class="k">if</span> <span class="o">(!</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">charSequence</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">charSequence2</span><span class="o">))</span> <span class="o">{</span>
+                            <span class="n">b</span><span class="o">.</span><span class="na">f</span> <span class="o">=</span> <span class="n">charSequence</span><span class="o">;</span>
+                            <span class="n">b</span><span class="o">.</span><span class="na">g</span> <span class="o">=</span> <span class="n">charSequence2</span><span class="o">;</span>
+                            <span class="n">b</span><span class="o">.</span><span class="na">h</span> <span class="o">=</span> <span class="s">"yd001"</span><span class="o">;</span>
+                            <span class="n">b</span><span class="o">.</span><span class="na">i</span> <span class="o">=</span> <span class="n">str</span><span class="o">;</span>
+                            <span class="n">b</span><span class="o">.</span><span class="na">j</span> <span class="o">=</span> <span class="n">str</span><span class="o">;</span>
+                            <span class="n">StringBuilder</span> <span class="n">stringBuilder2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+                            <span class="n">stringBuilder2</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">g</span><span class="o">);</span>
+                            <span class="n">stringBuilder2</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"_"</span><span class="o">);</span>
+                            <span class="n">stringBuilder2</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">h</span><span class="o">);</span>
+                            <span class="n">b</span><span class="o">.</span><span class="na">e</span> <span class="o">=</span> <span class="n">stringBuilder2</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+                            <span class="k">return</span><span class="o">;</span>
+                        <span class="o">}</span>
+                        <span class="k">return</span><span class="o">;</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initBasicInfo</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">StringBuilder</span> <span class="n">stringBuilder</span><span class="o">;</span>
+        <span class="n">b</span><span class="o">.</span><span class="na">a</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="n">b</span><span class="o">.</span><span class="na">b</span> <span class="o">=</span> <span class="s">"com.jingdong.app.reader.campus"</span><span class="o">;</span>
+        <span class="n">b</span><span class="o">.</span><span class="na">c</span> <span class="o">=</span> <span class="mi">3030002</span><span class="o">;</span>
+        <span class="n">b</span><span class="o">.</span><span class="na">d</span> <span class="o">=</span> <span class="s">"3.3.0"</span><span class="o">;</span>
+        <span class="n">b</span><span class="o">.</span><span class="na">k</span> <span class="o">=</span> <span class="s">"college"</span><span class="o">;</span>
+        <span class="n">com</span><span class="o">.</span><span class="na">meituan</span><span class="o">.</span><span class="na">android</span><span class="o">.</span><span class="na">walle</span><span class="o">.</span><span class="na">b</span> <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"_"</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">f</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">a</span><span class="o">();</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">l</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">b</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">tools</span><span class="o">.</span><span class="na">k</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">l</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">b</span><span class="o">.</span><span class="na">i</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">b</span><span class="o">.</span><span class="na">l</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"unionId"</span><span class="o">);</span>
+                <span class="n">b</span><span class="o">.</span><span class="na">j</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">b</span><span class="o">.</span><span class="na">l</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"unionSiteId"</span><span class="o">);</span>
+                <span class="n">b</span><span class="o">.</span><span class="na">g</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">b</span><span class="o">.</span><span class="na">l</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"partnerID"</span><span class="o">);</span>
+                <span class="n">b</span><span class="o">.</span><span class="na">h</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">b</span><span class="o">.</span><span class="na">l</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"subPartnerID"</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(!(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">g</span><span class="o">)</span> <span class="o">||</span> <span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">h</span><span class="o">)))</span> <span class="o">{</span>
+                    <span class="n">stringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+                    <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">g</span><span class="o">);</span>
+                    <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+                    <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">h</span><span class="o">);</span>
+                    <span class="n">b</span><span class="o">.</span><span class="na">e</span> <span class="o">=</span> <span class="n">stringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">f</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">f</span> <span class="o">=</span> <span class="s">"guanwang"</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">g</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">g</span> <span class="o">=</span> <span class="s">"hybt100"</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">h</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">h</span> <span class="o">=</span> <span class="s">"hybt103"</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">"100000"</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">i</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">i</span> <span class="o">=</span> <span class="n">str2</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">j</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">j</span> <span class="o">=</span> <span class="n">str2</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(!(!</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">e</span><span class="o">)</span> <span class="o">||</span> <span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">g</span><span class="o">)</span> <span class="o">||</span> <span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">h</span><span class="o">)))</span> <span class="o">{</span>
+            <span class="n">stringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">g</span><span class="o">);</span>
+            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">h</span><span class="o">);</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">e</span> <span class="o">=</span> <span class="n">stringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="n">initPreloadedCPA</span><span class="o">();</span>
+        <span class="n">fix</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="章节信息的加密-chapter_divisions_book_storedb--sessionchapterdivisionsbookstoredatautil">章节信息的加密 chapter_divisions_book_store.db  SessionChapterDivisionsBookStoreDataUtil</h3>
+<p>classes2.dex
+<code class="highlighter-rouge">com.jd.app.reader.downloader.core.data.database.manage.SessionChapterDivisionsBookStoreDataUtil</code></p>
+
+<p>这里的加密密码为：</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="nf">getChapterDivisionsBookStoreDaoSession</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">AssertUtil</span><span class="o">.</span><span class="na">assertApplicationContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">mChapterDivisionsBookStoreDaoSession</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="n">SessionChapterDivisionsBookStoreDataUtil</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">DaoMaster</span> <span class="n">daoMaster</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">helper</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">helper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevOpenHelper</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"chapter_divisions_book_store.db"</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">a</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">helper</span><span class="o">.</span><span class="na">getWritableDb</span><span class="o">());</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">helper</span><span class="o">.</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"password"</span><span class="o">));</span>
+                <span class="o">}</span>
+                <span class="n">mChapterDivisionsBookStoreDaoSession</span> <span class="o">=</span> <span class="n">daoMaster</span><span class="o">.</span><span class="na">newSession</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">mChapterDivisionsBookStoreDaoSession</span><span class="o">;</span>
+    <span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="sessiondownloadfailedrecordutil---download_failed_recorddb">SessionDownloadFailedRecordUtil -&gt; download_failed_record.db</h3>
+
+<p>@classes2.dex</p>
+
+<p><code class="highlighter-rouge">com.jd.app.reader.downloader.core.data.database.manage.SessionDownloadFailedRecordUtil</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="nf">getDownloadFailedRecordTableModelDaoSession</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">AssertUtil</span><span class="o">.</span><span class="na">assertApplicationContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">mDownloadFailedRecord</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="n">SessionDownloadFailedRecordUtil</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">DaoMaster</span> <span class="n">daoMaster</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">helper</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">helper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevOpenHelper</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"download_failed_record.db"</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">a</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">helper</span><span class="o">.</span><span class="na">getWritableDb</span><span class="o">());</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">helper</span><span class="o">.</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"password"</span><span class="o">));</span>
+                <span class="o">}</span>
+                <span class="n">mDownloadFailedRecord</span> <span class="o">=</span> <span class="n">daoMaster</span><span class="o">.</span><span class="na">newSession</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">mDownloadFailedRecord</span><span class="o">;</span>
+    <span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="sessionthewholebookstoredatautil---the_whole_book_storedb">SessionTheWholeBookStoreDataUtil -&gt; the_whole_book_store.db</h3>
+
+<p>完整书籍存储数据。
+<code class="highlighter-rouge">com.jd.app.reader.downloader.core.data.database.manage.SessionTheWholeBookStoreDataUtil</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="nf">getTheWholeBookStoreDaoSession</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">AssertUtil</span><span class="o">.</span><span class="na">assertApplicationContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">mTheWholeBookStoreDaoSession</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">SessionTheWholeBookStoreDataUtil</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">DaoMaster</span> <span class="n">daoMaster</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">helper</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">helper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevOpenHelper</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"the_whole_book_store.db"</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">a</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">helper</span><span class="o">.</span><span class="na">getWritableDb</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">helper</span><span class="o">.</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"password"</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="n">mTheWholeBookStoreDaoSession</span> <span class="o">=</span> <span class="n">daoMaster</span><span class="o">.</span><span class="na">newSession</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">mTheWholeBookStoreDaoSession</span><span class="o">;</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="sessionfilestoredatautil---file_storedb">SessionFileStoreDataUtil -&gt; file_store.db</h3>
+<p><code class="highlighter-rouge">com.jd.app.reader.downloader.core.data.database.manage.SessionFileStoreDataUtil</code></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="nf">getFileStoreDaoSession</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">AssertUtil</span><span class="o">.</span><span class="na">assertApplicationContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">mFileStoreDaoSession</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">SessionFileStoreDataUtil</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">DaoMaster</span> <span class="n">daoMaster</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">helper</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">helper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevOpenHelper</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"file_store.db"</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">a</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">helper</span><span class="o">.</span><span class="na">getWritableDb</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">helper</span><span class="o">.</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"password"</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="n">mFileStoreDaoSession</span> <span class="o">=</span> <span class="n">daoMaster</span><span class="o">.</span><span class="na">newSession</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">mFileStoreDaoSession</span><span class="o">;</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="dictdb"><code class="highlighter-rouge">dict.db</code></h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="nf">a</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">AssertUtil</span><span class="o">.</span><span class="na">assertApplicationContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">C</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">a</span> <span class="n">aVar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">a</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"dict.db"</span><span class="o">);</span>
+            <span class="kt">boolean</span> <span class="n">z2</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="na">a</span><span class="o">;</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">aVar</span><span class="o">.</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"SessionDictDataUtil"</span><span class="o">)).</span><span class="na">newSession</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="notebookdb"><code class="highlighter-rouge">Notebook.db</code></h3>
+
+<p>@classes3.dex
+通过搜过关键词 <code class="highlighter-rouge">getEncryptedWritableDb</code> 得到</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="nf">a</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">AssertUtil</span><span class="o">.</span><span class="na">assertApplicationContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">z</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">DaoMaster</span> <span class="n">daoMaster</span><span class="o">;</span>
+            <span class="n">C0156a</span> <span class="n">c0156a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">C0156a</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"NoteBook.db"</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">a</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">c0156a</span><span class="o">.</span><span class="na">getWritableDb</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">c0156a</span><span class="o">.</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"SessionBookDataUtil"</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">daoMaster</span><span class="o">.</span><span class="na">newSession</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="bookdb"><code class="highlighter-rouge">book.db</code></h3>
+
+<p>@classes3.dex
+<code class="highlighter-rouge">com.jingdong.app.reader.data.a.a.z</code></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="nf">a</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">AssertUtil</span><span class="o">.</span><span class="na">assertApplicationContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">z</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">DaoMaster</span> <span class="n">daoMaster</span><span class="o">;</span>
+            <span class="n">a</span> <span class="n">aVar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">a</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"book.db"</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">a</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">aVar</span><span class="o">.</span><span class="na">getWritableDb</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">daoMaster</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">aVar</span><span class="o">.</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"SessionBookDataUtil"</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">daoMaster</span><span class="o">.</span><span class="na">newSession</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="nf">a</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">AssertUtil</span><span class="o">.</span><span class="na">assertApplicationContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">A</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="k">new</span> <span class="n">a</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"books.db"</span><span class="o">).</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"SessionBookDataUtil"</span><span class="o">)).</span><span class="na">newSession</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>这里的 <code class="highlighter-rouge">a</code> 类，是一个DAO的子类，
+同文件：</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="n">DaoSession</span> <span class="n">a</span><span class="o">;</span>
+
+    <span class="cm">/* compiled from: SessionBookDataUtil */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">a</span> <span class="kd">extends</span> <span class="n">OpenHelper</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="nf">a</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">str</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="n">Database</span> <span class="n">database</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">a</span><span class="o">(</span><span class="n">database</span><span class="o">,</span> <span class="s">"JDFolder"</span><span class="o">,</span> <span class="s">"TEAM_ID"</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">database</span><span class="o">.</span><span class="na">execSQL</span><span class="o">(</span><span class="s">"ALTER TABLE JDFolder ADD COLUMN TEAM_ID TEXT DEFAULT '' "</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">b</span><span class="o">(</span><span class="n">Database</span> <span class="n">database</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">a</span><span class="o">(</span><span class="n">database</span><span class="o">,</span> <span class="s">"JDBookMark"</span><span class="o">,</span> <span class="s">"MEDIA_TIME"</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">database</span><span class="o">.</span><span class="na">execSQL</span><span class="o">(</span><span class="s">"ALTER TABLE JDBookMark ADD COLUMN MEDIA_TIME INTEGER DEFAULT 0"</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">a</span><span class="o">(</span><span class="n">database</span><span class="o">,</span> <span class="s">"JDBook"</span><span class="o">,</span> <span class="s">"BUY_TYPE"</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">database</span><span class="o">.</span><span class="na">execSQL</span><span class="o">(</span><span class="s">"ALTER TABLE JDBook ADD COLUMN BUY_TYPE INTEGER DEFAULT 0"</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e2</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e2</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">c</span><span class="o">(</span><span class="n">Database</span> <span class="n">database</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">a</span><span class="o">(</span><span class="n">database</span><span class="o">,</span> <span class="s">"JDBook"</span><span class="o">,</span> <span class="s">"TEAM_ID"</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">database</span><span class="o">.</span><span class="na">execSQL</span><span class="o">(</span><span class="s">"ALTER TABLE JDBook ADD COLUMN TEAM_ID TEXT DEFAULT '' "</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUpgrade</span><span class="o">(</span><span class="n">Database</span> <span class="n">database</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i2</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">StringBuilder</span> <span class="n">stringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"Upgrading schema from version "</span><span class="o">);</span>
+            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">" to "</span><span class="o">);</span>
+            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">i2</span><span class="o">);</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"greenDAO"</span><span class="o">,</span> <span class="n">stringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">c</span><span class="o">(</span><span class="n">database</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">a</span><span class="o">(</span><span class="n">database</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">b</span><span class="o">(</span><span class="n">database</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+</code></pre></div></div>
+
+<h2 id="关于书本的加密-openbookaction">关于书本的加密 <code class="highlighter-rouge">OpenBookAction</code></h2>
+
+<p>类名：<code class="highlighter-rouge">com.jingdong.app.reader.main.action.OpenBookAction</code></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cm">/* access modifiers changed from: private */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">a</span><span class="o">(</span><span class="n">g</span> <span class="n">gVar</span><span class="o">,</span> <span class="n">i</span> <span class="n">iVar</span><span class="o">,</span> <span class="n">JDBook</span> <span class="n">jDBook</span><span class="o">,</span> <span class="n">Bundle</span> <span class="n">bundle</span><span class="o">,</span> <span class="n">JDBookMark</span> <span class="n">jDBookMark</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">g</span> <span class="n">gVar2</span> <span class="o">=</span> <span class="n">gVar</span><span class="o">;</span>
+        <span class="n">JDBook</span> <span class="n">jDBook2</span> <span class="o">=</span> <span class="n">jDBook</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">format</span> <span class="o">=</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getFormat</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"bookFormatTag"</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">"bookServerIdTag"</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">str3</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">c</span><span class="o">().</span><span class="na">r</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">c</span><span class="o">(</span><span class="n">jDBook2</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">onRouterFail</span><span class="o">(</span><span class="n">gVar2</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="s">"团队版权限已到期,无法继续阅读该书！"</span><span class="o">);</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(!</span><span class="n">c</span><span class="o">(</span><span class="n">jDBook2</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">ActivityTag</span> <span class="n">activityTag</span> <span class="o">=</span> <span class="n">ActivityTag</span><span class="o">.</span><span class="na">JD_BOOKSHELF_OPENBOOK_EXCEPTION_ACTIVITY</span><span class="o">;</span>
+            <span class="n">Bundle</span> <span class="n">bundle2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+            <span class="n">StringBuilder</span> <span class="n">stringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">jDBook</span><span class="o">.</span><span class="na">getBookId</span><span class="o">());</span>
+            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str3</span><span class="o">);</span>
+            <span class="n">bundle2</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">str2</span><span class="o">,</span> <span class="n">stringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+            <span class="n">bundle2</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">format</span><span class="o">);</span>
+            <span class="n">onRouterSuccess</span><span class="o">(</span><span class="n">gVar2</span><span class="o">,</span> <span class="k">new</span> <span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">router</span><span class="o">.</span><span class="na">b</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="n">activityTag</span><span class="o">,</span> <span class="n">bundle2</span><span class="o">));</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">String</span> <span class="n">str4</span> <span class="o">=</span> <span class="n">JDBookTag</span><span class="o">.</span><span class="na">BOOK_FORMAT_COMICS</span><span class="o">;</span>
+        <span class="kt">boolean</span> <span class="n">equalsIgnoreCase</span> <span class="o">=</span> <span class="n">str4</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">format</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">str5</span> <span class="o">=</span> <span class="n">JDBookTag</span><span class="o">.</span><span class="na">BOOK_FORMAT_MP3</span><span class="o">;</span>
+        <span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="o">(</span><span class="n">equalsIgnoreCase</span> <span class="o">||</span> <span class="n">str5</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">format</span><span class="o">)</span> <span class="o">||</span> <span class="n">b</span><span class="o">(</span><span class="n">jDBook2</span><span class="o">))</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">String</span> <span class="n">h</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">c</span><span class="o">().</span><span class="na">h</span><span class="o">();</span>
+        <span class="n">JDBookMark</span> <span class="n">jDBookMark2</span> <span class="o">=</span> <span class="o">(</span><span class="n">JDBookMark</span><span class="o">)</span> <span class="k">new</span> <span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">data</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">k</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">app</span><span class="o">).</span><span class="na">c</span><span class="o">(</span><span class="n">Properties</span><span class="o">.</span><span class="na">BookRowId</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">jDBook</span><span class="o">.</span><span class="na">getId</span><span class="o">()),</span> <span class="n">Properties</span><span class="o">.</span><span class="na">UserId</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">h</span><span class="o">),</span> <span class="n">Properties</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">eq</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">0</span><span class="o">)));</span>
+        <span class="n">ActivityTag</span> <span class="n">activityTag2</span> <span class="o">=</span> <span class="n">ActivityTag</span><span class="o">.</span><span class="na">JD_EPUB_READER_ACTIVITY</span><span class="o">;</span>
+        <span class="n">Bundle</span> <span class="n">bundle3</span> <span class="o">=</span> <span class="n">bundle</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">()</span> <span class="o">:</span> <span class="n">bundle</span><span class="o">;</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putLong</span><span class="o">(</span><span class="s">"bookRowIdTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getId</span><span class="o">().</span><span class="na">longValue</span><span class="o">());</span>
+        <span class="n">StringBuilder</span> <span class="n">stringBuilder2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="n">stringBuilder2</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">jDBook</span><span class="o">.</span><span class="na">getBookId</span><span class="o">());</span>
+        <span class="n">stringBuilder2</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str3</span><span class="o">);</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">str2</span><span class="o">,</span> <span class="n">stringBuilder2</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"bookPathTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getBookPath</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"bookNameTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getBookName</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"bookAuthorTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">"bookFromTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getFrom</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">format</span><span class="o">);</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"bookCoverTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getBigImageUrl</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"BookDecryptKeyTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"bookDeviceKeyTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getUuid</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"BookDecryptRandomTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getRandom</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">"bookSourceTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getSource</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">"bookUpdateTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getUpdateNum</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putLong</span><span class="o">(</span><span class="s">"bookSizeTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getSize</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putLong</span><span class="o">(</span><span class="s">"book_buy_type_tag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getBuyType</span><span class="o">());</span>
+        <span class="n">bundle3</span><span class="o">.</span><span class="na">putBoolean</span><span class="o">(</span><span class="s">"bookFullDownloadTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getIsFullDownload</span><span class="o">());</span>
+        <span class="kt">boolean</span> <span class="n">r</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">c</span><span class="o">().</span><span class="na">r</span><span class="o">();</span>
+        <span class="n">str2</span> <span class="o">=</span> <span class="n">JDBookTag</span><span class="o">.</span><span class="na">BOOK_FORMAT_PDF</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">str6</span> <span class="o">=</span> <span class="n">JDBookTag</span><span class="o">.</span><span class="na">BOOK_FORMAT_EPUB</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(!(</span><span class="n">r</span> <span class="o">||</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getFrom</span><span class="o">()</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">||</span> <span class="o">((!</span><span class="n">str6</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">format</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">str2</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">format</span><span class="o">))</span> <span class="o">||</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getSource</span><span class="o">()</span> <span class="o">||</span> <span class="mi">6</span> <span class="o">==</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getSource</span><span class="o">())))</span> <span class="o">{</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putBoolean</span><span class="o">(</span><span class="s">"bookCanBuyTAG"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">str</span> <span class="o">=</span> <span class="s">"bookMarkChapterIdTag"</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">jDBookMark2</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">"bookMarkChapterIndexTag"</span><span class="o">,</span> <span class="n">jDBookMark2</span><span class="o">.</span><span class="na">getChapterIndex</span><span class="o">());</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">jDBookMark2</span><span class="o">.</span><span class="na">getChapterId</span><span class="o">());</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">"bookMarkParagraphTag"</span><span class="o">,</span> <span class="n">jDBookMark2</span><span class="o">.</span><span class="na">getStartParaIndex</span><span class="o">());</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"bookMarkNodeTag"</span><span class="o">,</span> <span class="n">jDBookMark2</span><span class="o">.</span><span class="na">getStartNodePath</span><span class="o">());</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">"bookMarkOffsetTag"</span><span class="o">,</span> <span class="n">jDBookMark2</span><span class="o">.</span><span class="na">getStartOffsetInPara</span><span class="o">());</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">"bookMarkPdfPageTag"</span><span class="o">,</span> <span class="n">jDBookMark2</span><span class="o">.</span><span class="na">getPdfPage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">jDBookMark</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"targetBookMarkChapterIdTag"</span><span class="o">,</span> <span class="n">jDBookMark</span><span class="o">.</span><span class="na">getChapterId</span><span class="o">());</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">"targetBookMarkParagraphTag"</span><span class="o">,</span> <span class="n">jDBookMark</span><span class="o">.</span><span class="na">getStartParaIndex</span><span class="o">());</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">"targetBookMarkOffsetTag"</span><span class="o">,</span> <span class="n">jDBookMark</span><span class="o">.</span><span class="na">getStartOffsetInPara</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">str6</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">format</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">activityTag2</span> <span class="o">=</span> <span class="n">ActivityTag</span><span class="o">.</span><span class="na">JD_EPUB_READER_ACTIVITY</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">str2</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">format</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">activityTag2</span> <span class="o">=</span> <span class="n">ActivityTag</span><span class="o">.</span><span class="na">JD_PDF_ACTIVITY</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">activityTag2</span> <span class="o">=</span> <span class="n">ActivityTag</span><span class="o">.</span><span class="na">JD_PLUGIN_ACTIVITY</span><span class="o">;</span>
+                <span class="n">bundle3</span><span class="o">.</span><span class="na">putLong</span><span class="o">(</span><span class="s">"download_plugin_name_tag"</span><span class="o">,</span> <span class="n">JDPluginTag</span><span class="o">.</span><span class="na">plugin_PDF_Type</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">JDBookTag</span><span class="o">.</span><span class="na">BOOK_FORMAT_TXT</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">format</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">activityTag2</span> <span class="o">=</span> <span class="n">ActivityTag</span><span class="o">.</span><span class="na">JD_EPUB_READER_ACTIVITY</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">jDBook</span><span class="o">.</span><span class="na">getFrom</span><span class="o">()</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">new</span> <span class="nf">f</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">app</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getKey</span><span class="o">()).</span><span class="na">a</span><span class="o">(</span><span class="n">jDBook</span><span class="o">.</span><span class="na">getBookPath</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">str5</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">format</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">activityTag2</span> <span class="o">=</span> <span class="n">ActivityTag</span><span class="o">.</span><span class="na">JD_MEDIAPLAYER_ACTIVITY</span><span class="o">;</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">"audioCoverTag"</span><span class="o">,</span> <span class="n">jDBook</span><span class="o">.</span><span class="na">getCustomUrl</span><span class="o">());</span>
+            <span class="n">bundle3</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">str3</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">str4</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">format</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">activityTag2</span> <span class="o">=</span> <span class="n">ActivityTag</span><span class="o">.</span><span class="na">JD_COMICS_ACTIVITY</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">StringBuilder</span> <span class="n">stringBuilder3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="n">stringBuilder3</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">jDBook</span><span class="o">.</span><span class="na">getBookId</span><span class="o">());</span>
+        <span class="n">stringBuilder3</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str3</span><span class="o">);</span>
+        <span class="n">a</span><span class="o">(</span><span class="n">stringBuilder3</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span> <span class="n">bundle3</span><span class="o">);</span>
+        <span class="n">a</span><span class="o">(</span><span class="n">jDBook2</span><span class="o">,</span> <span class="n">bundle3</span><span class="o">);</span>
+        <span class="n">onRouterSuccess</span><span class="o">(</span><span class="n">gVar2</span><span class="o">,</span> <span class="k">new</span> <span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">router</span><span class="o">.</span><span class="na">b</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="n">activityTag2</span><span class="o">,</span> <span class="n">bundle3</span><span class="o">));</span>
+        <span class="n">a</span><span class="o">(</span><span class="n">iVar</span><span class="o">,</span> <span class="n">jDBook2</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+</code></pre></div></div>
+
+<p>可能和加解密又关联：
+@classes4.dex
+<code class="highlighter-rouge">com.jingdong.app.reader.tools.b.a</code></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/* compiled from: ClientReuqestEncryptionUtil */</span>
+
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">a</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">decryptionoperation</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">a</span><span class="o">(),</span> <span class="k">this</span><span class="o">.</span><span class="na">i</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">a</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">decryptionoperation</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">a</span><span class="o">(</span><span class="n">z</span><span class="o">),</span> <span class="k">this</span><span class="o">.</span><span class="na">i</span><span class="o">);</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="localfileheader">LocalFileHeader</h3>
+
+<p>@classes4.dex
+<code class="highlighter-rouge">com.jingdong.app.reader.tools.l.d.g</code>
+用来存放加密所需变量的类。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* compiled from: LocalFileHeader */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">g</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">a</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">b</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">c</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">d</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">e</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">g</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">h</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">j</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">k</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">l</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">m</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">n</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">o</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">char</span><span class="o">[]</span> <span class="n">p</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">ArrayList</span> <span class="n">q</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">k</span> <span class="n">r</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">a</span> <span class="n">s</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">t</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">u</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">v</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">d</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">b</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bArr</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">c</span> <span class="o">=</span> <span class="n">bArr</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">c</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">d</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">d</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">f</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">e</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">e</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">g</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">h</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">l</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">i</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">j</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">j</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">c</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">k</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">e</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">l</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">m</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">char</span><span class="o">[]</span> <span class="nf">m</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">p</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">n</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">a</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">o</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">p</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">b</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">q</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">n</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">r</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">v</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="kt">long</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">h</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">b</span><span class="o">(</span><span class="kt">long</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">f</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">c</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">k</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">d</span><span class="o">(</span><span class="kt">long</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">i</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">e</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">o</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">ArrayList</span> <span class="nf">f</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">q</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">g</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">k</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">l</span> <span class="o">=</span> <span class="n">str</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">b</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">h</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">c</span><span class="o">(</span><span class="kt">long</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">m</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">d</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bArr</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">g</span> <span class="o">=</span> <span class="n">bArr</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">b</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">n</span> <span class="o">=</span> <span class="n">z</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">c</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">v</span> <span class="o">=</span> <span class="n">z</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">d</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">u</span> <span class="o">=</span> <span class="n">z</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cArr</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">p</span> <span class="o">=</span> <span class="n">cArr</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">b</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">o</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="n">ArrayList</span> <span class="n">arrayList</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">q</span> <span class="o">=</span> <span class="n">arrayList</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">t</span> <span class="o">=</span> <span class="n">z</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="n">k</span> <span class="n">kVar</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">r</span> <span class="o">=</span> <span class="n">kVar</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">a</span> <span class="nf">a</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">s</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="n">a</span> <span class="n">aVar</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">s</span> <span class="o">=</span> <span class="n">aVar</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">com.jingdong.app.reader.tools.l.b.a</code></p>
+<h3 id="aesdecrypter">AESDecrypter</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* compiled from: AESDecrypter */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">a</span> <span class="kd">implements</span> <span class="n">c</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">g</span> <span class="n">a</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">tools</span><span class="o">.</span><span class="na">l</span><span class="o">.</span><span class="na">b</span><span class="o">.</span><span class="na">b</span><span class="o">.</span><span class="na">a</span> <span class="n">b</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">tools</span><span class="o">.</span><span class="na">l</span><span class="o">.</span><span class="na">b</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">a</span> <span class="n">c</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">e</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">f</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">g</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">h</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">i</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">j</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">k</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">m</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">n</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">o</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">a</span><span class="o">(</span><span class="n">g</span> <span class="n">gVar</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">bArr</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">bArr2</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ZipException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">gVar</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">gVar</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">k</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">m</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">16</span><span class="o">];</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">n</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">16</span><span class="o">];</span>
+            <span class="n">a</span><span class="o">(</span><span class="n">bArr</span><span class="o">,</span> <span class="n">bArr2</span><span class="o">);</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="s">"one of the input parameters is null in AESDecryptor Constructor"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bArr</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">bArr2</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ZipException</span> <span class="o">{</span>
+        <span class="n">g</span> <span class="n">gVar</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">a</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">gVar</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">tools</span><span class="o">.</span><span class="na">l</span><span class="o">.</span><span class="na">d</span><span class="o">.</span><span class="na">a</span> <span class="n">a</span> <span class="o">=</span> <span class="n">gVar</span><span class="o">.</span><span class="na">a</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">StringBuilder</span> <span class="n">stringBuilder</span><span class="o">;</span>
+                <span class="kt">int</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">a</span><span class="o">();</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">a2</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">e</span> <span class="o">=</span> <span class="mi">16</span><span class="o">;</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">f</span> <span class="o">=</span> <span class="mi">16</span><span class="o">;</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">g</span> <span class="o">=</span> <span class="mi">8</span><span class="o">;</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">a2</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">e</span> <span class="o">=</span> <span class="mi">24</span><span class="o">;</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">f</span> <span class="o">=</span> <span class="mi">24</span><span class="o">;</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">g</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">a2</span> <span class="o">==</span> <span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">e</span> <span class="o">=</span> <span class="mi">32</span><span class="o">;</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">f</span> <span class="o">=</span> <span class="mi">32</span><span class="o">;</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">g</span> <span class="o">=</span> <span class="mi">16</span><span class="o">;</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">stringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+                    <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"invalid aes key strength for file: "</span><span class="o">);</span>
+                    <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">h</span><span class="o">());</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="n">stringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">m</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="k">this</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">m</span><span class="o">().</span><span class="na">length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="s">"empty or null password provided for AES Decryptor"</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">bArr</span> <span class="o">=</span> <span class="n">a</span><span class="o">(</span><span class="n">bArr</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">m</span><span class="o">());</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">bArr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">a2</span> <span class="o">=</span> <span class="n">bArr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+                    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">e</span><span class="o">;</span>
+                    <span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">f</span><span class="o">;</span>
+                    <span class="k">if</span> <span class="o">(</span><span class="n">a2</span> <span class="o">==</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">i2</span><span class="o">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="k">this</span><span class="o">.</span><span class="na">h</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                        <span class="k">this</span><span class="o">.</span><span class="na">i</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">i2</span><span class="o">];</span>
+                        <span class="k">this</span><span class="o">.</span><span class="na">j</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>
+                        <span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">bArr</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">h</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+                        <span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">bArr</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">e</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">i</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">f</span><span class="o">);</span>
+                        <span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">bArr</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">e</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">f</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">j</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+                        <span class="n">bArr</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">j</span><span class="o">;</span>
+                        <span class="k">if</span> <span class="o">(</span><span class="n">bArr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="s">"invalid derived password verifier for AES"</span><span class="o">);</span>
+                        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">bArr2</span><span class="o">,</span> <span class="n">bArr</span><span class="o">))</span> <span class="o">{</span>
+                            <span class="k">this</span><span class="o">.</span><span class="na">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">tools</span><span class="o">.</span><span class="na">l</span><span class="o">.</span><span class="na">b</span><span class="o">.</span><span class="na">b</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">h</span><span class="o">);</span>
+                            <span class="k">this</span><span class="o">.</span><span class="na">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">com</span><span class="o">.</span><span class="na">jingdong</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">reader</span><span class="o">.</span><span class="na">tools</span><span class="o">.</span><span class="na">l</span><span class="o">.</span><span class="na">b</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="s">"HmacSHA1"</span><span class="o">);</span>
+                            <span class="k">this</span><span class="o">.</span><span class="na">c</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">i</span><span class="o">);</span>
+                            <span class="k">return</span><span class="o">;</span>
+                        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                            <span class="n">stringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+                            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"Wrong Password for file: "</span><span class="o">);</span>
+                            <span class="n">stringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">h</span><span class="o">());</span>
+                            <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="n">stringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span> <span class="mi">5</span><span class="o">);</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="s">"invalid derived key"</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="s">"invalid aes extra data record - in init method of AESDecryptor"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="s">"invalid file header in init method of AESDecryptor"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">b</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">c</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">g</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">d</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">k</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">a</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bArr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i2</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ZipException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">b</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">i3</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+                <span class="kt">int</span> <span class="n">i4</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">i2</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">i3</span> <span class="o">&gt;=</span> <span class="n">i4</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">i2</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="kt">int</span> <span class="n">i5</span> <span class="o">=</span> <span class="n">i3</span> <span class="o">+</span> <span class="mi">16</span><span class="o">;</span>
+                <span class="k">try</span> <span class="o">{</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">o</span> <span class="o">=</span> <span class="n">i5</span> <span class="o">&lt;=</span> <span class="n">i4</span> <span class="o">?</span> <span class="mi">16</span> <span class="o">:</span> <span class="n">i4</span> <span class="o">-</span> <span class="n">i3</span><span class="o">;</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">c</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="n">bArr</span><span class="o">,</span> <span class="n">i3</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">o</span><span class="o">);</span>
+                    <span class="n">d</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">m</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">l</span><span class="o">,</span> <span class="mi">16</span><span class="o">);</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">b</span><span class="o">.</span><span class="na">a</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">m</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">n</span><span class="o">);</span>
+                    <span class="k">for</span> <span class="o">(</span><span class="n">i4</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i4</span> <span class="o">&lt;</span> <span class="k">this</span><span class="o">.</span><span class="na">o</span><span class="o">;</span> <span class="n">i4</span><span class="o">++)</span> <span class="o">{</span>
+                        <span class="kt">int</span> <span class="n">i6</span> <span class="o">=</span> <span class="n">i3</span> <span class="o">+</span> <span class="n">i4</span><span class="o">;</span>
+                        <span class="n">bArr</span><span class="o">[</span><span class="n">i6</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="o">(</span><span class="n">bArr</span><span class="o">[</span><span class="n">i6</span><span class="o">]</span> <span class="o">^</span> <span class="k">this</span><span class="o">.</span><span class="na">n</span><span class="o">[</span><span class="n">i4</span><span class="o">]);</span>
+                    <span class="o">}</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">l</span><span class="o">++;</span>
+                    <span class="n">i3</span> <span class="o">=</span> <span class="n">i5</span><span class="o">;</span>
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ZipException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e2</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="n">e2</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="s">"AES not initialized properly"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">a</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bArr</span><span class="o">,</span> <span class="kt">char</span><span class="o">[]</span> <span class="n">cArr</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ZipException</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">b</span><span class="o">(</span><span class="k">new</span> <span class="n">c</span><span class="o">(</span><span class="s">"HmacSHA1"</span><span class="o">,</span> <span class="s">"ISO-8859-1"</span><span class="o">,</span> <span class="n">bArr</span><span class="o">,</span> <span class="n">PushConstants</span><span class="o">.</span><span class="na">PUSHSERVICE_INFO_SENDMESSAGE_BY_NOTIFICATIONSERVICE</span><span class="o">)).</span><span class="na">a</span><span class="o">(</span><span class="n">cArr</span><span class="o">,</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">e</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">f</span><span class="o">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">ZipException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">a</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">c</span><span class="o">.</span><span class="na">b</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bArr</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">k</span> <span class="o">=</span> <span class="n">bArr</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="关于-greendao">关于 GreenDAO</h2>
+
+<h3 id="database-initialization">Database Initialization</h3>
+<p>Make sure to use a subclass of OpenHelper provided in DaoMaster to create your database instance. For example the simple DevOpenHelper, also provided in DaoMaster.</p>
+
+<p>Then, when creating your database instance, just call .getEncryptedWritableDb(<password>) instead of .getWritableDb(). Finally, pass the database to DaoMaster as usual:</password></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DevOpenHelper</span> <span class="n">helper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevOpenHelper</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"notes-db-encrypted.db"</span><span class="o">);</span>
+<span class="n">Database</span> <span class="n">db</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="na">getEncryptedWritableDb</span><span class="o">(</span><span class="s">"&lt;your-secret-password&gt;"</span><span class="o">);</span>
+<span class="n">daoSession</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaoMaster</span><span class="o">(</span><span class="n">db</span><span class="o">).</span><span class="na">newSession</span><span class="o">();</span>
+</code></pre></div></div>
+
+<hr />
+<ol>
+  <li>SQLite 常用的命令：
+    <ol>
+      <li>输出控制
+```sql
+sqlite&gt; .mode column
+sqlite&gt; .timer on
+sqlite&gt; .headers on
+sqlite&gt; .databases</li>
+    </ol>
+  </li>
+</ol>
+
+<p>seq  name             file
+—  —————  ———————————————————-
+0    main             E:\books_unencrypted.db
+2    books            E:\books.db</p>
+
+<p>```</p>
+<ol>
+  <li></li>
+</ol>

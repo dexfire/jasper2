@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/dev/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-04-03T14:46:55+00:00</updated>
+  <updated>2020-04-12T13:01:54+00:00</updated>
   <id>/tag/dev/feed.xml</id>
 
   
@@ -44,6 +44,69 @@
   
   
 
+  
+    <entry>
+      <title type="html">【光学】球面波 – 光学基础</title>
+      <link href="/Android%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <published>2020-04-11T16:49:00+00:00</published>
+      <updated>2020-04-11T16:49:00+00:00</updated>
+      <id>/%E3%80%90%E2%98%85%E3%80%91Android%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0</id>
+      <content type="html" xml:base="/Android%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0">&lt;h1 id=&quot;android-逆向工程概述&quot;&gt;Android 逆向工程概述&lt;/h1&gt;
+
+&lt;p&gt;逆向工程，指的是反编译原始代码，最终获取或者近似获取源代码为目的。当然，这通常属于违法行为，而且通常商业产品会对二进制代码进行保护，以防止恶意的反编译。不过呢，反编译也是学习的好方法，我们可以通过反编译，来对大公司产品架构窥知一二，也可以通过分析了解一些核心方法的逻辑，饶过应用逻辑来获取部分应用中的资源。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：对Android程序进行解包、转化、反编译等操作，获取和修改源代码。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;常用工具&lt;/strong&gt;：
+    &lt;ul&gt;
+      &lt;li&gt;APKDB：一款国人开发的工具集，利用了一些工具包，可以进行反编译，回编译，查看代码等。&lt;/li&gt;
+      &lt;li&gt;JEB：国外一款针对Android的反编译工具，类似于IDE平台，付费。&lt;/li&gt;
+      &lt;li&gt;dx.jar：处理dex文件，转换为jar文件&lt;/li&gt;
+      &lt;li&gt;jdax：java编写的反编译工具，可以处理dex，apk文件，反编译得到java代码，可以进行查看，搜索，编辑等操作&lt;/li&gt;
+      &lt;li&gt;dexdump：查看dex文件结构&lt;/li&gt;
+      &lt;li&gt;dexlist：查看dex的符号名称&lt;/li&gt;
+      &lt;li&gt;NDK 工具链：可以对elf、so文件进行分析&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一般方法：&lt;/li&gt;
+  &lt;li&gt;分类：
+    &lt;ul&gt;
+      &lt;li&gt;资源修改：替换资源文件，美化，翻译等&lt;/li&gt;
+      &lt;li&gt;查看代码：反编译，或者查看smail代码&lt;/li&gt;
+      &lt;li&gt;修改代码：修改后进行回编译&lt;/li&gt;
+      &lt;li&gt;注入代码：类似于xposed的效果，指定位置注入代码。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="android" />
+      
+        <category term="dev" />
+      
+
+      
+        <summary type="html">Android 逆向工程概述</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">【Python】使用语句筛选和构建新的list, dict, set等集合</title>
@@ -2584,52 +2647,6 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 
       
         <summary type="html">25分钟，收集资料，完成一个简单书评：</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【随想】我什么都做不好，我真的是天生的废物嘛？</title>
-      <link href="/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B" rel="alternate" type="text/html" title="【随想】我什么都做不好，我真的是天生的废物嘛？" />
-      <published>2020-03-10T01:00:00+00:00</published>
-      <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD,%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B%3F</id>
-      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B">&lt;h1 id=&quot;随想我什么都做不好我真的是天生的废物嘛&quot;&gt;【随想】我什么都做不好，我真的是天生的废物嘛？&lt;/h1&gt;
-
-&lt;p&gt;“天生我材必有用，千金散尽还复来。”
-在《亲密关系》一书中，&lt;/p&gt;
-
-&lt;p&gt;其实心态很重要。努力和方法也是。&lt;/p&gt;
-
-&lt;p&gt;没有人愿意听道理，所有人都喜欢听故事。
-因为你思考的深度不够。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-        <category term="spider" />
-      
-        <category term="dev" />
-      
-
-      
-        <summary type="html">【随想】我什么都做不好，我真的是天生的废物嘛？</summary>
       
 
       
