@@ -182,7 +182,7 @@ if __name__ == "__main__":
     config = yaml.full_load(open('_config.yml', 'r', encoding='utf8'))
     tags = yaml.full_load(
         open(os.sep.join(["_data", "tags.yml"]), encoding='utf8'))
-
+    log_info("Available Tags: " + " ".join(tags.keys()))
     # ++++++++++++ 从参数中初始化变量 ++++++++++++
 
     # 作者
