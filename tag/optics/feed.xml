@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/optics/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-04-12T15:12:03+00:00</updated>
+  <updated>2020-04-13T17:26:18+00:00</updated>
   <id>/tag/optics/feed.xml</id>
 
   
@@ -44,6 +44,48 @@
   
   
 
+  
+    <entry>
+      <title type="html">【光学】数字图像处理 频率域滤波思考题</title>
+      <link href="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%91%E7%8E%87%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%80%9D%E8%80%83%E9%A2%98" rel="alternate" type="text/html" title="【光学】数字图像处理 频率域滤波思考题" />
+      <published>2020-04-13T11:45:25+00:00</published>
+      <updated>2020-04-13T11:45:25+00:00</updated>
+      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%20%E9%A2%91%E7%8E%87%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%80%9D%E8%80%83%E9%A2%98</id>
+      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%91%E7%8E%87%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%80%9D%E8%80%83%E9%A2%98">&lt;h1 id=&quot;光学数字图像处理-频率域滤波思考题&quot;&gt;【光学】数字图像处理 频率域滤波思考题&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-简述图像频域滤波的基本流程&quot;&gt;1. 简述图像频域滤波的基本流程;&lt;/h2&gt;
+
+&lt;p&gt;首先&lt;/p&gt;
+
+&lt;h2 id=&quot;2-图像频域滤波分为哪几种各自的传递函数及曲线如何表示&quot;&gt;2. 图像频域滤波分为哪几种？各自的传递函数及曲线如何表示?&lt;/h2&gt;
+
+&lt;h2 id=&quot;3-简述图像同态滤波的基本原理和流程&quot;&gt;3. 简述图像同态滤波的基本原理和流程。&lt;/h2&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Dexfire Alex</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="optics" />
+      
+
+      
+        <summary type="html">【光学】数字图像处理 频率域滤波思考题</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">【光学】几何光学笔记</title>
@@ -108,7 +150,32 @@
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;22-出瞳exit-pupil&quot;&gt;2.2 出瞳(exit pupil)&lt;/h5&gt;
-&lt;p&gt;出瞳，是孔径光阑在像面的像。&lt;/p&gt;</content>
+&lt;p&gt;出瞳，是孔径光阑在像面的像。&lt;/p&gt;
+
+&lt;h5 id=&quot;23-视场field-of-view-fov&quot;&gt;2.3 视场（field of view, FOV）&lt;/h5&gt;
+&lt;p&gt;视场是指&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;视场与焦距的关系&lt;/strong&gt;：&lt;br /&gt;
+一般情况下，视场越大，焦距就越短。&lt;br /&gt;
+长焦距镜头视场窄于40°,以下列举几个实例:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;例如：镜头焦距25 mm，视场为 45°左右。&lt;/li&gt;
+  &lt;li&gt;镜头焦距50 mm，视场为 23°左右。&lt;/li&gt;
+  &lt;li&gt;镜头焦距75 mm，视场为 14°左右。&lt;/li&gt;
+  &lt;li&gt;镜头焦距100 mm，视场为 12°左右。&lt;/li&gt;
+  &lt;li&gt;镜头焦距150 mm，视场为 8°左右。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;参考资料：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.colorspace.com.cn/kb/2013/02/24/fov/&quot;&gt;视场角(FOV)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://baike.baidu.com/item/%E8%A7%86%E5%9C%BA/8231871?fr=aladdin&quot;&gt;视场&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;光学学习中很棒的概念图谱网站：&lt;a href=&quot;http://www.colorspace.com.cn/kb/home-with-categories-description/&quot;&gt;KnowledgeBase - 图像质量与色彩技术资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
 
       
       
@@ -970,7 +1037,30 @@
 &lt;ul&gt;
   &lt;li&gt;落地式 -&amp;gt; 台式 -&amp;gt; 可移动 -&amp;gt; 便携式 -&amp;gt; 袋装 -&amp;gt; 芯片&lt;/li&gt;
   &lt;li&gt;芯片实验室&lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;光电仪器&quot;&gt;光电仪器&lt;/h1&gt;
+
+&lt;h3 id=&quot;321-全面质量指标&quot;&gt;3.2.1 全面质量指标&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;可靠性指标：表征仪器不失效的性能，寿命，可维修性和仪器的保存性能。&lt;/li&gt;
+  &lt;li&gt;工艺性指标：表征仪器&lt;/li&gt;
+  &lt;li&gt;经济性指标&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;标准化（归一化）指标&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一致性（台间差）&lt;/li&gt;
+  &lt;li&gt;互换性（零部件公差、兼容性）&lt;/li&gt;
+  &lt;li&gt;可测试性、可靠性、工艺性、经济性、标准化、人机学、美学&lt;/li&gt;
+  &lt;li&gt;专利权&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ图片20200413153657.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ图片20200413153455.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ图片20200413153711.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content>
 
       
       
@@ -1247,83 +1337,6 @@ $r_s^2+r_p^2 \neq 1$
 
       
         <summary type="html">数字图像处理基础 低级图像处理 增强 修复 平滑 压缩 信噪比 压缩比 中级图像处理 分形 滤镜 高级图像处理 人脸识别 人脸检测 人脸特征提取 计算机视觉</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">【光学】数字图像处理</title>
-      <link href="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA" rel="alternate" type="text/html" title="【光学】数字图像处理" />
-      <published>2020-03-16T11:24:00+00:00</published>
-      <updated>2020-03-16T11:24:00+00:00</updated>
-      <id>/%E3%80%90%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6%E3%80%91%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA</id>
-      <content type="html" xml:base="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%8E%A8%E8%AE%BA">&lt;h1 id=&quot;信息光学几个重要推论&quot;&gt;【信息光学】几个重要推论&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;光波通过孔径、半透明物体、遮挡面等光学元件时，其幅度收到元件透过率影响。
-&lt;script type=&quot;math/tex&quot;&gt;U_o(x,y) = U_i(x,y) \cdot t(x,y)&lt;/script&gt;
-而在频域，则表现为&lt;em&gt;入射光场频谱&lt;/em&gt;与&lt;em&gt;透过率函数频谱&lt;/em&gt;成&lt;strong&gt;卷积关系&lt;/strong&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;孔径的周期性排列，由阵列定理，其透过率表达式为单孔径透过率函数与向各位置位移的δ函数的卷积，即：
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = t(x,y) * \sum_{n=1}^N \delta (x-\xi_n,y-\eta_n)&lt;/script&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;几种常见孔径的透过率函数及其频谱：&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;矩形孔，$x$ 方向长度为 $a$，$y$ 方向长度为 $b$ &lt;br /&gt;
-透过率函数：
-&lt;script type=&quot;math/tex&quot;&gt;t(x,y) = rect(\frac{x}{a}) \cdot rect(\frac{y}{b})&lt;/script&gt;&lt;br /&gt;
-频谱为：
-&lt;script type=&quot;math/tex&quot;&gt;T(\frac{x}{\lambda z}, \frac{y}{\lambda z}) = ab \cdot \mathrm{sinc}(a\frac{x}{\lambda z} ) \cdot \mathrm{sinc}(b\frac{y}{\lambda z})&lt;/script&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;透镜，二次曲面
-透镜可看做特殊的孔径遮挡物体，其透过率很高，通过时会产生一个随空间位置呈现二次型分布的相移。&lt;br /&gt;
-透镜的&lt;strong&gt;等效透过率函数&lt;/strong&gt;：&lt;br /&gt;
-&lt;em&gt;注：通常，输入为发散球面波，输出为会聚球面波。&lt;/em&gt;
-&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-\begin{aligned}
-  t(x,y) &amp;= \frac{U'(x,y)}{U(x,y)} \\
-  &amp;=  \Large{ \frac{ A e^{-jkd_i}\cdot e^{-\frac{jk}{2d_i}[(x-x_0)^2+(y-y_0)^2]} }{Ae^{jkd_o}\cdot e^{\frac{jk}{2d_o}[(x-x_0)^2+(y-y_0)^2]}}} \\
-  &amp;= \Large{e^{-jk(d_i+d_o)} \cdot e^{-\frac{jk}{2}(\frac{1}{d_i}+\frac{1}{d_o})[(x-x_0)^2+(y-y_0)^2]} }
-\end{aligned} %]]&gt;&lt;/script&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;其中 $U’(x,y)$ 为透射光波， $U(x,y)$ 为入射光波，以相距透镜，$\displaystyle e^{-jk(d_i+d_o)}$ 不随空间位置而发生变化，称为常数位相因子。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Dexfire Alex</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="math" />
-      
-        <category term="optics" />
-      
-
-      
-        <summary type="html">【信息光学】几个重要推论</summary>
       
 
       

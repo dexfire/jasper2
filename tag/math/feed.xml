@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/math/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-04-12T15:12:03+00:00</updated>
+  <updated>2020-04-13T17:26:18+00:00</updated>
   <id>/tag/math/feed.xml</id>
 
   
@@ -108,7 +108,32 @@
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;22-出瞳exit-pupil&quot;&gt;2.2 出瞳(exit pupil)&lt;/h5&gt;
-&lt;p&gt;出瞳，是孔径光阑在像面的像。&lt;/p&gt;</content>
+&lt;p&gt;出瞳，是孔径光阑在像面的像。&lt;/p&gt;
+
+&lt;h5 id=&quot;23-视场field-of-view-fov&quot;&gt;2.3 视场（field of view, FOV）&lt;/h5&gt;
+&lt;p&gt;视场是指&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;视场与焦距的关系&lt;/strong&gt;：&lt;br /&gt;
+一般情况下，视场越大，焦距就越短。&lt;br /&gt;
+长焦距镜头视场窄于40°,以下列举几个实例:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;例如：镜头焦距25 mm，视场为 45°左右。&lt;/li&gt;
+  &lt;li&gt;镜头焦距50 mm，视场为 23°左右。&lt;/li&gt;
+  &lt;li&gt;镜头焦距75 mm，视场为 14°左右。&lt;/li&gt;
+  &lt;li&gt;镜头焦距100 mm，视场为 12°左右。&lt;/li&gt;
+  &lt;li&gt;镜头焦距150 mm，视场为 8°左右。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;参考资料：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.colorspace.com.cn/kb/2013/02/24/fov/&quot;&gt;视场角(FOV)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://baike.baidu.com/item/%E8%A7%86%E5%9C%BA/8231871?fr=aladdin&quot;&gt;视场&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;光学学习中很棒的概念图谱网站：&lt;a href=&quot;http://www.colorspace.com.cn/kb/home-with-categories-description/&quot;&gt;KnowledgeBase - 图像质量与色彩技术资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
 
       
       
@@ -691,7 +716,30 @@
 &lt;ul&gt;
   &lt;li&gt;落地式 -&amp;gt; 台式 -&amp;gt; 可移动 -&amp;gt; 便携式 -&amp;gt; 袋装 -&amp;gt; 芯片&lt;/li&gt;
   &lt;li&gt;芯片实验室&lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;光电仪器&quot;&gt;光电仪器&lt;/h1&gt;
+
+&lt;h3 id=&quot;321-全面质量指标&quot;&gt;3.2.1 全面质量指标&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;可靠性指标：表征仪器不失效的性能，寿命，可维修性和仪器的保存性能。&lt;/li&gt;
+  &lt;li&gt;工艺性指标：表征仪器&lt;/li&gt;
+  &lt;li&gt;经济性指标&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;标准化（归一化）指标&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一致性（台间差）&lt;/li&gt;
+  &lt;li&gt;互换性（零部件公差、兼容性）&lt;/li&gt;
+  &lt;li&gt;可测试性、可靠性、工艺性、经济性、标准化、人机学、美学&lt;/li&gt;
+  &lt;li&gt;专利权&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ图片20200413153657.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ图片20200413153455.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/QQ图片20200413153711.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content>
 
       
       
