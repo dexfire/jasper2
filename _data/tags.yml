@@ -21,7 +21,7 @@ getting-started:
 embed:
   name: 嵌入式开发
   description: Some articles on embeded developments.
-  cover: assets/images/msp4305529lp.png
+  cover: assets/images/msp430.png
 
 python:
   name: Python
@@ -71,6 +71,11 @@ star:
 dev:
   name: Development
   description: 开发
+  cover: assets/images/html.jpg
+
+cpp:
+  name: C/C++
+  description: 人类创造的最硬核的语言，没有之一
   cover: assets/images/html.jpg
 
 story:
