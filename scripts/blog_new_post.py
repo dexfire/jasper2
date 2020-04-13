@@ -39,23 +39,20 @@ sentences = ["From majestic mountains and valleys of en to crystal clear waters 
              "你知道吗 ?很多思念你的朋友在分担你的悲伤，希望你能感到安慰些。",
              "At this time of sorrow, deep sympathy goes to you and yours.",
              "在这悲戚的时刻，谨向你和你的亲人致以深切的慰问。",
-             "Treasured memories live and grow more precious with time.",
-             "May those beautiful yesterdays help to ease today's sorrow.珍爱的记忆与时光同在且日益珍贵，",
-             "愿那些美好的昨天帮助你减轻今天的悲哀。",
+             "Treasured memories live and grow more precious with time, May those beautiful yesterdays help to ease today's sorrow.",
+             "珍爱的记忆与时光同在且日益珍贵，愿那些美好的昨天帮助你减轻今天的悲哀。",
              "May friends give you strength at this time of sorrow.",
              "May faith give you hope for every tomorrow.",
-             "愿朋友们在你悲痛的时刻给你力量，",
-             "愿信念给你的每一个明天带来希望。",
+             "愿朋友们在你悲痛的时刻给你力量，愿信念给你的每一个明天带来希望。",
              "Though words cannot express the thoughts the heart would like to say, still may you know that others care and sympathize today.",
-             "虽然言语不能表达内心欲诉的哀愁，",
-             "仍愿你知道朋友们今天都为你分忧。",
-             "Wishing you glad days filled with friendliness,",
-             "Wishing you bright days filled with cheer,",
+             "虽然言语不能表达内心欲诉的哀愁，仍愿你知道朋友们今天都为你分忧。",
+             "Wishing you glad days filled with friendliness.",
+             "Wishing you bright days filled with cheer.",
              "Wishing you warm days filled with happiness",
              "Wishing you to last throughout the year!",
              "Wishing you Have a wonderful brithday1",
-             "愿你一年到头都有充满友谊的欢欣日子，",
-             "愿你一年到头都有充满愉快的明朗日子，",
+             "愿你一年到头都有充满友谊的欢欣日子.",
+             "愿你一年到头都有充满愉快的明朗日子.",
              "愿你一年到头都有充满幸福的温馨日子 !",
              "愿你一年到头都有祝你度过一个美妙的生日 !",
              "Roses, sweet and fragrant, sent to you to say, May each hour be a happy one on this special day.",
@@ -63,20 +60,13 @@ sentences = ["From majestic mountains and valleys of en to crystal clear waters 
              "送你一束甜蜜芬芳的玫瑰，她对你说，今天的喜庆分外美妙，每时每刻都同样幸福，令人陶醉。",
              "祝你生日快乐 !",
              "Every day is birthday time when thinking of you, and I shall keep one sublime hoping your many dreams come true.",
-             "每当想到你我好似天天都在过生日，",
-             "可我特别珍视其中的一天，",
-             "祝愿你在这天美梦都能实现。",
-             "The kindest friend there could ever be is the kind of friend you are to me.",
-             "Happy Birthday!",
-             "世上如有诤友，",
-             "那就是像你对我那样关怀的朋友。",
-             "祝你生日快乐 !",
+             "每当想到你我好似天天都在过生日，可我特别珍视其中的一天，祝愿你在这天美梦都能实现。",
+             "The kindest friend there could ever be is the kind of friend you are to me. Happy Birthday!",
+             "世上如有诤友，那就是像你对我那样关怀的朋友。祝你生日快乐 !",
              "Among the friends we make in life, there are only one or two who can be called a special friend and that's how I think of you.",
              "You show the warmth of your friendship in so many different ways, That's why I hope your birthday is the happiest of days.",
-             "在我们结交的朋友中，",
-             "只有一、二人堪称知已。我正是这样看你。",
-             "你事无巨细都表现出温馨的友谊，",
-             "为此我祝你生日幸福无比。",
+             "在我们结交的朋友中，只有一、二人堪称知已。我正是这样看你。",
+             "你事无巨细都表现出温馨的友谊，为此我祝你生日幸福无比。",
              "Congratulations, Graduate, on all that you've accomplished",
              "Good luck in all that you'll achieve.",
              "祝贺你，毕业生，祝贺你取得的一切成绩.",
@@ -173,6 +163,7 @@ def getSequenceTitle() -> str:
 
 
 if __name__ == "__main__":
+
     # ++++++++++++ 初始化相关变量 ++++++++++++
     ap = initArgParser()
     args = ap.parse_args()
@@ -196,7 +187,7 @@ if __name__ == "__main__":
             err_list = []
             if tag not in tags:
                 err_list.append(tag)
-        if err_list > 0:
+        if len(err_list) > 0:
             log_info("ERROR tag: " + " ".join(err_list))
             print("Tags Available:\n\t", ' '.join(tags.keys()))
             exit(1)
@@ -214,6 +205,7 @@ if __name__ == "__main__":
         args.datetime) if args.datetime is not None else datetime.now()
     dat = dt_raw.strftime(r"%Y-%m-%d")
     dt = dt_raw.strftime(r"%Y-%m-%d %H:%M:%S")
+    print("Hello, " + dt)
     # ++++++++++++ 构建文本 ++++++++++++
     header = ["---"]
     header.append("layout: post")
@@ -229,6 +221,7 @@ if __name__ == "__main__":
                                    if args.tags is not None else "") + "'")
     header.append("author: " + author)
     header.append("comment: True")
+    header.append("---")
     header.append("")
     header.append("# " + category_text + title)
     header.append(os.linesep)
@@ -236,12 +229,21 @@ if __name__ == "__main__":
     # ++++++++++++ 输出文件 ++++++++++++
     file_name = "_posts" + os.sep + dat + "-" + category_text + title + ".md"
     if os.path.exists(file_name):
-        log_info("ERROR: file " + file_name + " is already exists!")
+        p = random.randint(0, len(sentences)-1)
+        ret = os.spawnv(os.P_WAIT, r"C:\Users\dexfire\AppData\Local\Programs\Microsoft VS Code\bin\code", [
+                        '"' + file_name + '"'])
+        log_info("INFO: file " + file_name + " is already exists!"
+                 + os.linesep + "Successfully opened post: " +
+                 file_name + os.linesep + "::" + sentences[p] + ". code("+str(ret)+")")
         exit(2)
     # log_info(file_name)
     with open(file_name, "a+", encoding=args.encoding, newline="") as fp:
         fp.write(os.linesep.join(header))
         fp.close()
         p = random.randint(0, len(sentences)-1)
+        ret = os.spawnv(os.P_WAIT, r"C:\Users\dexfire\AppData\Local\Programs\Microsoft VS Code\bin\code", [
+                        '"' + file_name + '"'])
         log_info("Successfully created post: " +
-                 file_name + os.linesep + "::" + sentences[p])
+                 file_name + os.linesep + "::" + sentences[p] + ". code("+str(ret)+")")
+
+        exit(0)
