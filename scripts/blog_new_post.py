@@ -158,7 +158,7 @@ def getSequenceTitle() -> str:
         if m is not None:
             # log_info(m.group(0))
             ids.append(int(m.group(2)))
-    id_max = max(ids)
+    id_max = max(ids) if len(ids) > 0 else 0
     return "post_{0:08}".format(id_max+1)
 
 
@@ -191,7 +191,9 @@ if __name__ == "__main__":
             log_info("ERROR tag: " + " ".join(err_list))
             print("Tags Available:\n\t", ' '.join(tags.keys()))
             exit(1)
-
+    else:
+        print("INFO: no tags defined!")
+        exit(1)
     # 分类名
     category = args.category if (args.category is not None) else (
         tags[args.tags[0]]["name"] if (args.tags is not None
@@ -228,6 +230,7 @@ if __name__ == "__main__":
 
     # ++++++++++++ 输出文件 ++++++++++++
     file_name = "_posts" + os.sep + dat + "-" + category_text + title + ".md"
+    file_name = re.sub("[/\\?*|\"?:<>]", "_", file_name)
     if os.path.exists(file_name):
         p = random.randint(0, len(sentences)-1)
         ret = os.spawnv(os.P_WAIT, r"C:\Users\dexfire\AppData\Local\Programs\Microsoft VS Code\bin\code", [
