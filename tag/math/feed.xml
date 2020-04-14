@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="/tag/math/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-04-14T10:23:07+00:00</updated>
+  <updated>2020-04-14T10:30:57+00:00</updated>
   <id>/tag/math/feed.xml</id>
 
   
@@ -418,7 +418,12 @@
 
 &lt;h3 id=&quot;成像&quot;&gt;成像&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;成像&lt;/strong&gt;是指照明一个放置于透镜之前的物体，使其经由透镜在另一位置，出现与物体非常相似的光场强度分布。这个强度分布称之为该物体的&lt;strong&gt;像&lt;/strong&gt;。可以用光屏接收的实际强度分布，称为&lt;strong&gt;实像&lt;/strong&gt;。如果透镜后方的光可等效与透镜前另一个位置发出的，称之为&lt;strong&gt;虚像&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;成像&lt;/strong&gt;是指照明一个放置于透镜之前的物体，使其经由透镜在另一位置，出现与物体非常相似的光场强度分布。&lt;/li&gt;
+  &lt;li&gt;这个强度分布称之为该物体的&lt;strong&gt;像&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;可以用光屏接收的实际强度分布，称为&lt;strong&gt;实像&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;如果透镜后方的光可等效与透镜前另一个位置发出的，称之为&lt;strong&gt;虚像&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&quot;理想成像&quot;&gt;理想成像&lt;/h4&gt;
 
