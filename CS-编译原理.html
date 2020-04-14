@@ -41,38 +41,51 @@
     <![endif]-->
 
     <!-- This tag outputs SEO meta+structured data and other important settings -->
-    <meta name="description" content="The professional publishing platform" />
-    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="description"
+    content="The professional publishing platform" />
+<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
+<link rel="canonical"
+    href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
-     <!--title below is coming from _includes/dynamic_title-->
-    <meta property="og:site_name" content="Ghost" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="【CS】编译原理" />
-    <meta property="og:description" content="编译原理 什么是编译？ 编译是指将高级语言代码（C，C++，Java等），通过低级语言（通常为汇编）实现的过程，最终输出为机器可执行的二进制机器码文件。 最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。 编译工作的几个步骤： 编译过程通常可以抽象为几个过程： 预处理 编译 链接 C/C++ 语言编译流程与编译工具链(toolchain) C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。 一款盛名远扬的开源编译工具链： GCC: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)： 以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，现在由自由软件基金会负责维护工作。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。 GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。 GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。 许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。 GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。 GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。 GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。 GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。 几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。 编译器前端：编译组织器（典例：clang） Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。 Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。" />
-    <meta property="og:url" content="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" />
-    <meta property="og:image" content="/math.jpg" />
-    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
-    <meta property="article:author" content="https://www.facebook.com/ghost" />
-    <meta property="article:published_time" content="2020-03-18T23:58:00+00:00" />
-    <meta property="article:modified_time" content="2020-03-18T23:58:00+00:00" />
-    <meta property="article:tag" content="Cs" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="【CS】编译原理" />
-    <meta name="twitter:description" content="编译原理 什么是编译？ 编译是指将高级语言代码（C，C++，Java等），通过低级语言（通常为汇编）实现的过程，最终输出为机器可执行的二进制机器码文件。 最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。 编译工作的几个步骤： 编译过程通常可以抽象为几个过程： 预处理 编译 链接 C/C++ 语言编译流程与编译工具链(toolchain) C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。 一款盛名远扬的开源编译工具链： GCC: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)： 以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，现在由自由软件基金会负责维护工作。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。 GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。 GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。 许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。 GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。 GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。 GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。 GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。 几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。 编译器前端：编译组织器（典例：clang） Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。 Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。" />
-    <meta name="twitter:url" content="/" />
-    <meta name="twitter:image" content="/math.jpg" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Ghost" />
-    <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Cs" />
-    <meta name="twitter:site" content="@tryghost" />
-    <meta name="twitter:creator" content="@tryghost" />
-    <meta property="og:image:width" content="1400" />
-    <meta property="og:image:height" content="933" />
 
-    <script type="application/ld+json">
+<!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Ghost" />
+<meta property="og:type" content="website" />
+<meta property="og:title"
+    content="【CS】编译原理" />
+<meta property="og:description"
+    content="编译原理 什么是编译？ 编译是指将高级语言代码（C，C++，Java等），通过低级语言（通常为汇编）实现的过程，最终输出为机器可执行的二进制机器码文件。 最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。 编译工作的几个步骤： 编译过程通常可以抽象为几个过程： 预处理 编译 链接 C/C++ 语言编译流程与编译工具链(toolchain) C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。 一款盛名远扬的开源编译工具链： GCC: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)： 以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，现在由自由软件基金会负责维护工作。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。 GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。 GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。 许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。 GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。 GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。 GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。 GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。 几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。 编译器前端：编译组织器（典例：clang） Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。 Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。" />
+<meta property="og:url"
+    content="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" />
+<meta property="og:image"
+    content="/math.jpg" />
+<meta property="article:publisher" content="https://www.facebook.com/ghost" />
+<meta property="article:author" content="https://www.facebook.com/ghost" />
+<meta property="article:published_time"
+    content="2020-03-18T23:58:00+00:00" />
+<meta property="article:modified_time"
+    content="2020-03-18T23:58:00+00:00" />
+
+<meta property="article:tag" content="Cs" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title"
+    content="【CS】编译原理" />
+<meta name="twitter:description"
+    content="编译原理 什么是编译？ 编译是指将高级语言代码（C，C++，Java等），通过低级语言（通常为汇编）实现的过程，最终输出为机器可执行的二进制机器码文件。 最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。 编译工作的几个步骤： 编译过程通常可以抽象为几个过程： 预处理 编译 链接 C/C++ 语言编译流程与编译工具链(toolchain) C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。 一款盛名远扬的开源编译工具链： GCC: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)： 以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，现在由自由软件基金会负责维护工作。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。 GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。 GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。 许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。 GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。 GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。 GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。 GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。 几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。 编译器前端：编译组织器（典例：clang） Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。 Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。" />
+<meta name="twitter:url" content="/" />
+<meta name="twitter:image"
+    content="/math.jpg" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Ghost" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Cs" />
+<meta name="twitter:site" content="@tryghost" />
+<meta name="twitter:creator" content="@tryghost" />
+<meta property="og:image:width" content="1400" />
+<meta property="og:image:height" content="933" />
+
+<script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Website",
@@ -96,7 +109,7 @@
 }
     </script>
 
-    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
     <script type="text/javascript">
     ghost.init({
     	clientId: "ghost-frontend",
@@ -104,9 +117,22 @@
     });
     </script> -->
 
-    <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="【CS】编译原理" href="/feed.xml" />
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml"
+    title="【CS】编译原理"
+    href="/feed.xml" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 </head>
 
@@ -390,6 +416,12 @@ into the {body} of the default.hbs template -->
                         <div class="read-next-card-content">
                             <ul>
                                 
+                                
+                                    
+                                
+                                    
+                                
+                                    
                                 
                                     
                                 

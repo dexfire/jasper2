@@ -41,38 +41,51 @@
     <![endif]-->
 
     <!-- This tag outputs SEO meta+structured data and other important settings -->
-    <meta name="description" content="The professional publishing platform" />
-    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="description"
+    content="The professional publishing platform" />
+<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
+<link rel="canonical"
+    href="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
-     <!--title below is coming from _includes/dynamic_title-->
-    <meta property="og:site_name" content="Ghost" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="【Python】Python正则表达式re.sub()之原位替换" />
-    <meta property="og:description" content="【Python】Python正则表达式re.sub()之原位替换 首先讲一下背景，这里是一个API网页接口，其中的html内容为了便于使用json进行传输，使用了许多escape 格式，类似 \x22 \x3C 的样子，这里贴一部分： &gt;&gt;&gt; feed = r'class=\x22info-detail\x22&gt;\x3Cspan class=\x22 ui-mr8 state\x22 &gt;3月7日 22:01\x3C\/span&gt;\x3Ca href=\x22javascript:;\x22 data-cmd=\x22qz_sign\x22 class=\x22f-sign-show state\x22 title=\x22我也要设置\x22&gt;\x3C\/a&gt;\x3C\/div&gt;\x3C\/div&gt;\x3C\/div&gt;\x3Cdiv class=\x22f-single-content f-wrap\x22&gt;\x3Cdiv class=\x22f-item f-s-i\x22 id=\x22feed_....._311_0_1583589681_0_1\x22 data-feedsflag=\x22\x22 data-iswupfeed=\x221\x22 data-key=\x227e6e330318a9635e0a8f0000\x22 data-specialtype=\x22\x22 data-extend-info=\x220_0_1_0_0_0_0|08009cc0040f5001|0008000000000000\x22 data-functype=\x22\x22 data-hasfollowed=\x221\x22&gt;\x3Cdiv class=\x22f-info qz_info_cut\x22&gt;我教你们怎么做舔狗，一天三遍请安记得把称呼带上，哥哥早上好，哥哥晚上好，对方回你一句话赶紧十句话顶上去嘘寒问暖要安排上，吃了吗？在干嘛？下雪了吗？下雨了吗？冷吗？加衣服了吗？哥哥你那里降温了记得添衣服，哥哥你那里下雨了记得带伞，哥哥你在哪？哥哥我请你吃饭，哥哥晚上有时间吗？哥哥中午有时间吗？哥哥辛苦了，哥哥穿这身真帅，哥哥你看今晚的星星，哥哥你要睡觉了吗？哥哥我觉得这个特别适合你就给你买了你别不高 \x3Ca' 经过一反度娘科普，发现其实也就是对html标签tag中的&lt; &gt; ' ' 进行了转义，但又不一定只有这几种情况，总的来讲，这些符号全都属于 ascii 编码的范畴，所以我们要做的就是对这些转义字符进行逆向解码。 首先呢，二狗在这里尽量尝试不借助Python文档以外的外界超自然力量进行研究，首先想到这个可否使用 Python 自带的编解码函数进行解码呢？毕竟 Python3 对自然语言编码可是增强了一大截，这点小问题应该难不倒万能胶语言的嘛？ 我们的基本思路是： 方案一：首先看是否存在 str" />
-    <meta property="og:url" content="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" />
-    <meta property="og:image" content="/python.png" />
-    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
-    <meta property="article:author" content="https://www.facebook.com/ghost" />
-    <meta property="article:published_time" content="2020-03-11T00:49:00+00:00" />
-    <meta property="article:modified_time" content="2020-03-11T00:49:00+00:00" />
-    <meta property="article:tag" content="Python" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="【Python】Python正则表达式re.sub()之原位替换" />
-    <meta name="twitter:description" content="【Python】Python正则表达式re.sub()之原位替换 首先讲一下背景，这里是一个API网页接口，其中的html内容为了便于使用json进行传输，使用了许多escape 格式，类似 \x22 \x3C 的样子，这里贴一部分： &gt;&gt;&gt; feed = r'class=\x22info-detail\x22&gt;\x3Cspan class=\x22 ui-mr8 state\x22 &gt;3月7日 22:01\x3C\/span&gt;\x3Ca href=\x22javascript:;\x22 data-cmd=\x22qz_sign\x22 class=\x22f-sign-show state\x22 title=\x22我也要设置\x22&gt;\x3C\/a&gt;\x3C\/div&gt;\x3C\/div&gt;\x3C\/div&gt;\x3Cdiv class=\x22f-single-content f-wrap\x22&gt;\x3Cdiv class=\x22f-item f-s-i\x22 id=\x22feed_....._311_0_1583589681_0_1\x22 data-feedsflag=\x22\x22 data-iswupfeed=\x221\x22 data-key=\x227e6e330318a9635e0a8f0000\x22 data-specialtype=\x22\x22 data-extend-info=\x220_0_1_0_0_0_0|08009cc0040f5001|0008000000000000\x22 data-functype=\x22\x22 data-hasfollowed=\x221\x22&gt;\x3Cdiv class=\x22f-info qz_info_cut\x22&gt;我教你们怎么做舔狗，一天三遍请安记得把称呼带上，哥哥早上好，哥哥晚上好，对方回你一句话赶紧十句话顶上去嘘寒问暖要安排上，吃了吗？在干嘛？下雪了吗？下雨了吗？冷吗？加衣服了吗？哥哥你那里降温了记得添衣服，哥哥你那里下雨了记得带伞，哥哥你在哪？哥哥我请你吃饭，哥哥晚上有时间吗？哥哥中午有时间吗？哥哥辛苦了，哥哥穿这身真帅，哥哥你看今晚的星星，哥哥你要睡觉了吗？哥哥我觉得这个特别适合你就给你买了你别不高 \x3Ca' 经过一反度娘科普，发现其实也就是对html标签tag中的&lt; &gt; ' ' 进行了转义，但又不一定只有这几种情况，总的来讲，这些符号全都属于 ascii 编码的范畴，所以我们要做的就是对这些转义字符进行逆向解码。 首先呢，二狗在这里尽量尝试不借助Python文档以外的外界超自然力量进行研究，首先想到这个可否使用 Python 自带的编解码函数进行解码呢？毕竟 Python3 对自然语言编码可是增强了一大截，这点小问题应该难不倒万能胶语言的嘛？ 我们的基本思路是： 方案一：首先看是否存在 str" />
-    <meta name="twitter:url" content="/" />
-    <meta name="twitter:image" content="/python.png" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Ghost" />
-    <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Python" />
-    <meta name="twitter:site" content="@tryghost" />
-    <meta name="twitter:creator" content="@tryghost" />
-    <meta property="og:image:width" content="1400" />
-    <meta property="og:image:height" content="933" />
 
-    <script type="application/ld+json">
+<!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Ghost" />
+<meta property="og:type" content="website" />
+<meta property="og:title"
+    content="【Python】Python正则表达式re.sub()之原位替换" />
+<meta property="og:description"
+    content="【Python】Python正则表达式re.sub()之原位替换 首先讲一下背景，这里是一个API网页接口，其中的html内容为了便于使用json进行传输，使用了许多escape 格式，类似 \x22 \x3C 的样子，这里贴一部分： &gt;&gt;&gt; feed = r'class=\x22info-detail\x22&gt;\x3Cspan class=\x22 ui-mr8 state\x22 &gt;3月7日 22:01\x3C\/span&gt;\x3Ca href=\x22javascript:;\x22 data-cmd=\x22qz_sign\x22 class=\x22f-sign-show state\x22 title=\x22我也要设置\x22&gt;\x3C\/a&gt;\x3C\/div&gt;\x3C\/div&gt;\x3C\/div&gt;\x3Cdiv class=\x22f-single-content f-wrap\x22&gt;\x3Cdiv class=\x22f-item f-s-i\x22 id=\x22feed_....._311_0_1583589681_0_1\x22 data-feedsflag=\x22\x22 data-iswupfeed=\x221\x22 data-key=\x227e6e330318a9635e0a8f0000\x22 data-specialtype=\x22\x22 data-extend-info=\x220_0_1_0_0_0_0|08009cc0040f5001|0008000000000000\x22 data-functype=\x22\x22 data-hasfollowed=\x221\x22&gt;\x3Cdiv class=\x22f-info qz_info_cut\x22&gt;我教你们怎么做舔狗，一天三遍请安记得把称呼带上，哥哥早上好，哥哥晚上好，对方回你一句话赶紧十句话顶上去嘘寒问暖要安排上，吃了吗？在干嘛？下雪了吗？下雨了吗？冷吗？加衣服了吗？哥哥你那里降温了记得添衣服，哥哥你那里下雨了记得带伞，哥哥你在哪？哥哥我请你吃饭，哥哥晚上有时间吗？哥哥中午有时间吗？哥哥辛苦了，哥哥穿这身真帅，哥哥你看今晚的星星，哥哥你要睡觉了吗？哥哥我觉得这个特别适合你就给你买了你别不高 \x3Ca' 经过一反度娘科普，发现其实也就是对html标签tag中的&lt; &gt; ' ' 进行了转义，但又不一定只有这几种情况，总的来讲，这些符号全都属于 ascii 编码的范畴，所以我们要做的就是对这些转义字符进行逆向解码。 首先呢，二狗在这里尽量尝试不借助Python文档以外的外界超自然力量进行研究，首先想到这个可否使用 Python 自带的编解码函数进行解码呢？毕竟 Python3 对自然语言编码可是增强了一大截，这点小问题应该难不倒万能胶语言的嘛？ 我们的基本思路是： 方案一：首先看是否存在 str" />
+<meta property="og:url"
+    content="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" />
+<meta property="og:image"
+    content="/python.png" />
+<meta property="article:publisher" content="https://www.facebook.com/ghost" />
+<meta property="article:author" content="https://www.facebook.com/ghost" />
+<meta property="article:published_time"
+    content="2020-03-11T00:49:00+00:00" />
+<meta property="article:modified_time"
+    content="2020-03-11T00:49:00+00:00" />
+
+<meta property="article:tag" content="Python" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title"
+    content="【Python】Python正则表达式re.sub()之原位替换" />
+<meta name="twitter:description"
+    content="【Python】Python正则表达式re.sub()之原位替换 首先讲一下背景，这里是一个API网页接口，其中的html内容为了便于使用json进行传输，使用了许多escape 格式，类似 \x22 \x3C 的样子，这里贴一部分： &gt;&gt;&gt; feed = r'class=\x22info-detail\x22&gt;\x3Cspan class=\x22 ui-mr8 state\x22 &gt;3月7日 22:01\x3C\/span&gt;\x3Ca href=\x22javascript:;\x22 data-cmd=\x22qz_sign\x22 class=\x22f-sign-show state\x22 title=\x22我也要设置\x22&gt;\x3C\/a&gt;\x3C\/div&gt;\x3C\/div&gt;\x3C\/div&gt;\x3Cdiv class=\x22f-single-content f-wrap\x22&gt;\x3Cdiv class=\x22f-item f-s-i\x22 id=\x22feed_....._311_0_1583589681_0_1\x22 data-feedsflag=\x22\x22 data-iswupfeed=\x221\x22 data-key=\x227e6e330318a9635e0a8f0000\x22 data-specialtype=\x22\x22 data-extend-info=\x220_0_1_0_0_0_0|08009cc0040f5001|0008000000000000\x22 data-functype=\x22\x22 data-hasfollowed=\x221\x22&gt;\x3Cdiv class=\x22f-info qz_info_cut\x22&gt;我教你们怎么做舔狗，一天三遍请安记得把称呼带上，哥哥早上好，哥哥晚上好，对方回你一句话赶紧十句话顶上去嘘寒问暖要安排上，吃了吗？在干嘛？下雪了吗？下雨了吗？冷吗？加衣服了吗？哥哥你那里降温了记得添衣服，哥哥你那里下雨了记得带伞，哥哥你在哪？哥哥我请你吃饭，哥哥晚上有时间吗？哥哥中午有时间吗？哥哥辛苦了，哥哥穿这身真帅，哥哥你看今晚的星星，哥哥你要睡觉了吗？哥哥我觉得这个特别适合你就给你买了你别不高 \x3Ca' 经过一反度娘科普，发现其实也就是对html标签tag中的&lt; &gt; ' ' 进行了转义，但又不一定只有这几种情况，总的来讲，这些符号全都属于 ascii 编码的范畴，所以我们要做的就是对这些转义字符进行逆向解码。 首先呢，二狗在这里尽量尝试不借助Python文档以外的外界超自然力量进行研究，首先想到这个可否使用 Python 自带的编解码函数进行解码呢？毕竟 Python3 对自然语言编码可是增强了一大截，这点小问题应该难不倒万能胶语言的嘛？ 我们的基本思路是： 方案一：首先看是否存在 str" />
+<meta name="twitter:url" content="/" />
+<meta name="twitter:image"
+    content="/python.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Ghost" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Python" />
+<meta name="twitter:site" content="@tryghost" />
+<meta name="twitter:creator" content="@tryghost" />
+<meta property="og:image:width" content="1400" />
+<meta property="og:image:height" content="933" />
+
+<script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Website",
@@ -96,7 +109,7 @@
 }
     </script>
 
-    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
     <script type="text/javascript">
     ghost.init({
     	clientId: "ghost-frontend",
@@ -104,9 +117,22 @@
     });
     </script> -->
 
-    <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="【Python】Python正则表达式re.sub()之原位替换" href="/feed.xml" />
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml"
+    title="【Python】Python正则表达式re.sub()之原位替换"
+    href="/feed.xml" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 </head>
 
@@ -433,6 +459,12 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
                         <div class="read-next-card-content">
                             <ul>
                                 
+                                
+                                    
+                                
+                                    
+                                
+                                    
                                 
                                     
                                 

@@ -41,38 +41,51 @@
     <![endif]-->
 
     <!-- This tag outputs SEO meta+structured data and other important settings -->
-    <meta name="description" content="The professional publishing platform" />
-    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="description"
+    content="The professional publishing platform" />
+<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
+<link rel="canonical"
+    href="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
-     <!--title below is coming from _includes/dynamic_title-->
-    <meta property="og:site_name" content="Ghost" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="【redis】一、Redis 数据库入门初体验" />
-    <meta property="og:description" content="【Redis】使用Redis的心得体会 ▉▉▉／◢▉◣◢▉◣◥◣／◢◤／／／／／／／／ ／▉／／▉／◥◤／▉／◥▉◤／◢▉◣／▉／▉／ ／▉／／◥◣／／◢◤／／▉／／▉／▉／▉／▉／ ／▉／／／◥◣◢◤／／／▉／／▉／▉／▉／▉ ／ ▉▉▉／／／◥◤／／／／▉／／◥▉◤／◥▉◤／ 工具并无善恶之分，同样的一把利剑在不同的人手里，发光或是消亡。 Redis 是一款 K/V （键值对）数据库，通常作缓存之用， 这样一件强大的神器在手，你是否也会感到难以驾驭，以至于杀鸡用了屠龙刀，只是拿来当成“变量暂存器”，还一边抱怨它不方便使用也不见得高效呢？ 那么，你的却没有用对地方，一起来感受这款新晋轻量网红数据库的魅力吧！ 首先，这东东到底有毛用啊？你不会用并不代表它没有用，我们应抱着敬畏之心对待这样一款开源良心产品的，你怀着恶意而来，便无人欢迎你再来采拮他人智慧的成果。 市面上已经有许多款数据库产品，当然也不乏3A级商业大作(Oracle, Access)，也有开源而气势不减的良心精品（MYSQL, MongoDB），那么它，Redia，又是凭着哪里来的勇气诞生于世的呢？ Redis 的优越特性 谈到特性不得不了解一下它的定位，这是一款缓存或者轻量级数据库，面对的是轻量级的简单应用，并且配套了极致简单的API，支持多种主流语言，也就是说，这也是类似于变成语言界的Python一样，Redis是一款万金油的中转缓存工具。 不谈钱的生意都是在耍无赖，不谈性的恋爱都是在浪费双方生命，那么不谈优势的数据库产品自然也只能是吸引下广大IT民工一时的眼球而已，显然，Redis并非此类浅薄货色。 高性能 存取速度快 缓存于内存区域之中，无需每次调用磁盘文件。 查询速度快 非关系型数据库，查询时只需要遍历key，降低了查询成本。 内存效率高 动态申请内存，无需预占用空余内存。 内存数据库 近期火热 备受好评 非关系型数据库 NoSQL 借用《Redis入门指南》篇首的描述： Redis 如今已经成为Web开发社区中最火热的内存数据库之一，而它的诞生距现在不过才4年，随着Web2.0的蓬勃发展，网站数据快速增长，对高性能读写的要求越来越高，再加上半结构化数据比重不断变发大，人们早已对铺天盖地运行着的关系型数据库能否适应现今的存储需求产生疑问。而Redis的迅猛发展为这个领域注入了全新的思维。 Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企业到新浪微博这样的大公司（拥有几百台Redis服务器），都能看到Redis的身影。Redis是个名副其实的多面手，无论是存储、队列还是缓存系统，都有着独到的功底。 要是把“谁在使用Redis”换成“谁没在使用Redis”，那么这个页面的内容一定会精简不少。 ———— Redis作者 Salvatore Sanfilippo 那么怎样将 Redis 用到实际工程中，又该怎样使用 redis 来处理复杂数据呢？ Redis 数据类型" />
-    <meta property="og:url" content="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" />
-    <meta property="og:image" content="/redis.png" />
-    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
-    <meta property="article:author" content="https://www.facebook.com/ghost" />
-    <meta property="article:published_time" content="2020-03-21T23:17:00+00:00" />
-    <meta property="article:modified_time" content="2020-03-21T23:17:00+00:00" />
-    <meta property="article:tag" content="Redis" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="【redis】一、Redis 数据库入门初体验" />
-    <meta name="twitter:description" content="【Redis】使用Redis的心得体会 ▉▉▉／◢▉◣◢▉◣◥◣／◢◤／／／／／／／／ ／▉／／▉／◥◤／▉／◥▉◤／◢▉◣／▉／▉／ ／▉／／◥◣／／◢◤／／▉／／▉／▉／▉／▉／ ／▉／／／◥◣◢◤／／／▉／／▉／▉／▉／▉ ／ ▉▉▉／／／◥◤／／／／▉／／◥▉◤／◥▉◤／ 工具并无善恶之分，同样的一把利剑在不同的人手里，发光或是消亡。 Redis 是一款 K/V （键值对）数据库，通常作缓存之用， 这样一件强大的神器在手，你是否也会感到难以驾驭，以至于杀鸡用了屠龙刀，只是拿来当成“变量暂存器”，还一边抱怨它不方便使用也不见得高效呢？ 那么，你的却没有用对地方，一起来感受这款新晋轻量网红数据库的魅力吧！ 首先，这东东到底有毛用啊？你不会用并不代表它没有用，我们应抱着敬畏之心对待这样一款开源良心产品的，你怀着恶意而来，便无人欢迎你再来采拮他人智慧的成果。 市面上已经有许多款数据库产品，当然也不乏3A级商业大作(Oracle, Access)，也有开源而气势不减的良心精品（MYSQL, MongoDB），那么它，Redia，又是凭着哪里来的勇气诞生于世的呢？ Redis 的优越特性 谈到特性不得不了解一下它的定位，这是一款缓存或者轻量级数据库，面对的是轻量级的简单应用，并且配套了极致简单的API，支持多种主流语言，也就是说，这也是类似于变成语言界的Python一样，Redis是一款万金油的中转缓存工具。 不谈钱的生意都是在耍无赖，不谈性的恋爱都是在浪费双方生命，那么不谈优势的数据库产品自然也只能是吸引下广大IT民工一时的眼球而已，显然，Redis并非此类浅薄货色。 高性能 存取速度快 缓存于内存区域之中，无需每次调用磁盘文件。 查询速度快 非关系型数据库，查询时只需要遍历key，降低了查询成本。 内存效率高 动态申请内存，无需预占用空余内存。 内存数据库 近期火热 备受好评 非关系型数据库 NoSQL 借用《Redis入门指南》篇首的描述： Redis 如今已经成为Web开发社区中最火热的内存数据库之一，而它的诞生距现在不过才4年，随着Web2.0的蓬勃发展，网站数据快速增长，对高性能读写的要求越来越高，再加上半结构化数据比重不断变发大，人们早已对铺天盖地运行着的关系型数据库能否适应现今的存储需求产生疑问。而Redis的迅猛发展为这个领域注入了全新的思维。 Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企业到新浪微博这样的大公司（拥有几百台Redis服务器），都能看到Redis的身影。Redis是个名副其实的多面手，无论是存储、队列还是缓存系统，都有着独到的功底。 要是把“谁在使用Redis”换成“谁没在使用Redis”，那么这个页面的内容一定会精简不少。 ———— Redis作者 Salvatore Sanfilippo 那么怎样将 Redis 用到实际工程中，又该怎样使用 redis 来处理复杂数据呢？ Redis 数据类型" />
-    <meta name="twitter:url" content="/" />
-    <meta name="twitter:image" content="/redis.png" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Ghost" />
-    <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Redis" />
-    <meta name="twitter:site" content="@tryghost" />
-    <meta name="twitter:creator" content="@tryghost" />
-    <meta property="og:image:width" content="1400" />
-    <meta property="og:image:height" content="933" />
 
-    <script type="application/ld+json">
+<!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Ghost" />
+<meta property="og:type" content="website" />
+<meta property="og:title"
+    content="【redis】一、Redis 数据库入门初体验" />
+<meta property="og:description"
+    content="【Redis】使用Redis的心得体会 ▉▉▉／◢▉◣◢▉◣◥◣／◢◤／／／／／／／／ ／▉／／▉／◥◤／▉／◥▉◤／◢▉◣／▉／▉／ ／▉／／◥◣／／◢◤／／▉／／▉／▉／▉／▉／ ／▉／／／◥◣◢◤／／／▉／／▉／▉／▉／▉ ／ ▉▉▉／／／◥◤／／／／▉／／◥▉◤／◥▉◤／ 工具并无善恶之分，同样的一把利剑在不同的人手里，发光或是消亡。 Redis 是一款 K/V （键值对）数据库，通常作缓存之用， 这样一件强大的神器在手，你是否也会感到难以驾驭，以至于杀鸡用了屠龙刀，只是拿来当成“变量暂存器”，还一边抱怨它不方便使用也不见得高效呢？ 那么，你的却没有用对地方，一起来感受这款新晋轻量网红数据库的魅力吧！ 首先，这东东到底有毛用啊？你不会用并不代表它没有用，我们应抱着敬畏之心对待这样一款开源良心产品的，你怀着恶意而来，便无人欢迎你再来采拮他人智慧的成果。 市面上已经有许多款数据库产品，当然也不乏3A级商业大作(Oracle, Access)，也有开源而气势不减的良心精品（MYSQL, MongoDB），那么它，Redia，又是凭着哪里来的勇气诞生于世的呢？ Redis 的优越特性 谈到特性不得不了解一下它的定位，这是一款缓存或者轻量级数据库，面对的是轻量级的简单应用，并且配套了极致简单的API，支持多种主流语言，也就是说，这也是类似于变成语言界的Python一样，Redis是一款万金油的中转缓存工具。 不谈钱的生意都是在耍无赖，不谈性的恋爱都是在浪费双方生命，那么不谈优势的数据库产品自然也只能是吸引下广大IT民工一时的眼球而已，显然，Redis并非此类浅薄货色。 高性能 存取速度快 缓存于内存区域之中，无需每次调用磁盘文件。 查询速度快 非关系型数据库，查询时只需要遍历key，降低了查询成本。 内存效率高 动态申请内存，无需预占用空余内存。 内存数据库 近期火热 备受好评 非关系型数据库 NoSQL 借用《Redis入门指南》篇首的描述： Redis 如今已经成为Web开发社区中最火热的内存数据库之一，而它的诞生距现在不过才4年，随着Web2.0的蓬勃发展，网站数据快速增长，对高性能读写的要求越来越高，再加上半结构化数据比重不断变发大，人们早已对铺天盖地运行着的关系型数据库能否适应现今的存储需求产生疑问。而Redis的迅猛发展为这个领域注入了全新的思维。 Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企业到新浪微博这样的大公司（拥有几百台Redis服务器），都能看到Redis的身影。Redis是个名副其实的多面手，无论是存储、队列还是缓存系统，都有着独到的功底。 要是把“谁在使用Redis”换成“谁没在使用Redis”，那么这个页面的内容一定会精简不少。 ———— Redis作者 Salvatore Sanfilippo 那么怎样将 Redis 用到实际工程中，又该怎样使用 redis 来处理复杂数据呢？ Redis 数据类型" />
+<meta property="og:url"
+    content="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" />
+<meta property="og:image"
+    content="/redis.png" />
+<meta property="article:publisher" content="https://www.facebook.com/ghost" />
+<meta property="article:author" content="https://www.facebook.com/ghost" />
+<meta property="article:published_time"
+    content="2020-03-21T23:17:00+00:00" />
+<meta property="article:modified_time"
+    content="2020-03-21T23:17:00+00:00" />
+
+<meta property="article:tag" content="Redis" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title"
+    content="【redis】一、Redis 数据库入门初体验" />
+<meta name="twitter:description"
+    content="【Redis】使用Redis的心得体会 ▉▉▉／◢▉◣◢▉◣◥◣／◢◤／／／／／／／／ ／▉／／▉／◥◤／▉／◥▉◤／◢▉◣／▉／▉／ ／▉／／◥◣／／◢◤／／▉／／▉／▉／▉／▉／ ／▉／／／◥◣◢◤／／／▉／／▉／▉／▉／▉ ／ ▉▉▉／／／◥◤／／／／▉／／◥▉◤／◥▉◤／ 工具并无善恶之分，同样的一把利剑在不同的人手里，发光或是消亡。 Redis 是一款 K/V （键值对）数据库，通常作缓存之用， 这样一件强大的神器在手，你是否也会感到难以驾驭，以至于杀鸡用了屠龙刀，只是拿来当成“变量暂存器”，还一边抱怨它不方便使用也不见得高效呢？ 那么，你的却没有用对地方，一起来感受这款新晋轻量网红数据库的魅力吧！ 首先，这东东到底有毛用啊？你不会用并不代表它没有用，我们应抱着敬畏之心对待这样一款开源良心产品的，你怀着恶意而来，便无人欢迎你再来采拮他人智慧的成果。 市面上已经有许多款数据库产品，当然也不乏3A级商业大作(Oracle, Access)，也有开源而气势不减的良心精品（MYSQL, MongoDB），那么它，Redia，又是凭着哪里来的勇气诞生于世的呢？ Redis 的优越特性 谈到特性不得不了解一下它的定位，这是一款缓存或者轻量级数据库，面对的是轻量级的简单应用，并且配套了极致简单的API，支持多种主流语言，也就是说，这也是类似于变成语言界的Python一样，Redis是一款万金油的中转缓存工具。 不谈钱的生意都是在耍无赖，不谈性的恋爱都是在浪费双方生命，那么不谈优势的数据库产品自然也只能是吸引下广大IT民工一时的眼球而已，显然，Redis并非此类浅薄货色。 高性能 存取速度快 缓存于内存区域之中，无需每次调用磁盘文件。 查询速度快 非关系型数据库，查询时只需要遍历key，降低了查询成本。 内存效率高 动态申请内存，无需预占用空余内存。 内存数据库 近期火热 备受好评 非关系型数据库 NoSQL 借用《Redis入门指南》篇首的描述： Redis 如今已经成为Web开发社区中最火热的内存数据库之一，而它的诞生距现在不过才4年，随着Web2.0的蓬勃发展，网站数据快速增长，对高性能读写的要求越来越高，再加上半结构化数据比重不断变发大，人们早已对铺天盖地运行着的关系型数据库能否适应现今的存储需求产生疑问。而Redis的迅猛发展为这个领域注入了全新的思维。 Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企业到新浪微博这样的大公司（拥有几百台Redis服务器），都能看到Redis的身影。Redis是个名副其实的多面手，无论是存储、队列还是缓存系统，都有着独到的功底。 要是把“谁在使用Redis”换成“谁没在使用Redis”，那么这个页面的内容一定会精简不少。 ———— Redis作者 Salvatore Sanfilippo 那么怎样将 Redis 用到实际工程中，又该怎样使用 redis 来处理复杂数据呢？ Redis 数据类型" />
+<meta name="twitter:url" content="/" />
+<meta name="twitter:image"
+    content="/redis.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Ghost" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Redis" />
+<meta name="twitter:site" content="@tryghost" />
+<meta name="twitter:creator" content="@tryghost" />
+<meta property="og:image:width" content="1400" />
+<meta property="og:image:height" content="933" />
+
+<script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Website",
@@ -96,7 +109,7 @@
 }
     </script>
 
-    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
     <script type="text/javascript">
     ghost.init({
     	clientId: "ghost-frontend",
@@ -104,9 +117,22 @@
     });
     </script> -->
 
-    <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="【redis】一、Redis 数据库入门初体验" href="/feed.xml" />
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml"
+    title="【redis】一、Redis 数据库入门初体验"
+    href="/feed.xml" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 </head>
 
@@ -454,6 +480,12 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
                         <div class="read-next-card-content">
                             <ul>
                                 
+                                
+                                    
+                                
+                                    
+                                
+                                    
                                 
                                     
                                 

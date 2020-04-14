@@ -41,38 +41,51 @@
     <![endif]-->
 
     <!-- This tag outputs SEO meta+structured data and other important settings -->
-    <meta name="description" content="The professional publishing platform" />
-    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="description"
+    content="The professional publishing platform" />
+<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
+<link rel="canonical"
+    href="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
-     <!--title below is coming from _includes/dynamic_title-->
-    <meta property="og:site_name" content="Ghost" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="【redis】一、Redis 数据库入门初体验" />
-    <meta property="og:description" content="【redis】一、Redis 数据库入门初体验 Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（strings）， 散列（hashes）， 列表（lists）， 集合（sets）， 有序集合（sorted sets） 与范围查询， bitmaps， hyperloglogs 和 地理空间（geospatial） 索引半径查询。 Redis 内置了 复制（replication），LUA脚本（Lua scripting）， LRU驱动事件（LRU eviction），事务（transactions） 和不同级别的 磁盘持久化（persistence）， 并通过 Redis哨兵（Sentinel）和自动 分区（Cluster）提供高可用性（high availability）。 Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports" />
-    <meta property="og:url" content="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C" />
-    <meta property="og:image" content="/redis.png" />
-    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
-    <meta property="article:author" content="https://www.facebook.com/ghost" />
-    <meta property="article:published_time" content="2020-03-19T09:16:00+00:00" />
-    <meta property="article:modified_time" content="2020-03-19T09:16:00+00:00" />
-    <meta property="article:tag" content="Redis" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="【redis】一、Redis 数据库入门初体验" />
-    <meta name="twitter:description" content="【redis】一、Redis 数据库入门初体验 Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（strings）， 散列（hashes）， 列表（lists）， 集合（sets）， 有序集合（sorted sets） 与范围查询， bitmaps， hyperloglogs 和 地理空间（geospatial） 索引半径查询。 Redis 内置了 复制（replication），LUA脚本（Lua scripting）， LRU驱动事件（LRU eviction），事务（transactions） 和不同级别的 磁盘持久化（persistence）， 并通过 Redis哨兵（Sentinel）和自动 分区（Cluster）提供高可用性（high availability）。 Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports" />
-    <meta name="twitter:url" content="/" />
-    <meta name="twitter:image" content="/redis.png" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Ghost" />
-    <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Redis" />
-    <meta name="twitter:site" content="@tryghost" />
-    <meta name="twitter:creator" content="@tryghost" />
-    <meta property="og:image:width" content="1400" />
-    <meta property="og:image:height" content="933" />
 
-    <script type="application/ld+json">
+<!--title below is coming from _includes/dynamic_title-->
+<meta property="og:site_name" content="Ghost" />
+<meta property="og:type" content="website" />
+<meta property="og:title"
+    content="【redis】一、Redis 数据库入门初体验" />
+<meta property="og:description"
+    content="【redis】一、Redis 数据库入门初体验 Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（strings）， 散列（hashes）， 列表（lists）， 集合（sets）， 有序集合（sorted sets） 与范围查询， bitmaps， hyperloglogs 和 地理空间（geospatial） 索引半径查询。 Redis 内置了 复制（replication），LUA脚本（Lua scripting）， LRU驱动事件（LRU eviction），事务（transactions） 和不同级别的 磁盘持久化（persistence）， 并通过 Redis哨兵（Sentinel）和自动 分区（Cluster）提供高可用性（high availability）。 Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports" />
+<meta property="og:url"
+    content="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C" />
+<meta property="og:image"
+    content="/redis.png" />
+<meta property="article:publisher" content="https://www.facebook.com/ghost" />
+<meta property="article:author" content="https://www.facebook.com/ghost" />
+<meta property="article:published_time"
+    content="2020-03-19T09:16:00+00:00" />
+<meta property="article:modified_time"
+    content="2020-03-19T09:16:00+00:00" />
+
+<meta property="article:tag" content="Redis" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title"
+    content="【redis】一、Redis 数据库入门初体验" />
+<meta name="twitter:description"
+    content="【redis】一、Redis 数据库入门初体验 Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（strings）， 散列（hashes）， 列表（lists）， 集合（sets）， 有序集合（sorted sets） 与范围查询， bitmaps， hyperloglogs 和 地理空间（geospatial） 索引半径查询。 Redis 内置了 复制（replication），LUA脚本（Lua scripting）， LRU驱动事件（LRU eviction），事务（transactions） 和不同级别的 磁盘持久化（persistence）， 并通过 Redis哨兵（Sentinel）和自动 分区（Cluster）提供高可用性（high availability）。 Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports" />
+<meta name="twitter:url" content="/" />
+<meta name="twitter:image"
+    content="/redis.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Ghost" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Redis" />
+<meta name="twitter:site" content="@tryghost" />
+<meta name="twitter:creator" content="@tryghost" />
+<meta property="og:image:width" content="1400" />
+<meta property="og:image:height" content="933" />
+
+<script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Website",
@@ -96,7 +109,7 @@
 }
     </script>
 
-    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+<!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
     <script type="text/javascript">
     ghost.init({
     	clientId: "ghost-frontend",
@@ -104,9 +117,22 @@
     });
     </script> -->
 
-    <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="【redis】一、Redis 数据库入门初体验" href="/feed.xml" />
+<meta name="generator" content="Jekyll 3.6.2" />
+<link rel="alternate" type="application/rss+xml"
+    title="【redis】一、Redis 数据库入门初体验"
+    href="/feed.xml" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 </head>
 
@@ -381,6 +407,12 @@ Redis所有数据存储在内存中，对数据的更新将异步地保存到磁
                         <div class="read-next-card-content">
                             <ul>
                                 
+                                
+                                    
+                                
+                                    
+                                
+                                    
                                 
                                     
                                 
