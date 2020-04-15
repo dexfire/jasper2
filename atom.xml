@@ -899,11 +899,8 @@ comment: True
       <item>
         <title>【光学】数字图像处理</title>
         
-          <description>&lt;p&gt;（1）静止图像 $\displaystyle I=f(x,y,z,\lambda)$&lt;br /&gt;
-（2）平面图像 $\displaystyle I=f(x,y,\lambda,t)$ &lt;br /&gt;
-（3）灰度图像 $\displaystyle I=f(x,y,z,t)$&lt;br /&gt;
-（4）模拟图像 $\displaystyle I=f(x,y,z,\lambda,t)$  xyz连续&lt;br /&gt;
-（5）数字图像 $\displaystyle I=f(x,y,z,\lambda,t)$  xyz离散&lt;/p&gt;
+          <description>&lt;h1 id=&quot;第一章&quot;&gt;第一章&lt;/h1&gt;
+
 </description>
         
         <pubDate>Mon, 16 Mar 2020 11:24:00 +0000</pubDate>
