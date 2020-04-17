@@ -7,20 +7,19 @@ language: 'zh-cn'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-# /jasper2/
-baseurl: /
+# jasper2/
+baseurl: /jasper2/
 
 # Website info
-title: Ghost
+title: 你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ
 description: The professional publishing platform
 cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
-favicon: assets/images/favicon.png
-production_url: https://dexfire.github.io/
+favicon: favicon.ico
+production_url: https://jekyller.github.io/jasper2/
 source_url: https://github.com/jekyller/jasper2/
-CNAME: dexfire.cn
-#add cname for website to be created
+CNAME: #add cname for website to be created
 
 # Social info
 navigation: True # show the navbar links
@@ -31,8 +30,8 @@ twitter: tryghost # replace by your username
 facebook: ghost # replace by your username
 
 # Disqus
-disqus: True
-disqus_shortname: dexfire # replace with your disqus username
+disqus: False
+disqus_shortname: jekyller # replace with your disqus username
 
 # Google Analytics
 google_analytics: UA-69281367-1 # replace with your GA tracking identifier
@@ -41,7 +40,6 @@ google_analytics: UA-69281367-1 # replace with your GA tracking identifier
 permalink: /:title
 # permalink: /author/:author
 # permalink: /tag/:tag
-# permalink: /:title
 
 # Authors' info in `_data/authors.yml`
 # Tags' info in `_data/tags_info.yml`
@@ -78,7 +76,7 @@ repo: jasper2
 branch: master
 relative_source: ../jasper2/
 destination: ../jasper2-pages/
-production_url:  https://dexfire.github.io/
+production_url:  https://dexfire.github.io/jasper2/
 source_url:  https://github.com/dexfire/jasper2/
 
 exclude:
@@ -98,5 +96,3 @@ exclude:
   - changelog.md
   - "*.Rmd"
   - .git*
-  - .vscode
-  - scripts
