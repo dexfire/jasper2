@@ -16,9 +16,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
     <!-- prism.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
         integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q=" crossorigin="anonymous" />
@@ -46,9 +46,9 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description"
     content="The professional publishing platform" />
-<link rel="shortcut icon" href="/jasper2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="canonical"
-    href="/jasper2/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" />
+    href="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
 
@@ -60,9 +60,9 @@
 <meta property="og:description"
     content="【Redis】使用Redis的心得体会 ▉▉▉／◢▉◣◢▉◣◥◣／◢◤／／／／／／／／ ／▉／／▉／◥◤／▉／◥▉◤／◢▉◣／▉／▉／ ／▉／／◥◣／／◢◤／／▉／／▉／▉／▉／▉／ ／▉／／／◥◣◢◤／／／▉／／▉／▉／▉／▉ ／ ▉▉▉／／／◥◤／／／／▉／／◥▉◤／◥▉◤／ 工具并无善恶之分，同样的一把利剑在不同的人手里，发光或是消亡。 Redis 是一款 K/V （键值对）数据库，通常作缓存之用， 这样一件强大的神器在手，你是否也会感到难以驾驭，以至于杀鸡用了屠龙刀，只是拿来当成“变量暂存器”，还一边抱怨它不方便使用也不见得高效呢？ 那么，你的却没有用对地方，一起来感受这款新晋轻量网红数据库的魅力吧！ 首先，这东东到底有毛用啊？你不会用并不代表它没有用，我们应抱着敬畏之心对待这样一款开源良心产品的，你怀着恶意而来，便无人欢迎你再来采拮他人智慧的成果。 市面上已经有许多款数据库产品，当然也不乏3A级商业大作(Oracle, Access)，也有开源而气势不减的良心精品（MYSQL, MongoDB），那么它，Redia，又是凭着哪里来的勇气诞生于世的呢？ Redis 的优越特性 谈到特性不得不了解一下它的定位，这是一款缓存或者轻量级数据库，面对的是轻量级的简单应用，并且配套了极致简单的API，支持多种主流语言，也就是说，这也是类似于变成语言界的Python一样，Redis是一款万金油的中转缓存工具。 不谈钱的生意都是在耍无赖，不谈性的恋爱都是在浪费双方生命，那么不谈优势的数据库产品自然也只能是吸引下广大IT民工一时的眼球而已，显然，Redis并非此类浅薄货色。 高性能 存取速度快 缓存于内存区域之中，无需每次调用磁盘文件。 查询速度快 非关系型数据库，查询时只需要遍历key，降低了查询成本。 内存效率高 动态申请内存，无需预占用空余内存。 内存数据库 近期火热 备受好评 非关系型数据库 NoSQL 借用《Redis入门指南》篇首的描述： Redis 如今已经成为Web开发社区中最火热的内存数据库之一，而它的诞生距现在不过才4年，随着Web2.0的蓬勃发展，网站数据快速增长，对高性能读写的要求越来越高，再加上半结构化数据比重不断变发大，人们早已对铺天盖地运行着的关系型数据库能否适应现今的存储需求产生疑问。而Redis的迅猛发展为这个领域注入了全新的思维。 Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企业到新浪微博这样的大公司（拥有几百台Redis服务器），都能看到Redis的身影。Redis是个名副其实的多面手，无论是存储、队列还是缓存系统，都有着独到的功底。 要是把“谁在使用Redis”换成“谁没在使用Redis”，那么这个页面的内容一定会精简不少。 ———— Redis作者 Salvatore Sanfilippo 那么怎样将 Redis 用到实际工程中，又该怎样使用 redis 来处理复杂数据呢？ Redis 数据类型" />
 <meta property="og:url"
-    content="/jasper2/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" />
+    content="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" />
 <meta property="og:image"
-    content="/jasper2/redis.png" />
+    content="/redis.png" />
 <meta property="article:publisher" content="https://www.facebook.com/ghost" />
 <meta property="article:author" content="https://www.facebook.com/ghost" />
 <meta property="article:published_time"
@@ -76,9 +76,9 @@
     content="【redis】一、Redis 数据库入门初体验" />
 <meta name="twitter:description"
     content="【Redis】使用Redis的心得体会 ▉▉▉／◢▉◣◢▉◣◥◣／◢◤／／／／／／／／ ／▉／／▉／◥◤／▉／◥▉◤／◢▉◣／▉／▉／ ／▉／／◥◣／／◢◤／／▉／／▉／▉／▉／▉／ ／▉／／／◥◣◢◤／／／▉／／▉／▉／▉／▉ ／ ▉▉▉／／／◥◤／／／／▉／／◥▉◤／◥▉◤／ 工具并无善恶之分，同样的一把利剑在不同的人手里，发光或是消亡。 Redis 是一款 K/V （键值对）数据库，通常作缓存之用， 这样一件强大的神器在手，你是否也会感到难以驾驭，以至于杀鸡用了屠龙刀，只是拿来当成“变量暂存器”，还一边抱怨它不方便使用也不见得高效呢？ 那么，你的却没有用对地方，一起来感受这款新晋轻量网红数据库的魅力吧！ 首先，这东东到底有毛用啊？你不会用并不代表它没有用，我们应抱着敬畏之心对待这样一款开源良心产品的，你怀着恶意而来，便无人欢迎你再来采拮他人智慧的成果。 市面上已经有许多款数据库产品，当然也不乏3A级商业大作(Oracle, Access)，也有开源而气势不减的良心精品（MYSQL, MongoDB），那么它，Redia，又是凭着哪里来的勇气诞生于世的呢？ Redis 的优越特性 谈到特性不得不了解一下它的定位，这是一款缓存或者轻量级数据库，面对的是轻量级的简单应用，并且配套了极致简单的API，支持多种主流语言，也就是说，这也是类似于变成语言界的Python一样，Redis是一款万金油的中转缓存工具。 不谈钱的生意都是在耍无赖，不谈性的恋爱都是在浪费双方生命，那么不谈优势的数据库产品自然也只能是吸引下广大IT民工一时的眼球而已，显然，Redis并非此类浅薄货色。 高性能 存取速度快 缓存于内存区域之中，无需每次调用磁盘文件。 查询速度快 非关系型数据库，查询时只需要遍历key，降低了查询成本。 内存效率高 动态申请内存，无需预占用空余内存。 内存数据库 近期火热 备受好评 非关系型数据库 NoSQL 借用《Redis入门指南》篇首的描述： Redis 如今已经成为Web开发社区中最火热的内存数据库之一，而它的诞生距现在不过才4年，随着Web2.0的蓬勃发展，网站数据快速增长，对高性能读写的要求越来越高，再加上半结构化数据比重不断变发大，人们早已对铺天盖地运行着的关系型数据库能否适应现今的存储需求产生疑问。而Redis的迅猛发展为这个领域注入了全新的思维。 Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企业到新浪微博这样的大公司（拥有几百台Redis服务器），都能看到Redis的身影。Redis是个名副其实的多面手，无论是存储、队列还是缓存系统，都有着独到的功底。 要是把“谁在使用Redis”换成“谁没在使用Redis”，那么这个页面的内容一定会精简不少。 ———— Redis作者 Salvatore Sanfilippo 那么怎样将 Redis 用到实际工程中，又该怎样使用 redis 来处理复杂数据呢？ Redis 数据类型" />
-<meta name="twitter:url" content="/jasper2/" />
+<meta name="twitter:url" content="/" />
 <meta name="twitter:image"
-    content="/jasper2/redis.png" />
+    content="/redis.png" />
 <meta name="twitter:label1" content="Written by" />
 <meta name="twitter:data1" content="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
 <meta name="twitter:label2" content="Filed under" />
@@ -95,18 +95,18 @@
     "publisher": {
         "@type": "Organization",
         "name": "你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ",
-        "logo": "/jasper2/assets/images/blog-icon.png"
+        "logo": "/assets/images/blog-icon.png"
     },
-    "url": "/jasper2/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A",
+    "url": "/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A",
     "image": {
         "@type": "ImageObject",
-        "url": "/jasper2/redis.png",
+        "url": "/redis.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/jasper2/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"
+        "@id": "/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"
     },
     "description": "【Redis】使用Redis的心得体会 ▉▉▉／◢▉◣◢▉◣◥◣／◢◤／／／／／／／／ ／▉／／▉／◥◤／▉／◥▉◤／◢▉◣／▉／▉／ ／▉／／◥◣／／◢◤／／▉／／▉／▉／▉／▉／ ／▉／／／◥◣◢◤／／／▉／／▉／▉／▉／▉ ／ ▉▉▉／／／◥◤／／／／▉／／◥▉◤／◥▉◤／ 工具并无善恶之分，同样的一把利剑在不同的人手里，发光或是消亡。 Redis 是一款 K/V （键值对）数据库，通常作缓存之用， 这样一件强大的神器在手，你是否也会感到难以驾驭，以至于杀鸡用了屠龙刀，只是拿来当成“变量暂存器”，还一边抱怨它不方便使用也不见得高效呢？ 那么，你的却没有用对地方，一起来感受这款新晋轻量网红数据库的魅力吧！ 首先，这东东到底有毛用啊？你不会用并不代表它没有用，我们应抱着敬畏之心对待这样一款开源良心产品的，你怀着恶意而来，便无人欢迎你再来采拮他人智慧的成果。 市面上已经有许多款数据库产品，当然也不乏3A级商业大作(Oracle, Access)，也有开源而气势不减的良心精品（MYSQL, MongoDB），那么它，Redia，又是凭着哪里来的勇气诞生于世的呢？ Redis 的优越特性 谈到特性不得不了解一下它的定位，这是一款缓存或者轻量级数据库，面对的是轻量级的简单应用，并且配套了极致简单的API，支持多种主流语言，也就是说，这也是类似于变成语言界的Python一样，Redis是一款万金油的中转缓存工具。 不谈钱的生意都是在耍无赖，不谈性的恋爱都是在浪费双方生命，那么不谈优势的数据库产品自然也只能是吸引下广大IT民工一时的眼球而已，显然，Redis并非此类浅薄货色。 高性能 存取速度快 缓存于内存区域之中，无需每次调用磁盘文件。 查询速度快 非关系型数据库，查询时只需要遍历key，降低了查询成本。 内存效率高 动态申请内存，无需预占用空余内存。 内存数据库 近期火热 备受好评 非关系型数据库 NoSQL 借用《Redis入门指南》篇首的描述： Redis 如今已经成为Web开发社区中最火热的内存数据库之一，而它的诞生距现在不过才4年，随着Web2.0的蓬勃发展，网站数据快速增长，对高性能读写的要求越来越高，再加上半结构化数据比重不断变发大，人们早已对铺天盖地运行着的关系型数据库能否适应现今的存储需求产生疑问。而Redis的迅猛发展为这个领域注入了全新的思维。 Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企业到新浪微博这样的大公司（拥有几百台Redis服务器），都能看到Redis的身影。Redis是个名副其实的多面手，无论是存储、队列还是缓存系统，都有着独到的功底。 要是把“谁在使用Redis”换成“谁没在使用Redis”，那么这个页面的内容一定会精简不少。 ———— Redis作者 Salvatore Sanfilippo 那么怎样将 Redis 用到实际工程中，又该怎样使用 redis 来处理复杂数据呢？ Redis 数据类型"
 }
@@ -123,7 +123,7 @@
 <meta name="generator" content="Jekyll 3.6.2" />
 <link rel="alternate" type="application/rss+xml"
     title="【redis】一、Redis 数据库入门初体验"
-    href="/jasper2/feed.xml" />
+    href="/feed.xml" />
 
 <!-- Katex Math Display -->
 
@@ -152,18 +152,18 @@ into the {body} of the default.hbs template -->
     <div class="site-nav-left">
         
             
-                <a class="site-nav-logo" href="/jasper2/"><img src="/jasper2/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" /></a>
+                <a class="site-nav-logo" href="/"><img src="/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" /></a>
             
         
         
             <ul class="nav" role="menu">
-    <li class="nav-home" role="menuitem"><a href="/jasper2/">Home</a></li>
-    <li class="nav-about" role="menuitem"><a href="/jasper2/author/dexfire/">Dexfire</a></li>
-    <li class="nav-getting-started" role="menuitem"><a href="/jasper2/tag/sweet/">Sweets</a>
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/author/dexfire/">Dexfire</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/sweet/">Sweets</a>
     </li>
-    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/ai/">AI</a></li>
-    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/embed/">Embed</a></li>
-    <li class="nav-about" role="menuitem"><a href="/jasper2/tag/star/">Stars</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/ai/">AI</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/embed/">Embed</a></li>
+    <li class="nav-about" role="menuitem"><a href="/tag/star/">Stars</a></li>
 </ul>
         
     </div>
@@ -202,15 +202,15 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         
                             
-                                <a href='/jasper2/tag/redis/'>REDIS</a>,
+                                <a href='/tag/redis/'>REDIS</a>,
                             
                         
                             
-                                <a href='/jasper2/tag/cs/'>CS</a>,
+                                <a href='/tag/cs/'>CS</a>,
                             
                         
                             
-                                <a href='/jasper2/tag/dev/'>DEV</a>
+                                <a href='/tag/dev/'>DEV</a>
                             
                         
                     
@@ -219,7 +219,7 @@ into the {body} of the default.hbs template -->
             </header>
 
             
-                <figure class="post-full-image" style="background-image: url(/jasper2/assets/images/redis.png)"></figure>
+                <figure class="post-full-image" style="background-image: url(/assets/images/redis.png)"></figure>
             
 
             <section class="post-full-content">
@@ -410,11 +410,11 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
                     
                         <section class="author-card">
                             
-                                <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="dexfire"/>
+                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire"/>
                             
                             <section class="author-card-content">
                                 <h4 class="author-card-name">
-                                    <a href="/jasper2/author/dexfire">Dexfire Alex</a>
+                                    <a href="/author/dexfire">Dexfire Alex</a>
                                 </h4>
                                 
                                     <p>水中月是天上月，眼前人是心上人</p>
@@ -422,7 +422,7 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
                             </section>
                         </section>
                         <div class="post-full-footer-right">
-                            <a class="author-card-button" href="/jasper2/author/dexfire">Read More</a>
+                            <a class="author-card-button" href="/author/dexfire">Read More</a>
                         </div>
                     
                 
@@ -448,14 +448,14 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
                 
                 
                 
-                    <article class="read-next-card"  style="background-image: url(/jasper2/assets/images/blog-cover.jpg)" >
+                    <article class="read-next-card"  style="background-image: url(/assets/images/blog-cover.jpg)" >
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash;
                                 你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ
                                 &mdash;</small>
                             
                                 <h3 class="read-next-card-header-title">
-                                    <a href="/jasper2/tag/redis/">Redis</a>
+                                    <a href="/tag/redis/">Redis</a>
                                 </h3>
                             
                         </header>
@@ -738,7 +738,7 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/jasper2/tag/redis/">
+                            <a href="/tag/redis/">
                                 
                                     See all
                                     1
@@ -756,15 +756,15 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
 
 <article class="post-card post-template">
     
-        <a class="post-card-image-link" href="/jasper2/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E6%97%B6%E9%97%B4%E9%83%BD%E5%8E%BB%E5%93%AA%E4%BA%86">
+        <a class="post-card-image-link" href="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E6%97%B6%E9%97%B4%E9%83%BD%E5%8E%BB%E5%93%AA%E4%BA%86">
             
-                <div class="post-card-image" style="background-image: url(/jasper2/assets/images/20180415153733_upjts.jpg)"></div>
+                <div class="post-card-image" style="background-image: url(/assets/images/20180415153733_upjts.jpg)"></div>
             
-            <!-- <div class="post-card-image" style="background-image: url(/jasper2/20180415153733_upjts.jpg)"></div> -->
+            <!-- <div class="post-card-image" style="background-image: url(/20180415153733_upjts.jpg)"></div> -->
         </a>
     
     <div class="post-card-content">
-        <a class="post-card-content-link" href="/jasper2/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E6%97%B6%E9%97%B4%E9%83%BD%E5%8E%BB%E5%93%AA%E4%BA%86">
+        <a class="post-card-content-link" href="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E6%97%B6%E9%97%B4%E9%83%BD%E5%8E%BB%E5%93%AA%E4%BA%86">
             <header class="post-card-header">
                 
                     
@@ -800,10 +800,10 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
             
                 
                     
-                        <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
                     
                     <span class="post-card-author">
-                        <a href="/jasper2/author/dexfire/">Dexfire Alex</a>
+                        <a href="/author/dexfire/">Dexfire Alex</a>
                     </span>
                 
             
@@ -826,7 +826,7 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
 <article class="post-card  no-image">
     
     <div class="post-card-content">
-        <a class="post-card-content-link" href="/jasper2/%E5%8A%A8%E6%BC%AB-%E6%99%A8%E6%9B%A6%E5%85%AC%E4%B8%BB-%E6%95%85%E4%BA%8B%E7%9A%84%E8%88%9E%E5%8F%B0%E6%98%AF-%E5%90%91%E7%9D%80%E6%96%B0%E7%9A%84%E5%9C%B0%E6%96%B9">
+        <a class="post-card-content-link" href="/%E5%8A%A8%E6%BC%AB-%E6%99%A8%E6%9B%A6%E5%85%AC%E4%B8%BB-%E6%95%85%E4%BA%8B%E7%9A%84%E8%88%9E%E5%8F%B0%E6%98%AF-%E5%90%91%E7%9D%80%E6%96%B0%E7%9A%84%E5%9C%B0%E6%96%B9">
             <header class="post-card-header">
                 
 
@@ -875,9 +875,9 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
 <!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
 <div class="floating-header">
     <div class="floating-header-logo">
-        <a href="/jasper2/">
+        <a href="/">
             
-                <img src="/jasper2/assets/images/favicon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ icon" />
+                <img src="/assets/images/favicon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ icon" />
             
             <span>你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</span>
         </a>
@@ -919,13 +919,13 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="/jasper2/">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</a> &copy;
+                <section class="copyright"><a href="/">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</a> &copy;
                     2020</section>
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
                 <nav class="site-footer-nav">
-                    <a href="/jasper2/">Latest Posts</a>
+                    <a href="/">Latest Posts</a>
                     <a href="https://facebook.com/ghost" target="_blank"
                         rel="noopener">Facebook</a>
                     <a href="https://twitter.com/tryghost" target="_blank"
@@ -947,7 +947,7 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
         <a class="subscribe-overlay-close" href="#"></a>
         <div class="subscribe-overlay-content">
             
-            <img class="subscribe-overlay-logo" src="/jasper2/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
+            <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
             
             <h1 class="subscribe-overlay-title">Subscribe to 你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</h1>
             <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered
@@ -1005,7 +1005,7 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
-    <script type="text/javascript" src="/jasper2/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
     <!--script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script-->
 
     <!-- Paginator increased to "infinit" in _config.yml -->
@@ -1013,7 +1013,7 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
     <!-- <script>
         var maxPages = parseInt('');
     </script>
-    <script src="/jasper2/assets/js/infinitescroll.js"></script> -->
+    <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
     

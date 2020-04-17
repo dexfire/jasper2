@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/jasper2/tag/book/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/jasper2/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:22:25+00:00</updated>
-  <id>/jasper2/tag/book/feed.xml</id>
+  <link href="/tag/book/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:33:34+00:00</updated>
+  <id>/tag/book/feed.xml</id>
 
   
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">【书评】《思考力：哈佛教你打破常规、超越障碍的深度思维》</title>
-      <link href="/jasper2/%E6%80%9D%E8%80%83%E5%8A%9B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0" rel="alternate" type="text/html" title="【书评】《思考力：哈佛教你打破常规、超越障碍的深度思维》" />
+      <link href="/%E6%80%9D%E8%80%83%E5%8A%9B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0" rel="alternate" type="text/html" title="【书评】《思考力：哈佛教你打破常规、超越障碍的深度思维》" />
       <published>2020-04-11T08:29:00+00:00</published>
       <updated>2020-04-11T08:29:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E2%98%85%E3%80%91%E3%80%8A%E6%80%9D%E8%80%83%E5%8A%9B%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0</id>
-      <content type="html" xml:base="/jasper2/%E6%80%9D%E8%80%83%E5%8A%9B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0">&lt;h1 id=&quot;思考力哈佛教你打破常规超越障碍的深度思维读书笔记&quot;&gt;《思考力：哈佛教你打破常规、超越障碍的深度思维》读书笔记&lt;/h1&gt;
+      <id>/%E3%80%90%E2%98%85%E3%80%91%E3%80%8A%E6%80%9D%E8%80%83%E5%8A%9B%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0</id>
+      <content type="html" xml:base="/%E6%80%9D%E8%80%83%E5%8A%9B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0">&lt;h1 id=&quot;思考力哈佛教你打破常规超越障碍的深度思维读书笔记&quot;&gt;《思考力：哈佛教你打破常规、超越障碍的深度思维》读书笔记&lt;/h1&gt;
 
 &lt;p&gt;首先，开头读到这本书，觉得它也是一股满满的鸡汤味，语言虽有依据，但还是有蹭哈佛热度的嫌疑，许多值得商榷的点模糊带过或者绝对化，不过总得方向是不错的。&lt;/p&gt;
 
@@ -144,11 +144,11 @@
   
     <entry>
       <title type="html">【书评】《爱的艺术》弗洛姆</title>
-      <link href="/jasper2/%E4%B9%A6%E8%AF%84-%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF-%E5%BC%97%E6%B4%9B%E5%A7%86" rel="alternate" type="text/html" title="【书评】《爱的艺术》弗洛姆" />
+      <link href="/%E4%B9%A6%E8%AF%84-%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF-%E5%BC%97%E6%B4%9B%E5%A7%86" rel="alternate" type="text/html" title="【书评】《爱的艺术》弗洛姆" />
       <published>2020-03-29T03:29:00+00:00</published>
       <updated>2020-03-29T03:29:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E4%B9%A6%E8%AF%84%E3%80%91%E3%80%8A%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E5%BC%97%E6%B4%9B%E5%A7%86</id>
-      <content type="html" xml:base="/jasper2/%E4%B9%A6%E8%AF%84-%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF-%E5%BC%97%E6%B4%9B%E5%A7%86">&lt;h1 id=&quot;书评爱的艺术弗洛姆&quot;&gt;【书评】《爱的艺术》弗洛姆&lt;/h1&gt;
+      <id>/%E3%80%90%E4%B9%A6%E8%AF%84%E3%80%91%E3%80%8A%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E5%BC%97%E6%B4%9B%E5%A7%86</id>
+      <content type="html" xml:base="/%E4%B9%A6%E8%AF%84-%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF-%E5%BC%97%E6%B4%9B%E5%A7%86">&lt;h1 id=&quot;书评爱的艺术弗洛姆&quot;&gt;【书评】《爱的艺术》弗洛姆&lt;/h1&gt;
 
 &lt;p&gt;这是一本深入探讨爱的意义与爱的理论实践的书，但如作者在前言中所说，这并非一本传授所谓爱的艺术秘诀的书。&lt;/p&gt;
 
@@ -304,11 +304,11 @@
   
     <entry>
       <title type="html">【随想】你的读书境界，决定你的人生高度</title>
-      <link href="/jasper2/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C-%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6" rel="alternate" type="text/html" title="【随想】你的读书境界，决定你的人生高度" />
+      <link href="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C-%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6" rel="alternate" type="text/html" title="【随想】你的读书境界，决定你的人生高度" />
       <published>2020-03-08T14:27:00+00:00</published>
       <updated>2020-03-08T14:27:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C,%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6</id>
-      <content type="html" xml:base="/jasper2/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C-%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6">&lt;h1 id=&quot;你的读书境界决定你的人生高度&quot;&gt;你的读书境界，决定你的人生高度&lt;/h1&gt;
+      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C,%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6</id>
+      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E4%BD%A0%E7%9A%84%E8%AF%BB%E4%B9%A6%E5%A2%83%E7%95%8C-%E5%86%B3%E5%AE%9A%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E9%AB%98%E5%BA%A6">&lt;h1 id=&quot;你的读书境界决定你的人生高度&quot;&gt;你的读书境界，决定你的人生高度&lt;/h1&gt;
 
 &lt;p&gt;读书，是世界上门槛最低的高贵举动。它改变你的容颜，丰富你的思想，提升你的逻辑、谈吐。在阅读上花的每一秒，都将沉淀成将来更好的你。&lt;/p&gt;
 

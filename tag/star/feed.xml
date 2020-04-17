@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/jasper2/tag/star/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/jasper2/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:22:25+00:00</updated>
-  <id>/jasper2/tag/star/feed.xml</id>
+  <link href="/tag/star/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:33:34+00:00</updated>
+  <id>/tag/star/feed.xml</id>
 
   
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">【C/C++】C/C++中调用dll动态链接库的方法</title>
-      <link href="/jasper2/C_C++-C_C++%E4%B8%AD%E8%B0%83%E7%94%A8dll%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95" rel="alternate" type="text/html" title="【C/C++】C/C++中调用dll动态链接库的方法" />
+      <link href="/C_C++-C_C++%E4%B8%AD%E8%B0%83%E7%94%A8dll%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95" rel="alternate" type="text/html" title="【C/C++】C/C++中调用dll动态链接库的方法" />
       <published>2020-04-14T01:14:28+00:00</published>
       <updated>2020-04-14T01:14:28+00:00</updated>
-      <id>/jasper2/%E3%80%90C_C++%E3%80%91C_C++%E4%B8%AD%E8%B0%83%E7%94%A8dll%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95</id>
-      <content type="html" xml:base="/jasper2/C_C++-C_C++%E4%B8%AD%E8%B0%83%E7%94%A8dll%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95">&lt;h1 id=&quot;cccc中调用dll动态链接库的方法&quot;&gt;【C/C++】C/C++中调用dll动态链接库的方法&lt;/h1&gt;
+      <id>/%E3%80%90C_C++%E3%80%91C_C++%E4%B8%AD%E8%B0%83%E7%94%A8dll%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95</id>
+      <content type="html" xml:base="/C_C++-C_C++%E4%B8%AD%E8%B0%83%E7%94%A8dll%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95">&lt;h1 id=&quot;cccc中调用dll动态链接库的方法&quot;&gt;【C/C++】C/C++中调用dll动态链接库的方法&lt;/h1&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*.dll&lt;/code&gt;是Windows平台中动态链接库的后缀名，由于函数和资源复用是非常基础的设计原则，所以动态链接库无论是何种平台，何种领域的应用软件中的使用都非常广泛。&lt;/p&gt;
 
@@ -158,11 +158,11 @@
   
     <entry>
       <title type="html">【★ 随想】我们为什么一定要有取悦自己与他人的能力</title>
-      <link href="/jasper2/%E7%81%AB%E8%8A%B1-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%89%E5%8F%96%E6%82%A6%E8%87%AA%E5%B7%B1%E4%B8%8E%E4%BB%96%E4%BA%BA%E7%9A%84%E8%83%BD%E5%8A%9B" rel="alternate" type="text/html" title="【★ 随想】我们为什么一定要有取悦自己与他人的能力" />
+      <link href="/%E7%81%AB%E8%8A%B1-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%89%E5%8F%96%E6%82%A6%E8%87%AA%E5%B7%B1%E4%B8%8E%E4%BB%96%E4%BA%BA%E7%9A%84%E8%83%BD%E5%8A%9B" rel="alternate" type="text/html" title="【★ 随想】我们为什么一定要有取悦自己与他人的能力" />
       <published>2020-04-11T10:17:00+00:00</published>
       <updated>2020-04-11T10:17:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E2%98%85%20%E7%81%AB%E8%8A%B1%E3%80%91%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%89%E5%8F%96%E6%82%A6%E8%87%AA%E5%B7%B1%E4%B8%8E%E4%BB%96%E4%BA%BA%E7%9A%84%E8%83%BD%E5%8A%9B</id>
-      <content type="html" xml:base="/jasper2/%E7%81%AB%E8%8A%B1-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%89%E5%8F%96%E6%82%A6%E8%87%AA%E5%B7%B1%E4%B8%8E%E4%BB%96%E4%BA%BA%E7%9A%84%E8%83%BD%E5%8A%9B">&lt;h1 id=&quot;我们为什么一定要有取悦自己与他人的能力&quot;&gt;我们为什么一定要有取悦自己与他人的能力&lt;/h1&gt;
+      <id>/%E3%80%90%E2%98%85%20%E7%81%AB%E8%8A%B1%E3%80%91%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%89%E5%8F%96%E6%82%A6%E8%87%AA%E5%B7%B1%E4%B8%8E%E4%BB%96%E4%BA%BA%E7%9A%84%E8%83%BD%E5%8A%9B</id>
+      <content type="html" xml:base="/%E7%81%AB%E8%8A%B1-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%89%E5%8F%96%E6%82%A6%E8%87%AA%E5%B7%B1%E4%B8%8E%E4%BB%96%E4%BA%BA%E7%9A%84%E8%83%BD%E5%8A%9B">&lt;h1 id=&quot;我们为什么一定要有取悦自己与他人的能力&quot;&gt;我们为什么一定要有取悦自己与他人的能力&lt;/h1&gt;
 
 &lt;h2 id=&quot;取悦自己自娱自乐的能力&quot;&gt;“取悦”自己——自娱自乐的能力&lt;/h2&gt;
 
@@ -202,11 +202,11 @@
   
     <entry>
       <title type="html">【★ 随想】世界上为什么会有这么多无聊的人？</title>
-      <link href="/jasper2/,-%E9%9A%8F%E6%83%B3-%E4%B8%96%E7%95%8C%E4%B8%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E8%BF%99%E4%B9%88%E5%A4%9A%E6%97%A0%E8%81%8A%E7%9A%84%E4%BA%BA" rel="alternate" type="text/html" title="【★ 随想】世界上为什么会有这么多无聊的人？" />
+      <link href="/,-%E9%9A%8F%E6%83%B3-%E4%B8%96%E7%95%8C%E4%B8%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E8%BF%99%E4%B9%88%E5%A4%9A%E6%97%A0%E8%81%8A%E7%9A%84%E4%BA%BA" rel="alternate" type="text/html" title="【★ 随想】世界上为什么会有这么多无聊的人？" />
       <published>2020-04-08T10:17:00+00:00</published>
       <updated>2020-04-08T10:17:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E2%98%85,%20%E9%9A%8F%E6%83%B3%E3%80%91%E4%B8%96%E7%95%8C%E4%B8%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E8%BF%99%E4%B9%88%E5%A4%9A%E6%97%A0%E8%81%8A%E7%9A%84%E4%BA%BA%3F</id>
-      <content type="html" xml:base="/jasper2/,-%E9%9A%8F%E6%83%B3-%E4%B8%96%E7%95%8C%E4%B8%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E8%BF%99%E4%B9%88%E5%A4%9A%E6%97%A0%E8%81%8A%E7%9A%84%E4%BA%BA">&lt;h1 id=&quot;-随想世界上为什么会有这么多无聊的人&quot;&gt;【★ 随想】世界上为什么会有这么多无聊的人？&lt;/h1&gt;
+      <id>/%E3%80%90%E2%98%85,%20%E9%9A%8F%E6%83%B3%E3%80%91%E4%B8%96%E7%95%8C%E4%B8%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E8%BF%99%E4%B9%88%E5%A4%9A%E6%97%A0%E8%81%8A%E7%9A%84%E4%BA%BA%3F</id>
+      <content type="html" xml:base="/,-%E9%9A%8F%E6%83%B3-%E4%B8%96%E7%95%8C%E4%B8%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E8%BF%99%E4%B9%88%E5%A4%9A%E6%97%A0%E8%81%8A%E7%9A%84%E4%BA%BA">&lt;h1 id=&quot;-随想世界上为什么会有这么多无聊的人&quot;&gt;【★ 随想】世界上为什么会有这么多无聊的人？&lt;/h1&gt;
 
 &lt;p&gt;是啊，这世上为什么要有这么多无聊的人呢？刷番剧、聚餐、蹦迪、打架、水贴吧、&lt;br /&gt;
 刷微博、看抖音、做表情包、玩梗、写游戏、打游戏、游戏比赛、看游戏比赛、做直播、看直播、&lt;br /&gt;
@@ -249,11 +249,11 @@
   
     <entry>
       <title type="html">【★★★】人是怎样废掉的？</title>
-      <link href="/jasper2/%E4%BA%BA%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BA%9F%E6%8E%89%E7%9A%84" rel="alternate" type="text/html" title="【★★★】人是怎样废掉的？" />
+      <link href="/%E4%BA%BA%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BA%9F%E6%8E%89%E7%9A%84" rel="alternate" type="text/html" title="【★★★】人是怎样废掉的？" />
       <published>2020-04-08T09:17:00+00:00</published>
       <updated>2020-04-08T09:17:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E2%98%85%E2%98%85%E2%98%85%E3%80%91%E4%BA%BA%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BA%9F%E6%8E%89%E7%9A%84%3F</id>
-      <content type="html" xml:base="/jasper2/%E4%BA%BA%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BA%9F%E6%8E%89%E7%9A%84">&lt;h1 id=&quot;人是怎样废掉的&quot;&gt;【★★★】人是怎样废掉的？&lt;/h1&gt;
+      <id>/%E3%80%90%E2%98%85%E2%98%85%E2%98%85%E3%80%91%E4%BA%BA%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BA%9F%E6%8E%89%E7%9A%84%3F</id>
+      <content type="html" xml:base="/%E4%BA%BA%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BA%9F%E6%8E%89%E7%9A%84">&lt;h1 id=&quot;人是怎样废掉的&quot;&gt;【★★★】人是怎样废掉的？&lt;/h1&gt;
 
 &lt;h2 id=&quot;知乎-泠川&quot;&gt;知乎-泠川&lt;/h2&gt;
 &lt;p&gt;来源：知乎-泠川
@@ -444,11 +444,11 @@
   
     <entry>
       <title type="html">【★】你从人际交往中悟到了什么？</title>
-      <link href="/jasper2/%E4%BD%A0%E4%BB%8E%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E6%82%9F%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88" rel="alternate" type="text/html" title="【★】你从人际交往中悟到了什么？" />
+      <link href="/%E4%BD%A0%E4%BB%8E%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E6%82%9F%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88" rel="alternate" type="text/html" title="【★】你从人际交往中悟到了什么？" />
       <published>2020-03-28T09:30:00+00:00</published>
       <updated>2020-03-28T09:30:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E2%98%85%E3%80%91%E4%BD%A0%E4%BB%8E%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E6%82%9F%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%3F</id>
-      <content type="html" xml:base="/jasper2/%E4%BD%A0%E4%BB%8E%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E6%82%9F%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88">&lt;h1 id=&quot;你从人际交往中悟到了什么&quot;&gt;【★】你从人际交往中悟到了什么？&lt;/h1&gt;
+      <id>/%E3%80%90%E2%98%85%E3%80%91%E4%BD%A0%E4%BB%8E%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E6%82%9F%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%3F</id>
+      <content type="html" xml:base="/%E4%BD%A0%E4%BB%8E%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E6%82%9F%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88">&lt;h1 id=&quot;你从人际交往中悟到了什么&quot;&gt;【★】你从人际交往中悟到了什么？&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;有技巧地夸奖一个人是&lt;/li&gt;

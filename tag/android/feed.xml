@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/jasper2/tag/android/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/jasper2/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:22:25+00:00</updated>
-  <id>/jasper2/tag/android/feed.xml</id>
+  <link href="/tag/android/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:33:34+00:00</updated>
+  <id>/tag/android/feed.xml</id>
 
   
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">Android 逆向工程概述</title>
-      <link href="/jasper2/Android%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0" rel="alternate" type="text/html" title="Android 逆向工程概述" />
+      <link href="/Android%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0" rel="alternate" type="text/html" title="Android 逆向工程概述" />
       <published>2020-04-11T16:49:00+00:00</published>
       <updated>2020-04-11T16:49:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E2%98%85%E3%80%91Android%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0</id>
-      <content type="html" xml:base="/jasper2/Android%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0">&lt;h1 id=&quot;android-逆向工程概述&quot;&gt;Android 逆向工程概述&lt;/h1&gt;
+      <id>/%E3%80%90%E2%98%85%E3%80%91Android%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0</id>
+      <content type="html" xml:base="/Android%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0">&lt;h1 id=&quot;android-逆向工程概述&quot;&gt;Android 逆向工程概述&lt;/h1&gt;
 
 &lt;p&gt;逆向工程，指的是反编译原始代码，最终获取或者近似获取源代码为目的。当然，这通常属于违法行为，而且通常商业产品会对二进制代码进行保护，以防止恶意的反编译。不过呢，反编译也是学习的好方法，我们可以通过反编译，来对大公司产品架构窥知一二，也可以通过分析了解一些核心方法的逻辑，饶过应用逻辑来获取部分应用中的资源。&lt;/p&gt;
 

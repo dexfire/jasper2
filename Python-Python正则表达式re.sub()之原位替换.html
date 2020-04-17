@@ -16,9 +16,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
     <!-- prism.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
         integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q=" crossorigin="anonymous" />
@@ -46,9 +46,9 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description"
     content="The professional publishing platform" />
-<link rel="shortcut icon" href="/jasper2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="canonical"
-    href="/jasper2/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" />
+    href="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
 
@@ -60,9 +60,9 @@
 <meta property="og:description"
     content="【Python】Python正则表达式re.sub()之原位替换 首先讲一下背景，这里是一个API网页接口，其中的html内容为了便于使用json进行传输，使用了许多escape 格式，类似 \x22 \x3C 的样子，这里贴一部分： &gt;&gt;&gt; feed = r'class=\x22info-detail\x22&gt;\x3Cspan class=\x22 ui-mr8 state\x22 &gt;3月7日 22:01\x3C\/span&gt;\x3Ca href=\x22javascript:;\x22 data-cmd=\x22qz_sign\x22 class=\x22f-sign-show state\x22 title=\x22我也要设置\x22&gt;\x3C\/a&gt;\x3C\/div&gt;\x3C\/div&gt;\x3C\/div&gt;\x3Cdiv class=\x22f-single-content f-wrap\x22&gt;\x3Cdiv class=\x22f-item f-s-i\x22 id=\x22feed_....._311_0_1583589681_0_1\x22 data-feedsflag=\x22\x22 data-iswupfeed=\x221\x22 data-key=\x227e6e330318a9635e0a8f0000\x22 data-specialtype=\x22\x22 data-extend-info=\x220_0_1_0_0_0_0|08009cc0040f5001|0008000000000000\x22 data-functype=\x22\x22 data-hasfollowed=\x221\x22&gt;\x3Cdiv class=\x22f-info qz_info_cut\x22&gt;我教你们怎么做舔狗，一天三遍请安记得把称呼带上，哥哥早上好，哥哥晚上好，对方回你一句话赶紧十句话顶上去嘘寒问暖要安排上，吃了吗？在干嘛？下雪了吗？下雨了吗？冷吗？加衣服了吗？哥哥你那里降温了记得添衣服，哥哥你那里下雨了记得带伞，哥哥你在哪？哥哥我请你吃饭，哥哥晚上有时间吗？哥哥中午有时间吗？哥哥辛苦了，哥哥穿这身真帅，哥哥你看今晚的星星，哥哥你要睡觉了吗？哥哥我觉得这个特别适合你就给你买了你别不高 \x3Ca' 经过一反度娘科普，发现其实也就是对html标签tag中的&lt; &gt; ' ' 进行了转义，但又不一定只有这几种情况，总的来讲，这些符号全都属于 ascii 编码的范畴，所以我们要做的就是对这些转义字符进行逆向解码。 首先呢，二狗在这里尽量尝试不借助Python文档以外的外界超自然力量进行研究，首先想到这个可否使用 Python 自带的编解码函数进行解码呢？毕竟 Python3 对自然语言编码可是增强了一大截，这点小问题应该难不倒万能胶语言的嘛？ 我们的基本思路是： 方案一：首先看是否存在 str" />
 <meta property="og:url"
-    content="/jasper2/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" />
+    content="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" />
 <meta property="og:image"
-    content="/jasper2/python.png" />
+    content="/python.png" />
 <meta property="article:publisher" content="https://www.facebook.com/ghost" />
 <meta property="article:author" content="https://www.facebook.com/ghost" />
 <meta property="article:published_time"
@@ -76,9 +76,9 @@
     content="【Python】Python正则表达式re.sub()之原位替换" />
 <meta name="twitter:description"
     content="【Python】Python正则表达式re.sub()之原位替换 首先讲一下背景，这里是一个API网页接口，其中的html内容为了便于使用json进行传输，使用了许多escape 格式，类似 \x22 \x3C 的样子，这里贴一部分： &gt;&gt;&gt; feed = r'class=\x22info-detail\x22&gt;\x3Cspan class=\x22 ui-mr8 state\x22 &gt;3月7日 22:01\x3C\/span&gt;\x3Ca href=\x22javascript:;\x22 data-cmd=\x22qz_sign\x22 class=\x22f-sign-show state\x22 title=\x22我也要设置\x22&gt;\x3C\/a&gt;\x3C\/div&gt;\x3C\/div&gt;\x3C\/div&gt;\x3Cdiv class=\x22f-single-content f-wrap\x22&gt;\x3Cdiv class=\x22f-item f-s-i\x22 id=\x22feed_....._311_0_1583589681_0_1\x22 data-feedsflag=\x22\x22 data-iswupfeed=\x221\x22 data-key=\x227e6e330318a9635e0a8f0000\x22 data-specialtype=\x22\x22 data-extend-info=\x220_0_1_0_0_0_0|08009cc0040f5001|0008000000000000\x22 data-functype=\x22\x22 data-hasfollowed=\x221\x22&gt;\x3Cdiv class=\x22f-info qz_info_cut\x22&gt;我教你们怎么做舔狗，一天三遍请安记得把称呼带上，哥哥早上好，哥哥晚上好，对方回你一句话赶紧十句话顶上去嘘寒问暖要安排上，吃了吗？在干嘛？下雪了吗？下雨了吗？冷吗？加衣服了吗？哥哥你那里降温了记得添衣服，哥哥你那里下雨了记得带伞，哥哥你在哪？哥哥我请你吃饭，哥哥晚上有时间吗？哥哥中午有时间吗？哥哥辛苦了，哥哥穿这身真帅，哥哥你看今晚的星星，哥哥你要睡觉了吗？哥哥我觉得这个特别适合你就给你买了你别不高 \x3Ca' 经过一反度娘科普，发现其实也就是对html标签tag中的&lt; &gt; ' ' 进行了转义，但又不一定只有这几种情况，总的来讲，这些符号全都属于 ascii 编码的范畴，所以我们要做的就是对这些转义字符进行逆向解码。 首先呢，二狗在这里尽量尝试不借助Python文档以外的外界超自然力量进行研究，首先想到这个可否使用 Python 自带的编解码函数进行解码呢？毕竟 Python3 对自然语言编码可是增强了一大截，这点小问题应该难不倒万能胶语言的嘛？ 我们的基本思路是： 方案一：首先看是否存在 str" />
-<meta name="twitter:url" content="/jasper2/" />
+<meta name="twitter:url" content="/" />
 <meta name="twitter:image"
-    content="/jasper2/python.png" />
+    content="/python.png" />
 <meta name="twitter:label1" content="Written by" />
 <meta name="twitter:data1" content="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
 <meta name="twitter:label2" content="Filed under" />
@@ -95,18 +95,18 @@
     "publisher": {
         "@type": "Organization",
         "name": "你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ",
-        "logo": "/jasper2/assets/images/blog-icon.png"
+        "logo": "/assets/images/blog-icon.png"
     },
-    "url": "/jasper2/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2",
+    "url": "/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2",
     "image": {
         "@type": "ImageObject",
-        "url": "/jasper2/python.png",
+        "url": "/python.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/jasper2/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2"
+        "@id": "/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2"
     },
     "description": "【Python】Python正则表达式re.sub()之原位替换 首先讲一下背景，这里是一个API网页接口，其中的html内容为了便于使用json进行传输，使用了许多escape 格式，类似 \x22 \x3C 的样子，这里贴一部分： &gt;&gt;&gt; feed = r'class=\x22info-detail\x22&gt;\x3Cspan class=\x22 ui-mr8 state\x22 &gt;3月7日 22:01\x3C\/span&gt;\x3Ca href=\x22javascript:;\x22 data-cmd=\x22qz_sign\x22 class=\x22f-sign-show state\x22 title=\x22我也要设置\x22&gt;\x3C\/a&gt;\x3C\/div&gt;\x3C\/div&gt;\x3C\/div&gt;\x3Cdiv class=\x22f-single-content f-wrap\x22&gt;\x3Cdiv class=\x22f-item f-s-i\x22 id=\x22feed_....._311_0_1583589681_0_1\x22 data-feedsflag=\x22\x22 data-iswupfeed=\x221\x22 data-key=\x227e6e330318a9635e0a8f0000\x22 data-specialtype=\x22\x22 data-extend-info=\x220_0_1_0_0_0_0|08009cc0040f5001|0008000000000000\x22 data-functype=\x22\x22 data-hasfollowed=\x221\x22&gt;\x3Cdiv class=\x22f-info qz_info_cut\x22&gt;我教你们怎么做舔狗，一天三遍请安记得把称呼带上，哥哥早上好，哥哥晚上好，对方回你一句话赶紧十句话顶上去嘘寒问暖要安排上，吃了吗？在干嘛？下雪了吗？下雨了吗？冷吗？加衣服了吗？哥哥你那里降温了记得添衣服，哥哥你那里下雨了记得带伞，哥哥你在哪？哥哥我请你吃饭，哥哥晚上有时间吗？哥哥中午有时间吗？哥哥辛苦了，哥哥穿这身真帅，哥哥你看今晚的星星，哥哥你要睡觉了吗？哥哥我觉得这个特别适合你就给你买了你别不高 \x3Ca' 经过一反度娘科普，发现其实也就是对html标签tag中的&lt; &gt; ' ' 进行了转义，但又不一定只有这几种情况，总的来讲，这些符号全都属于 ascii 编码的范畴，所以我们要做的就是对这些转义字符进行逆向解码。 首先呢，二狗在这里尽量尝试不借助Python文档以外的外界超自然力量进行研究，首先想到这个可否使用 Python 自带的编解码函数进行解码呢？毕竟 Python3 对自然语言编码可是增强了一大截，这点小问题应该难不倒万能胶语言的嘛？ 我们的基本思路是： 方案一：首先看是否存在 str"
 }
@@ -123,7 +123,7 @@
 <meta name="generator" content="Jekyll 3.6.2" />
 <link rel="alternate" type="application/rss+xml"
     title="【Python】Python正则表达式re.sub()之原位替换"
-    href="/jasper2/feed.xml" />
+    href="/feed.xml" />
 
 <!-- Katex Math Display -->
 
@@ -152,18 +152,18 @@ into the {body} of the default.hbs template -->
     <div class="site-nav-left">
         
             
-                <a class="site-nav-logo" href="/jasper2/"><img src="/jasper2/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" /></a>
+                <a class="site-nav-logo" href="/"><img src="/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" /></a>
             
         
         
             <ul class="nav" role="menu">
-    <li class="nav-home" role="menuitem"><a href="/jasper2/">Home</a></li>
-    <li class="nav-about" role="menuitem"><a href="/jasper2/author/dexfire/">Dexfire</a></li>
-    <li class="nav-getting-started" role="menuitem"><a href="/jasper2/tag/sweet/">Sweets</a>
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/author/dexfire/">Dexfire</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/sweet/">Sweets</a>
     </li>
-    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/ai/">AI</a></li>
-    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/embed/">Embed</a></li>
-    <li class="nav-about" role="menuitem"><a href="/jasper2/tag/star/">Stars</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/ai/">AI</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/embed/">Embed</a></li>
+    <li class="nav-about" role="menuitem"><a href="/tag/star/">Stars</a></li>
 </ul>
         
     </div>
@@ -202,11 +202,11 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         
                             
-                                <a href='/jasper2/tag/python/'>PYTHON</a>,
+                                <a href='/tag/python/'>PYTHON</a>,
                             
                         
                             
-                                <a href='/jasper2/tag/dev/'>DEV</a>
+                                <a href='/tag/dev/'>DEV</a>
                             
                         
                     
@@ -215,7 +215,7 @@ into the {body} of the default.hbs template -->
             </header>
 
             
-                <figure class="post-full-image" style="background-image: url(/jasper2/assets/images/python.png)"></figure>
+                <figure class="post-full-image" style="background-image: url(/assets/images/python.png)"></figure>
             
 
             <section class="post-full-content">
@@ -389,11 +389,11 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
                     
                         <section class="author-card">
                             
-                                <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="dexfire"/>
+                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire"/>
                             
                             <section class="author-card-content">
                                 <h4 class="author-card-name">
-                                    <a href="/jasper2/author/dexfire">Dexfire Alex</a>
+                                    <a href="/author/dexfire">Dexfire Alex</a>
                                 </h4>
                                 
                                     <p>水中月是天上月，眼前人是心上人</p>
@@ -401,7 +401,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
                             </section>
                         </section>
                         <div class="post-full-footer-right">
-                            <a class="author-card-button" href="/jasper2/author/dexfire">Read More</a>
+                            <a class="author-card-button" href="/author/dexfire">Read More</a>
                         </div>
                     
                 
@@ -427,14 +427,14 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
                 
                 
                 
-                    <article class="read-next-card"  style="background-image: url(/jasper2/assets/images/blog-cover.jpg)" >
+                    <article class="read-next-card"  style="background-image: url(/assets/images/blog-cover.jpg)" >
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash;
                                 你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ
                                 &mdash;</small>
                             
                                 <h3 class="read-next-card-header-title">
-                                    <a href="/jasper2/tag/python/">Python</a>
+                                    <a href="/tag/python/">Python</a>
                                 </h3>
                             
                         </header>
@@ -459,7 +459,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
                                             
                                             
                                                 <li>
-                                                    <a href="/jasper2/Python-Python-%E8%BF%90%E8%A1%8Cshell%E8%84%9A%E6%9C%AC">【Python】Python 运行shell脚本</a>
+                                                    <a href="/Python-Python-%E8%BF%90%E8%A1%8Cshell%E8%84%9A%E6%9C%AC">【Python】Python 运行shell脚本</a>
                                                 </li>
                                             
                                         
@@ -500,7 +500,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
                                             
                                             
                                                 <li>
-                                                    <a href="/jasper2/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88">【Python】使用语句筛选和构建新的list, dict, set等集合</a>
+                                                    <a href="/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88">【Python】使用语句筛选和构建新的list, dict, set等集合</a>
                                                 </li>
                                             
                                         
@@ -563,7 +563,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
                                             
                                             
                                                 <li>
-                                                    <a href="/jasper2/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">【Python基础】日志处理之logging模块</a>
+                                                    <a href="/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">【Python基础】日志处理之logging模块</a>
                                                 </li>
                                             
                                         
@@ -772,7 +772,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/jasper2/tag/python/">
+                            <a href="/tag/python/">
                                 
                                     See all
                                     9
@@ -791,7 +791,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 <article class="post-card  no-image">
     
     <div class="post-card-content">
-        <a class="post-card-content-link" href="/jasper2/%E8%BD%AC%E8%BD%BD-%E4%BD%A0%E7%9A%84%E8%BA%AB%E6%9D%90-%E5%87%BA%E5%8D%96%E4%BA%86%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%B1%82%E6%AC%A1">
+        <a class="post-card-content-link" href="/%E8%BD%AC%E8%BD%BD-%E4%BD%A0%E7%9A%84%E8%BA%AB%E6%9D%90-%E5%87%BA%E5%8D%96%E4%BA%86%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%B1%82%E6%AC%A1">
             <header class="post-card-header">
                 
 
@@ -839,15 +839,15 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 
 <article class="post-card post-template">
     
-        <a class="post-card-image-link" href="/jasper2/%E9%9A%8F%E6%83%B3-%E8%BF%99%E4%B8%96%E4%B8%8A%E4%B8%8D%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA-%E5%A4%A7%E5%A4%9A%E6%98%AF%E8%BF%87%E5%88%86%E8%87%AA%E7%A7%81%E7%9A%84%E4%BA%BA">
+        <a class="post-card-image-link" href="/%E9%9A%8F%E6%83%B3-%E8%BF%99%E4%B8%96%E4%B8%8A%E4%B8%8D%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA-%E5%A4%A7%E5%A4%9A%E6%98%AF%E8%BF%87%E5%88%86%E8%87%AA%E7%A7%81%E7%9A%84%E4%BA%BA">
             
-                <div class="post-card-image" style="background-image: url(/jasper2/assets/images/4d13e10460727926.jpg)"></div>
+                <div class="post-card-image" style="background-image: url(/assets/images/4d13e10460727926.jpg)"></div>
             
-            <!-- <div class="post-card-image" style="background-image: url(/jasper2/4d13e10460727926.jpg)"></div> -->
+            <!-- <div class="post-card-image" style="background-image: url(/4d13e10460727926.jpg)"></div> -->
         </a>
     
     <div class="post-card-content">
-        <a class="post-card-content-link" href="/jasper2/%E9%9A%8F%E6%83%B3-%E8%BF%99%E4%B8%96%E4%B8%8A%E4%B8%8D%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA-%E5%A4%A7%E5%A4%9A%E6%98%AF%E8%BF%87%E5%88%86%E8%87%AA%E7%A7%81%E7%9A%84%E4%BA%BA">
+        <a class="post-card-content-link" href="/%E9%9A%8F%E6%83%B3-%E8%BF%99%E4%B8%96%E4%B8%8A%E4%B8%8D%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%BA%BA-%E5%A4%A7%E5%A4%9A%E6%98%AF%E8%BF%87%E5%88%86%E8%87%AA%E7%A7%81%E7%9A%84%E4%BA%BA">
             <header class="post-card-header">
                 
                     
@@ -883,10 +883,10 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
             
                 
                     
-                        <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
                     
                     <span class="post-card-author">
-                        <a href="/jasper2/author/dexfire/">Dexfire Alex</a>
+                        <a href="/author/dexfire/">Dexfire Alex</a>
                     </span>
                 
             
@@ -909,9 +909,9 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
 <!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
 <div class="floating-header">
     <div class="floating-header-logo">
-        <a href="/jasper2/">
+        <a href="/">
             
-                <img src="/jasper2/assets/images/favicon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ icon" />
+                <img src="/assets/images/favicon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ icon" />
             
             <span>你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</span>
         </a>
@@ -953,13 +953,13 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="/jasper2/">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</a> &copy;
+                <section class="copyright"><a href="/">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</a> &copy;
                     2020</section>
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
                 <nav class="site-footer-nav">
-                    <a href="/jasper2/">Latest Posts</a>
+                    <a href="/">Latest Posts</a>
                     <a href="https://facebook.com/ghost" target="_blank"
                         rel="noopener">Facebook</a>
                     <a href="https://twitter.com/tryghost" target="_blank"
@@ -981,7 +981,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
         <a class="subscribe-overlay-close" href="#"></a>
         <div class="subscribe-overlay-content">
             
-            <img class="subscribe-overlay-logo" src="/jasper2/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
+            <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
             
             <h1 class="subscribe-overlay-title">Subscribe to 你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</h1>
             <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered
@@ -1039,7 +1039,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
-    <script type="text/javascript" src="/jasper2/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
     <!--script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script-->
 
     <!-- Paginator increased to "infinit" in _config.yml -->
@@ -1047,7 +1047,7 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
     <!-- <script>
         var maxPages = parseInt('');
     </script>
-    <script src="/jasper2/assets/js/infinitescroll.js"></script> -->
+    <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
     

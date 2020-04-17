@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/jasper2/tag/python/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/jasper2/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:22:25+00:00</updated>
-  <id>/jasper2/tag/python/feed.xml</id>
+  <link href="/tag/python/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:33:34+00:00</updated>
+  <id>/tag/python/feed.xml</id>
 
   
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">【Python】Python 运行shell脚本</title>
-      <link href="/jasper2/Python-Python-%E8%BF%90%E8%A1%8Cshell%E8%84%9A%E6%9C%AC" rel="alternate" type="text/html" title="【Python】Python 运行shell脚本" />
+      <link href="/Python-Python-%E8%BF%90%E8%A1%8Cshell%E8%84%9A%E6%9C%AC" rel="alternate" type="text/html" title="【Python】Python 运行shell脚本" />
       <published>2020-04-13T08:55:18+00:00</published>
       <updated>2020-04-13T08:55:18+00:00</updated>
-      <id>/jasper2/%E3%80%90Python%E3%80%91Python%20%E8%BF%90%E8%A1%8Cshell%E8%84%9A%E6%9C%AC</id>
-      <content type="html" xml:base="/jasper2/Python-Python-%E8%BF%90%E8%A1%8Cshell%E8%84%9A%E6%9C%AC">&lt;h1 id=&quot;pythonpython-运行shell脚本&quot;&gt;【Python】Python 运行shell脚本&lt;/h1&gt;
+      <id>/%E3%80%90Python%E3%80%91Python%20%E8%BF%90%E8%A1%8Cshell%E8%84%9A%E6%9C%AC</id>
+      <content type="html" xml:base="/Python-Python-%E8%BF%90%E8%A1%8Cshell%E8%84%9A%E6%9C%AC">&lt;h1 id=&quot;pythonpython-运行shell脚本&quot;&gt;【Python】Python 运行shell脚本&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://docs.python.org/2/library/os.html#process-management&quot;&gt;15.1.5. Process Management - Python Docs&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;运行进程替换当前进程&quot;&gt;运行进程，替换当前进程&lt;/h2&gt;
@@ -126,11 +126,11 @@
   
     <entry>
       <title type="html">【Python】使用语句筛选和构建新的list, dict, set等集合</title>
-      <link href="/jasper2/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88" rel="alternate" type="text/html" title="【Python】使用语句筛选和构建新的list, dict, set等集合" />
+      <link href="/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88" rel="alternate" type="text/html" title="【Python】使用语句筛选和构建新的list, dict, set等集合" />
       <published>2020-03-28T14:17:00+00:00</published>
       <updated>2020-03-28T14:17:00+00:00</updated>
-      <id>/jasper2/%E3%80%90Python%E3%80%91%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,%20dict,%20set%E7%AD%89%E9%9B%86%E5%90%88</id>
-      <content type="html" xml:base="/jasper2/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88">&lt;h1 id=&quot;python使用语句筛选和构建新的list-dict-set等集合&quot;&gt;【Python】使用语句筛选和构建新的list, dict, set等集合&lt;/h1&gt;
+      <id>/%E3%80%90Python%E3%80%91%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,%20dict,%20set%E7%AD%89%E9%9B%86%E5%90%88</id>
+      <content type="html" xml:base="/Python-%E4%BD%BF%E7%94%A8%E8%AF%AD%E5%8F%A5%E7%AD%9B%E9%80%89%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84list,-dict,-set%E7%AD%89%E9%9B%86%E5%90%88">&lt;h1 id=&quot;python使用语句筛选和构建新的list-dict-set等集合&quot;&gt;【Python】使用语句筛选和构建新的list, dict, set等集合&lt;/h1&gt;
 
 &lt;p&gt;List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.&lt;/p&gt;
 
@@ -204,11 +204,11 @@
   
     <entry>
       <title type="html">【Python基础】日志处理之logging模块</title>
-      <link href="/jasper2/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97" rel="alternate" type="text/html" title="【Python基础】日志处理之logging模块" />
+      <link href="/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97" rel="alternate" type="text/html" title="【Python基础】日志处理之logging模块" />
       <published>2020-03-17T23:10:00+00:00</published>
       <updated>2020-03-17T23:10:00+00:00</updated>
-      <id>/jasper2/%E3%80%90Python%E5%9F%BA%E7%A1%80%E3%80%91%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97</id>
-      <content type="html" xml:base="/jasper2/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">&lt;h1 id=&quot;python基础日志处理之logging模块&quot;&gt;【Python基础】日志处理之logging模块&lt;/h1&gt;
+      <id>/%E3%80%90Python%E5%9F%BA%E7%A1%80%E3%80%91%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97</id>
+      <content type="html" xml:base="/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">&lt;h1 id=&quot;python基础日志处理之logging模块&quot;&gt;【Python基础】日志处理之logging模块&lt;/h1&gt;
 
 &lt;p&gt;logging 是 Python 内建的实用日志输出模块，可以为应用与库定义了实现灵活的事件日志系统的函数与类.&lt;/p&gt;
 
@@ -310,11 +310,11 @@
   
     <entry>
       <title type="html">【Python】Python正则表达式re.sub()之原位替换</title>
-      <link href="/jasper2/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" rel="alternate" type="text/html" title="【Python】Python正则表达式re.sub()之原位替换" />
+      <link href="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2" rel="alternate" type="text/html" title="【Python】Python正则表达式re.sub()之原位替换" />
       <published>2020-03-11T00:49:00+00:00</published>
       <updated>2020-03-11T00:49:00+00:00</updated>
-      <id>/jasper2/%E3%80%90Python%E3%80%91Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2</id>
-      <content type="html" xml:base="/jasper2/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2">&lt;h1 id=&quot;pythonpython正则表达式resub之原位替换&quot;&gt;【Python】Python正则表达式re.sub()之原位替换&lt;/h1&gt;
+      <id>/%E3%80%90Python%E3%80%91Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2</id>
+      <content type="html" xml:base="/Python-Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre.sub()%E4%B9%8B%E5%8E%9F%E4%BD%8D%E6%9B%BF%E6%8D%A2">&lt;h1 id=&quot;pythonpython正则表达式resub之原位替换&quot;&gt;【Python】Python正则表达式re.sub()之原位替换&lt;/h1&gt;
 
 &lt;p&gt;首先讲一下背景，这里是一个API网页接口，其中的html内容为了便于使用json进行传输，使用了许多escape 格式，类似 &lt;code class=&quot;highlighter-rouge&quot;&gt;\x22&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;\x3C&lt;/code&gt; 的样子，这里贴一部分：&lt;/p&gt;
 
@@ -470,11 +470,11 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
   
     <entry>
       <title type="html">【爬虫】QQ空间爬虫简单思路</title>
-      <link href="/jasper2/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF" rel="alternate" type="text/html" title="【爬虫】QQ空间爬虫简单思路" />
+      <link href="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF" rel="alternate" type="text/html" title="【爬虫】QQ空间爬虫简单思路" />
       <published>2020-03-10T11:33:00+00:00</published>
       <updated>2020-03-10T11:33:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF</id>
-      <content type="html" xml:base="/jasper2/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF">&lt;h1 id=&quot;爬虫qq空间爬虫简单思路&quot;&gt;【爬虫】QQ空间爬虫简单思路&lt;/h1&gt;
+      <id>/%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF</id>
+      <content type="html" xml:base="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF">&lt;h1 id=&quot;爬虫qq空间爬虫简单思路&quot;&gt;【爬虫】QQ空间爬虫简单思路&lt;/h1&gt;
 
 &lt;p&gt;我们继续尝试爬取QQ空间的好友动态。现在是大数据当道的时代，爬虫工程师也成了一个关键性的抢手职位，你可以不做一个优秀的爬虫工程师，但掌握一门扎实的爬虫编写技能，是可以为你的职业技能加分的。同时&lt;/p&gt;
 
@@ -1995,11 +1995,11 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
   
     <entry>
       <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
-      <link href="/jasper2/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
+      <link href="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
       <published>2020-03-10T01:00:00+00:00</published>
       <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E6%A4%8D%E6%A0%91%E8%8A%82%E3%80%91%E3%80%8A%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8%E3%80%8B%E7%AE%80%E8%AF%84</id>
-      <content type="html" xml:base="/jasper2/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84">&lt;p&gt;25分钟，收集资料，完成一个简单书评：&lt;/p&gt;
+      <id>/%E3%80%90%E6%A4%8D%E6%A0%91%E8%8A%82%E3%80%91%E3%80%8A%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8%E3%80%8B%E7%AE%80%E8%AF%84</id>
+      <content type="html" xml:base="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84">&lt;p&gt;25分钟，收集资料，完成一个简单书评：&lt;/p&gt;
 
 &lt;h1 id=&quot;云边有个小卖部简评&quot;&gt;《云边有个小卖部》简评&lt;/h1&gt;
 
@@ -2056,11 +2056,11 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
   
     <entry>
       <title type="html">【随想】我什么都做不好，我真的是天生的废物嘛？</title>
-      <link href="/jasper2/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B" rel="alternate" type="text/html" title="【随想】我什么都做不好，我真的是天生的废物嘛？" />
+      <link href="/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B" rel="alternate" type="text/html" title="【随想】我什么都做不好，我真的是天生的废物嘛？" />
       <published>2020-03-10T01:00:00+00:00</published>
       <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/jasper2/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD,%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B%3F</id>
-      <content type="html" xml:base="/jasper2/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B">&lt;h1 id=&quot;随想我什么都做不好我真的是天生的废物嘛&quot;&gt;【随想】我什么都做不好，我真的是天生的废物嘛？&lt;/h1&gt;
+      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD,%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B%3F</id>
+      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B">&lt;h1 id=&quot;随想我什么都做不好我真的是天生的废物嘛&quot;&gt;【随想】我什么都做不好，我真的是天生的废物嘛？&lt;/h1&gt;
 
 &lt;p&gt;“天生我材必有用，千金散尽还复来。”
 在《亲密关系》一书中，&lt;/p&gt;
@@ -2102,11 +2102,11 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
   
     <entry>
       <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
-      <link href="/jasper2/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
+      <link href="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
       <published>2020-03-10T01:00:00+00:00</published>
       <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/jasper2/%E3%80%90QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E3%80%91%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0</id>
-      <content type="html" xml:base="/jasper2/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0">&lt;h1 id=&quot;qq空间爬虫关于qq空间g_tk的生成方法的python实现&quot;&gt;【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现&lt;/h1&gt;
+      <id>/%E3%80%90QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E3%80%91%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0</id>
+      <content type="html" xml:base="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0">&lt;h1 id=&quot;qq空间爬虫关于qq空间g_tk的生成方法的python实现&quot;&gt;【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现&lt;/h1&gt;
 
 &lt;p&gt;QQ空间中的许多API都需要使用一个名叫 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 的请求参数，而实验中证明，如果这个参数错误，会直接导致访问失败，而实际必须参数中也仅仅只有&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;qzonetoken&lt;/code&gt;两个参数是授权必须的（当然还要提供cookie啦）。&lt;/p&gt;
 
@@ -2257,11 +2257,11 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
   
     <entry>
       <title type="html">【python】基本数据类型字符串处理</title>
-      <link href="/jasper2/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" rel="alternate" type="text/html" title="【python】基本数据类型字符串处理" />
+      <link href="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86" rel="alternate" type="text/html" title="【python】基本数据类型字符串处理" />
       <published>2020-03-10T00:39:00+00:00</published>
       <updated>2020-03-10T00:39:00+00:00</updated>
-      <id>/jasper2/%E3%80%90python%E3%80%91%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86</id>
-      <content type="html" xml:base="/jasper2/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86">&lt;h1 id=&quot;python基本数据类型字符串处理&quot;&gt;【python】基本数据类型字符串处理&lt;/h1&gt;
+      <id>/%E3%80%90python%E3%80%91%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86</id>
+      <content type="html" xml:base="/python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86">&lt;h1 id=&quot;python基本数据类型字符串处理&quot;&gt;【python】基本数据类型字符串处理&lt;/h1&gt;
 
 &lt;h2 id=&quot;1-整型int-关键字&quot;&gt;1. 整型：&lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt; 关键字&lt;/h2&gt;
 
@@ -2363,11 +2363,11 @@ After I do the conversion, I’ll probe to see if the string I have is encoded i
   
     <entry>
       <title type="html">Python argparse 模块使用记录</title>
-      <link href="/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97" rel="alternate" type="text/html" title="Python argparse 模块使用记录" />
+      <link href="/Python-argparse-%E6%A8%A1%E5%9D%97" rel="alternate" type="text/html" title="Python argparse 模块使用记录" />
       <published>2020-03-01T20:01:01+00:00</published>
       <updated>2020-03-01T20:01:01+00:00</updated>
-      <id>/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97</id>
-      <content type="html" xml:base="/jasper2/Python-argparse-%E6%A8%A1%E5%9D%97">&lt;p&gt;以下代码是一个 Python 程序，它获取一个整数列表并计算总和或者最大值：&lt;/p&gt;
+      <id>/Python-argparse-%E6%A8%A1%E5%9D%97</id>
+      <content type="html" xml:base="/Python-argparse-%E6%A8%A1%E5%9D%97">&lt;p&gt;以下代码是一个 Python 程序，它获取一个整数列表并计算总和或者最大值：&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;argparse&lt;/span&gt;
 

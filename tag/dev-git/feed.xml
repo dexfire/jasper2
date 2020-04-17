@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/jasper2/tag/dev-git/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/jasper2/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:22:25+00:00</updated>
-  <id>/jasper2/tag/dev-git/feed.xml</id>
+  <link href="/tag/dev-git/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:33:34+00:00</updated>
+  <id>/tag/dev-git/feed.xml</id>
 
   
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">Travis 中的几类数据加密</title>
-      <link href="/jasper2/Travis-encryption-desc" rel="alternate" type="text/html" title="Travis 中的几类数据加密" />
+      <link href="/Travis-encryption-desc" rel="alternate" type="text/html" title="Travis 中的几类数据加密" />
       <published>2020-03-01T20:01:01+00:00</published>
       <updated>2020-03-01T20:01:01+00:00</updated>
-      <id>/jasper2/Travis-encryption-desc</id>
-      <content type="html" xml:base="/jasper2/Travis-encryption-desc">&lt;h1 id=&quot;travis-ci-中的几类数据加密&quot;&gt;travis-ci 中的几类数据加密&lt;/h1&gt;
+      <id>/Travis-encryption-desc</id>
+      <content type="html" xml:base="/Travis-encryption-desc">&lt;h1 id=&quot;travis-ci-中的几类数据加密&quot;&gt;travis-ci 中的几类数据加密&lt;/h1&gt;
 
 &lt;p&gt;travis-ci 是一个托管构建平台，可以检测 Github 项目的 Commit 并随时构建，推送编译测试结果。&lt;/p&gt;
 

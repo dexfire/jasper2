@@ -16,9 +16,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
     <!-- prism.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
         integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q=" crossorigin="anonymous" />
@@ -46,9 +46,9 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description"
     content="The professional publishing platform" />
-<link rel="shortcut icon" href="/jasper2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="canonical"
-    href="/jasper2/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" />
+    href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
 
@@ -60,9 +60,9 @@
 <meta property="og:description"
     content="编译原理 什么是编译？ 编译是指将高级语言代码（C，C++，Java等），通过低级语言（通常为汇编）实现的过程，最终输出为机器可执行的二进制机器码文件。 最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。 编译工作的几个步骤： 编译过程通常可以抽象为几个过程： 预处理 编译 链接 C/C++ 语言编译流程与编译工具链(toolchain) C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。 一款盛名远扬的开源编译工具链： GCC: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)： 以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，现在由自由软件基金会负责维护工作。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。 GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。 GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。 许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。 GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。 GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。 GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。 GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。 几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。 编译器前端：编译组织器（典例：clang） Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。 Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。" />
 <meta property="og:url"
-    content="/jasper2/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" />
+    content="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" />
 <meta property="og:image"
-    content="/jasper2/math.jpg" />
+    content="/math.jpg" />
 <meta property="article:publisher" content="https://www.facebook.com/ghost" />
 <meta property="article:author" content="https://www.facebook.com/ghost" />
 <meta property="article:published_time"
@@ -76,9 +76,9 @@
     content="【CS】编译原理" />
 <meta name="twitter:description"
     content="编译原理 什么是编译？ 编译是指将高级语言代码（C，C++，Java等），通过低级语言（通常为汇编）实现的过程，最终输出为机器可执行的二进制机器码文件。 最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。 编译工作的几个步骤： 编译过程通常可以抽象为几个过程： 预处理 编译 链接 C/C++ 语言编译流程与编译工具链(toolchain) C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。 一款盛名远扬的开源编译工具链： GCC: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)： 以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，现在由自由软件基金会负责维护工作。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。 GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。 GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。 许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。 GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。 GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。 GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。 GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。 几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。 编译器前端：编译组织器（典例：clang） Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。 Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。" />
-<meta name="twitter:url" content="/jasper2/" />
+<meta name="twitter:url" content="/" />
 <meta name="twitter:image"
-    content="/jasper2/math.jpg" />
+    content="/math.jpg" />
 <meta name="twitter:label1" content="Written by" />
 <meta name="twitter:data1" content="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
 <meta name="twitter:label2" content="Filed under" />
@@ -95,18 +95,18 @@
     "publisher": {
         "@type": "Organization",
         "name": "你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ",
-        "logo": "/jasper2/assets/images/blog-icon.png"
+        "logo": "/assets/images/blog-icon.png"
     },
-    "url": "/jasper2/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86",
+    "url": "/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86",
     "image": {
         "@type": "ImageObject",
-        "url": "/jasper2/math.jpg",
+        "url": "/math.jpg",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/jasper2/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"
+        "@id": "/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"
     },
     "description": "编译原理 什么是编译？ 编译是指将高级语言代码（C，C++，Java等），通过低级语言（通常为汇编）实现的过程，最终输出为机器可执行的二进制机器码文件。 最常接触到的是 C/C++ 编译过程，C/C++ 是一门十分高效的编程语言，其面向对象的编码思想，与其丰富的工具库，高效率的执行机制，使其成为了当今几乎所有性能依赖场景的主流编程语言。 编译工作的几个步骤： 编译过程通常可以抽象为几个过程： 预处理 编译 链接 C/C++ 语言编译流程与编译工具链(toolchain) C/C++ 代码在编译过程中使用工具链（toolchain）来进行整个编译工作，工具链是一系列预编译好的可执行工具程序、预编译库、预编译头文件、辅助脚本等组件构成，可以完成简单文件的编译工作。 一款盛名远扬的开源编译工具链： GCC: GNU(Gnu’s Not Unix)编译器套装(GNU Compiler Collection)： 以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一。GCC(特别是其中的C语言编译器)也常被认为是跨平台编译器的事实标准。1985年由理查德·马修·斯托曼开始发展，现在由自由软件基金会负责维护工作。GCC原本用C开发，后来因为LLVM、Clang的崛起，它才将开发语言转换为C++。 GCC支持的语言：原名为GNU C语言编译器(GNU C Compiler)，因为它原本只能处理C语言。 GCC在发布后很快地得到扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，Go与其他语言。 许多操作系统，包括许多类Unix系统，如Linux及BSD家族都采用GCC作为标准编译器。苹果电脑预装的Mac OS X操作系统也采用这个编译器。 GCC目前由世界各地不同的数个程序员小组维护。它是移植到最多中央处理器架构以及最多操作系统的编译器。由于GCC已成为GNU系统的官方编译器(包括GNU/Linux家族)，它也成为编译与创建其他操作系统的主要编译器，包括BSD家族、Mac OS X、NeXTSTEP与BeOS。 GCC通常是跨平台软件的编译器首选。有别于一般局限于特定系统与运行环境的编译器，GCC在所有平台上都使用同一个前端处理程序，产生一样的中介码，因此此中介码在各个其他平台上使用GCC编译，有很大的机会可得到正确无误的输出程序。 GCC支持的主要处理器架构：ARM、x86、x86-64、MIPS、PowerPC等。 GCC结构：GCC的外部接口长得像一个标准的Unix编译器。用户在命令行下键入gcc之程序名，以及一些命令参数，以便决定每个输入文件使用的个别语言编译器，并为输出代码使用适合此硬件平台的汇编语言编译器，并且选择性地运行连接器以制造可执行的程序。每个语言编译器都是独立程序，此程序可处理输入的源代码，并输出汇编语言码。全部的语言编译器都拥有共通的中介架构：一个前端解析匹配此语言的源代码，并产生一抽象语法树，以及一翻译此语法树成为GCC的寄存器转换语言的后端。编译器最优化与静态代码解析技术在此阶段应用于代码上。最后，适用于此硬件架构的汇编语言代码以杰克·戴维森与克里斯·弗雷泽发明的算法产出。 几乎全部的GCC都由C/C++写成，除了Ada前端大部分以Ada写成。 编译器前端：编译组织器（典例：clang） Clang：是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它采用了底层虚拟机(LLVM)作为其后端。它的目标是提供一个GNU编译器套装(GCC)的替代品。作者是克里斯·拉特纳(Chris Lattner)，在苹果公司的赞助支持下进行开发，而源代码授权是使用类BSD的伊利诺伊大学厄巴纳-香槟分校开源码许可。Clang主要由C++编写。 Clang项目包括Clang前端和Clang静态分析器等。这个软件项目在2005年由苹果电脑发起，是LLVM(Low Level Virtual Machine)编译器工具集的前端(front-end)，目的是输出代码对应的抽象语法树(Abstract Syntax Tree, AST)，并将代码编译成LLVM Bitcode。接着在后端(back-end)使用LLVM编译成平台相关的机器语言。"
 }
@@ -123,7 +123,7 @@
 <meta name="generator" content="Jekyll 3.6.2" />
 <link rel="alternate" type="application/rss+xml"
     title="【CS】编译原理"
-    href="/jasper2/feed.xml" />
+    href="/feed.xml" />
 
 <!-- Katex Math Display -->
 
@@ -152,18 +152,18 @@ into the {body} of the default.hbs template -->
     <div class="site-nav-left">
         
             
-                <a class="site-nav-logo" href="/jasper2/"><img src="/jasper2/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" /></a>
+                <a class="site-nav-logo" href="/"><img src="/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" /></a>
             
         
         
             <ul class="nav" role="menu">
-    <li class="nav-home" role="menuitem"><a href="/jasper2/">Home</a></li>
-    <li class="nav-about" role="menuitem"><a href="/jasper2/author/dexfire/">Dexfire</a></li>
-    <li class="nav-getting-started" role="menuitem"><a href="/jasper2/tag/sweet/">Sweets</a>
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/author/dexfire/">Dexfire</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/tag/sweet/">Sweets</a>
     </li>
-    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/ai/">AI</a></li>
-    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/embed/">Embed</a></li>
-    <li class="nav-about" role="menuitem"><a href="/jasper2/tag/star/">Stars</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/ai/">AI</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/tag/embed/">Embed</a></li>
+    <li class="nav-about" role="menuitem"><a href="/tag/star/">Stars</a></li>
 </ul>
         
     </div>
@@ -202,15 +202,15 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         
                             
-                                <a href='/jasper2/tag/cs/'>CS</a>,
+                                <a href='/tag/cs/'>CS</a>,
                             
                         
                             
-                                <a href='/jasper2/tag/dev/'>DEV</a>,
+                                <a href='/tag/dev/'>DEV</a>,
                             
                         
                             
-                                <a href='/jasper2/tag/embd/'>EMBD</a>
+                                <a href='/tag/embd/'>EMBD</a>
                             
                         
                     
@@ -219,7 +219,7 @@ into the {body} of the default.hbs template -->
             </header>
 
             
-                <figure class="post-full-image" style="background-image: url(/jasper2/assets/images/math.jpg)"></figure>
+                <figure class="post-full-image" style="background-image: url(/assets/images/math.jpg)"></figure>
             
 
             <section class="post-full-content">
@@ -346,11 +346,11 @@ into the {body} of the default.hbs template -->
                     
                         <section class="author-card">
                             
-                                <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="dexfire"/>
+                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire"/>
                             
                             <section class="author-card-content">
                                 <h4 class="author-card-name">
-                                    <a href="/jasper2/author/dexfire">Dexfire Alex</a>
+                                    <a href="/author/dexfire">Dexfire Alex</a>
                                 </h4>
                                 
                                     <p>水中月是天上月，眼前人是心上人</p>
@@ -358,7 +358,7 @@ into the {body} of the default.hbs template -->
                             </section>
                         </section>
                         <div class="post-full-footer-right">
-                            <a class="author-card-button" href="/jasper2/author/dexfire">Read More</a>
+                            <a class="author-card-button" href="/author/dexfire">Read More</a>
                         </div>
                     
                 
@@ -384,14 +384,14 @@ into the {body} of the default.hbs template -->
                 
                 
                 
-                    <article class="read-next-card"  style="background-image: url(/jasper2/assets/images/blog-cover.jpg)" >
+                    <article class="read-next-card"  style="background-image: url(/assets/images/blog-cover.jpg)" >
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash;
                                 你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ
                                 &mdash;</small>
                             
                                 <h3 class="read-next-card-header-title">
-                                    <a href="/jasper2/tag/cs/">Cs</a>
+                                    <a href="/tag/cs/">Cs</a>
                                 </h3>
                             
                         </header>
@@ -474,7 +474,7 @@ into the {body} of the default.hbs template -->
                                             
                                             
                                                 <li>
-                                                    <a href="/jasper2/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B">【CS】有限状态机（FSM）模型</a>
+                                                    <a href="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B">【CS】有限状态机（FSM）模型</a>
                                                 </li>
                                             
                                         
@@ -491,7 +491,7 @@ into the {body} of the default.hbs template -->
                                             
                                             
                                                 <li>
-                                                    <a href="/jasper2/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A">【redis】一、Redis 数据库入门初体验</a>
+                                                    <a href="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A">【redis】一、Redis 数据库入门初体验</a>
                                                 </li>
                                             
                                         
@@ -510,7 +510,7 @@ into the {body} of the default.hbs template -->
                                             
                                             
                                                 <li>
-                                                    <a href="/jasper2/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C">【redis】一、Redis 数据库入门初体验</a>
+                                                    <a href="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C">【redis】一、Redis 数据库入门初体验</a>
                                                 </li>
                                             
                                         
@@ -709,7 +709,7 @@ into the {body} of the default.hbs template -->
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/jasper2/tag/cs/">
+                            <a href="/tag/cs/">
                                 
                                     See all
                                     5
@@ -728,7 +728,7 @@ into the {body} of the default.hbs template -->
 <article class="post-card  no-image">
     
     <div class="post-card-content">
-        <a class="post-card-content-link" href="/jasper2/%E9%9A%8F%E6%83%B3-2020%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8A%A8%E8%8D%A1%E7%9A%84%E5%8E%86%E5%8F%B2%E7%81%BE%E5%B9%B4">
+        <a class="post-card-content-link" href="/%E9%9A%8F%E6%83%B3-2020%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8A%A8%E8%8D%A1%E7%9A%84%E5%8E%86%E5%8F%B2%E7%81%BE%E5%B9%B4">
             <header class="post-card-header">
                 
 
@@ -776,15 +776,15 @@ into the {body} of the default.hbs template -->
 
 <article class="post-card post-template">
     
-        <a class="post-card-image-link" href="/jasper2/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">
+        <a class="post-card-image-link" href="/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">
             
-                <div class="post-card-image" style="background-image: url(/jasper2/assets/images/python.png)"></div>
+                <div class="post-card-image" style="background-image: url(/assets/images/python.png)"></div>
             
-            <!-- <div class="post-card-image" style="background-image: url(/jasper2/python.png)"></div> -->
+            <!-- <div class="post-card-image" style="background-image: url(/python.png)"></div> -->
         </a>
     
     <div class="post-card-content">
-        <a class="post-card-content-link" href="/jasper2/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">
+        <a class="post-card-content-link" href="/Python%E5%9F%BA%E7%A1%80-%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E4%B9%8Blogging%E6%A8%A1%E5%9D%97">
             <header class="post-card-header">
                 
                     
@@ -824,10 +824,10 @@ into the {body} of the default.hbs template -->
             
                 
                     
-                        <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
                     
                     <span class="post-card-author">
-                        <a href="/jasper2/author/dexfire/">Dexfire Alex</a>
+                        <a href="/author/dexfire/">Dexfire Alex</a>
                     </span>
                 
             
@@ -850,9 +850,9 @@ into the {body} of the default.hbs template -->
 <!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
 <div class="floating-header">
     <div class="floating-header-logo">
-        <a href="/jasper2/">
+        <a href="/">
             
-                <img src="/jasper2/assets/images/favicon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ icon" />
+                <img src="/assets/images/favicon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ icon" />
             
             <span>你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</span>
         </a>
@@ -894,13 +894,13 @@ into the {body} of the default.hbs template -->
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="/jasper2/">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</a> &copy;
+                <section class="copyright"><a href="/">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</a> &copy;
                     2020</section>
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
                 <nav class="site-footer-nav">
-                    <a href="/jasper2/">Latest Posts</a>
+                    <a href="/">Latest Posts</a>
                     <a href="https://facebook.com/ghost" target="_blank"
                         rel="noopener">Facebook</a>
                     <a href="https://twitter.com/tryghost" target="_blank"
@@ -922,7 +922,7 @@ into the {body} of the default.hbs template -->
         <a class="subscribe-overlay-close" href="#"></a>
         <div class="subscribe-overlay-content">
             
-            <img class="subscribe-overlay-logo" src="/jasper2/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
+            <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
             
             <h1 class="subscribe-overlay-title">Subscribe to 你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</h1>
             <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered
@@ -980,7 +980,7 @@ into the {body} of the default.hbs template -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
-    <script type="text/javascript" src="/jasper2/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
     <!--script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script-->
 
     <!-- Paginator increased to "infinit" in _config.yml -->
@@ -988,7 +988,7 @@ into the {body} of the default.hbs template -->
     <!-- <script>
         var maxPages = parseInt('');
     </script>
-    <script src="/jasper2/assets/js/infinitescroll.js"></script> -->
+    <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
     
