@@ -2,17 +2,17 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/tag/git/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:03:13+00:00</updated>
-  <id>/tag/git/feed.xml</id>
+  <link href="/jasper2/tag/git/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/jasper2/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:16:28+00:00</updated>
+  <id>/jasper2/tag/git/feed.xml</id>
 
   
   
   
 
   
-    <title type="html">Ghost | </title>
+    <title type="html">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ | </title>
   
 
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">Github 博客设置 CNAME 网站别名</title>
-      <link href="/python-python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6" rel="alternate" type="text/html" title="Github 博客设置 CNAME 网站别名" />
+      <link href="/jasper2/python-python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6" rel="alternate" type="text/html" title="Github 博客设置 CNAME 网站别名" />
       <published>2020-03-01T18:06:00+00:00</published>
       <updated>2020-03-01T18:06:00+00:00</updated>
-      <id>/%E3%80%90python%E3%80%91python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6</id>
-      <content type="html" xml:base="/python-python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6">&lt;h1 id=&quot;python-读写yaml文件&quot;&gt;Python 读写yaml文件&lt;/h1&gt;</content>
+      <id>/jasper2/%E3%80%90python%E3%80%91python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6</id>
+      <content type="html" xml:base="/jasper2/python-python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6">&lt;h1 id=&quot;python-读写yaml文件&quot;&gt;Python 读写yaml文件&lt;/h1&gt;</content>
 
       
       
@@ -85,11 +85,11 @@
   
     <entry>
       <title type="html">Github 博客设置 CNAME 网站别名</title>
-      <link href="/github-cnames" rel="alternate" type="text/html" title="Github 博客设置 CNAME 网站别名" />
+      <link href="/jasper2/github-cnames" rel="alternate" type="text/html" title="Github 博客设置 CNAME 网站别名" />
       <published>2020-03-01T18:06:00+00:00</published>
       <updated>2020-03-01T18:06:00+00:00</updated>
-      <id>/github-cnames</id>
-      <content type="html" xml:base="/github-cnames">&lt;p&gt;nothing&lt;/p&gt;</content>
+      <id>/jasper2/github-cnames</id>
+      <content type="html" xml:base="/jasper2/github-cnames">&lt;p&gt;nothing&lt;/p&gt;</content>
 
       
       

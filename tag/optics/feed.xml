@@ -2,17 +2,17 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/tag/optics/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:03:13+00:00</updated>
-  <id>/tag/optics/feed.xml</id>
+  <link href="/jasper2/tag/optics/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/jasper2/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:16:28+00:00</updated>
+  <id>/jasper2/tag/optics/feed.xml</id>
 
   
   
   
 
   
-    <title type="html">Ghost | </title>
+    <title type="html">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ | </title>
   
 
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">【光学】数字图像处理 频率域滤波思考题</title>
-      <link href="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%91%E7%8E%87%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%80%9D%E8%80%83%E9%A2%98" rel="alternate" type="text/html" title="【光学】数字图像处理 频率域滤波思考题" />
+      <link href="/jasper2/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%91%E7%8E%87%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%80%9D%E8%80%83%E9%A2%98" rel="alternate" type="text/html" title="【光学】数字图像处理 频率域滤波思考题" />
       <published>2020-04-13T11:45:25+00:00</published>
       <updated>2020-04-13T11:45:25+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%20%E9%A2%91%E7%8E%87%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%80%9D%E8%80%83%E9%A2%98</id>
-      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%91%E7%8E%87%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%80%9D%E8%80%83%E9%A2%98">&lt;h1 id=&quot;光学数字图像处理-频率域滤波思考题&quot;&gt;【光学】数字图像处理 频率域滤波思考题&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%20%E9%A2%91%E7%8E%87%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%80%9D%E8%80%83%E9%A2%98</id>
+      <content type="html" xml:base="/jasper2/%E5%85%89%E5%AD%A6-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E9%A2%91%E7%8E%87%E5%9F%9F%E6%BB%A4%E6%B3%A2%E6%80%9D%E8%80%83%E9%A2%98">&lt;h1 id=&quot;光学数字图像处理-频率域滤波思考题&quot;&gt;【光学】数字图像处理 频率域滤波思考题&lt;/h1&gt;
 
 &lt;h2 id=&quot;1-简述图像频域滤波的基本流程&quot;&gt;1. 简述图像频域滤波的基本流程;&lt;/h2&gt;
 
@@ -89,11 +89,11 @@
   
     <entry>
       <title type="html">【光学】几何光学笔记</title>
-      <link href="/%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6-%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0" rel="alternate" type="text/html" title="【光学】几何光学笔记" />
+      <link href="/jasper2/%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6-%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0" rel="alternate" type="text/html" title="【光学】几何光学笔记" />
       <published>2020-04-12T10:49:00+00:00</published>
       <updated>2020-04-12T10:49:00+00:00</updated>
-      <id>/%E3%80%90%E2%98%85%20%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6%E3%80%91%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0</id>
-      <content type="html" xml:base="/%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6-%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0">&lt;h1 id=&quot;几何光学&quot;&gt;几何光学&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E2%98%85%20%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6%E3%80%91%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0</id>
+      <content type="html" xml:base="/jasper2/%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6-%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0">&lt;h1 id=&quot;几何光学&quot;&gt;几何光学&lt;/h1&gt;
 
 &lt;h2 id=&quot;理想光学系统&quot;&gt;理想光学系统&lt;/h2&gt;
 
@@ -207,11 +207,11 @@
   
     <entry>
       <title type="html">【光电传感】负折射率波导及应用</title>
-      <link href="/%E5%85%89%E7%94%B5%E4%BC%A0%E6%84%9F-%E8%B4%9F%E6%8A%98%E5%B0%84%E7%8E%87%E6%B3%A2%E5%AF%BC%E5%8F%8A%E5%BA%94%E7%94%A8" rel="alternate" type="text/html" title="【光电传感】负折射率波导及应用" />
+      <link href="/jasper2/%E5%85%89%E7%94%B5%E4%BC%A0%E6%84%9F-%E8%B4%9F%E6%8A%98%E5%B0%84%E7%8E%87%E6%B3%A2%E5%AF%BC%E5%8F%8A%E5%BA%94%E7%94%A8" rel="alternate" type="text/html" title="【光电传感】负折射率波导及应用" />
       <published>2020-04-08T16:49:00+00:00</published>
       <updated>2020-04-08T16:49:00+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E7%94%B5%E4%BC%A0%E6%84%9F%E3%80%91%E8%B4%9F%E6%8A%98%E5%B0%84%E7%8E%87%E6%B3%A2%E5%AF%BC%E5%8F%8A%E5%BA%94%E7%94%A8</id>
-      <content type="html" xml:base="/%E5%85%89%E7%94%B5%E4%BC%A0%E6%84%9F-%E8%B4%9F%E6%8A%98%E5%B0%84%E7%8E%87%E6%B3%A2%E5%AF%BC%E5%8F%8A%E5%BA%94%E7%94%A8">&lt;h1 id=&quot;光电传感负折射率波导及应用&quot;&gt;【光电传感】负折射率波导及应用&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E5%85%89%E7%94%B5%E4%BC%A0%E6%84%9F%E3%80%91%E8%B4%9F%E6%8A%98%E5%B0%84%E7%8E%87%E6%B3%A2%E5%AF%BC%E5%8F%8A%E5%BA%94%E7%94%A8</id>
+      <content type="html" xml:base="/jasper2/%E5%85%89%E7%94%B5%E4%BC%A0%E6%84%9F-%E8%B4%9F%E6%8A%98%E5%B0%84%E7%8E%87%E6%B3%A2%E5%AF%BC%E5%8F%8A%E5%BA%94%E7%94%A8">&lt;h1 id=&quot;光电传感负折射率波导及应用&quot;&gt;【光电传感】负折射率波导及应用&lt;/h1&gt;
 
 &lt;h2 id=&quot;负折射率&quot;&gt;负折射率&lt;/h2&gt;
 
@@ -408,11 +408,11 @@
   
     <entry>
       <title type="html">【论文】光电测量与传感课题——传感技术稳定性标准</title>
-      <link href="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86" rel="alternate" type="text/html" title="【论文】光电测量与传感课题——传感技术稳定性标准" />
+      <link href="/jasper2/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86" rel="alternate" type="text/html" title="【论文】光电测量与传感课题——传感技术稳定性标准" />
       <published>2020-03-22T19:32:00+00:00</published>
       <updated>2020-03-22T19:32:00+00:00</updated>
-      <id>/%E3%80%90%E8%AE%BA%E6%96%87%E3%80%91%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98%E2%80%94%E2%80%94%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86</id>
-      <content type="html" xml:base="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86">&lt;h1 id=&quot;论文光电测量与传感课题传感技术稳定性标准&quot;&gt;【论文】光电测量与传感课题——传感技术稳定性标准&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E8%AE%BA%E6%96%87%E3%80%91%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98%E2%80%94%E2%80%94%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86</id>
+      <content type="html" xml:base="/jasper2/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86">&lt;h1 id=&quot;论文光电测量与传感课题传感技术稳定性标准&quot;&gt;【论文】光电测量与传感课题——传感技术稳定性标准&lt;/h1&gt;
 
 &lt;p&gt;标准乍一看是很枯燥的东西，仔细看过之后才知道，原来它是真的枯燥。
 为什么要指定标准呢？那些又算是稳定性标准呢？&lt;/p&gt;
@@ -687,11 +687,11 @@
   
     <entry>
       <title type="html">【信息光学】第五章 光学成像系统的频率特性</title>
-      <link href="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7" rel="alternate" type="text/html" title="【信息光学】第五章 光学成像系统的频率特性" />
+      <link href="/jasper2/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7" rel="alternate" type="text/html" title="【信息光学】第五章 光学成像系统的频率特性" />
       <published>2020-03-20T10:46:00+00:00</published>
       <updated>2020-03-20T10:46:00+00:00</updated>
-      <id>/%E3%80%90%E2%98%85%E2%98%85%E3%80%91%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6%20-%20%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7</id>
-      <content type="html" xml:base="/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7">&lt;h1 id=&quot;信息光学第五章-光学成像系统的频率特性&quot;&gt;【信息光学】第五章 光学成像系统的频率特性&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E2%98%85%E2%98%85%E3%80%91%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6%20-%20%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7</id>
+      <content type="html" xml:base="/jasper2/%E4%BF%A1%E6%81%AF%E5%85%89%E5%AD%A6-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%85%89%E5%AD%A6%E6%88%90%E5%83%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7">&lt;h1 id=&quot;信息光学第五章-光学成像系统的频率特性&quot;&gt;【信息光学】第五章 光学成像系统的频率特性&lt;/h1&gt;
 
 &lt;h2 id=&quot;50-物理光学&quot;&gt;5.0 物理光学&lt;/h2&gt;
 
@@ -988,11 +988,11 @@
   
     <entry>
       <title type="html">【光学】球面波 – 光学基础</title>
-      <link href="/%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <link href="/jasper2/%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
       <published>2020-03-17T16:49:00+00:00</published>
       <updated>2020-03-17T16:49:00+00:00</updated>
-      <id>/%E3%80%90%E2%98%85%E3%80%91%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86</id>
-      <content type="html" xml:base="/%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86">&lt;h3 id=&quot;153-光学仪器&quot;&gt;1.5.3 光学仪器&lt;/h3&gt;
+      <id>/jasper2/%E3%80%90%E2%98%85%E3%80%91%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86</id>
+      <content type="html" xml:base="/jasper2/%E5%85%89%E7%94%B5%E4%BB%AA%E5%99%A8%E5%8E%9F%E7%90%86">&lt;h3 id=&quot;153-光学仪器&quot;&gt;1.5.3 光学仪器&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;传感器&lt;/li&gt;
@@ -1110,11 +1110,11 @@
   
     <entry>
       <title type="html">【光学】球面波 – 光学基础</title>
-      <link href="/%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6-%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <link href="/jasper2/%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6-%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
       <published>2020-03-17T16:49:00+00:00</published>
       <updated>2020-03-17T16:49:00+00:00</updated>
-      <id>/%E3%80%90%E2%98%85%20%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E3%80%91%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0</id>
-      <content type="html" xml:base="/%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6-%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0">&lt;h1 id=&quot;-物理光学物理光学笔记&quot;&gt;【★ 物理光学】物理光学笔记&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E2%98%85%20%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E3%80%91%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0</id>
+      <content type="html" xml:base="/jasper2/%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6-%E7%89%A9%E7%90%86%E5%85%89%E5%AD%A6%E7%AC%94%E8%AE%B0">&lt;h1 id=&quot;-物理光学物理光学笔记&quot;&gt;【★ 物理光学】物理光学笔记&lt;/h1&gt;
 
 &lt;p&gt;&lt;strong&gt;物理光学&lt;/strong&gt;是研究光的&lt;strong&gt;本性&lt;/strong&gt;、&lt;strong&gt;规律&lt;/strong&gt;及其应用、&lt;strong&gt;造福于人类&lt;/strong&gt;的一门学科。
 &lt;em&gt;注：以人为本，脱离人类的科学是无意义的。&lt;/em&gt;物理光学在近代发展中起到了重要的作用，是许多现代光学仪器的设计与应用基础，在以下领域有着广泛的应用：&lt;/p&gt;
@@ -1166,11 +1166,11 @@
   
     <entry>
       <title type="html">【光学】球面波 – 光学基础</title>
-      <link href="/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <link href="/jasper2/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
       <published>2020-03-17T16:49:00+00:00</published>
       <updated>2020-03-17T16:49:00+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8</id>
-      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8">&lt;h1 id=&quot;光学光学分界面上的光学性质&quot;&gt;【光学】光学分界面上的光学性质&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8</id>
+      <content type="html" xml:base="/jasper2/%E5%85%89%E5%AD%A6-%E5%85%89%E5%AD%A6%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%85%89%E5%AD%A6%E6%80%A7%E8%B4%A8">&lt;h1 id=&quot;光学光学分界面上的光学性质&quot;&gt;【光学】光学分界面上的光学性质&lt;/h1&gt;
 
 &lt;p&gt;波矢的大小的含义，即光波能量传播的&lt;/p&gt;
 
@@ -1233,11 +1233,11 @@ $r_s^2+r_p^2 \neq 1$
   
     <entry>
       <title type="html">【光学】球面波 – 光学基础</title>
-      <link href="/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
+      <link href="/jasper2/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】球面波 -- 光学基础" />
       <published>2020-03-17T00:10:00+00:00</published>
       <updated>2020-03-17T00:10:00+00:00</updated>
-      <id>/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E7%90%83%E9%9D%A2%E6%B3%A2%20--%20%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80</id>
-      <content type="html" xml:base="/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;光学球面波--光学基础&quot;&gt;【光学】球面波 – 光学基础&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E5%85%89%E5%AD%A6%E3%80%91%E7%90%83%E9%9D%A2%E6%B3%A2%20--%20%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="/jasper2/%E5%85%89%E5%AD%A6-%E7%90%83%E9%9D%A2%E6%B3%A2-%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;光学球面波--光学基础&quot;&gt;【光学】球面波 – 光学基础&lt;/h1&gt;
 &lt;p&gt;光学中最常用的球面波公式：
 &lt;script type=&quot;math/tex&quot;&gt;U(x,y,z) = \frac{a_0}{r}e^{j \theta} = \frac{a_0}{r}e^{j\overrightarrow{k} \cdot \overrightarrow{r}}&lt;/script&gt;
 事实上，这个等式是&lt;strong&gt;亥姆霍兹方程&lt;/strong&gt;的一组简单解。&lt;/p&gt;
@@ -1276,11 +1276,11 @@ $r_s^2+r_p^2 \neq 1$
   
     <entry>
       <title type="html">【光学】数字图像处理</title>
-      <link href="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】数字图像处理" />
+      <link href="/jasper2/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80" rel="alternate" type="text/html" title="【光学】数字图像处理" />
       <published>2020-03-16T11:24:00+00:00</published>
       <updated>2020-03-16T11:24:00+00:00</updated>
-      <id>/%E3%80%90%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80</id>
-      <content type="html" xml:base="/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;数字图像处理基础&quot;&gt;数字图像处理基础&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E3%80%91%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="/jasper2/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%9F%BA%E7%A1%80">&lt;h1 id=&quot;数字图像处理基础&quot;&gt;数字图像处理基础&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;低级图像处理
     &lt;ul&gt;

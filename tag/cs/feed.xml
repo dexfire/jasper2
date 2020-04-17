@@ -2,17 +2,17 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/tag/cs/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:03:13+00:00</updated>
-  <id>/tag/cs/feed.xml</id>
+  <link href="/jasper2/tag/cs/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/jasper2/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:16:28+00:00</updated>
+  <id>/jasper2/tag/cs/feed.xml</id>
 
   
   
   
 
   
-    <title type="html">Ghost | </title>
+    <title type="html">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ | </title>
   
 
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">【CS】有限状态机（FSM）模型</title>
-      <link href="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" rel="alternate" type="text/html" title="【CS】有限状态机（FSM）模型" />
+      <link href="/jasper2/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" rel="alternate" type="text/html" title="【CS】有限状态机（FSM）模型" />
       <published>2020-03-22T19:32:00+00:00</published>
       <updated>2020-03-22T19:32:00+00:00</updated>
-      <id>/%E3%80%90CS%E3%80%91%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA(FSM)%E6%A8%A1%E5%9E%8B</id>
-      <content type="html" xml:base="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B">&lt;h1 id=&quot;cs有限状态机fsm模型&quot;&gt;【CS】有限状态机（FSM）模型&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90CS%E3%80%91%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA(FSM)%E6%A8%A1%E5%9E%8B</id>
+      <content type="html" xml:base="/jasper2/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B">&lt;h1 id=&quot;cs有限状态机fsm模型&quot;&gt;【CS】有限状态机（FSM）模型&lt;/h1&gt;
 
 &lt;h2 id=&quot;什么是有限状态机&quot;&gt;什么是有限状态机？&lt;/h2&gt;
 
@@ -264,11 +264,11 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
   
     <entry>
       <title type="html">【redis】一、Redis 数据库入门初体验</title>
-      <link href="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" rel="alternate" type="text/html" title="【redis】一、Redis 数据库入门初体验" />
+      <link href="/jasper2/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A" rel="alternate" type="text/html" title="【redis】一、Redis 数据库入门初体验" />
       <published>2020-03-21T23:17:00+00:00</published>
       <updated>2020-03-21T23:17:00+00:00</updated>
-      <id>/%E3%80%90Redis%E3%80%91%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A</id>
-      <content type="html" xml:base="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A">&lt;h1 id=&quot;redis使用redis的心得体会&quot;&gt;【Redis】使用Redis的心得体会&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90Redis%E3%80%91%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A</id>
+      <content type="html" xml:base="/jasper2/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A">&lt;h1 id=&quot;redis使用redis的心得体会&quot;&gt;【Redis】使用Redis的心得体会&lt;/h1&gt;
 
 &lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 
@@ -442,11 +442,11 @@ Redis凭借其全面的功能得到越来越多的公司的青睐，从初创企
   
     <entry>
       <title type="html">【redis】一、Redis 数据库入门初体验</title>
-      <link href="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C" rel="alternate" type="text/html" title="【redis】一、Redis 数据库入门初体验" />
+      <link href="/jasper2/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C" rel="alternate" type="text/html" title="【redis】一、Redis 数据库入门初体验" />
       <published>2020-03-19T09:16:00+00:00</published>
       <updated>2020-03-19T09:16:00+00:00</updated>
-      <id>/%E3%80%90redis%E3%80%91%E4%B8%80%E3%80%81Redis%20%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C</id>
-      <content type="html" xml:base="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C">&lt;h1 id=&quot;redis一redis-数据库入门初体验&quot;&gt;【redis】一、Redis 数据库入门初体验&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90redis%E3%80%91%E4%B8%80%E3%80%81Redis%20%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C</id>
+      <content type="html" xml:base="/jasper2/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C">&lt;h1 id=&quot;redis一redis-数据库入门初体验&quot;&gt;【redis】一、Redis 数据库入门初体验&lt;/h1&gt;
 
 &lt;p&gt;Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（strings）， 散列（hashes）， 列表（lists）， 集合（sets）， 有序集合（sorted sets） 与范围查询， bitmaps， hyperloglogs 和 地理空间（geospatial） 索引半径查询。 Redis 内置了 复制（replication），LUA脚本（Lua scripting）， LRU驱动事件（LRU eviction），事务（transactions） 和不同级别的 磁盘持久化（persistence）， 并通过 Redis哨兵（Sentinel）和自动 分区（Cluster）提供高可用性（high availability）。&lt;/p&gt;
 
@@ -547,11 +547,11 @@ Redis所有数据存储在内存中，对数据的更新将异步地保存到磁
   
     <entry>
       <title type="html">【CS】编译原理</title>
-      <link href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【CS】编译原理" />
+      <link href="/jasper2/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86" rel="alternate" type="text/html" title="【CS】编译原理" />
       <published>2020-03-18T23:58:00+00:00</published>
       <updated>2020-03-18T23:58:00+00:00</updated>
-      <id>/%E3%80%90CS%E3%80%91%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</id>
-      <content type="html" xml:base="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">&lt;h1 id=&quot;编译原理&quot;&gt;编译原理&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90CS%E3%80%91%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86</id>
+      <content type="html" xml:base="/jasper2/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">&lt;h1 id=&quot;编译原理&quot;&gt;编译原理&lt;/h1&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;什么是编译？&lt;/strong&gt;&lt;/p&gt;
@@ -662,11 +662,11 @@ Redis所有数据存储在内存中，对数据的更新将异步地保存到磁
   
     <entry>
       <title type="html">Github 博客设置 CNAME 网站别名</title>
-      <link href="/python-python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6" rel="alternate" type="text/html" title="Github 博客设置 CNAME 网站别名" />
+      <link href="/jasper2/python-python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6" rel="alternate" type="text/html" title="Github 博客设置 CNAME 网站别名" />
       <published>2020-03-01T18:06:00+00:00</published>
       <updated>2020-03-01T18:06:00+00:00</updated>
-      <id>/%E3%80%90python%E3%80%91python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6</id>
-      <content type="html" xml:base="/python-python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6">&lt;h1 id=&quot;python-读写yaml文件&quot;&gt;Python 读写yaml文件&lt;/h1&gt;</content>
+      <id>/jasper2/%E3%80%90python%E3%80%91python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6</id>
+      <content type="html" xml:base="/jasper2/python-python%E8%AF%BB%E5%86%99yaml%E6%96%87%E4%BB%B6">&lt;h1 id=&quot;python-读写yaml文件&quot;&gt;Python 读写yaml文件&lt;/h1&gt;</content>
 
       
       
@@ -700,11 +700,11 @@ Redis所有数据存储在内存中，对数据的更新将异步地保存到磁
   
     <entry>
       <title type="html">Github 博客设置 CNAME 网站别名</title>
-      <link href="/github-cnames" rel="alternate" type="text/html" title="Github 博客设置 CNAME 网站别名" />
+      <link href="/jasper2/github-cnames" rel="alternate" type="text/html" title="Github 博客设置 CNAME 网站别名" />
       <published>2020-03-01T18:06:00+00:00</published>
       <updated>2020-03-01T18:06:00+00:00</updated>
-      <id>/github-cnames</id>
-      <content type="html" xml:base="/github-cnames">&lt;p&gt;nothing&lt;/p&gt;</content>
+      <id>/jasper2/github-cnames</id>
+      <content type="html" xml:base="/jasper2/github-cnames">&lt;p&gt;nothing&lt;/p&gt;</content>
 
       
       

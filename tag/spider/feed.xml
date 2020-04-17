@@ -2,17 +2,17 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/tag/spider/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:03:13+00:00</updated>
-  <id>/tag/spider/feed.xml</id>
+  <link href="/jasper2/tag/spider/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/jasper2/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:16:28+00:00</updated>
+  <id>/jasper2/tag/spider/feed.xml</id>
 
   
   
   
 
   
-    <title type="html">Ghost | </title>
+    <title type="html">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ | </title>
   
 
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">【爬虫】QQ空间爬虫简单思路</title>
-      <link href="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF" rel="alternate" type="text/html" title="【爬虫】QQ空间爬虫简单思路" />
+      <link href="/jasper2/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF" rel="alternate" type="text/html" title="【爬虫】QQ空间爬虫简单思路" />
       <published>2020-03-10T11:33:00+00:00</published>
       <updated>2020-03-10T11:33:00+00:00</updated>
-      <id>/%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF</id>
-      <content type="html" xml:base="/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF">&lt;h1 id=&quot;爬虫qq空间爬虫简单思路&quot;&gt;【爬虫】QQ空间爬虫简单思路&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E7%88%AC%E8%99%AB%E3%80%91QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF</id>
+      <content type="html" xml:base="/jasper2/%E7%88%AC%E8%99%AB-QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E7%AE%80%E5%8D%95%E6%80%9D%E8%B7%AF">&lt;h1 id=&quot;爬虫qq空间爬虫简单思路&quot;&gt;【爬虫】QQ空间爬虫简单思路&lt;/h1&gt;
 
 &lt;p&gt;我们继续尝试爬取QQ空间的好友动态。现在是大数据当道的时代，爬虫工程师也成了一个关键性的抢手职位，你可以不做一个优秀的爬虫工程师，但掌握一门扎实的爬虫编写技能，是可以为你的职业技能加分的。同时&lt;/p&gt;
 
@@ -1572,11 +1572,11 @@
   
     <entry>
       <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
-      <link href="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
+      <link href="/jasper2/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
       <published>2020-03-10T01:00:00+00:00</published>
       <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/%E3%80%90%E6%A4%8D%E6%A0%91%E8%8A%82%E3%80%91%E3%80%8A%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8%E3%80%8B%E7%AE%80%E8%AF%84</id>
-      <content type="html" xml:base="/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84">&lt;p&gt;25分钟，收集资料，完成一个简单书评：&lt;/p&gt;
+      <id>/jasper2/%E3%80%90%E6%A4%8D%E6%A0%91%E8%8A%82%E3%80%91%E3%80%8A%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8%E3%80%8B%E7%AE%80%E8%AF%84</id>
+      <content type="html" xml:base="/jasper2/%E6%A4%8D%E6%A0%91%E8%8A%82-%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8-%E7%AE%80%E8%AF%84">&lt;p&gt;25分钟，收集资料，完成一个简单书评：&lt;/p&gt;
 
 &lt;h1 id=&quot;云边有个小卖部简评&quot;&gt;《云边有个小卖部》简评&lt;/h1&gt;
 
@@ -1633,11 +1633,11 @@
   
     <entry>
       <title type="html">【随想】我什么都做不好，我真的是天生的废物嘛？</title>
-      <link href="/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B" rel="alternate" type="text/html" title="【随想】我什么都做不好，我真的是天生的废物嘛？" />
+      <link href="/jasper2/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B" rel="alternate" type="text/html" title="【随想】我什么都做不好，我真的是天生的废物嘛？" />
       <published>2020-03-10T01:00:00+00:00</published>
       <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD,%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B%3F</id>
-      <content type="html" xml:base="/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B">&lt;h1 id=&quot;随想我什么都做不好我真的是天生的废物嘛&quot;&gt;【随想】我什么都做不好，我真的是天生的废物嘛？&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90%E9%9A%8F%E6%83%B3%E3%80%91%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD,%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B%3F</id>
+      <content type="html" xml:base="/jasper2/%E9%9A%8F%E6%83%B3-%E6%88%91%E4%BB%80%E4%B9%88%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD-%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%BA%9F%E7%89%A9%E5%98%9B">&lt;h1 id=&quot;随想我什么都做不好我真的是天生的废物嘛&quot;&gt;【随想】我什么都做不好，我真的是天生的废物嘛？&lt;/h1&gt;
 
 &lt;p&gt;“天生我材必有用，千金散尽还复来。”
 在《亲密关系》一书中，&lt;/p&gt;
@@ -1679,11 +1679,11 @@
   
     <entry>
       <title type="html">【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现</title>
-      <link href="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
+      <link href="/jasper2/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0" rel="alternate" type="text/html" title="【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现" />
       <published>2020-03-10T01:00:00+00:00</published>
       <updated>2020-03-10T01:00:00+00:00</updated>
-      <id>/%E3%80%90QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E3%80%91%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0</id>
-      <content type="html" xml:base="/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0">&lt;h1 id=&quot;qq空间爬虫关于qq空间g_tk的生成方法的python实现&quot;&gt;【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现&lt;/h1&gt;
+      <id>/jasper2/%E3%80%90QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB%E3%80%91%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0</id>
+      <content type="html" xml:base="/jasper2/QQ%E7%A9%BA%E9%97%B4%E7%88%AC%E8%99%AB-%E5%85%B3%E4%BA%8EQQ%E7%A9%BA%E9%97%B4g_tk%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E7%9A%84python%E5%AE%9E%E7%8E%B0">&lt;h1 id=&quot;qq空间爬虫关于qq空间g_tk的生成方法的python实现&quot;&gt;【QQ空间爬虫】关于QQ空间g_tk的生成方法的python实现&lt;/h1&gt;
 
 &lt;p&gt;QQ空间中的许多API都需要使用一个名叫 &lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt; 的请求参数，而实验中证明，如果这个参数错误，会直接导致访问失败，而实际必须参数中也仅仅只有&lt;code class=&quot;highlighter-rouge&quot;&gt;g_tk&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;qzonetoken&lt;/code&gt;两个参数是授权必须的（当然还要提供cookie啦）。&lt;/p&gt;
 

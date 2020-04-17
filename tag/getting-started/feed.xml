@@ -2,17 +2,17 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="/tag/getting-started/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/" rel="alternate" type="text/html" />
-  <updated>2020-04-17T17:03:13+00:00</updated>
-  <id>/tag/getting-started/feed.xml</id>
+  <link href="/jasper2/tag/getting-started/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/jasper2/" rel="alternate" type="text/html" />
+  <updated>2020-04-17T17:16:28+00:00</updated>
+  <id>/jasper2/tag/getting-started/feed.xml</id>
 
   
   
   
 
   
-    <title type="html">Ghost | </title>
+    <title type="html">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ | </title>
   
 
   
@@ -47,11 +47,11 @@
   
     <entry>
       <title type="html">Welcome to Ghost</title>
-      <link href="/welcome" rel="alternate" type="text/html" title="Welcome to Ghost" />
+      <link href="/jasper2/welcome" rel="alternate" type="text/html" title="Welcome to Ghost" />
       <published>2017-07-27T10:00:00+00:00</published>
       <updated>2017-07-27T10:00:00+00:00</updated>
-      <id>/welcome</id>
-      <content type="html" xml:base="/welcome">&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
+      <id>/jasper2/welcome</id>
+      <content type="html" xml:base="/jasper2/welcome">&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
 
 &lt;p&gt;We know that first impressions are important, so we’ve populated your new site with some initial &lt;strong&gt;Getting Started&lt;/strong&gt; posts that will help you get familiar with everything in no time. This is the first one!&lt;/p&gt;
 
@@ -96,11 +96,11 @@
   
     <entry>
       <title type="html">Using the Ghost editor</title>
-      <link href="/the-editor" rel="alternate" type="text/html" title="Using the Ghost editor" />
+      <link href="/jasper2/the-editor" rel="alternate" type="text/html" title="Using the Ghost editor" />
       <published>2017-07-27T09:00:00+00:00</published>
       <updated>2017-07-27T09:00:00+00:00</updated>
-      <id>/the-editor</id>
-      <content type="html" xml:base="/the-editor">&lt;p&gt;Ghost uses a language called &lt;strong&gt;Markdown&lt;/strong&gt; to format text.&lt;/p&gt;
+      <id>/jasper2/the-editor</id>
+      <content type="html" xml:base="/jasper2/the-editor">&lt;p&gt;Ghost uses a language called &lt;strong&gt;Markdown&lt;/strong&gt; to format text.&lt;/p&gt;
 &lt;p&gt;When you go to edit a post and see special characters and colours intertwined between the words, those are Markdown shortcuts which tell Ghost what to do with the words in your document. The biggest benefit of Markdown is that you can quickly apply formatting as you type, without needing to pause.&lt;/p&gt;
 &lt;p&gt;At the bottom of the editor, you'll find a toolbar with basic formatting options to help you get started as easily as possible. You'll also notice that there's a &lt;strong&gt;?&lt;/strong&gt; icon, which contains more advanced shortcuts.&lt;/p&gt;
 &lt;p&gt;For now, though, let's run you through some of the basics. You'll want to make sure you're editing this post in order to see all the Markdown we've used.&lt;/p&gt;
@@ -171,11 +171,11 @@
   
     <entry>
       <title type="html">Organising your content with tags</title>
-      <link href="/using-tags" rel="alternate" type="text/html" title="Organising your content with tags" />
+      <link href="/jasper2/using-tags" rel="alternate" type="text/html" title="Organising your content with tags" />
       <published>2017-07-27T08:00:00+00:00</published>
       <updated>2017-07-27T08:00:00+00:00</updated>
-      <id>/using-tags</id>
-      <content type="html" xml:base="/using-tags">&lt;p&gt;Ghost has a single, powerful organisational taxonomy, called tags.&lt;/p&gt;
+      <id>/jasper2/using-tags</id>
+      <content type="html" xml:base="/jasper2/using-tags">&lt;p&gt;Ghost has a single, powerful organisational taxonomy, called tags.&lt;/p&gt;
 &lt;p&gt;It doesn't matter whether you want to call them categories, tags, boxes, or anything else. You can think of Ghost tags a lot like Gmail labels. By tagging posts with one or more keyword, you can organise articles into buckets of related content.&lt;/p&gt;
 &lt;h2 id=&quot;basictagging&quot;&gt;Basic tagging&lt;/h2&gt;
 &lt;p&gt;When you write a post, you can assign tags to help differentiate between categories of content. For example, you might tag some posts with &lt;code&gt;News&lt;/code&gt; and other posts with &lt;code&gt;Cycling&lt;/code&gt;, which would create two distinct categories of content listed on &lt;code&gt;/tag/news/&lt;/code&gt; and &lt;code&gt;/tag/cycling/&lt;/code&gt;, respectively.&lt;/p&gt;
@@ -230,11 +230,11 @@
   
     <entry>
       <title type="html">Managing Ghost users</title>
-      <link href="/managing-users" rel="alternate" type="text/html" title="Managing Ghost users" />
+      <link href="/jasper2/managing-users" rel="alternate" type="text/html" title="Managing Ghost users" />
       <published>2017-07-27T07:00:00+00:00</published>
       <updated>2017-07-27T07:00:00+00:00</updated>
-      <id>/managing-users</id>
-      <content type="html" xml:base="/managing-users">&lt;p&gt;Ghost has a number of different user roles for your team&lt;/p&gt;
+      <id>/jasper2/managing-users</id>
+      <content type="html" xml:base="/jasper2/managing-users">&lt;p&gt;Ghost has a number of different user roles for your team&lt;/p&gt;
 &lt;h3 id=&quot;authors&quot;&gt;Authors&lt;/h3&gt;
 &lt;p&gt;The base user level in Ghost is an author. Authors can write posts, edit their own posts, and publish their own posts. Authors are &lt;strong&gt;trusted&lt;/strong&gt; users. If you don't trust users to be allowed to publish their own posts, you shouldn't invite them to Ghost admin.&lt;/p&gt;
 &lt;h3 id=&quot;editors&quot;&gt;Editors&lt;/h3&gt;
@@ -274,11 +274,11 @@
   
     <entry>
       <title type="html">Making your site private</title>
-      <link href="/private-sites" rel="alternate" type="text/html" title="Making your site private" />
+      <link href="/jasper2/private-sites" rel="alternate" type="text/html" title="Making your site private" />
       <published>2017-07-27T06:00:00+00:00</published>
       <updated>2017-07-27T06:00:00+00:00</updated>
-      <id>/private-sites</id>
-      <content type="html" xml:base="/private-sites">&lt;p&gt;Sometimes you might want to put your site behind closed doors&lt;/p&gt;
+      <id>/jasper2/private-sites</id>
+      <content type="html" xml:base="/jasper2/private-sites">&lt;p&gt;Sometimes you might want to put your site behind closed doors&lt;/p&gt;
 &lt;p&gt;If you've got a publication that you don't want the world to see yet because it's not ready to launch, you can hide your Ghost site behind a simple shared pass-phrase.&lt;/p&gt;
 &lt;p&gt;You can toggle this preference on at the bottom of Ghost's General Settings&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://casper.ghost.org/v1.0.0/images/private.png&quot; alt=&quot;private&quot;&gt;&lt;/p&gt;
@@ -313,11 +313,11 @@
   
     <entry>
       <title type="html">Advanced Markdown tips</title>
-      <link href="/advanced-markdown" rel="alternate" type="text/html" title="Advanced Markdown tips" />
+      <link href="/jasper2/advanced-markdown" rel="alternate" type="text/html" title="Advanced Markdown tips" />
       <published>2017-07-27T05:00:00+00:00</published>
       <updated>2017-07-27T05:00:00+00:00</updated>
-      <id>/advanced-markdown</id>
-      <content type="html" xml:base="/advanced-markdown">&lt;p&gt;There are lots of powerful things you can do with the Ghost editor&lt;/p&gt;
+      <id>/jasper2/advanced-markdown</id>
+      <content type="html" xml:base="/jasper2/advanced-markdown">&lt;p&gt;There are lots of powerful things you can do with the Ghost editor&lt;/p&gt;
 &lt;p&gt;If you've gotten pretty comfortable with &lt;a href=&quot;/the-editor/&quot;&gt;all the basics&lt;/a&gt; of writing in Ghost, then you may enjoy some more advanced tips about the types of things you can do with Markdown!&lt;/p&gt;
 &lt;p&gt;As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.&lt;/p&gt;
 &lt;h2 id=&quot;specialformatting&quot;&gt;Special formatting&lt;/h2&gt;
@@ -389,11 +389,11 @@
   
     <entry>
       <title type="html">Setting up your own Ghost theme</title>
-      <link href="/themes" rel="alternate" type="text/html" title="Setting up your own Ghost theme" />
+      <link href="/jasper2/themes" rel="alternate" type="text/html" title="Setting up your own Ghost theme" />
       <published>2017-07-27T04:00:00+00:00</published>
       <updated>2017-07-27T04:00:00+00:00</updated>
-      <id>/themes</id>
-      <content type="html" xml:base="/themes">&lt;p&gt;Creating a totally custom design for your publication&lt;/p&gt;
+      <id>/jasper2/themes</id>
+      <content type="html" xml:base="/jasper2/themes">&lt;p&gt;Creating a totally custom design for your publication&lt;/p&gt;
 &lt;p&gt;Ghost comes with a beautiful default theme called Casper, which is designed to be a clean, readable publication layout and can be easily adapted for most purposes. However, Ghost can also be completely themed to suit your needs. Rather than just giving you a few basic settings which act as a poor proxy for code, we just let you write code.&lt;/p&gt;
 &lt;p&gt;There are a huge range of both free and premium pre-built themes which you can get from the &lt;a href=&quot;http://marketplace.ghost.org&quot;&gt;Ghost Theme Marketplace&lt;/a&gt;, or you can simply create your own from scratch.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://marketplace.ghost.org&quot;&gt;&lt;img src=&quot;https://casper.ghost.org/v1.0.0/images/marketplace.jpg&quot; alt=&quot;marketplace&quot;&gt;&lt;/a&gt;&lt;/p&gt;

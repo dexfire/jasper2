@@ -16,9 +16,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
-    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/jasper2/assets/built/syntax.css" />
     <!-- prism.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
         integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q=" crossorigin="anonymous" />
@@ -46,23 +46,23 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description"
     content="The professional publishing platform" />
-<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" />
+<link rel="shortcut icon" href="/jasper2/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="canonical"
-    href="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" />
+    href="/jasper2/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
 
 <!--title below is coming from _includes/dynamic_title-->
-<meta property="og:site_name" content="Ghost" />
+<meta property="og:site_name" content="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
 <meta property="og:type" content="website" />
 <meta property="og:title"
     content="【CS】有限状态机（FSM）模型" />
 <meta property="og:description"
     content="【CS】有限状态机（FSM）模型 什么是有限状态机？ 什么是状态机（State Mechine）？顾名思义，即一种可以在一些状态中进行转换的机器，显然这仅仅是一种理想模型，并没有考虑具体的实现方式。 定义 有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。 有什么用？ 虽然听起来仅仅是一个不沾边、不实用、不靠谱的理论模型，但在生活中的例子实在太多了，状态机模型广泛可见于机械结构、电子元件、计算机编程算法当中，只要是在确定的状态间切换的逻辑，都可以归纳为状态机模型。 有限状态机是一种用来进行对象行为建模的工具，其作用主要是描述对象在它的生命周期内所经历的状态序列，以及如何响应来自外界的各种事件。在计算机科学中，有限状态机被广泛用于建模应用行为、硬件电路系统设计、软件工程，编译器、网络协议、和计算与语言的研究。比如下图非常有名的TCP协议状态机。 状态机模型 有限状态机一般都有以下特点： 可以用状态来描述事物，并且任一时刻，事物总是处于一种状态； 事物拥有的状态总数是有限的； 通过触发事物的某些行为，可以导致事物从一种状态过渡到另一种状态； 事物状态变化是有规则的，A状态可以变换到B，B可以变换到C，A却不一定能变换到C； 同一种行为，可以将事物从多种状态变成同种状态，但是不能从同种状态变成多种状态。 状态 状态机可归纳为4个要素，即现态、条件、动作、次态。“现态”和“条件”是因，“动作”和“次态”是果。详解如下： 现态： 指当前所处的状态。 次态： 条件满足后要迁往的新状态。“次态”是相对于“现态”而言的，“次态”一旦被激活，就转变成新的“现态”了。 状态转换动作条件 状态机在满足触发条件时进行状态切换，如当计数达到指定大小进行下一个阶段操作。 条件： 又称为“事件”。当一个条件被满足，将会触发一个动作，或者执行一次状态的迁移。 动作： 条件满足后执行的动作。动作执行完毕后，可以迁移到新的状态，也可以仍旧保持原状态。动作不是必需的，当条件满足后，也可以不执行任何动作，直接迁移到新状态。 状态机的描述 状态机模型可以使用关系表达式（状态方程）、状态转换图、状态转换表等多种方式进行描述。 状态转换图 STD图(State Transform Diagram)状态转换图,表示行为模型。STD通过描述系统的状态和引起系统状态转换的事件，来表示系统的行为，指出作为特定事件的结果将执行哪些动作（例如，处理数据等）。STD描述系统对外部事件如何响应，如何动作。 通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为。此外状态转换图还指明了作为特定事件的结果系统将做哪些动作（例如，处理数据）。因此状态转换图提供了行为建模机制。 在状态转换图中，每一个节点代表一个状态，其中双圈是终结状态。许多单片机教材上对工作模式的表达通常采用状态图的形式。 状态转换表 状态机模型可以用状态转换表来简化状态切换逻辑，因为只要输入变量处于确定状态，其输出也应当是一个确定态，也即状态互转可以使用输入/输出一一对应关系表来描述。 应用举例 例1. TCP状态转换图 例2. JavaScript中对用户鼠标状态的交互动作 在js中，新建一个对象，用这个对象的属性来模拟元素的状态,用这个对象的方法模拟元素在不同状态的转变,那么这个对象就是一个有限状态机。是否可用有限状态机来描述，却决于：当前状态确定，有限个状态，响应事件，在不同状态间有规律的转变。它对JavaScript的意义在于，很多对象可以写成有限状态机。举例来说，网页上有一个菜单元素。鼠标悬停的时候，菜单显示；鼠标移开的时候，菜单隐藏。如果使用有限状态机描述，就是这个菜单只有两种状态（显示和隐藏），鼠标会引发状态转变。 var menu = {" />
 <meta property="og:url"
-    content="/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" />
+    content="/jasper2/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B" />
 <meta property="og:image"
-    content="/90e2e1d013a1df93933b5d34affe4568.png" />
+    content="/jasper2/90e2e1d013a1df93933b5d34affe4568.png" />
 <meta property="article:publisher" content="https://www.facebook.com/ghost" />
 <meta property="article:author" content="https://www.facebook.com/ghost" />
 <meta property="article:published_time"
@@ -76,11 +76,11 @@
     content="【CS】有限状态机（FSM）模型" />
 <meta name="twitter:description"
     content="【CS】有限状态机（FSM）模型 什么是有限状态机？ 什么是状态机（State Mechine）？顾名思义，即一种可以在一些状态中进行转换的机器，显然这仅仅是一种理想模型，并没有考虑具体的实现方式。 定义 有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。 有什么用？ 虽然听起来仅仅是一个不沾边、不实用、不靠谱的理论模型，但在生活中的例子实在太多了，状态机模型广泛可见于机械结构、电子元件、计算机编程算法当中，只要是在确定的状态间切换的逻辑，都可以归纳为状态机模型。 有限状态机是一种用来进行对象行为建模的工具，其作用主要是描述对象在它的生命周期内所经历的状态序列，以及如何响应来自外界的各种事件。在计算机科学中，有限状态机被广泛用于建模应用行为、硬件电路系统设计、软件工程，编译器、网络协议、和计算与语言的研究。比如下图非常有名的TCP协议状态机。 状态机模型 有限状态机一般都有以下特点： 可以用状态来描述事物，并且任一时刻，事物总是处于一种状态； 事物拥有的状态总数是有限的； 通过触发事物的某些行为，可以导致事物从一种状态过渡到另一种状态； 事物状态变化是有规则的，A状态可以变换到B，B可以变换到C，A却不一定能变换到C； 同一种行为，可以将事物从多种状态变成同种状态，但是不能从同种状态变成多种状态。 状态 状态机可归纳为4个要素，即现态、条件、动作、次态。“现态”和“条件”是因，“动作”和“次态”是果。详解如下： 现态： 指当前所处的状态。 次态： 条件满足后要迁往的新状态。“次态”是相对于“现态”而言的，“次态”一旦被激活，就转变成新的“现态”了。 状态转换动作条件 状态机在满足触发条件时进行状态切换，如当计数达到指定大小进行下一个阶段操作。 条件： 又称为“事件”。当一个条件被满足，将会触发一个动作，或者执行一次状态的迁移。 动作： 条件满足后执行的动作。动作执行完毕后，可以迁移到新的状态，也可以仍旧保持原状态。动作不是必需的，当条件满足后，也可以不执行任何动作，直接迁移到新状态。 状态机的描述 状态机模型可以使用关系表达式（状态方程）、状态转换图、状态转换表等多种方式进行描述。 状态转换图 STD图(State Transform Diagram)状态转换图,表示行为模型。STD通过描述系统的状态和引起系统状态转换的事件，来表示系统的行为，指出作为特定事件的结果将执行哪些动作（例如，处理数据等）。STD描述系统对外部事件如何响应，如何动作。 通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为。此外状态转换图还指明了作为特定事件的结果系统将做哪些动作（例如，处理数据）。因此状态转换图提供了行为建模机制。 在状态转换图中，每一个节点代表一个状态，其中双圈是终结状态。许多单片机教材上对工作模式的表达通常采用状态图的形式。 状态转换表 状态机模型可以用状态转换表来简化状态切换逻辑，因为只要输入变量处于确定状态，其输出也应当是一个确定态，也即状态互转可以使用输入/输出一一对应关系表来描述。 应用举例 例1. TCP状态转换图 例2. JavaScript中对用户鼠标状态的交互动作 在js中，新建一个对象，用这个对象的属性来模拟元素的状态,用这个对象的方法模拟元素在不同状态的转变,那么这个对象就是一个有限状态机。是否可用有限状态机来描述，却决于：当前状态确定，有限个状态，响应事件，在不同状态间有规律的转变。它对JavaScript的意义在于，很多对象可以写成有限状态机。举例来说，网页上有一个菜单元素。鼠标悬停的时候，菜单显示；鼠标移开的时候，菜单隐藏。如果使用有限状态机描述，就是这个菜单只有两种状态（显示和隐藏），鼠标会引发状态转变。 var menu = {" />
-<meta name="twitter:url" content="/" />
+<meta name="twitter:url" content="/jasper2/" />
 <meta name="twitter:image"
-    content="/90e2e1d013a1df93933b5d34affe4568.png" />
+    content="/jasper2/90e2e1d013a1df93933b5d34affe4568.png" />
 <meta name="twitter:label1" content="Written by" />
-<meta name="twitter:data1" content="Ghost" />
+<meta name="twitter:data1" content="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
 <meta name="twitter:label2" content="Filed under" />
 <meta name="twitter:data2" content="Cs" />
 <meta name="twitter:site" content="@tryghost" />
@@ -94,19 +94,19 @@
     "@type": "Website",
     "publisher": {
         "@type": "Organization",
-        "name": "Ghost",
-        "logo": "/assets/images/blog-icon.png"
+        "name": "你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ",
+        "logo": "/jasper2/assets/images/blog-icon.png"
     },
-    "url": "/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B",
+    "url": "/jasper2/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B",
     "image": {
         "@type": "ImageObject",
-        "url": "/90e2e1d013a1df93933b5d34affe4568.png",
+        "url": "/jasper2/90e2e1d013a1df93933b5d34affe4568.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B"
+        "@id": "/jasper2/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B"
     },
     "description": "【CS】有限状态机（FSM）模型 什么是有限状态机？ 什么是状态机（State Mechine）？顾名思义，即一种可以在一些状态中进行转换的机器，显然这仅仅是一种理想模型，并没有考虑具体的实现方式。 定义 有限状态机，（英语：Finite-state machine, FSM），又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。 有什么用？ 虽然听起来仅仅是一个不沾边、不实用、不靠谱的理论模型，但在生活中的例子实在太多了，状态机模型广泛可见于机械结构、电子元件、计算机编程算法当中，只要是在确定的状态间切换的逻辑，都可以归纳为状态机模型。 有限状态机是一种用来进行对象行为建模的工具，其作用主要是描述对象在它的生命周期内所经历的状态序列，以及如何响应来自外界的各种事件。在计算机科学中，有限状态机被广泛用于建模应用行为、硬件电路系统设计、软件工程，编译器、网络协议、和计算与语言的研究。比如下图非常有名的TCP协议状态机。 状态机模型 有限状态机一般都有以下特点： 可以用状态来描述事物，并且任一时刻，事物总是处于一种状态； 事物拥有的状态总数是有限的； 通过触发事物的某些行为，可以导致事物从一种状态过渡到另一种状态； 事物状态变化是有规则的，A状态可以变换到B，B可以变换到C，A却不一定能变换到C； 同一种行为，可以将事物从多种状态变成同种状态，但是不能从同种状态变成多种状态。 状态 状态机可归纳为4个要素，即现态、条件、动作、次态。“现态”和“条件”是因，“动作”和“次态”是果。详解如下： 现态： 指当前所处的状态。 次态： 条件满足后要迁往的新状态。“次态”是相对于“现态”而言的，“次态”一旦被激活，就转变成新的“现态”了。 状态转换动作条件 状态机在满足触发条件时进行状态切换，如当计数达到指定大小进行下一个阶段操作。 条件： 又称为“事件”。当一个条件被满足，将会触发一个动作，或者执行一次状态的迁移。 动作： 条件满足后执行的动作。动作执行完毕后，可以迁移到新的状态，也可以仍旧保持原状态。动作不是必需的，当条件满足后，也可以不执行任何动作，直接迁移到新状态。 状态机的描述 状态机模型可以使用关系表达式（状态方程）、状态转换图、状态转换表等多种方式进行描述。 状态转换图 STD图(State Transform Diagram)状态转换图,表示行为模型。STD通过描述系统的状态和引起系统状态转换的事件，来表示系统的行为，指出作为特定事件的结果将执行哪些动作（例如，处理数据等）。STD描述系统对外部事件如何响应，如何动作。 通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为。此外状态转换图还指明了作为特定事件的结果系统将做哪些动作（例如，处理数据）。因此状态转换图提供了行为建模机制。 在状态转换图中，每一个节点代表一个状态，其中双圈是终结状态。许多单片机教材上对工作模式的表达通常采用状态图的形式。 状态转换表 状态机模型可以用状态转换表来简化状态切换逻辑，因为只要输入变量处于确定状态，其输出也应当是一个确定态，也即状态互转可以使用输入/输出一一对应关系表来描述。 应用举例 例1. TCP状态转换图 例2. JavaScript中对用户鼠标状态的交互动作 在js中，新建一个对象，用这个对象的属性来模拟元素的状态,用这个对象的方法模拟元素在不同状态的转变,那么这个对象就是一个有限状态机。是否可用有限状态机来描述，却决于：当前状态确定，有限个状态，响应事件，在不同状态间有规律的转变。它对JavaScript的意义在于，很多对象可以写成有限状态机。举例来说，网页上有一个菜单元素。鼠标悬停的时候，菜单显示；鼠标移开的时候，菜单隐藏。如果使用有限状态机描述，就是这个菜单只有两种状态（显示和隐藏），鼠标会引发状态转变。 var menu = {"
 }
@@ -123,7 +123,7 @@
 <meta name="generator" content="Jekyll 3.6.2" />
 <link rel="alternate" type="application/rss+xml"
     title="【CS】有限状态机（FSM）模型"
-    href="/feed.xml" />
+    href="/jasper2/feed.xml" />
 
 <!-- Katex Math Display -->
 
@@ -152,18 +152,18 @@ into the {body} of the default.hbs template -->
     <div class="site-nav-left">
         
             
-                <a class="site-nav-logo" href="/"><img src="/assets/images/blog-icon.png" alt="Ghost" /></a>
+                <a class="site-nav-logo" href="/jasper2/"><img src="/jasper2/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" /></a>
             
         
         
             <ul class="nav" role="menu">
-    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
-    <li class="nav-about" role="menuitem"><a href="/author/dexfire/">Dexfire</a></li>
-    <li class="nav-getting-started" role="menuitem"><a href="/tag/sweet/">Sweets</a>
+    <li class="nav-home" role="menuitem"><a href="/jasper2/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/jasper2/author/dexfire/">Dexfire</a></li>
+    <li class="nav-getting-started" role="menuitem"><a href="/jasper2/tag/sweet/">Sweets</a>
     </li>
-    <li class="nav-embed" role="menuitem"><a href="/tag/ai/">AI</a></li>
-    <li class="nav-embed" role="menuitem"><a href="/tag/embed/">Embed</a></li>
-    <li class="nav-about" role="menuitem"><a href="/tag/star/">Stars</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/ai/">AI</a></li>
+    <li class="nav-embed" role="menuitem"><a href="/jasper2/tag/embed/">Embed</a></li>
+    <li class="nav-about" role="menuitem"><a href="/jasper2/tag/star/">Stars</a></li>
 </ul>
         
     </div>
@@ -202,11 +202,11 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         
                             
-                                <a href='/tag/cs/'>CS</a>,
+                                <a href='/jasper2/tag/cs/'>CS</a>,
                             
                         
                             
-                                <a href='/tag/dev/'>DEV</a>
+                                <a href='/jasper2/tag/dev/'>DEV</a>
                             
                         
                     
@@ -215,7 +215,7 @@ into the {body} of the default.hbs template -->
             </header>
 
             
-                <figure class="post-full-image" style="background-image: url(/assets/images/90e2e1d013a1df93933b5d34affe4568.png)"></figure>
+                <figure class="post-full-image" style="background-image: url(/jasper2/assets/images/90e2e1d013a1df93933b5d34affe4568.png)"></figure>
             
 
             <section class="post-full-content">
@@ -410,7 +410,7 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
             
                 <section class="subscribe-form">
                     <h3 class="subscribe-form-title">Subscribe to
-                        Ghost</h3>
+                        你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</h3>
                     <p>Get the latest posts delivered right to your inbox</p>
                     <form method="post" action="/subscribe/" class="">
     <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
@@ -446,11 +446,11 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
                     
                         <section class="author-card">
                             
-                                <img class="author-profile-image" src="/assets/images/dexfire.png" alt="dexfire"/>
+                                <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="dexfire"/>
                             
                             <section class="author-card-content">
                                 <h4 class="author-card-name">
-                                    <a href="/author/dexfire">Dexfire Alex</a>
+                                    <a href="/jasper2/author/dexfire">Dexfire Alex</a>
                                 </h4>
                                 
                                     <p>水中月是天上月，眼前人是心上人</p>
@@ -458,7 +458,7 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
                             </section>
                         </section>
                         <div class="post-full-footer-right">
-                            <a class="author-card-button" href="/author/dexfire">Read More</a>
+                            <a class="author-card-button" href="/jasper2/author/dexfire">Read More</a>
                         </div>
                     
                 
@@ -468,22 +468,6 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
             <!-- If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
-            
-                <section class="post-full-comments">
-                    <div id="disqus_thread"></div>
-                    <script>
-                        var disqus_config = function () {
-                            this.page.url = '/';
-                            this.page.identifier = 'Ghost';
-                        };
-                        (function() {
-                            var d = document, s = d.createElement('script');
-                            s.src = 'https://dexfire.disqus.com/embed.js';
-                            s.setAttribute('data-timestamp', +new Date());
-                            (d.head || d.body).appendChild(s);
-                        })();
-                    </script>
-                </section>
             
 
         </article>
@@ -500,14 +484,14 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
                 
                 
                 
-                    <article class="read-next-card"  style="background-image: url(/assets/images/blog-cover.jpg)" >
+                    <article class="read-next-card"  style="background-image: url(/jasper2/assets/images/blog-cover.jpg)" >
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash;
-                                Ghost
+                                你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ
                                 &mdash;</small>
                             
                                 <h3 class="read-next-card-header-title">
-                                    <a href="/tag/cs/">Cs</a>
+                                    <a href="/jasper2/tag/cs/">Cs</a>
                                 </h3>
                             
                         </header>
@@ -600,7 +584,7 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
                                             
                                             
                                                 <li>
-                                                    <a href="/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A">【redis】一、Redis 数据库入门初体验</a>
+                                                    <a href="/jasper2/Redis-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A">【redis】一、Redis 数据库入门初体验</a>
                                                 </li>
                                             
                                         
@@ -619,7 +603,7 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
                                             
                                             
                                                 <li>
-                                                    <a href="/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C">【redis】一、Redis 数据库入门初体验</a>
+                                                    <a href="/jasper2/redis-%E4%B8%80-Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8%E5%88%9D%E4%BD%93%E9%AA%8C">【redis】一、Redis 数据库入门初体验</a>
                                                 </li>
                                             
                                         
@@ -636,7 +620,7 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
                                             
                                             
                                                 <li>
-                                                    <a href="/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">【CS】编译原理</a>
+                                                    <a href="/jasper2/CS-%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">【CS】编译原理</a>
                                                 </li>
                                             
                                         
@@ -825,7 +809,7 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/tag/cs/">
+                            <a href="/jasper2/tag/cs/">
                                 
                                     See all
                                     5
@@ -843,15 +827,15 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
 
 <article class="post-card post-template">
     
-        <a class="post-card-image-link" href="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86">
+        <a class="post-card-image-link" href="/jasper2/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86">
             
-                <div class="post-card-image" style="background-image: url(/assets/images/90e2e1d013a1df93933b5d34affe4568.png)"></div>
+                <div class="post-card-image" style="background-image: url(/jasper2/assets/images/90e2e1d013a1df93933b5d34affe4568.png)"></div>
             
-            <!-- <div class="post-card-image" style="background-image: url(/90e2e1d013a1df93933b5d34affe4568.png)"></div> -->
+            <!-- <div class="post-card-image" style="background-image: url(/jasper2/90e2e1d013a1df93933b5d34affe4568.png)"></div> -->
         </a>
     
     <div class="post-card-content">
-        <a class="post-card-content-link" href="/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86">
+        <a class="post-card-content-link" href="/jasper2/%E8%AE%BA%E6%96%87-%E5%85%89%E7%94%B5%E6%B5%8B%E9%87%8F%E4%B8%8E%E4%BC%A0%E6%84%9F%E8%AF%BE%E9%A2%98-%E4%BC%A0%E6%84%9F%E6%8A%80%E6%9C%AF%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%A0%87%E5%87%86">
             <header class="post-card-header">
                 
                     
@@ -887,10 +871,10 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
             
                 
                     
-                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                        <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="Dexfire Alex"/>
                     
                     <span class="post-card-author">
-                        <a href="/author/dexfire/">Dexfire Alex</a>
+                        <a href="/jasper2/author/dexfire/">Dexfire Alex</a>
                     </span>
                 
             
@@ -912,15 +896,15 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
 
 <article class="post-card post-template">
     
-        <a class="post-card-image-link" href="/%E5%88%9B%E4%BC%A4%E5%BF%83%E7%90%86%E5%AD%A6">
+        <a class="post-card-image-link" href="/jasper2/%E5%88%9B%E4%BC%A4%E5%BF%83%E7%90%86%E5%AD%A6">
             
-                <div class="post-card-image" style="background-image: url(/assets/images/20180415153733_upjts.jpg)"></div>
+                <div class="post-card-image" style="background-image: url(/jasper2/assets/images/20180415153733_upjts.jpg)"></div>
             
-            <!-- <div class="post-card-image" style="background-image: url(/20180415153733_upjts.jpg)"></div> -->
+            <!-- <div class="post-card-image" style="background-image: url(/jasper2/20180415153733_upjts.jpg)"></div> -->
         </a>
     
     <div class="post-card-content">
-        <a class="post-card-content-link" href="/%E5%88%9B%E4%BC%A4%E5%BF%83%E7%90%86%E5%AD%A6">
+        <a class="post-card-content-link" href="/jasper2/%E5%88%9B%E4%BC%A4%E5%BF%83%E7%90%86%E5%AD%A6">
             <header class="post-card-header">
                 
                     
@@ -956,10 +940,10 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
             
                 
                     
-                        <img class="author-profile-image" src="/assets/images/dexfire.png" alt="Dexfire Alex"/>
+                        <img class="author-profile-image" src="/jasper2/assets/images/dexfire.png" alt="Dexfire Alex"/>
                     
                     <span class="post-card-author">
-                        <a href="/author/dexfire/">Dexfire Alex</a>
+                        <a href="/jasper2/author/dexfire/">Dexfire Alex</a>
                     </span>
                 
             
@@ -982,11 +966,11 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
 <!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
 <div class="floating-header">
     <div class="floating-header-logo">
-        <a href="/">
+        <a href="/jasper2/">
             
-                <img src="/assets/images/favicon.png" alt="Ghost icon" />
+                <img src="/jasper2/assets/images/favicon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ icon" />
             
-            <span>Ghost</span>
+            <span>你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</span>
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
@@ -996,12 +980,12 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E3%80%90CS%E3%80%91%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%88FSM%EF%BC%89%E6%A8%A1%E5%9E%8B&amp;url=https://dexfire.github.io/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E3%80%90CS%E3%80%91%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%88FSM%EF%BC%89%E6%A8%A1%E5%9E%8B&amp;url=https://dexfire.github.io/jasper2/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dexfire.github.io/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://dexfire.github.io/jasper2/CS-%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-FSM-%E6%A8%A1%E5%9E%8B"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 
@@ -1026,13 +1010,13 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="/">Ghost</a> &copy;
+                <section class="copyright"><a href="/jasper2/">你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</a> &copy;
                     2020</section>
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
                 <nav class="site-footer-nav">
-                    <a href="/">Latest Posts</a>
+                    <a href="/jasper2/">Latest Posts</a>
                     <a href="https://facebook.com/ghost" target="_blank"
                         rel="noopener">Facebook</a>
                     <a href="https://twitter.com/tryghost" target="_blank"
@@ -1054,9 +1038,9 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
         <a class="subscribe-overlay-close" href="#"></a>
         <div class="subscribe-overlay-content">
             
-            <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="Ghost" />
+            <img class="subscribe-overlay-logo" src="/jasper2/assets/images/blog-icon.png" alt="你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ" />
             
-            <h1 class="subscribe-overlay-title">Subscribe to Ghost</h1>
+            <h1 class="subscribe-overlay-title">Subscribe to 你终于回来啦ヽ(✿ﾟ▽ﾟ)ノ</h1>
             <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered
                 straight to your inbox</p>
             <form method="post" action="/subscribe/" class="">
@@ -1112,7 +1096,7 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
-    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/jasper2/assets/js/jquery.fitvids.js"></script>
     <!--script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script-->
 
     <!-- Paginator increased to "infinit" in _config.yml -->
@@ -1120,7 +1104,7 @@ B = (A[147] | (A[258] | B[147])[0369]*[258])[0369]* (5)用分配律展开 (5) �
     <!-- <script>
         var maxPages = parseInt('');
     </script>
-    <script src="/assets/js/infinitescroll.js"></script> -->
+    <script src="/jasper2/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
     
