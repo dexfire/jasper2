@@ -167,3 +167,8 @@ car:
   name: 汽车
   description: 高价值,高追求
   cover: assets/images/car.jpg
+  
+windows:
+  name: Windows
+  description: 高价值,高追求
+  cover: assets/images/windows.jpg
